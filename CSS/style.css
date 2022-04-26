@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: url(/IMG/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat:round;
+}
+
+.Animate_Nav {
+    /* Gave the keyframe a name of nav-load */
+    animation: nav-load 1s ease-in-out;
+}
+
+.heading {
+    margin: 250px 0 0 0;
+}
+
+.sec-1 {
+    margin: 280px 0 0 0; 
+}
+
+
+.hover-btn-clas:hover {
+    background-color: #ffc107;
+    transition: 1s;
+}
+
+.special-btn:hover {
+    background-color: #2f4f4f;
+    transition: 1s;
+}
+
+.Animate_btn {
+    animation: btn-animate 3s;
+    background-color: #ffc107;
+
+}
+.Animate_btn:hover {
+    background-color: #f0f8ff;
+    
+}
+
+.footer-p {
+    text-decoration: none;
+}
+
+.video {
+    text-align: center;
+}
+
+.sction-2-p {
+    columns: 2;
+}
+.sction-3-p {
+    columns: 3;
+}
+
+.group1 {
+    animation: group_1 3s;
+}
+.group2 {
+    animation: group_2 3s;
+}
+
+@keyframes nav-load {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes btn-animate {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(1000%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes group_1 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateX(-1000%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes group_2 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateX(1000%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+/* If the screen is 1171.20px or less then I do want these styles to be applied. If it's above 1171.20px then I don't want these styles to be applied. Use (min-width: 800px) to do the opposite which is if the screen is 800px and up then apply whaever styles. */
+@media screen and (max-width: 1171.20px){
+
+}

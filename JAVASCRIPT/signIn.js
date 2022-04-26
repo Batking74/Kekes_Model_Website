@@ -1,0 +1,1 @@
+document.querySelectorAll('#validationForm input').value
