@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url(/IMG/home_background.jpg);
+}
+/* Navigation styles start */
+.nav-container {
+    background-color: #000000;
+    display: grid;
+    grid-template: 66px / repeat(8, auto);
+    height: 4vmax;
+    padding: 0 0 5px 0;
+}
+
+.nav-container img {
+    width: 50px;
+    height: 40px;
+}
+.nav-container img:hover {
+    cursor: pointer;
+}
+
+.nav-container a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    padding: 0 0 0vmax 0;
+}
+
+.nav-btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+.nav-btn:hover {
+    background-color: #ffc107;
+}
+
+.special-nav-btn {
+    color: #ffc107;
+}
+.special-nav-btn:hover {
+    background-color: #2f4f4f;
+}
+
+.login-logo {
+    margin: 0 5px 0 0;
+}
