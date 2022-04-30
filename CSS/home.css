@@ -9,8 +9,8 @@ body {
 .nav-container {
     background-color: #000000;
     display: grid;
-    grid-template: 66px / repeat(8, auto);
-    height: 4vmax;
+    grid-template: 70px / repeat(8, auto);
+    height: 65px;
     padding: 0 0 5px 0;
 }
 
@@ -18,8 +18,8 @@ body {
     width: 50px;
     height: 40px;
 }
-.nav-container img:hover {
-    cursor: pointer;
+.nav-container img:active {
+    cursor: grabbing;
 }
 
 .nav-container a {
@@ -32,7 +32,6 @@ body {
 }
 
 .nav-btn {
-    background-color: #000000;
     color: #ffffff;
 }
 .nav-btn:hover {
