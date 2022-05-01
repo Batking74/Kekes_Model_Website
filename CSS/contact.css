@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/IMG/contact_bg4.png);
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Navigation styles start */
+.nav-container {
+    background-color: #000000;
+    display: grid;
+    grid-template: 60px / repeat(8, auto);
+    height: 55px;
+    padding: 0 0 5px 0;
+}
+
+.nav-container img {
+    width: 48px;
+    height: 38px;
+}
+
+.nav-container a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding: 0;
+}
+
+.nav-container a:active {
+    cursor: grabbing;
+}
+
+.nav-btn {
+    color: #ffffff;
+}
+
+.nav-btn:hover {
+    background-color: #ffc107;
+}
+
+.special-nav-btn {
+    color: #ffc107;
+}
+
+.special-nav-btn:hover {
+    background-color: #2f4f4f;
+}
+
+.login-logo {
+    margin: 0 5px 0 0;
+}
+
+/* Navigation End */
+
+/* Title start */
+.header {
+    text-align: center;
+    position: relative;
+    top: 30px;
+    font-size: x-large;
+    background-color: #0000004e;
+    color: #fffffff1;
+    padding: 10px;
+}
+
+.header h1 {
+    font-weight: lighter;
+}
+/* Title End */
+
+.position-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.main-container {
+    background-color: #b08c8c26;
+    padding: 20px;
+    display: grid;
+    column-gap: 1vmax;
+    display: flex;
+    border-radius: 2%;
+}
+
+/* Contact info start */
+.info-container, form {
+    height: 30vmax;
+}
+
+.info-container {
+    background-color: #d7a615;
+    border-radius: 10px;
+    padding: 2vmax 70px 3vmax 2vmax;
+    display: grid;
+}
+
+.info-heading h1 {
+    margin-bottom: 10px;
+}
+
+.info-heading p {
+    font-size: 16px;
+}
+
+.info-group-1 {
+    display: grid;
+    column-gap: 20px;
+    display: flex;
+}
+
+.info-group-2 {
+    display: grid;
+    column-gap: 20px;
+    display: flex;
+}
+
+.info-group-3 {
+    display: grid;
+    column-gap: 20px;
+    display: flex;
+}
+
+.info-group-4 {
+    display: grid;
+    column-gap: 20px;
+    display: flex;
+}
+/* Contact info End */
+
+/* Form */
+form {
+    color: white;
+}

@@ -4,6 +4,11 @@
 }
 
 body {
+    background: linear-gradient(90deg,#ffc1077c,#ffc10780);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -60,8 +65,11 @@ body {
 form {
     position: absolute;
     left: 37%;
-    bottom: 26%;
+    bottom: 15%;
     display: grid;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+    color: #000000;
 }
 
 form h1 {
@@ -85,10 +93,13 @@ form input {
     border: solid 1px #0000004f;
     border-radius: 5px;
     margin-bottom: 20px;
+    background-color: #978e4551;
 }
 
 .checkbox {
     cursor: pointer;
+    color: red;
+    background-color: #978e4551;
 }
 
 .checkbox:active {
