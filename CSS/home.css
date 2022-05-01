@@ -4,22 +4,24 @@
 }
 body {
     background-image: url(/IMG/home_background.jpg);
+    background-repeat: no-repeat;
+    background-position-y: -30px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Navigation styles start */
 .nav-container {
     background-color: #000000;
     display: grid;
-    grid-template: 70px / repeat(8, auto);
-    height: 65px;
+    grid-template: 60px / repeat(8, auto);
+    height: 55px;
     padding: 0 0 5px 0;
 }
 
 .nav-container img {
-    width: 50px;
-    height: 40px;
-}
-.nav-container img:active {
-    cursor: grabbing;
+    width: 48px;
+    height: 38px;
 }
 
 .nav-container a {
@@ -27,13 +29,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: larger;
-    padding: 0 0 0vmax 0;
+    font-size: large;
+    padding: 0;
+}
+.nav-container a:active {
+    cursor: grabbing;
 }
 
 .nav-btn {
     color: #ffffff;
 }
+
 .nav-btn:hover {
     background-color: #ffc107;
 }
@@ -41,6 +47,7 @@ body {
 .special-nav-btn {
     color: #ffc107;
 }
+
 .special-nav-btn:hover {
     background-color: #2f4f4f;
 }
@@ -48,3 +55,84 @@ body {
 .login-logo {
     margin: 0 5px 0 0;
 }
+
+/* Navigation End */
+
+/* Start of heading */
+.heading-container {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+    left: 33%;
+    bottom: 40%;
+}
+
+.heading-container h1 {
+    font-size: 55px;
+    font-weight: lighter;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.heading-container button {
+    font-size: 17px;
+    font-weight: large;
+    padding: 17px 0 17px 0;
+    width: 20vmax;
+    border: solid 2px rgba(0, 0, 0, 0.242);
+    border-radius: 10px;
+    color: #000000;
+    background-color: #ffc107;
+}
+
+.heading-container button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.heading-container button:active {
+    cursor: grabbing;
+}
+/* End of heading */
+
+/* Start of section 1 */
+
+/* End of section 1 */
+
+/* Start of section 2 */
+
+/* End of section 2 */
+
+/* Start of section 3 */
+
+/* End of section 3 */
+
+/* Start of footer */
+.footer-p {
+    text-decoration: none;
+}
+
+.video {
+    text-align: center;
+}
+
+.sction-2-p {
+    columns: 2;
+}
+.sction-3-p {
+    columns: 3;
+}
+
+.group1 {
+    animation: group_1 3s;
+}
+.group2 {
+    animation: group_2 3s;
+}
+/* End of footer */
+
+
+

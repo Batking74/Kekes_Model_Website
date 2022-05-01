@@ -1,32 +1,139 @@
 * {
     margin: 0;
+    padding: 0;
 }
 
-.hover-btn-clas:hover {
-    background-color: #ffc107;
-    transition: 1s;
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.special-btn:hover {
-    background-color: #2f4f4f;
-    transition: 1s;
-}
-
-form {
+/* Navigation styles start */
+.nav-container {
+    background-color: #000000;
     display: grid;
-    margin-left: 530px;
-    margin-right: 530px;
+    grid-template: 60px / repeat(8, auto);
+    height: 55px;
+    padding: 0 0 5px 0;
 }
 
-.link {
+.nav-container img {
+    width: 48px;
+    height: 38px;
+}
+
+.nav-container a {
     text-decoration: none;
-    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding: 0;
 }
 
-.link:hover {
+.nav-container a:active {
+    cursor: grabbing;
+}
+
+.nav-btn {
+    color: #ffffff;
+}
+
+.nav-btn:hover {
+    background-color: #ffc107;
+}
+
+.special-nav-btn {
     color: #ffc107;
 }
 
-footer {
-    margin-top: 59px;
+.special-nav-btn:hover {
+    background-color: #2f4f4f;
 }
+
+.login-logo {
+    margin: 0 5px 0 0;
+}
+
+/* Navigation End */
+
+/* Start form */
+form {
+    position: absolute;
+    left: 37%;
+    bottom: 26%;
+    display: grid;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    font-size: 50px;
+}
+
+form h1:hover {
+    cursor: default;
+}
+
+form label {
+    font-size: medium;
+}
+
+form input {
+    padding: 7px 11vmax 7px 7px;
+    font-size: 17px;
+    border: solid 1px #0000004f;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
+.checkbox:active {
+    cursor: grabbing;
+}
+
+.signin-forgotpass {
+    display: grid;
+    column-gap: 40px;
+    display: flex;
+}
+
+form button {
+    padding: 10px 65px 10px 65px;
+    background-color: #ffc107;
+    color: #000000;
+    cursor: pointer;
+    border: 2px #00000046 solid;
+    border-radius: 5px;
+}
+
+form button:active {
+    cursor: grabbing;
+}
+
+form a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+}
+
+form a:hover {
+    color: #d7a615;
+}
+
+form a:active {
+    cursor: grabbing;
+}
+
+.signup-btn {
+    padding: 14px 0 14px 0;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* Start form styles */
+
+/* form validation */
