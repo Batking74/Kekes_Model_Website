@@ -9,15 +9,15 @@
 </head>
 <body>
     <!-- Start of navigation bar -->
-    <nav class="nav-container">
+    <nav class="Animate_Nav nav-container">
         <a href="#"><img src="/IMG/keke_logo.jpg" alt="Keke Palmers Logo"></a>
-        <a class="special-nav-btn" href="/HTML/index.html">Home</a>
-        <a class="nav-btn" href="/HTML/aboutPage.html">About</a>
-        <a class="nav-btn" href="/HTML/FAQPage.html">FAQ</a>
-        <a class="nav-btn" href="#">Contact</a>
-        <a class="nav-btn" href="/HTML/Store.html">Store</a>
-        <a class="nav-btn" href="/HTML/FAQPage.html">Careers</a>
-        <a class="special-nav-btn" href="/HTML/Login.html">
+        <a class="nav-animate-group1 special-nav-btn" href="/HTML/index.html">Home</a>
+        <a class="nav-animate-group1 nav-btn" href="/HTML/aboutPage.html">About</a>
+        <a class="nav-animate-group1 nav-btn" href="/HTML/FAQPage.html">FAQ</a>
+        <a class="nav-animate-group1 nav-btn" href="#">Contact</a>
+        <a class="nav-animate-group2 nav-btn" href="/HTML/Store.html">Store</a>
+        <a class="nav-animate-group2 nav-btn" href="/HTML/FAQPage.html">Careers</a>
+        <a class="nav-animate-group2 special-nav-btn" href="/HTML/Login.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>Log in</a>
@@ -61,29 +61,38 @@
                 
                 <!-- Start of form -->
                 <form action="">
-                    <div>
-                        <label for="firstname">First Name</label>
-                        <input type="text">
-                        <label for="lastname">Last Name</label>
-                        <input type="text">
+                    <div class="position-group-container">
+                        <div class="firstNameEmail-group">
+                            <label for="firstname">First Name</label>
+                            <input autofocus maxlength="20" type="text">
+                            <label for="email">E-Mail</label>
+                            <input maxlength="20" type="email">
+                        </div>
+                        <div class="lastNamePhone-group">
+                            <label for="lastname">Last Name</label>
+                            <input maxlength="20" type="text">
+                            <label for="phonenumber">Phone #</label>
+                            <input maxlength="12" type="tel">
+                        </div>
                     </div>
                     <div>
-                        <label for="email">E-Mail</label>
-                        <input type="email">
-                        <label for="phonenumber">Phone #</label>
-                        <input type="tel">
+                        <br>
+                        <p>What device are you contacting from?</p>
+                        <br>
+                        <input type="radio" name="" id="">
+                        <label for="">Mobile Device</label>
+                        <input type="radio" name="" id="">
+                        <label for="">Computer/Desktop</label>
+                        <input type="radio" name="" id="">
+                        <label for="">Tablet</label>
+                        <input type="radio" name="" id="">
+                        <label for="">Other</label>
                     </div>
-                    <div>
-                        <input type="radio" name="" id="">
-                        <label for="">Lorem ipsum dolor sit</label>
-                        <input type="radio" name="" id="">
-                        <label for="">Lorem ipsum dolor sit</label>
-                        <input type="radio" name="" id="">
-                        <label for="">Lorem ipsum dolor sit</label>
-                    </div>
-                    <div>
+                    <br>
+                    <div class="message">
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <br>
+                        <textarea name="message" id="message" cols="81" rows="3"></textarea>
                     </div>
                     <button>Send Message</button>
                 </form>

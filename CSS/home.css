@@ -32,6 +32,10 @@ body {
     font-size: large;
     padding: 0;
 }
+.nav-container a {
+    transition: 2s;
+}
+
 .nav-container a:active {
     cursor: grabbing;
 }
@@ -88,6 +92,7 @@ body {
 }
 
 .heading-container button:hover {
+    transition: 1s;
     background-color: #000000;
     color: #ffffff;
     cursor: pointer;
@@ -111,28 +116,60 @@ body {
 /* End of section 3 */
 
 /* Start of footer */
-.footer-p {
-    text-decoration: none;
+
+/* Navigation Animations */
+.Animate_btn {
+    animation: btn-animate 3s;
 }
 
-.video {
-    text-align: center;
+.nav-animate-group1 {
+    animation: nav-animate-group1 3s;
 }
 
-.sction-2-p {
-    columns: 2;
-}
-.sction-3-p {
-    columns: 3;
+.nav-animate-group2 {
+    animation: nav-animate-group2 3s;
 }
 
-.group1 {
-    animation: group_1 3s;
+@keyframes nav-load {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
 }
-.group2 {
-    animation: group_2 3s;
+
+@keyframes btn-animate {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(1000%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
 }
-/* End of footer */
 
+@keyframes nav-animate-group1 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateX(-1000%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
 
-
+@keyframes nav-animate-group2 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateX(1000%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}

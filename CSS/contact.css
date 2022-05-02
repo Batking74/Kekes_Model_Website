@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family:'Times New Roman', Times, serif;
 }
 
 body {
@@ -64,9 +65,8 @@ body {
 .header {
     text-align: center;
     position: relative;
-    top: 30px;
-    font-size: x-large;
-    background-color: #0000004e;
+    top: 10px;
+    font-size: large;
     color: #fffffff1;
     padding: 10px;
 }
@@ -79,21 +79,21 @@ body {
 .position-container {
     display: flex;
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 1%;
 }
 
 .main-container {
-    background-color: #b08c8c26;
+    background-color: #b08c8c1c;
     padding: 20px;
     display: grid;
-    column-gap: 1vmax;
+    column-gap: 3vmax;
     display: flex;
     border-radius: 2%;
 }
 
 /* Contact info start */
 .info-container, form {
-    height: 30vmax;
+    height: 25vmax;
 }
 
 .info-container {
@@ -136,7 +136,92 @@ body {
 }
 /* Contact info End */
 
-/* Form */
+/* Form start */
 form {
     color: white;
+    margin-top: 10px;
+}
+
+/* Positioning inputs and labels */
+
+.position-group-container {
+    display: grid;
+    column-gap: 5%;
+    display: flex;
+}
+
+.firstNameEmail-group input, .lastNamePhone-group input {
+    width: 285px;
+}
+
+.firstNameEmail-group input, .lastNamePhone-group input, .message textarea {
+    background: none;
+    border: none;
+    font-size: x-large;
+    margin-top: 20px;
+    outline: none;
+    border-bottom: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.firstNameEmail-group label, .lastNamePhone-group label, .message label {
+    margin-top: 25px;
+    font-size: medium;
+}
+
+.firstNameEmail-group {
+    display: grid;
+}
+
+.lastNamePhone-group {
+    display: grid;
+}
+
+.message textarea {
+    width: 600px;
+    resize: none;
+}
+
+
+
+/* Navigation Animations */
+.nav-animate-group1 {
+    animation: nav-animate-group1 3s;
+}
+
+.nav-animate-group2 {
+    animation: nav-animate-group2 3s;
+}
+
+@keyframes nav-load {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes nav-animate-group1 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes nav-animate-group2 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
 }

@@ -4,7 +4,7 @@
 }
 
 body {
-    background: linear-gradient(90deg,#ffc1077c,#ffc10780);
+    background-image: url(/IMG/ssss.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,7 +69,7 @@ form {
     display: grid;
     border-radius: 20px;
     padding: 30px 30px 30px 30px;
-    color: #000000;
+    color: #ffffffd4;
 }
 
 form h1 {
@@ -91,6 +91,7 @@ form input {
     padding: 7px 11vmax 7px 7px;
     font-size: 17px;
     border: solid 1px #0000004f;
+    outline: none;
     border-radius: 5px;
     margin-bottom: 20px;
     background-color: #978e4551;
@@ -98,7 +99,6 @@ form input {
 
 .checkbox {
     cursor: pointer;
-    color: red;
     background-color: #978e4551;
 }
 
@@ -128,7 +128,7 @@ form button:active {
 form a {
     display: inline-block;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff92;
 }
 
 form a:hover {
