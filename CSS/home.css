@@ -7,7 +7,7 @@ body {
     background-repeat: no-repeat;
     background-position-y: -30px;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: local;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Navigation styles start */
@@ -33,7 +33,7 @@ body {
     padding: 0;
 }
 .nav-container a {
-    transition: 2s;
+    transition: 1s;
 }
 
 .nav-container a:active {
@@ -105,17 +105,111 @@ body {
 
 /* Start of section 1 */
 
-/* End of section 1 */
 
-/* Start of section 2 */
 
-/* End of section 2 */
 
-/* Start of section 3 */
 
-/* End of section 3 */
+
+
+
+.sction1-container, .sction2-container, .sction3-container {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 100%;
+    background-color: #ffffff;
+}
+.sction2-container {
+    position: absolute;
+    top: 150%;
+    background-color: #000000;
+}
+.sction3-container {
+    position: absolute;
+    top: 200%;
+}
+
+
+
+
 
 /* Start of footer */
+footer {
+    background-color: #000000;
+    position: absolute;
+    top: 250%;
+    width: 100%;
+    padding: 40px 0 40px 0;
+}
+
+.position-footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.position-logos {
+    text-align: center;
+}
+/* Social Media Icon alignment */
+.socialMedia-icons {
+    display: grid;
+    column-gap: 15px;
+    display: flex;
+    margin-top: 15px;
+}
+
+.footer-column-a-1, .footer-column-a-2 {
+    display: grid;
+    row-gap: 17px;
+}
+
+.footer-column-a-1 a, .footer-column-a-2 a, .last-footer-col {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.last-footer-col input {
+    padding: 5px 150px 5px 0;
+    background-color: #000000;
+    outline: none;
+    color: #ffffffcb;
+    border: none;
+    border-bottom: solid #ffffff 1px;
+}
+
+.last-footer-col button {
+    margin-top: 15px;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+}
+
+.last-footer-col button:hover {
+    transition: 1s;
+    background-color: #ffbf00cc;
+    color: #ffffff;
+}
+
+.footer-column-a-1 a:first-child, .footer-column-a-2 a:first-child {
+    color: gray;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+
+.copyright hr {
+    border: 0.1px #ffffff2b solid;
+    outline: none;
+}
+
+
+
+
+
 
 /* Navigation Animations */
 .Animate_btn {
