@@ -25,6 +25,7 @@
         <!-- End of Navigation bar -->
 
         <!-- Title start -->
+        <div id="error"></div>
         <div class="header">
             <h1>Contact Palmer Studios</h1>
         </div>
@@ -59,42 +60,42 @@
                 <!-- End of contact info container -->
                 
                 <!-- Start of form -->
-                <form action="">
+                <form id="form" action="">
                     <div class="position-group-container">
                         <div class="firstNameEmail-group">
                             <label for="firstname">First Name</label>
-                            <input autofocus maxlength="20" type="text">
+                            <input id="first_Name" autofocus maxlength="20" type="text">
                             <label for="email">E-Mail</label>
-                            <input maxlength="20" type="email">
+                            <input id="email" maxlength="20" type="email">
                         </div>
                         <div class="lastNamePhone-group">
                             <label for="lastname">Last Name</label>
-                            <input maxlength="20" type="text">
+                            <input id="last_Name" maxlength="20" type="text">
                             <label for="phonenumber">Phone #</label>
-                            <input maxlength="12" type="tel">
+                            <input id="Phone_number" maxlength="12" type="tel">
                         </div>
                     </div>
                     <div class="radio">
                         <br>
                         <p>What device are you contacting from?</p>
                         <br>
-                        <input type="radio" name="" id="">
+                        <input type="radio" id="radio-btn">
                         <label for="">Mobile Device</label>
-                        <input type="radio" name="" id="">
+                        <input type="radio" id="radio-btn">
                         <label for="">Computer/Desktop</label>
-                        <input type="radio" name="" id="">
+                        <input type="radio" id="radio-btn">
                         <label for="">Tablet</label>
-                        <input type="radio" name="" id="">
-                        <label for="">Other</label>
+                        <input type="radio" id="radio-btn">
+                        <label for="Other">Other</label>
                     </div>
                     <br>
                     <div class="message">
                         <label for="message">Message</label>
                         <br>
-                        <textarea name="message" id="message" cols="81" rows="3"></textarea>
+                        <textarea id="textAreaMessage" maxlength="1000" name="message" id="message" cols="81" rows="3"></textarea>
                     </div>
                     <div class="btn">
-                        <button>Send Message</button>
+                        <button id="btn">Send Message</button>
                     </div>
                 </form>
             </div>
@@ -152,5 +153,6 @@
         </div>
     </footer>
     <!-- End of footer -->
+    <script src="/JAVASCRIPT/contact.js"></script>
     </body>
 </html>
