@@ -22,17 +22,13 @@
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>Log in</a>
     </nav>
-        <!-- End of Navigation bar -->
-
-        <!-- Title start -->
-        <div id="error"></div>
-        <div class="header">
-            <h1>Contact Palmer Studios</h1>
-        </div>
-        <!-- Title End -->
+    <!-- Title start -->
+    <div class="header">
+        <h1>Contact Palmer Studios</h1>
+    </div>
+        <!-- Start of contact info container -->
         <div class="position-container">
             <div class="main-container">
-                <!-- Start of contact info container -->
                 <div class="info-container">
                     <div class="info-heading">
                         <h1>Contact<br>Information</h1>
@@ -57,22 +53,25 @@
                         <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
                     </div>
                 </div>
-                <!-- End of contact info container -->
                 
                 <!-- Start of form -->
-                <form id="form" action="">
+                <form id="form" action="/HTML/contactAction.html">
                     <div class="position-group-container">
                         <div class="firstNameEmail-group">
                             <label for="firstname">First Name</label>
                             <input id="first_Name" autofocus maxlength="20" type="text">
+                            <span id="firstNameError"></span>
                             <label for="email">E-Mail</label>
-                            <input id="email" maxlength="20" type="email">
+                            <input id="email" maxlength="30" type="email">
+                            <span id="emailError"></span>
                         </div>
                         <div class="lastNamePhone-group">
                             <label for="lastname">Last Name</label>
                             <input id="last_Name" maxlength="20" type="text">
+                            <span id="lastNameError"></span>
                             <label for="phonenumber">Phone #</label>
-                            <input id="Phone_number" maxlength="12" type="tel">
+                            <input id="Phone_number" maxlength="11" type="tel">
+                            <span id="phoneNumberError"></span>
                         </div>
                     </div>
                     <div class="radio">
@@ -93,13 +92,15 @@
                         <label for="message">Message</label>
                         <br>
                         <textarea id="textAreaMessage" maxlength="1000" name="message" id="message" cols="81" rows="3"></textarea>
+                        <div id="messageError"></div>
                     </div>
                     <div class="btn">
-                        <button id="btn">Send Message</button>
+                        <button type="submit" id="btn">Send Message</button>
                     </div>
                 </form>
             </div>
         </div>
+
         <!-- Start of footer -->
         <footer>
             <div class="position-footer-container">

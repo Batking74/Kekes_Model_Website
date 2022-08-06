@@ -201,8 +201,31 @@ form {
     cursor: pointer;
 }
 
+/* Errors */
+#firstNameError {
+    margin-top: 5px;
+    color: #fc7e00;
+}
 
+#lastNameError {
+    margin-top: 5px;
+    color: #fc7e00;
+}
 
+#emailError {
+    margin-top: 5px;
+    color: #fc7e00;
+}
+
+#phoneNumberError {
+    margin-top: 5px;
+    color: #fc7e00;
+}
+
+#messageError {
+    margin-top: 5px;
+    color: #fc7e00;
+}
 
 /* Start of footer */
 footer {
