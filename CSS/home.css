@@ -116,16 +116,12 @@ body {
     font-weight: lighter;
     font-variant: small-caps;
     padding: 15px;
-    width: 1479px;
+    width: 1350px;
 }
 /* .videoCount {
-
 }
-
 .subCount {
-
 }
-
 .viewCount {
 } */
 
@@ -221,8 +217,8 @@ body {
 
 /* Start of section 2 */
 .sction2-container {
-    top: 1895px;
-    padding: 40px 0 100px 0;
+    top: 1731px;
+    padding: 40px 0 128px 0;
     height: 200%;
     background-color: #000000e7;
 }
@@ -324,7 +320,7 @@ body {
     text-decoration: none;
     position: absolute;
     left: 40%;
-    top: 83%;
+    top: 92%;
     color: #000000;
     border-radius: 50px;
     font-size: 20px;
@@ -339,7 +335,7 @@ body {
 
 /* Start of section 3 */
 .sction3-container {
-    top: 472%;
+    top: 480%;
     background-color: #ffffffd0;
     height: 50%;
 }
@@ -348,7 +344,7 @@ body {
 footer {
     background-color: #000000;
     position: absolute;
-    top: 522%;
+    top: 530%;
     width: 100%;
     padding: 40px 0 40px 0;
 }
