@@ -34,7 +34,9 @@ product21 = new myProducts('/IMG/Tiki.jpg', 'Joyful Noise Keke Palmer Hoodie', '
 product22 = new myProducts('/IMG/Tiki.jpg', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/product_22.html');
 product23 = new myProducts('/IMG/Tiki.jpg', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/product_23.html');
 product24 = new myProducts('/IMG/Tiki.jpg', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/product_24.html');
+
 myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24];
+
 myProductArray.forEach(product => {
     productMainContainer.innerHTML += `
     <div class="Product-Container">
@@ -46,4 +48,23 @@ myProductArray.forEach(product => {
         <a class="AddToCart" href="">Add to cart</a>
     </div>
 </div>`;
+})
+
+// Footer
+const footerForm = document.getElementById('footerForm');
+const footerInput = document.getElementById('footerInput');
+const footerBtn = document.getElementById('footerbtn');
+const footerResponse = document.getElementById('footerSubmissionResponse');
+const footerLabel = document.getElementById('footerLabel');
+footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(footerInput.value == '') {
+    }
+    else {
+        footerLabel.remove()
+        footerInput.remove();
+        footerBtn.remove();
+        console.log('Thank You, you will recieve emails on new content!')
+        footerResponse.innerHTML = `<svg class="Footer-Response-Icon" viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>Thank You, you will recieve emails on new content!`
+    }
 })

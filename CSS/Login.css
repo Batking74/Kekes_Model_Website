@@ -12,35 +12,31 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navigation styles start */
+/* Navigation Start */
 .nav-container {
+    position: fixed;
     background-color: #000000;
     display: grid;
-    grid-template: 60px / repeat(8, auto);
+    grid-template: 60px / repeat(7, auto);
     height: 55px;
     padding: 0 0 5px 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-container img {
-    width: 48px;
-    height: 38px;
+    width: 80px;
+    height: 90px;
 }
 
 .nav-container a {
     text-decoration: none;
+    transition: 1s;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: large;
     padding: 0;
-    transition: 1s;
-}
-
-.nav-container a:active {
-    cursor: grabbing;
-}
-
-.nav-btn {
     color: #ffffff;
 }
 
@@ -48,19 +44,17 @@ body {
     background-color: #ffc107;
 }
 
-.special-nav-btn {
+#special-nav-btn {
     color: #ffc107;
 }
 
-.special-nav-btn:hover {
+#special-nav-btn:hover {
     background-color: #2f4f4f;
 }
 
 .login-logo {
     margin: 0 5px 0 0;
 }
-
-/* Navigation End */
 
 /* Start form */
 form {

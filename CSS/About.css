@@ -4,17 +4,18 @@
 }
 
 body {
-    background-position: center;
+    background-image: url();
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position-y: -30px;
     background-size: cover;
-    background: url(/IMG/ffg.jpg);
+    background-attachment: fixed;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Navigation Start */
 .nav-container {
     position: fixed;
-    background: linear-gradient(#000000cb, #000000);
+    background-color: #000000;
     display: grid;
     grid-template: 60px / repeat(7, auto);
     height: 55px;
@@ -55,49 +56,52 @@ body {
     margin: 0 5px 0 0;
 }
 
-/* Product */
-
-.left-col, .right-col {
-    position: relative;
-}
-
-.left-col::before {
-    content: 'Bald head';
-    text-transform: capitalize;
+/* YouTube Statistics */
+#fetchedYouTubeData {
     position: absolute;
-    right: 0;
-    top: -20px;
+    z-index: 1;
+    background-color: #0000007a;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-weight: lighter;
+    font-variant: small-caps;
+    padding: 15px;
+    width: 1350px;
 }
+/* .videoCount {
+}
+.subCount {
+}
+.viewCount {
+} */
 
-.left-col::after {
-    content: '';
+/* Weather Statistics */
+#fetchedWeatherData {
     position: absolute;
-    right: 80px;
-    top: -10px;
-    width: 50px;
-    height: 2px;
-    background: #ffffff;
-    transform-origin: right;
-    transform: rotate(-30deg);
+    z-index: 3;
+    top: 30%;
+    left: 85%;
+    background-image: url(/IMG/blue-cloudy-daylight-background-weather-design_33099-512.webp);
+    object-fit: fill;
+    /* background-color: rgba(159, 156, 142, 0.822); */
+    padding: 20px;
+    border-radius: 20px;
 }
 
-.about-image {
-    border-radius: 10px;
-    box-shadow: 0 10px 10px #00000040;
-}
-
-.about-paragraph {
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 35px;
-    margin-bottom: 40px;
+.weatherIcon {
+    position: absolute;
+    right: 25px;
+    top: 30px;
 }
 
 /* Start of footer */
 footer {
     background-color: #000000;
     position: absolute;
-    top: 500%;
+    top: 100%;
     width: 100%;
     padding: 40px 0 40px 0;
 }
@@ -110,7 +114,6 @@ footer {
 .position-logos {
     text-align: center;
 }
-
 /* Social Media Icon alignment */
 .socialMedia-icons {
     display: grid;
@@ -194,3 +197,47 @@ select:-webkit-autofill:focus {
     border: 0.1px #ffffff2b solid;
     outline: none;
 }
+
+/* Navigation Animations */
+.nav-animate-group1 {
+    animation: nav-animate-group1 3s;
+}
+
+.nav-animate-group2 {
+    animation: nav-animate-group2 3s;
+}
+
+@keyframes nav-load {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes nav-animate-group1 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes nav-animate-group2 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 1024px) {}

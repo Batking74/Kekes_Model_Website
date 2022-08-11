@@ -4,57 +4,50 @@
 }
 
 body {
+    background-image: url(/IMG/ffg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background: url(/IMG/ffg.jpg);
 }
 
-/* Navigation styles start */
+/* Navigation Start */
 .nav-container {
+    position: fixed;
     background: linear-gradient(#000000cb, #000000);
     display: grid;
-    grid-template: 60px / repeat(8, auto);
+    grid-template: 60px / repeat(7, auto);
     height: 55px;
     padding: 0 0 5px 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-container img {
-    width: 48px;
-    height: 38px;
+    width: 80px;
+    height: 90px;
 }
 
 .nav-container a {
     text-decoration: none;
+    transition: 1s;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: large;
     padding: 0;
-}
-
-.nav-container a {
-    transition: 1s;
-}
-
-.nav-container a:active {
-    cursor: grabbing;
-}
-
-.nav-btn {
     color: #ffffff;
 }
 
 .nav-btn:hover {
-    background-color: #ffc10763;
+    background-color: #ffc107;
 }
 
-.special-nav-btn {
+#special-nav-btn {
     color: #ffc107;
 }
 
-.special-nav-btn:hover {
+#special-nav-btn:hover {
     background-color: #2f4f4f;
 }
 
@@ -64,15 +57,17 @@ body {
 
 /* Heading Start */
 .Heading {
-    text-align: center;
     background: linear-gradient(#000000, #000000cb);
     padding: 10px;
+    position: relative;
+    top: 50px;
 }
 .Heading h1 {
     font-size: 50px;
     font-weight: lighter;
     font-variant: small-caps;
     color: #ffffff;
+    text-align: center;
 }
 
 /* Start of dynamic cards */
@@ -104,8 +99,8 @@ body {
 .Product-Price {
     font-size: 20px;
     font-weight: 900;
-    color: #000000;
     text-decoration: none;
+    color: #000000;
 }
 
 .Product-description {
@@ -179,6 +174,21 @@ footer {
     color: #ffffff;
 }
 
+/* Changes Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffc107;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .last-footer-col input {
     padding: 5px 150px 5px 0;
     background-color: #000000;
@@ -195,6 +205,19 @@ footer {
     background-color: #ffc107;
     border: none;
     border-radius: 5px;
+}
+
+.footerSubmissionResponse {
+    margin-top: 10px;
+    color: red;
+}
+
+.Footer-Response-Icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 190px;
+    bottom: 25px;
 }
 
 .last-footer-col button:hover {

@@ -22,26 +22,31 @@ function validate() {
             let fNameError = 'First name is required!';
             reject(fNameError);
             firstNameError.innerHTML = fNameError;
+            setTimeout(() => firstNameError.remove(), 5000);
         }
         else if (lastName.value === '' || null || undefined) {
             let lNameError = 'Last name is required!';
             reject(lNameError);
             lastNameError.innerHTML = lNameError;
+            setTimeout(() => lastNameError.remove(), 5000);
         }
         else if (email.value === '' || null || undefined) {
             let mailError = 'Email is required!';
             reject(mailError);
             emailError.innerHTML = mailError;
+            setTimeout(() => emailError.remove(), 5000);
         }
         else if (phoneNumber.value === '' || null || undefined) {
             let phone = 'Phone number is required!';
             reject(phone);
             phoneNumberError.innerHTML = phone;
+            setTimeout(() => phoneNumberError.remove(), 5000);
         }
         else if (userMessage.value === '' || null || undefined) {
             let msg = 'Message is required';
             reject(msg);
             messageError.innerHTML = msg;
+            setTimeout(() => messageError.remove(), 5000);
         }
         else {
             resolve('Form Completed Submitting...');
@@ -50,7 +55,7 @@ function validate() {
     .then(getData => {
         console.log(getData);
         const userContactSubmission = [{
-            id: Date.now(),
+            Date: Date(),
             First_name: firstName.value,
             Last_name: lastName.value,
             Email: email.value,
@@ -69,3 +74,22 @@ function validate() {
         console.log(reject);
     })
 }
+
+// Footer
+const footerForm = document.getElementById('footerForm');
+const footerInput = document.getElementById('footerInput');
+const footerBtn = document.getElementById('footerbtn');
+const footerResponse = document.getElementById('footerSubmissionResponse');
+const footerLabel = document.getElementById('footerLabel');
+footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(footerInput.value == '') {
+    }
+    else {
+        footerLabel.remove()
+        footerInput.remove();
+        footerBtn.remove();
+        console.log('Thank You, you will recieve emails on new content!')
+        footerResponse.innerHTML = `<svg class="Footer-Response-Icon" viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>Thank You, you will recieve emails on new content!`
+    }
+})
