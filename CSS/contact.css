@@ -136,14 +136,14 @@ form {
     background: none;
     border: none;
     font-size: x-large;
-    margin-top: 24px;
+    margin-top: 26px;
     outline: none;
     border-bottom: solid 1px #ffffff;
     color: #ffffff;
 }
 
 .firstNameEmail-group label, .lastNamePhone-group label, .message label {
-    margin-top: 25px;
+    margin-top: 26px;
     font-size: medium;
 }
 
@@ -192,28 +192,33 @@ form {
 
 /* Errors */
 #firstNameError {
-    margin-top: 5px;
+    position: absolute;
+    top: 352px;
     color: #fc7e00;
 }
 
 #lastNameError {
-    margin-top: 5px;
+    position: absolute;
+    top: 352px;
     color: #fc7e00;
 }
 
 #emailError {
-    margin-top: 5px;
+    position: absolute;
+    top: 450px;
     color: #fc7e00;
 }
 
 #phoneNumberError {
-    margin-top: 5px;
+    position: absolute;
+    top: 450px;
     color: #fc7e00;
 }
 
 #messageError {
-    margin-top: 5px;
-    color: #783c00;
+    position: absolute;
+    top: 550;
+    color: #fc7e00;
 }
 
 /* Navigation Animations */
