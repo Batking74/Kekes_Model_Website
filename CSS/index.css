@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(/IMG/Home_Background_IMG.jpg);
+    background-image: url(/IMG/Background\ Images/Home_Background_IMG.jpg);
     background-repeat: no-repeat;
     background-position-y: -30px;
     background-size: cover;
@@ -25,8 +25,9 @@ body {
 }
 
 .nav-container img {
-    width: 80px;
-    height: 90px;
+    width: 70px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .nav-container a {
@@ -83,10 +84,11 @@ body {
     border-radius: 10px;
     color: #000000;
     background-color: #ffc107;
+    transition: 2s;
 }
 
-.heading-container button:hover {
-    transition: 1s;
+.heading-container button:hover, .heading-container button:focus {
+    transform: scale(1.2);
     background-color: #000000af;
     color: #ffffff;
     cursor: pointer;
@@ -268,10 +270,10 @@ body {
 .Gallery-Image .content {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 5%;
     border-radius: 20px;
-    width: 95%;
-    height: 90%;
+    width: 90%;
+    height: 418px;
     background-color: #000000b3;
     display: flex;
     justify-content: center;
@@ -343,10 +345,15 @@ footer {
     text-align: center;
 }
 
-.socialMedia-icons {
+.socialMedia-icons-Container {
     display: grid;
     column-gap: 15px;
     display: flex;
+}
+
+.socialMedia-icons {
+    width: 30px;
+    height: 30px;
 }
 
 .footer-column-a-1, .footer-column-a-2 {
@@ -400,10 +407,17 @@ select:-webkit-autofill:focus {
 .Footer-Response-Icon {
     width: 50px;
     height: 50px;
-    position: relative;
+    position: absolute;
+    left: 1220px;
+    bottom: 325px;
+    /* position: relative;
     left: 200px;
-    bottom: 25px;
+    bottom: 25px; */
 }
+
+/* #footerInput:valid {
+    border-color: green;
+} */
 
 .last-footer-col button:hover {
     transition: 1s;

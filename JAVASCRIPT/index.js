@@ -14,10 +14,10 @@ class myProjects {
 }
 // Instantiation
 // Each object of the same type is a unique entity aka object.
-item1 = new myProjects('Fayn Ahnn?', '#Ariiaaann', '/IMG/OK.jpg');
-item2 = new myProjects('USA Paddle', '#Salonefunnybad', '/IMG/Tiki.jpg');
-item3 = new myProjects('Blessing Bengeh', '#Heyden Adama', '/IMG/Salone.jpg');
-item4 = new myProjects('Keke', '#PalmerSudios', '/IMG/keke-palmer-skin-care-products.jpg');
+item1 = new myProjects('Ariel', '#Ariiaaann', '/IMG/Models/Female/Model_3.jpg');
+item2 = new myProjects('USA Paddle', '#Sierra Leone', '/IMG/Tiki.jpg');
+item3 = new myProjects('Blessing Bengeh', '#Sierra Leone', '/IMG/Models/Female/Model_4.jpg');
+item4 = new myProjects('Keke', '#PalmerSudios', '/IMG/Keke/Photo_3.jpg');
 myProjectsArray = [item1, item2, item3, item4];
 myProjectsArray.forEach(project => {
     imageContainer.innerHTML += `
@@ -39,7 +39,7 @@ const footerResponse = document.getElementById('footerSubmissionResponse');
 const footerLabel = document.getElementById('footerLabel');
 footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    if(footerInput.value == '') {
+    if(footerInput.value === '') {
     }
     else {
         footerLabel.remove()

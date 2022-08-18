@@ -25,8 +25,9 @@ body {
 }
 
 .nav-container img {
-    width: 80px;
-    height: 90px;
+    width: 70px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .nav-container a {
@@ -78,12 +79,27 @@ body {
 }
 
 .main-container {
-    background-color: #b08c8c3b;
-    padding: 60px;
+    background-color: #b08c8c6b;
+    padding: 50px;
     display: grid;
     column-gap: 3vmax;
     display: flex;
     border-radius: 2%;
+}
+
+/* Changes Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #b08c8c00 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* Contact info start */
@@ -155,14 +171,6 @@ form {
     display: grid;
 }
 
-.radio label {
-    margin-left: 10px;
-}
-
-.radio input {
-    margin-left: 15px;
-}
-
 .message textarea {
     width: 600px;
     resize: none;
@@ -181,43 +189,20 @@ form {
     color: #ffffff;
     background-color: #000000;
     font-size: large;
+    transition: 1s;
 }
 
 .btn button:hover {
-    transition: 1s;
+    transform: scale(1.1);
     background-color: #ffc107;
     color: black;
     cursor: pointer;
 }
 
-/* Errors */
-#firstNameError {
-    position: absolute;
-    top: 352px;
-    color: #fc7e00;
-}
+/* Error Handling */
 
-#lastNameError {
-    position: absolute;
-    top: 352px;
-    color: #fc7e00;
-}
-
-#emailError {
-    position: absolute;
-    top: 450px;
-    color: #fc7e00;
-}
-
-#phoneNumberError {
-    position: absolute;
-    top: 450px;
-    color: #fc7e00;
-}
-
-#messageError {
-    position: absolute;
-    top: 550;
+#firstNameError, #lastNameError, #emailError, #phoneNumberError, #messageError {
+    margin-top: 3%;
     color: #fc7e00;
 }
 
