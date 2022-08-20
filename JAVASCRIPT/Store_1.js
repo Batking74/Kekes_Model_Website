@@ -17,7 +17,7 @@ product1 = new myProducts('/IMG/Store Products/Store 1/Product_1.jpg', 'Light Gr
 product2 = new myProducts('/IMG/Store Products/Store 1/Product_2.jpg', 'White Palmer T-Shirt - Hustlers', 'White Palmer T-Shirt - Hustlers', '$10.99', '$15.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_2.html');
 product3 = new myProducts('/IMG/Store Products/Store 1/Product_3.jpg', 'Keke Palmer Duvet Set (Purple)', 'Keke Palmer Duvet Set (Purple)', '$29.99', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_3.html');
 product4 = new myProducts('/IMG/Store Products/Store 1/Product_4.jpg', 'Keke Palmer Duvet Set (Tan)', 'Keke Palmer Duvet Set (Tan)', '$29.99', '$34.99', '&#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_4.html');
-product5 = new myProducts('/IMG/Store Products/Store 1/Product_5.jpg', 'Keke Palmer T-Shirt (White)', 'Keke Palmer T-Shirt (White)', '$7.99', '$13.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_5.html');
+product5 = new myProducts('/IMG/Store Products/Store 1/Product_5.jpg', 'Keke Palmer T-Shirt (White)', 'Keke Palmer T-Shirt (White)', '$7.99', '$13.99', '&#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_5.html');
 product6 = new myProducts('/IMG/Store Products/Store 1/Product_6.jpg', 'Keke Do You Love Me T-Shirt', 'Keke Do You Love Me T-Shirt', '$7.99', '$11.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_6.html');
 product7 = new myProducts('/IMG/Store Products/Store 1/Product_7.jpg', 'Black and Brown Exfoliating Cleanser', 'Black and Brown Exfoliating Cleanser', '$6.75', '$10.25', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_7.html');
 product8 = new myProducts('/IMG/Store Products/Store 1/Product_8.jpg', 'African Clarifying Mud Mask Oils and Spray', 'African Clarifying Mud Mask Oils and Spray', '$9.99', '$15.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_8.html');
@@ -54,7 +54,7 @@ myProductArray.forEach(product => {
                 <p class="Product-description">${product.description}</p>
                 <p class="Product-Rating">${product.rating}</p>
                 <span>
-                    <a class="AddToCart" href="">Add to cart</a>
+                    <a class="AddToList" href="">Add to List</a>
                 </span>
             </div>
         </a>
