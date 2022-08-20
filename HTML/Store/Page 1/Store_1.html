@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/Store_1.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/IMG/Background\ Images/Store_Background_Image.jpg);
+    /* background-image: url(/IMG/contact_bg2.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* Navigation Start */
+.nav-container {
+    position: fixed;
+    background: linear-gradient(#000000cb, #000000);
+    display: grid;
+    grid-template: 60px / repeat(7, auto);
+    height: 55px;
+    padding: 0 0 5px 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-container img {
+    width: 70px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.nav-container a {
+    text-decoration: none;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding: 0;
+    color: #ffffff;
+}
+
+.nav-btn:hover {
+    background-color: #ffc107;
+}
+
+#special-nav-btn {
+    color: #ffc107;
+}
+
+#special-nav-btn:hover {
+    background-color: #2f4f4f;
+}
+
+.login-logo {
+    margin: 0 5px 0 0;
+}
+
+/* Heading Start */
+.Heading {
+    background: linear-gradient(#000000, #000000cb);
+    padding: 10px;
+    position: relative;
+    top: 50px;
+}
+.Heading h1 {
+    font-size: 50px;
+    font-weight: lighter;
+    font-variant: small-caps;
+    color: #ffffff;
+    text-align: center;
+}
+
+.ad-1 {
+    text-align: center;
+}
+
+.ad-1 img {
+    margin-top: 50px;
+    cursor: none;
+}
+
+.Heading-2 {
+    padding: 50px 0 50px 0;
+    position: absolute;
+    top: 580px;
+    width: 100%;
+}
+.Heading-2 h1 {
+    font-size: 90px;
+    font-weight: lighter;
+    font-variant: small-caps;
+    color: #ffffff;
+    text-align: center;
+    background-color: #000000;
+}
+
+/* Start of dynamic cards */
+.Product-Main-Container {
+    background-color: #ffffff;
+    padding: 0 0 420px 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 100px;
+    column-gap: 50px;
+}
+
+.Product-Container {
+    margin: 100px 0 0 40px;
+}
+
+.Product-Container a {
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.Product-Container a:hover {
+    text-decoration: underline;
+}
+
+.Product-Container a:link {
+    color:#000000;
+}
+
+.Product-Container img {
+    width: 85%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: 1.3s;
+}
+
+.Product-Container img:hover {
+    transform: scale(1.3);
+}
+
+.Product-Card {
+    width: 75%;
+}
+
+.Product-Price {
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #000000;
+}
+
+.Product-description {
+    margin-top: 5px;
+    display: block;
+    color: #000000;
+    text-decoration: none;
+}
+
+.Product-Rating {
+    font-size: 30px;
+    color: #000000;
+}
+
+.AddToCart {
+    display: block;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    width: fit-content;
+    padding: 8px;
+    color: #ffffff;
+    transition: 1.6s;
+}
+
+.AddToCart:hover {
+    transform: scale(1.1);
+    text-decoration: none !important;
+    background-color: #000000;
+    color: #ffc107;
+}
+
+.Page-Nav-Text {
+    position: absolute;
+    top: 491%;
+    left: 690px;
+}
+
+.Page-Navigator-2 img {
+    position: absolute;
+    top: 490%;
+    left: 55%;
+    width: 45px;
+    height: 45px;
+}
+.Page-Navigator-2 img:hover {
+    cursor: none;
+    border-radius: 30px;
+    border-style: dotted;
+}
+
+/* Start of footer */
+footer {
+    background-color: #000000;
+    position: absolute;
+    top: 510%;
+    width: 100%;
+    padding: 40px 0 40px 0;
+}
+
+.position-footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.position-logos {
+    text-align: center;
+}
+
+.socialMedia-icons-Container {
+    display: grid;
+    column-gap: 15px;
+    display: flex;
+}
+
+.socialMedia-icons {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-column-a-1, .footer-column-a-2 {
+    display: grid;
+    row-gap: 17px;
+}
+
+.footer-column-a-1 a, .footer-column-a-2 a, .last-footer-col {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Changes Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffc107;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.last-footer-col input {
+    padding: 5px 150px 5px 0;
+    background-color: #000000;
+    outline: none;
+    color: #ffc107;
+    border: none;
+    border-bottom: solid #ffffff 1px;
+}
+
+.last-footer-col button {
+    margin-top: 15px;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+}
+
+.footerSubmissionResponse {
+    margin-top: 10px;
+    color: red;
+}
+
+.Footer-Response-Icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 1230px;
+    bottom: 295px;
+}
+
+.last-footer-col button:hover {
+    transition: 1s;
+    background-color: #ffbf00cc;
+    color: #ffffff;
+}
+
+.footer-column-a-1 a:first-child, .footer-column-a-2 a:first-child {
+    color: gray;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+
+.copyright hr {
+    border: 0.1px #ffffff2b solid;
+    outline: none;
+}
+
+/* Navigation Animations */
+.nav-animate-group1 {
+    animation: nav-animate-group1 3s;
+}
+
+.nav-animate-group2 {
+    animation: nav-animate-group2 3s;
+}
+
+@keyframes nav-load {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes nav-animate-group1 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes nav-animate-group2 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 1024px) {}
+    </style>
+</head>
+<body>
+    <!-- Start of navigation bar -->
+    <nav class="Animate_Nav nav-container">
+        <a href="#">
+            <img src="/IMG/Social Media Icons & Logos/Palmer_Logo.PNG" alt="Palmer Studios logo.">
+        </a>
+        <a class="nav-animate-group1" id="special-nav-btn" href="/HTML/index.html">Home</a>
+        <a class="nav-animate-group1 nav-btn" href="/HTML/About.html">About</a>
+        <a class="nav-animate-group1 nav-btn" href="/HTML/FAQ.html">FAQ</a>
+        <a class="nav-animate-group2 nav-btn" href="/HTML/Contact.html">Contact</a>
+        <a class="nav-animate-group2 nav-btn" href="#">Store</a>
+        <a class="nav-animate-group2" id="special-nav-btn" href="/HTML/Login.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>Log in
+        </a>
+    </nav>
+
+    <!-- Start of Store -->
+    <div class="Heading">
+        <h1>Palmers Store</h1>
+    </div>
+    <div class="ad-1">
+        <img src="/IMG/Ads/Sale_ad_1.jpg" alt="ad">
+        <div class="Heading-2">
+            <h1>Ready to serve you!</h1>
+        </div>
+    </div>
+    <div class="Product-Main-Container">
+    </div>
+    <div class="Page-Nav-Text">
+        <h2>Page 1 of 3</h2>
+    </div>
+    <div class="Page-Navigator-2">
+        <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Store Page Navigator">
+    </div>
+
+    <!-- Start of footer -->
+    <footer>
+        <div class="position-footer-container">
+            <div class="position-logos">
+                <img width="120" height="140" src="/IMG/Social Media Icons & Logos/Palmer_Logo.PNG" alt="Palmer Studios logo.">
+                <div class="socialMedia-icons-Container">
+                    <a href="https://www.facebook.com/kekepalmer">
+                        <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/FaceBook_Icon.png" alt="FaceBook Logo">
+                    </a>
+                    <a href="https://www.instagram.com/keke/">
+                        <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/Instagram_Icon.png" alt="Instagram Icon">
+                    </a>
+                    <a href="https://twitter.com/KekePalmer">
+                        <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/Twitter_Icon.png" alt="Twitter Icon">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCG7azEZJY5PCsjcUCOdvOPw">
+                        <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/YouTube_Icon.png" alt="YouTube Icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column-a-1">
+                <a href="">Support</a>
+                <a href="/HTML/Contact.html">Contact Us</a>
+                <a href="/HTML/FAQ.html">FAQ</a>
+                <a href="">Downloads</a>
+                <a href="">Locate A Dealer</a>
+                <a href="#">Store</a>
+                <a href="">Modeling Registration</a>
+            </div>
+            <div class="footer-column-a-2">
+                <a href="">Palmer Studios</a>
+                <a href="">About Palmer Studios</a>
+                <a href="">Palmer Designs</a>
+                <a href="">Careers</a>
+                <a href="">Newsroom</a>
+                <a href="">Palmer Access</a>
+            </div>
+            <form id="footerForm" class="last-footer-col">
+                <p id="footerLabel">Stay up to date on the latest modeling show</p>
+                <br>
+                <input id="footerInput" placeholder="Enter your e-mail address" type="email">
+                <br>
+                <p id="footerSubmissionResponse"></p>
+                <button type="submit" id="footerbtn">Sign Up</button>
+            </form>
+        </div>
+        <div class="copyright">
+            <br>
+            <hr>
+            <br>
+            <p>&copy; copyright 2022 Nazir Knuckles Inc</p>
+        </div>
+    </footer>
+    <script src="/JAVASCRIPT/Store_1.js">
+        // Creating Dynamic Project Card
+const productMainContainer = document.querySelector('.Product-Main-Container');
+class myProducts {
+    constructor(image, imageAlt, description, price, rating, productLink) {
+        this.image = image;
+        this.imageAlt = imageAlt;
+        this.description = description;
+        this.price = price;
+        this.rating = rating;
+        this.productLink = productLink;
+    }
+
+}
+
+product1 = new myProducts('/IMG/Store Products/Store 1/Product_1.jpg', 'Picture of Curl Moisture Milk product Product', 'Camille Rose Curl Love Moisture Milk', '$6.99', '&#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_1.html');
+product2 = new myProducts('/IMG/Store Products/Store 1/Product_2.jpg', 'A picture of Curl Control Jelly product', 'Blueberry Bliss Curl Control Jelly', '$8.50', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_2.html');
+product3 = new myProducts('/IMG/Store Products/Store 1/Product_3.jpg', 'Conditioner and treatment products', 'Hair Care Conditioner Bundle', '$10.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_3.html');
+product4 = new myProducts('/IMG/Store Products/Store 1/Product_4.jpg', 'African Clarifying Mud Mask', 'African Black Soap for Skin', '$11.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_4.html');
+product5 = new myProducts('/IMG/Store Products/Store 1/Product_5.jpg', 'Buttah Rosewater Toner for Skin', 'Buttah Rosewater Toner for Skin', '$9.75', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_5.html');
+product6 = new myProducts('/IMG/Store Products/Store 1/Product_6.jpg', '', 'Joyful Noise Keke Palmer Hoodie', '$16.45', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_6.html');
+product7 = new myProducts('/IMG/Store Products/Store 1/Product_7.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$50.00', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_7.html');
+product8 = new myProducts('/IMG/Store Products/Store 1/Product_8.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$12.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_8.html');
+product9 = new myProducts('/IMG/Store Products/Store 1/Product_9.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$9.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_9.html');
+product10 = new myProducts('/IMG/Store Products/Store 1/Product_10.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$6.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_10.html');
+product11 = new myProducts('/IMG/Store Products/Store 1/Product_11.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$8.25', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_11.html');
+product12 = new myProducts('/IMG/Store Products/Store 1/Product_12.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$7.50', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_12.html');
+product13 = new myProducts('/IMG/Store Products/Store 1/Product_13.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_13.html');
+product14 = new myProducts('/IMG/Store Products/Store 1/Product_14.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_14.html');
+product15 = new myProducts('/IMG/Store Products/Store 1/Product_15.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_15.html');
+product16 = new myProducts('/IMG/Store Products/Store 1/Product_16.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_16.html');
+product17 = new myProducts('/IMG/Store Products/Store 1/Product_17.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_17.html');
+product18 = new myProducts('/IMG/Store Products/Store 1/Product_18.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_18.html');
+product19 = new myProducts('/IMG/Store Products/Store 1/Product_19.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_19.html');
+product20 = new myProducts('/IMG/Store Products/Store 1/Product_20.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_20.html');
+product21 = new myProducts('/IMG/Store Products/Store 1/Product_21.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_21.html');
+product22 = new myProducts('/IMG/Store Products/Store 1/Product_22.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_22.html');
+product23 = new myProducts('/IMG/Store Products/Store 1/Product_23.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_23.html');
+product24 = new myProducts('/IMG/Store Products/Store 1/Product_24.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_24.html');
+product25 = new myProducts('/IMG/Store Products/Store 1/Product_25.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_24.html');
+
+myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25];
+
+myProductArray.forEach(product => {
+    productMainContainer.innerHTML += `
+    <div class="Product-Container">
+        <a href="${product.productLink}">
+            <img id="img" src="${product.image}" alt="${product.imageAlt}">
+            <div id="hover" class="Product-Card">
+                <p class="Product-Price">${product.price}</p>
+                <p class="Product-description">${product.description}</p>
+                <p class="Product-Rating">${product.rating}</p>
+                <span>
+                    <a class="AddToCart" href="">Add to cart</a>
+                </span>
+            </div>
+        </a>
+</div>`
+})
+
+// Footer
+const footerForm = document.getElementById('footerForm');
+const footerInput = document.getElementById('footerInput');
+const footerBtn = document.getElementById('footerbtn');
+const footerResponse = document.getElementById('footerSubmissionResponse');
+const footerLabel = document.getElementById('footerLabel');
+footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(footerInput.value == '') {
+    }
+    else {
+        footerLabel.remove()
+        footerInput.remove();
+        footerBtn.remove();
+        console.log('Thank You, you will recieve emails on new content!')
+        footerResponse.innerHTML = `<svg class="Footer-Response-Icon" viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>Thank You, you will recieve emails on new content!`
+    }
+})
+
+const nextPage = document.getElementById('Next-Page');
+nextPage.addEventListener('click', () => {
+    location.replace('/HTML/Store/Page 2/Store_2.html')
+})
+    </script>
+</body>
+</html>

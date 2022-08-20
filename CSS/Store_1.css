@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/IMG/Background\ Images/Store_Background_Image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* Navigation Start */
+.nav-container {
+    position: fixed;
+    background: #000000;
+    display: grid;
+    grid-template: 60px / repeat(7, auto);
+    height: 55px;
+    padding: 0 0 5px 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-container img {
+    width: 70px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.nav-container a {
+    text-decoration: none;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding: 0;
+    color: #ffffff;
+}
+
+.nav-btn:hover {
+    background-color: #ffc107;
+}
+
+#special-nav-btn {
+    color: #ffc107;
+}
+
+#special-nav-btn:hover {
+    background-color: #2f4f4f;
+}
+
+.login-logo {
+    margin: 0 5px 0 0;
+}
+
+/* Heading Start */
+.Heading {
+    background: linear-gradient(#000000, #000000cb);
+    padding: 10px;
+    position: relative;
+    top: 50px;
+}
+.Heading h1 {
+    font-size: 50px;
+    font-weight: lighter;
+    font-variant: small-caps;
+    color: #ffffff;
+    text-align: center;
+}
+
+.ad-1 {
+    text-align: center;
+}
+
+.ad-1 img {
+    margin-top: 50px;
+    cursor: none;
+}
+
+.Heading-2 {
+    padding: 50px 0 50px 0;
+    position: absolute;
+    top: 580px;
+    width: 100%;
+}
+.Heading-2 h1 {
+    font-size: 90px;
+    font-weight: lighter;
+    font-variant: small-caps;
+    color: #ffffff;
+    text-align: center;
+    background-color: #000000;
+}
+
+/* Start of dynamic cards */
+.Product-Main-Container {
+    background-color: #ffffff;
+    padding: 0 0 420px 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 100px;
+    column-gap: 50px;
+}
+
+.Product-Container {
+    margin: 100px 0 0 40px;
+}
+
+.Product-Container a {
+    margin-top: 10px;
+    text-decoration: none !important;
+}
+
+.Product-Container a:link {
+    color:#000000;
+}
+
+.Product-Container img {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: 1.3s;
+}
+
+.Product-Container img:hover {
+    transform: scale(1.3);
+}
+
+.Product-Card {
+    width: 70%;
+}
+
+.Price-Container {
+    display: flex;
+    cursor: pointer;
+}
+
+.Product-Price {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000000;
+}
+
+.Product-Old-Price {
+    font-size: 15px;
+    text-decoration: line-through;
+    margin-left: 10px;
+    color: #2f4f4f;
+}
+
+.Product-description {
+    margin-top: 5px;
+    display: block;
+    color: #000000;
+}
+
+.Product-Rating {
+    font-size: 30px;
+    color: #000000;
+}
+
+.AddToCart {
+    display: block;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    width: fit-content;
+    padding: 8px;
+    color: #ffffff;
+    transition: 1.6s;
+}
+
+.AddToCart:hover {
+    transform: scale(1.1);
+    text-decoration: none !important;
+    background-color: #000000;
+    color: #ffc107;
+}
+
+.Page-Nav-Text {
+    position: absolute;
+    top: 491%;
+    left: 690px;
+}
+
+.Page-Navigator-2 img {
+    position: absolute;
+    top: 490%;
+    left: 55%;
+    width: 45px;
+    height: 45px;
+}
+.Page-Navigator-2 img:hover {
+    border-radius: 30px;
+    border-style: dotted;
+}
+
+/* Start of footer */
+footer {
+    background-color: #000000;
+    position: absolute;
+    top: 510%;
+    width: 100%;
+    padding: 40px 0 40px 0;
+}
+
+.position-footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.position-logos {
+    text-align: center;
+}
+
+.socialMedia-icons-Container {
+    display: grid;
+    column-gap: 15px;
+    display: flex;
+}
+
+.socialMedia-icons {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-column-a-1, .footer-column-a-2 {
+    display: grid;
+    row-gap: 17px;
+}
+
+.footer-column-a-1 a, .footer-column-a-2 a, .last-footer-col {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Changes Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffc107;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.last-footer-col input {
+    padding: 5px 150px 5px 0;
+    background-color: #000000;
+    outline: none;
+    color: #ffc107;
+    border: none;
+    border-bottom: solid #ffffff 1px;
+}
+
+.last-footer-col button {
+    margin-top: 15px;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+}
+
+.footerSubmissionResponse {
+    margin-top: 10px;
+    color: red;
+}
+
+.Footer-Response-Icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 1230px;
+    bottom: 295px;
+}
+
+.last-footer-col button:hover {
+    transition: 1s;
+    background-color: #ffbf00cc;
+    color: #ffffff;
+}
+
+.footer-column-a-1 a:first-child, .footer-column-a-2 a:first-child {
+    color: gray;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+
+.copyright hr {
+    border: 0.1px #ffffff2b solid;
+    outline: none;
+}
+
+/* Navigation Animations */
+.nav-animate-group1 {
+    animation: nav-animate-group1 3s;
+}
+
+.nav-animate-group2 {
+    animation: nav-animate-group2 3s;
+}
+
+@keyframes nav-load {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes nav-animate-group1 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes nav-animate-group2 {
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-80%);
+    }
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 1024px) {}
