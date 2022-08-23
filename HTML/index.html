@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <div role="side-navbar-media-queries" id="menu-open">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="TopBar">
+    </div>
+
     <!-- Start of navigation bar -->
     <nav class="Animate_Nav nav-container">
         <a href="#">
@@ -28,20 +36,21 @@
     </nav>
 
     <!-- Start of heading -->
-    <div class="heading-container">
+    <header class="heading-container">
         <h1>Keke's Modeling Studio</h1>
         <br>
         <button class="Animate_btn">Schedule Appointment</button>
-    </div>
+    </header>
 
+    <!-- Start of section 1 -->
     <section class="sction1-container">
         <h2 class="section-1-heading">Message To our Guests</h2>
-        <div class="sction1-image-container">
-            <div class="sction1-p-alignment">
-                <div class="left-col">
+        <div role="img-alignment" class="sction1-image-container">
+            <div role="p-alignment" class="sction1-p-alignment">
+                <div role="second-img&p-alignment">
                     <img width="calc(100% - 1200px)" height="300px" src="/IMG/Keke/Photo_1.jpg" class="sction1-image" alt="Picture of Keke Palmer">
                 </div>
-                <div class="right-col">
+                <div>
                     <p class="sction1-paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ipsum autem quibusdam illo aliquid quia earum voluptates eum aliquam perspiciatis? Id tempora mollitia doloribus magnam vitae corporis nostrum, molestiae quae quam, praesentium exercitationem quidem at sapiente eius odit? Aliquam velit dolor repudiandae repellendus, assumenda sapiente quibusdam commodi aut totam exercitationem iure distinctio quia similique nam eaque impedit dignissimos molestias asperiores, maxime porro est iusto aliquid? Eius consectetur harum optio velit! A, alias voluptates. Repellat ab ipsam magni facilis quia maxime possimus officiis perspiciatis. Voluptatibus nemo explicabo, enim omnis nulla sunt?</p>
                     </div>
                 </div>
@@ -63,7 +72,7 @@
         <h2 class="section-2-heading">The Advantages of Having an Online Modeling Portfolio</h2>
         <br>
         <br>
-        <div>
+        <div class="section-2-models">
             <img class="section-2-img-num1" src="/IMG/Models/Female/Model_1.jpg" alt="Female Model #1" width="350" height="400">
             <img class="section-2-img-num2" src="/IMG/Models/Female/Model_2.jpg" alt="Female Model #2" width="350" height="400">
         </div>
@@ -136,11 +145,10 @@
             <br>
             <input id="footerInput" placeholder="Enter your e-mail address" type="email">
             <br>
-            <p id="footerSubmissionResponse"></p>
             <button type="submit" id="footerbtn">Sign Up</button>
         </form>
     </div>
-    <div class="copyright">
+    <div role="contentinfo" class="copyright">
         <br>
         <hr>
         <br>

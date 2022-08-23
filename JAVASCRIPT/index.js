@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log(Date());
 })
+// Toggle Hamburger menu
+const openMenu = document.querySelector('#menu-open');
+const sideNavigation = document.querySelector('.nav-container');
+openMenu.addEventListener('click', (e) => {
+    sideNavigation.classList.toggle('active');
+});
+
 // Creating Dynamic Project Card
 const imageContainer = document.querySelector('.Model-Gallery-Container');
 class myProjects {
@@ -35,7 +42,6 @@ myProjectsArray.forEach(project => {
 const footerForm = document.getElementById('footerForm');
 const footerInput = document.getElementById('footerInput');
 const footerBtn = document.getElementById('footerbtn');
-const footerResponse = document.getElementById('footerSubmissionResponse');
 const footerLabel = document.getElementById('footerLabel');
 footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
