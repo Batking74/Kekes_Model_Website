@@ -11,16 +11,12 @@ openMenu.addEventListener('click', (e) => {
 // Creating Dynamic Project Card
 const imageContainer = document.querySelector('.Model-Gallery-Container');
 class myProjects {
-    // Abstraction
     constructor(name, tags, image) {
-        // New Instances/objects of myProjects class
         this.name = name;
         this.tags = tags;
         this.image = image;
     }
 }
-// Instantiation
-// Each object of the same type is a unique entity aka object.
 item1 = new myProjects('Ariel', '#Ariiaaann', '/IMG/Models/Female/Model_3.jpg');
 item2 = new myProjects('USA Paddle', '#Sierra Leone', '/IMG/Tiki.jpg');
 item3 = new myProjects('Blessing Bengeh', '#Sierra Leone', '/IMG/Models/Female/Model_4.jpg');

@@ -78,7 +78,6 @@ body {
 
 .ad-1 img {
     margin-top: 50px;
-    cursor: none;
 }
 
 .Heading-2 {
@@ -172,13 +171,15 @@ body {
     padding: 8px;
     color: #ffffff;
     transition: 1.6s;
+    border: solid 2px #000000;
 }
 
-.AddToCart:hover {
+.AddToList:hover {
     transform: scale(1.1);
     text-decoration: none !important;
-    background-color: #000000;
-    color: #ffc107;
+    background-color: #ffc107;
+    color: #000000;
+    border: solid 2px #000000;
 }
 
 .Page-Nav-Text {
@@ -314,36 +315,214 @@ select:-webkit-autofill:focus {
 }
 
 @keyframes nav-load {
-    /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-100%);
     }
-    /* This is what the animation will look like at the end. */
     100% {
         transform: translateY(0);
     }
 }
 
 @keyframes nav-animate-group1 {
-    /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-80%);
     }
-    /* This is what the animation will look like at the end. */
     100% {
         transform: translateX(0);
     }
 }
 
 @keyframes nav-animate-group2 {
-    /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-80%);
     }
-    /* This is what the animation will look like at the end. */
     100% {
         transform: translateX(0);
     }
 }
 
-@media screen and (max-width: 1024px) {}
+/* tablet view */
+@media (max-width: 996px) {
+    /* Side Navigation Menu */
+    #menu-open {
+        position: fixed;
+        top: 25px;
+        left: 20px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 4;
+        transition: 1s;
+    }
+
+    #menu-open:hover {
+        transform: scale(1.1);
+    }
+
+    #menu-open span {
+        display: flex;
+        width: 20px;
+        height: 2px;
+        padding: 1px 2px 1px 2px;
+        background-color: #ffa600;
+        margin-top: 3.2px;
+    }
+    
+    /* Navigation Start */
+    .nav-container {
+    grid-template-rows: repeat(7, 90px);
+    height: 100vh;
+    width: 30%;
+    z-index: 3;
+    border-right: 3px solid #ffa60088;
+    background-color: #000000e9;
+    left: -40%;
+    transition: 2s;
+    }
+
+    .nav-container.active {
+    left: 0;
+    }
+    
+    /* Heading Start */
+    .Heading {
+        background: #000000;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+    
+    .ad-1 img {
+        position: relative;
+        bottom: 52px;
+        z-index: 1;
+    }
+    
+    .Heading-2 {
+      display: none;
+    }
+    
+    /* Start of dynamic cards */
+    .Product-Main-Container {
+        position: relative;
+        bottom: 150px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .Product-Container a {
+        font-size: 14px;
+    }
+    
+    .Product-Container img {
+        width: 76%;
+    }
+    
+    .Page-Nav-Text {
+        top: 570%;
+        left: 450px;
+    }
+    
+    .Page-Navigator-2 img {
+        top: 569%;
+        left: 61%;
+    }
+    
+    /* Start of footer */
+    footer {
+        top: 590%;
+    }
+    
+    .last-footer-col button, .last-footer-col input, #footerLabel {
+        display: none;
+    }
+
+    /* Navigation Animations */
+    .nav-animate-group1 {
+        animation: none;
+    }
+    
+    .nav-animate-group2 {
+        animation: none;
+    }
+}
+
+/* mobile view */
+@media (max-width: 500px) {
+    /* Drop Navigation Menu */
+    #menu-open {
+        top: 30px;
+        left: 27rem;
+        z-index: 4;
+
+    }
+
+    /* Navigation Start */
+    .nav-container {
+        grid-template-rows: repeat(7, 100px);
+        width: 100%;
+        height: 100vh;
+        background-color: #000000;
+        border-right: none;
+        top: -101%;
+        left: 0;
+    }
+    
+    .nav-container.active {
+        top: 0;
+    }
+    
+    /* Heading Start */
+    .Heading {
+        width: 100%;
+    }
+    
+    .ad-1 img {
+        width: 100%;
+    }
+    
+    /* Start of dynamic cards */
+    .Product-Main-Container {
+        position: relative;
+        bottom: 150px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .Page-Nav-Text {
+        top: 955%;
+        left: 170px;
+    }
+    
+    .Page-Navigator-2 img {
+        top: 954%;
+    }
+    
+    /* Start of footer */
+    footer {
+        top: 970%;
+    }
+    
+    .position-footer-container {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        row-gap: 50px;
+        text-align: center;
+    }
+    
+    .footer-column-a-1, .footer-column-a-2 {
+        position: relative;
+        bottom: 90%;
+    }
+
+    .position-logos {
+        position: relative;
+        top: 325%;
+    }
+
+    .socialMedia-icons-Container {
+        column-gap: 40px;
+    }
+    
+    .nav-animate-group2 {
+        animation: none;
+    }
+}

@@ -83,3 +83,10 @@ const nextPage = document.getElementById('Next-Page');
 nextPage.addEventListener('click', () => {
     location.replace('/HTML/Store/Page 2/Store_2.html')
 })
+
+// Toggle Hamburger menu
+const openMenu = document.querySelector('#menu-open');
+const sideNavigation = document.querySelector('.nav-container');
+openMenu.addEventListener('click', () => {
+    sideNavigation.classList.toggle('active');
+});

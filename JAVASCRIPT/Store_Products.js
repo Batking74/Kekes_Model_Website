@@ -1,3 +1,12 @@
+// Toggle Hamburger menu
+const openMenu = document.querySelector('#menu-open');
+const sideNavigation = document.querySelector('.nav-container');
+const menu = document.querySelectorAll('.menu');
+openMenu.addEventListener('click', () => {
+    sideNavigation.classList.toggle('active');
+    menu.classList.toggle('changeColor');
+});
+
 // Footer
 const footerForm = document.getElementById('footerForm');
 const footerInput = document.getElementById('footerInput');

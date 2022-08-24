@@ -369,8 +369,10 @@ select:-webkit-autofill:focus {
     width: 50px;
     height: 50px;
     position: absolute;
-    left: 1220px;
+    left: 300px;
+    /* left: 1220px; */
     bottom: 325px;
+    z-index: 3;
 }
 
 .footer-column-a-1 a:first-child, .footer-column-a-2 a:first-child {
@@ -445,7 +447,7 @@ select:-webkit-autofill:focus {
 }
 
 /* tablet view */
-@media (max-width: 996px) {
+@media screen and (max-width: 996px) {
     html {
         font-size: 14px;
     }
@@ -614,26 +616,8 @@ select:-webkit-autofill:focus {
         top: 500%;
     }
 
-    .socialMedia-icons {
-        width: 25px;
-        height: 25px;
-    }
-
-    .footer-column-a-1, .footer-column-a-2 {
-        row-gap: 19px;
-    }
-
-    .last-footer-col input {
-        padding: 5px 110px 5px 0;
-    }
-
-    .last-footer-col button {
-        padding: 9px 40px 9px 40px;
-    }
-
-    .Footer-Response-Icon {
-        left: 725px;
-        bottom: 310px;
+    .last-footer-col button, .last-footer-col input, #footerLabel {
+        display: none;
     }
 
     /* Navigation Animations */
@@ -647,7 +631,7 @@ select:-webkit-autofill:focus {
 }
 
 /* mobile view */
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
 
     html {
         font-size: 13px;
@@ -665,11 +649,11 @@ select:-webkit-autofill:focus {
 
     /* Navigation Start */
     .nav-container {
-        grid-template-rows: repeat(7, 40px);
+        grid-template-rows: repeat(7, 100px);
         width: 100%;
-        height: 40vh;
+        height: 100vh;
         border-right: none;
-        top: -45%;
+        top: -101%;
         left: 0;
     }
     
@@ -836,10 +820,6 @@ select:-webkit-autofill:focus {
     .footer-column-a-1, .footer-column-a-2 {
         position: relative;
         bottom: 90%;
-    }
-
-    .last-footer-col input, .last-footer-col button, #footerLabel {
-        display: none;
     }
 
     .position-logos {

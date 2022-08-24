@@ -87,7 +87,6 @@ body {
     border-radius: 2%;
 }
 
-/* Changes Autocomplete styles in Chrome */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
@@ -216,33 +215,27 @@ form {
 }
 
 @keyframes nav-load {
-    /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-100%);
     }
-    /* This is what the animation will look like at the end. */
     100% {
         transform: translateY(0);
     }
 }
 
 @keyframes nav-animate-group1 {
-    /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-80%);
     }
-    /* This is what the animation will look like at the end. */
     100% {
         transform: translateX(0);
     }
 }
 
 @keyframes nav-animate-group2 {
-    /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-80%);
     }
-    /* This is what the animation will look like at the end. */
     100% {
         transform: translateX(0);
     }
