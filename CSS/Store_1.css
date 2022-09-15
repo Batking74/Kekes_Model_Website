@@ -376,7 +376,7 @@ select:-webkit-autofill:focus {
     z-index: 3;
     border-right: 3px solid #ffa60088;
     background-color: #000000e9;
-    left: -40%;
+    left: -4000%;
     transition: 2s;
     }
 
@@ -448,14 +448,6 @@ select:-webkit-autofill:focus {
 
 /* mobile view */
 @media (max-width: 500px) {
-    /* Drop Navigation Menu */
-    #menu-open {
-        top: 30px;
-        left: 27rem;
-        z-index: 4;
-
-    }
-
     /* Navigation Start */
     .nav-container {
         grid-template-rows: repeat(7, 100px);

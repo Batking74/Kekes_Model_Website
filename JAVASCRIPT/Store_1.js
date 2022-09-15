@@ -1,7 +1,9 @@
 // Creating Dynamic Project Card
 const productMainContainer = document.querySelector('.Product-Main-Container');
 class myProducts {
+    // Abstraction 
     constructor(image, imageAlt, description, price, oldPrice, rating, productLink) {
+        // Encapsulation
         this.image = image;
         this.imageAlt = imageAlt;
         this.description = description;
@@ -13,6 +15,7 @@ class myProducts {
 
 }
 
+// Instantiation 
 product1 = new myProducts('/IMG/Store Products/Store 1/Product_1.jpg', 'Light Gray Palmer Hoodie', 'Light Gray Palmer Hoodie','$19.99', '$24.99', '&#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_1.html');
 product2 = new myProducts('/IMG/Store Products/Store 1/Product_2.jpg', 'White Palmer T-Shirt - Hustlers', 'White Palmer T-Shirt - Hustlers', '$10.99', '$15.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_2.html');
 product3 = new myProducts('/IMG/Store Products/Store 1/Product_3.jpg', 'Keke Palmer Duvet Set (Purple)', 'Keke Palmer Duvet Set (Purple)', '$29.99', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 1/product_3.html');

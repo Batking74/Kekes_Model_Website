@@ -25,6 +25,7 @@ function fetchYouTubeData() {
         console.log(error);
     })
 }
+
 fetchYouTubeData();
 
 function fetchWeatherData() {
