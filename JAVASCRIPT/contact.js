@@ -10,39 +10,42 @@ const lastNameError = document.querySelector('#lastNameError');
 const emailError = document.querySelector('#emailError');
 const phoneNumberError = document.querySelector('#phoneNumberError');
 const messageError = document.querySelector('#messageError');
+const userData = [firstName, lastName, email, phoneNumber, userMessage];
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
 
+// if(userData.forEach())
+
 function validate() {
     new Promise((resolve, reject) => {
-        if (firstName.value === '' || null || undefined) {
+        if (firstName.value === '') {
             let fNameError = 'First name is required!';
             reject(fNameError);
             firstNameError.innerHTML = fNameError;
             setTimeout(() => firstNameError.remove(), 5000);
         }
-        else if (lastName.value === '' || null || undefined) {
+        else if (lastName.value === '') {
             let lNameError = 'Last name is required!';
             reject(lNameError);
             lastNameError.innerHTML = lNameError;
             setTimeout(() => lastNameError.remove(), 5000);
         }
-        else if (email.value === '' || null || undefined) {
+        else if (email.value === '') {
             let mailError = 'Email is required!';
             reject(mailError);
             emailError.innerHTML = mailError;
             setTimeout(() => emailError.remove(), 5000);
         }
-        else if (phoneNumber.value === '' || null || undefined) {
+        else if (phoneNumber.value === '') {
             let phone = 'Phone number is required!';
             reject(phone);
             phoneNumberError.innerHTML = phone;
             setTimeout(() => phoneNumberError.remove(), 5000);
         }
-        else if (userMessage.value === '' || null || undefined) {
+        else if (userMessage.value === '') {
             let msg = 'Message is required';
             reject(msg);
             messageError.innerHTML = msg;
