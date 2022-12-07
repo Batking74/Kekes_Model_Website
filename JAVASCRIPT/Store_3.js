@@ -11,31 +11,44 @@ class myProducts {
     }
 }
 
-product1 = new myProducts('/IMG/Store Products/Store 3/Product_1.jpg', 'Picture of Curl Moisture Milk product Product', 'Camille Rose Curl Love Moisture Milk', '$6.99', '&#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_1.html');
-product2 = new myProducts('/IMG/Store Products/Store 3/Product_2.jpg', 'A picture of Curl Control Jelly product', 'Blueberry Bliss Curl Control Jelly', '$8.50', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_2.html');
-product3 = new myProducts('/IMG/Store Products/Store 3/Product_3.jpg', 'Conditioner and treatment products', 'Hair Care Conditioner Bundle', '$10.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_3.html');
-product4 = new myProducts('/IMG/Store Products/Store 3/Product_4.jpg', 'African Clarifying Mud Mask', 'African Black Soap for Skin', '$11.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_4.html');
-product5 = new myProducts('/IMG/Store Products/Store 3/Product_5.jpg', 'Buttah Rosewater Toner for Skin', 'Buttah Rosewater Toner for Skin', '$9.75', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_5.html');
-product6 = new myProducts('/IMG/Store Products/Store 3/Product_6.jpg', '', 'Joyful Noise Keke Palmer Hoodie', '$16.45', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_6.html');
-product7 = new myProducts('/IMG/Store Products/Store 3/Product_7.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$50.00', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_7.html');
-product8 = new myProducts('/IMG/Store Products/Store 3/Product_8.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$12.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_8.html');
-product9 = new myProducts('/IMG/Store Products/Store 3/Product_9.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$9.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_9.html');
-product10 = new myProducts('/IMG/Store Products/Store 3/Product_10.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$6.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_10.html');
-product11 = new myProducts('/IMG/Store Products/Store 3/Product_11.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$8.25', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_11.html');
-product12 = new myProducts('/IMG/Store Products/Store 3/Product_12.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$7.50', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_12.html');
-product13 = new myProducts('/IMG/Store Products/Store 3/Product_13.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_13.html');
-product14 = new myProducts('/IMG/Store Products/Store 3/Product_14.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_14.html');
-product15 = new myProducts('/IMG/Store Products/Store 3/Product_15.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_15.html');
-product16 = new myProducts('/IMG/Store Products/Store 3/Product_16.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_16.html');
-product17 = new myProducts('/IMG/Store Products/Store 3/Product_17.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_17.html');
-product18 = new myProducts('/IMG/Store Products/Store 3/Product_18.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_18.html');
-product19 = new myProducts('/IMG/Store Products/Store 3/Product_19.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_19.html');
-product20 = new myProducts('/IMG/Store Products/Store 3/Product_20.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_20.html');
-product21 = new myProducts('/IMG/Store Products/Store 3/Product_21.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_21.html');
-product22 = new myProducts('/IMG/Store Products/Store 3/Product_22.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_22.html');
-product23 = new myProducts('/IMG/Store Products/Store 3/Product_23.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_23.html');
-product24 = new myProducts('/IMG/Store Products/Store 3/Product_24.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_24.html');
-product25 = new myProducts('/IMG/Store Products/Store 3/Product_25.jpg', 'image', 'Joyful Noise Keke Palmer Hoodie', '$34.99', '&#8902 &#8902 &#8902 &#8902 &#8902', '/HTML/Store/Page 3/product_24.html');
+const originalPrice = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const rating = ['&#8902', '&#8902 &#8902', '&#8902 &#8902 &#8902', '&#8902 &#8902 &#8902 &#8902', '&#8902 &#8902 &#8902 &#8902 &#8902'];
+
+const image = ['/IMG/Store Products/Store 3/Product_1.jpg', '/IMG/Store Products/Store 3/Product_2.jpg', '/IMG/Store Products/Store 3/Product_3.jpg', '/IMG/Store Products/Store 3/Product_4.jpg', '/IMG/Store Products/Store 3/Product_5.jpg', '/IMG/Store Products/Store 3/Product_6.jpg', '/IMG/Store Products/Store 3/Product_7.jpg', '/IMG/Store Products/Store 3/Product_8.jpg', '/IMG/Store Products/Store 3/Product_9.jpg', '/IMG/Store Products/Store 3/Product_10.jpg', '/IMG/Store Products/Store 3/Product_11.jpg', '/IMG/Store Products/Store 3/Product_12.jpg', '/IMG/Store Products/Store 3/Product_13.jpg', '/IMG/Store Products/Store 3/Product_14.jpg', '/IMG/Store Products/Store 3/Product_15.jpg', '/IMG/Store Products/Store 3/Product_16.jpg', '/IMG/Store Products/Store 3/Product_17.jpg', '/IMG/Store Products/Store 3/Product_18.jpg', '/IMG/Store Products/Store 3/Product_19.jpg', '/IMG/Store Products/Store 3/Product_20.jpg', '/IMG/Store Products/Store 3/Product_21.jpg', '/IMG/Store Products/Store 3/Product_22.jpg', '/IMG/Store Products/Store 3/Product_23.jpg', '/IMG/Store Products/Store 3/Product_24.jpg', '/IMG/Store Products/Store 3/Product_25.jpg', ];
+
+const description = [];
+
+const productLink = ['/HTML/Store/Page 3/product_1.html', '/HTML/Store/Page 3/product_2.html', '/HTML/Store/Page 3/product_3.html', '/HTML/Store/Page 3/product_4.html', '/HTML/Store/Page 3/product_5.html', '/HTML/Store/Page 3/product_6.html', '/HTML/Store/Page 3/product_7.html', '/HTML/Store/Page 3/product_8.html', '/HTML/Store/Page 3/product_9.html', '/HTML/Store/Page 3/product_10.html', '/HTML/Store/Page 3/product_11.html', '/HTML/Store/Page 3/product_12.html', '/HTML/Store/Page 3/product_13.html', '/HTML/Store/Page 3/product_14.html', '/HTML/Store/Page 3/product_15.html', '/HTML/Store/Page 3/product_16.html', '/HTML/Store/Page 3/product_17.html', '/HTML/Store/Page 3/product_18.html', '/HTML/Store/Page 3/product_19.html', '/HTML/Store/Page 3/product_20.html', '/HTML/Store/Page 3/product_21.html', '/HTML/Store/Page 3/product_22.html', '/HTML/Store/Page 3/product_23.html', '/HTML/Store/Page 3/product_24.html', '/HTML/Store/Page 3/product_25.html'];
+
+function getOriginalPrice(index) {
+    return '$' + originalPrice[index];
+}
+
+product1 = new myProducts(image[0], description[0], description[0], getOriginalPrice(0), rating[3], productLink[0]);
+product2 = new myProducts(image[1], description[1], description[1], getOriginalPrice(1), rating[4], productLink[1]);
+product3 = new myProducts(image[2], description[2], description[2], getOriginalPrice(2), rating[4], productLink[2]);
+product4 = new myProducts(image[3], description[3], description[3], getOriginalPrice(3), rating[4], productLink[3]);
+product5 = new myProducts(image[4], description[4], description[4], getOriginalPrice(4), rating[4], productLink[4]);
+product6 = new myProducts(image[5], description[5], description[5], getOriginalPrice(5), rating[4], productLink[5]);
+product7 = new myProducts(image[6], description[6], description[6], getOriginalPrice(6), rating[4], productLink[6]);
+product8 = new myProducts(image[7], description[7], description[7], getOriginalPrice(7), rating[4], productLink[7]);
+product9 = new myProducts(image[8], description[8], description[8], getOriginalPrice(8), rating[4], productLink[8]);
+product10 = new myProducts(image[9], description[9], description[9], getOriginalPrice(9), rating[4], productLink[9]);
+product11 = new myProducts(image[10], description[10], description[10], getOriginalPrice(10), rating[4], productLink[10]);
+product12 = new myProducts(image[11], description[11], description[11], getOriginalPrice(11), rating[4], productLink[11]);
+product13 = new myProducts(image[12], description[12], description[12], getOriginalPrice(12), rating[4], productLink[12]);
+product14 = new myProducts(image[13], description[13], description[13], getOriginalPrice(13), rating[4], productLink[13]);
+product15 = new myProducts(image[14], description[14], description[14], getOriginalPrice(14), rating[4], productLink[14]);
+product16 = new myProducts(image[15], description[15], description[15], getOriginalPrice(15), rating[4], productLink[15]);
+product17 = new myProducts(image[16], description[16], description[16], getOriginalPrice(16), rating[4], productLink[16]);
+product18 = new myProducts(image[17], description[17], description[17], getOriginalPrice(17), rating[4], productLink[17]);
+product19 = new myProducts(image[18], description[18], description[18], getOriginalPrice(18), rating[4], productLink[18]);
+product20 = new myProducts(image[19], description[19], description[19], getOriginalPrice(19), rating[4], productLink[19]);
+product21 = new myProducts(image[20], description[20], description[20], getOriginalPrice(20), rating[4], productLink[20]);
+product22 = new myProducts(image[21], description[21], description[21], getOriginalPrice(21), rating[4], productLink[21]);
+product23 = new myProducts(image[22], description[22], description[22], getOriginalPrice(22), rating[4], productLink[22]);
+product24 = new myProducts(image[23], description[23], description[23], getOriginalPrice(23), rating[4], productLink[23]);
+product25 = new myProducts(image[24], description[24], description[24], getOriginalPrice(24), rating[4], productLink[24]);
 
 myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25];
 

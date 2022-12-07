@@ -51,11 +51,13 @@ function twentyFivePercent(index) {
     let total = originalPrice[index] - (originalPrice[index] * discount)
     return "$" + parseFloat(total).toFixed(2);
 }
+
 function thirtyPercent(index) {
     let discount = 30 / 100;
     let total = originalPrice[index] - (originalPrice[index] * discount)
     return "$" + parseFloat(total).toFixed(2);
 }
+
 function fourtyPercent(index) {
     let discount = 40 / 100;
     let total = originalPrice[index] - (originalPrice[index] * discount)
@@ -68,7 +70,7 @@ function fiftyPercent(index) {
 
 // Math.round(originalPrice[index] / 2);
 
-// Instantiation 
+// Instantiation
 product1 = new myProducts(image[0], description[0], description[0], fifteenPercent(0) , getOriginalPrice(0), rating[3], productLink[0]);
 product2 = new myProducts(image[1], description[1], description[1], fifteenPercent(1), getOriginalPrice(1), rating[4], productLink[1]);
 product3 = new myProducts(image[2], description[2], description[2], fifteenPercent(2), getOriginalPrice(2), rating[4], productLink[2]);
