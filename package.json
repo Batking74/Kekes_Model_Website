@@ -1,20 +1,24 @@
 {
-  "name": "keke's_model_website",
+  "name": "palmerstudios",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Palmer Studios project for practice",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Batking74/Keke-s_Model_Website.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Nazir Knuckles",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Batking74/Keke-s_Model_Website/issues"
   },
-  "homepage": "https://github.com/Batking74/Keke-s_Model_Website#readme"
+  "homepage": "https://github.com/Batking74/Keke-s_Model_Website#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jsontoxml": "^1.0.1",
+    "xlsx": "^0.18.5"
+  }
 }
