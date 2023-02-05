@@ -146,6 +146,7 @@ body {
 }
 
 .Product-Old-Price {
+    position: relative;
     font-size: 15px;
     text-decoration: line-through;
     margin-left: 10px;
