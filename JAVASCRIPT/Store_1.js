@@ -37,55 +37,61 @@ let link = ['/HTML/Store/Page 1/product_1.html', '/HTML/Store/Page 1/product_2.h
 
 
 
-let array = [price += price.length, img += img.length, description += description.length, link += link.length];
+let array = [price.length, img.length, description.length, link.length];
+console.log("Price Length: " + array[0]);
+console.log("Image Length: " + array[1]);
+console.log("Description/Alt Length: " + array[2]);
+console.log("Link Length: " + array[3]);
 
-for(let i = 0; i < array.length; i++) {
-    product1 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product2 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product3 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product4 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product5 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product6 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product7 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product8 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product9 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product10 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product12 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product13 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product14 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product15 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product16 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product17 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product18 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product19 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product20 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product21 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product22 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product23 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product24 = new Product(img[i], description[i], price[i], rating[i], link[i]);
-    product25 = new Product(img[i], description[i], price[i], rating[i], link[i]);
+let i = 0;
+if(i < array[0] && i < array[1] && i < array[2] && i < array[3]) {
+    product1 = new Product(img[i], description[i], price[i], rating[0], link[i]);
+    product2 = new Product(img[i], description[i], price[i], rating[2], link[i]);
+    product3 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product4 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product5 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product6 = new Product(img[i], description[i], price[i], rating[1], link[i]);
+    product7 = new Product(img[i], description[i], price[i], rating[2], link[i]);
+    product8 = new Product(img[i], description[i], price[i], rating[3], link[i]);
+    product9 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product10 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product11 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product12 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product13 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product14 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product15 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product16 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product17 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product18 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product19 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product20 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product21 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product22 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product23 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product24 = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    product25 = new Product(img[i], description[i], price[i], rating[4], link[i]);
 
     myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25];
 
-myProductArray.forEach(product => {
-    productMainContainer.innerHTML += `
-    <div class="Product-Container">
-        <a href="${product.link}">
-            <img src="${product.img}" alt="${product.description}">
-            <div class="Product-Card">
-                <span class="Price-Container">
-                    <p class="Product-Price">${product.link}</p>
-                    <p class="Product-Old-Price">${product.price}</p>
-                </span>
-                <p class="Product-description">${product.description}</p>
-                <p class="Product-Rating">${product.rating}</p>
-                <span>
-                    <a class="AddToList" href="">Add to List</a>
-                </span>
-            </div>
-        </a>
-</div>`
-})
+    myProductArray.forEach(product => {
+        productMainContainer.innerHTML += `
+        <div class="Product-Container">
+            <a href="${product.link}">
+                <img src="${product.img}" alt="${product.description}">
+                <div class="Product-Card">
+                    <span class="Price-Container">
+                        <p class="Product-Price">${product.link}</p>
+                        <p class="Product-Old-Price">${product.price}</p>
+                    </span>
+                    <p class="Product-description">${product.description}</p>
+                    <p class="Product-Rating">${product.rating}</p>
+                    <span>
+                        <a class="AddToList" href="">Add to List</a>
+                    </span>
+                </div>
+            </a>
+    </div>`
+    })
 }
 
 
