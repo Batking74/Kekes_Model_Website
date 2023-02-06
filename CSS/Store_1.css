@@ -4,12 +4,13 @@
 }
 
 body {
-    background-image: url(/IMG/Background\ Images/Store_Background_Image.jpg);
+    /* background-image: url(/IMG/Background\ Images/Store_Background_Image.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    overflow-x: hidden;
+    overflow-x: hidden; */
+    background: black;
 }
 
 /* Navigation Start */
@@ -58,13 +59,13 @@ body {
 }
 
 /* Heading Start */
-.Heading {
+header {
     background: linear-gradient(#000000, #000000cb);
     padding: 10px;
     position: relative;
     top: 50px;
 }
-.Heading h1 {
+header h1 {
     font-size: 50px;
     font-weight: lighter;
     font-variant: small-caps;
@@ -80,25 +81,41 @@ body {
     margin-top: 50px;
 }
 
-.Heading-2 {
+.title {
     padding: 50px 0 50px 0;
     position: absolute;
-    top: 580px;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 80%);
 }
-.Heading-2 h1 {
-    font-size: 90px;
+
+
+.title div h1 {
+    font-size: 45px;
     font-weight: lighter;
     font-variant: small-caps;
-    color: #ffffff;
-    text-align: center;
-    background-color: #000000;
+    color: #000;
+    position: relative;
+    bottom: 5px;
+    left: 10%;
+}
+
+.title div select {
+    position: relative;
+    padding: 10px 50px 10px 0;
+}
+
+.title div hr {
+    position: relative;
+    width: 110%;
+    margin: 15px 5vw 0 5vw;
+    border: #000 solid 1px;
 }
 
 /* Start of dynamic cards */
 .Product-Main-Container {
-    background-color: #ffffff;
-    padding: 0 0 420px 0;
+    background: white;
+    padding: 0 0 500px 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     row-gap: 100px;
@@ -106,12 +123,16 @@ body {
 }
 
 .Product-Container {
-    margin: 100px 0 0 40px;
+    position: relative;
+    top: calc(50% - 50px);
+    padding-bottom: 50px;
+    text-align: center;
 }
 
 .Product-Container a {
     margin-top: 10px;
     text-decoration: none !important;
+    text-align: start !important;
 }
 
 .Product-Container a:link {
@@ -119,11 +140,11 @@ body {
 }
 
 .Product-Container img {
-    width: 80%;
-    height: 100%;
     object-fit: contain;
     border-radius: 10px;
     transition: 1.3s;
+    border: #221e1e solid 5px;
+    width: 80%;
 }
 
 .Product-Container img:hover {
@@ -204,8 +225,6 @@ body {
 /* Start of footer */
 footer {
     background-color: #000000;
-    position: absolute;
-    top: 510%;
     width: 100%;
     padding: 40px 0 40px 0;
 }

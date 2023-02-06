@@ -1,5 +1,6 @@
 // Creating Dynamic Project Card
 const productMainContainer = document.querySelector('.Product-Main-Container');
+const body = document.getElementById('body');
 let i = Array.from({length: 25}, (_, i) => i + 0);
 
 class Product {
@@ -77,15 +78,13 @@ const product23 = new Product(img[i[22]], description[i[21]], price[i[22]], rati
 const product24 = new Product(img[i[23]], description[i[23]], price[i[23]], rating[4], link[i[23]]);
 const product25 = new Product(img[i[24]], description[i[24]], price[i[24]], rating[4], link[i[24]]);
 
-
 myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25];
 
-getAllLengths();
 
 myProductArray.forEach(product => {
     productMainContainer.innerHTML += `
-    <div class="Product-Container">
-        <a href="${product.getLink()}">
+        <div class="Product-Container">
+            <a href="${product.getLink()}">
             <img src="${product.getImage()}" alt="${product.getDescription()}">
             <div class="Product-Card">
                 <span class="Price-Container">
@@ -99,15 +98,9 @@ myProductArray.forEach(product => {
                 </span>
             </div>
         </a>
-</div>`
+    </div>
+    `
 })
-
-
-
-
-
-
-
 
 
 function getAllLengths() {
@@ -131,36 +124,36 @@ function tenPercent(index) {
 
 function fifteenPercent(index) {
     let discount = 15 / 100;
-    let total = originalPrice[index] - (originalPrice[index] * discount);
+    let total = price[index] - (price[index] * discount);
     return "$" + parseFloat(total).toFixed(2);
 }
 
 function twentyPercent(index) {
     let discount = 20 / 100;
-    let total = originalPrice[index] - (originalPrice[index] * discount)
+    let total = price[index] - (price[index] * discount)
     return "$" + parseFloat(total).toFixed(2);
 }
 
 function twentyFivePercent(index) {
     let discount = 25 / 100;
-    let total = originalPrice[index] - (originalPrice[index] * discount)
+    let total = price[index] - (price[index] * discount)
     return "$" + parseFloat(total).toFixed(2);
 }
 
 function thirtyPercent(index) {
     let discount = 30 / 100;
-    let total = originalPrice[index] - (originalPrice[index] * discount)
+    let total = price[index] - (price[index] * discount)
     return "$" + parseFloat(total).toFixed(2);
 }
 
 function fourtyPercent(index) {
     let discount = 40 / 100;
-    let total = originalPrice[index] - (originalPrice[index] * discount)
+    let total = price[index] - (price[index] * discount)
     return "$" + parseFloat(total).toFixed(2);
 }
 
 function fiftyPercent(index) {
-    return "$" + parseFloat(originalPrice[index] / 2).toFixed(2);
+    return "$" + parseFloat(price[index] / 2).toFixed(2);
 }
 
 
@@ -195,3 +188,4 @@ const sideNavigation = document.querySelector('.nav-container');
 openMenu.addEventListener('click', () => {
     sideNavigation.classList.toggle('active');
 });
+
