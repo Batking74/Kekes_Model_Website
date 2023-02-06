@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/CSS/Store_1.css">
 </head>
-<body id="body">
+<body>
     <!-- Start of navigation bar -->
     <div role="side-navbar-media-queries" id="menu-open">
         <span></span>
@@ -16,16 +16,16 @@
     </div>
 
 
-    <nav class="Animate_Nav nav-container">
+    <nav class="Animate_Nav">
         <a href="#">
             <img src="/IMG/Social Media Icons & Logos/Palmer_Logo.PNG" alt="Palmer Studios logo.">
         </a>
-        <a class="nav-animate-group1" id="special-nav-btn" href="/HTML/index.html">Home</a>
-        <a class="nav-animate-group1 nav-btn" href="/HTML/About.html">About</a>
-        <a class="nav-animate-group1 nav-btn" href="/HTML/FAQ.html">FAQ</a>
-        <a class="nav-animate-group2 nav-btn" href="/HTML/Contact.html">Contact</a>
-        <a class="nav-animate-group2 nav-btn" href="#">Store</a>
-        <a class="nav-animate-group2" id="special-nav-btn" href="/HTML/Login.html">
+        <a class="nav-animate-group1" href="/HTML/index.html">Home</a>
+        <a class="nav-animate-group1 nav" href="/HTML/About.html">About</a>
+        <a class="nav-animate-group1 nav" href="/HTML/FAQ.html">FAQ</a>
+        <a class="nav-animate-group2 nav" href="/HTML/Contact.html">Contact</a>
+        <a class="nav-animate-group2 nav" href="#">Store</a>
+        <a class="nav-animate-group2" href="/HTML/Login.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -36,18 +36,18 @@
 
     <!-- Start of Store -->
     <header>
-        <h1>Palmers Store</h1>
+        <h1 id="Company-Name">Palmers Store</h1>
     </header>
 
 
-    <aside class="ad-1">
-        <img src="/IMG/Ads/Sale_ad_1.jpg" alt="ad">
+    <aside style="text-align: center;">
+        <img src="/IMG/Ads/Sale_ad_1.jpg" alt="Sale ad" style="margin-top: 50px;">
     </aside>
 
 
     <main class="Product-Main-Container">
         <div class="title">
-            <div><h1>Products | Palmer Store</h1></div>
+            <div><h1>Products | <span id="Company-Name">Palmer Store</span></h1></div>
             <div>
                 <select name="" id="">
                     <option value="">Featured</option>
@@ -64,11 +64,10 @@
 
 
 
-
-    <span class="Page-Nav-Text"><h2>Page 1 of 3</h2></span>
-    <nav class="Page-Navigator-2">
+    <div class="nav-2">
+        <h2>Page 1 of 3</h2>
         <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Store Page Navigator">
-    </nav>
+    </div>
     
 
     <!-- Start of footer -->
@@ -121,7 +120,7 @@
             <br>
             <hr>
             <br>
-            <p>&copy; copyright 2022 Nazir Knuckles Inc</p>
+            <p id="copyright">&copy; copyright 2022 Nazir Knuckles Inc</p>
         </div>
     </footer>
     <script src="/JAVASCRIPT/Store_1.js"></script>
