@@ -1,32 +1,15 @@
-import Product, { myProductArray, img, description, price, rating, link, i } from "./Store_Products_Blueprint.js";
+import Product, { companyName, productCount, productMainContainer, nextPage, sideNavigation, openMenu, footerForm, footerInput, footerBtn, footerResponse, footerLabel, copyright, date, pageLink, price, rating, img, description, link, validate, getAllLengths, getTenPercnt, getFifteenPercnt, getTwentyPercnt, getTwentyFivePercnt, getThirtyPercnt, getFourtyPercnt, getFiftyPercnt } from "./Store_Products_Blueprint.js";
+
+const previousPageBtn = document.getElementById('Previous-Page');
 
 
-
-const product1 = new Product(img[i[0]], description[i[0]], price[i[0]], rating[0], link[i[0]]);
-myProductArray.push(product1)
-console.log(myProductArray[myProductArray.length - 1]);
-
-myProductArray.forEach(element => {
-    
+nextPage.addEventListener('click', () => {
+    location.replace(`${pageLink[2]}`)
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+previousPageBtn.addEventListener('click', () => {
+    location.replace(`${pageLink[0]}`)
+})
 
 
 
