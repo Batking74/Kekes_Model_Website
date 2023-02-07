@@ -1,9 +1,34 @@
 // Creating Dynamic Project Card
 const productMainContainer = document.querySelector('.Product-Main-Container');
 const body = document.getElementById('body');
-let i = Array.from({length: 25}, (_, i) => i + 0);
+const footerForm = document.getElementById('footerForm');
+const footerInput = document.getElementById('footerInput');
+const footerBtn = document.getElementById('footerbtn');
+const footerResponse = document.getElementById('footerSubmissionResponse');
+const footerLabel = document.getElementById('footerLabel');
+const companyName = document.querySelectorAll('#Company-Name');
+const copyright = document.getElementById('copyright');
+const nextPage = document.getElementById('Next-Page');
+const openMenu = document.querySelector('#menu-open');
+const sideNavigation = document.querySelector('.nav-container');
+const productCount = document.querySelector('#Products-Count');
+const date = new Date();
 
-class Product {
+
+companyName.forEach(element => {
+    element.innerHTML = "Palmer Store";
+})
+
+// copyright.innerHTML = `&copy; copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()}`;
+
+
+
+
+
+let i = Array.from({length: 25}, (_, i) => i + 0);
+// let myProductArray = new Array(30);
+
+export default class Product {
     constructor(image, description, price, rating, link) {
         this.image = image;
         this.imageAlt = description;
@@ -78,7 +103,11 @@ const product23 = new Product(img[i[22]], description[i[21]], price[i[22]], rati
 const product24 = new Product(img[i[23]], description[i[23]], price[i[23]], rating[4], link[i[23]]);
 const product25 = new Product(img[i[24]], description[i[24]], price[i[24]], rating[4], link[i[24]]);
 
-myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25];
+const myProductArray = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25];
+
+
+
+// productCount.innerHTML = `${myProductArray.length}`;
 
 
 myProductArray.forEach(product => {
@@ -88,8 +117,8 @@ myProductArray.forEach(product => {
             <img src="${product.getImage()}" alt="${product.getDescription()}">
             <div class="Product-Card">
                 <span class="Price-Container">
-                    <p class="Product-Price">${product.getPrice()}</p>
-                    <p class="Product-Old-Price">${product.getPrice()}</p>
+                    <p class="Product-Price">$${product.getPrice()}</p>
+                    <p class="Product-Old-Price">$${product.getPrice()}</p>
                 </span>
                 <p class="Product-description">${product.getDescription()}</p>
                 <p class="Product-Rating">${product.rating}</p>
@@ -103,70 +132,10 @@ myProductArray.forEach(product => {
 })
 
 
-function getAllLengths() {
-    console.log("Number of prices: " + price.length);
-    console.log("Number of ratings: " + rating.length);
-    console.log("Number of images: " + img.length);
-    console.log("Number of descriptions: " + description.length);
-    console.log("Number of links: " + link.length);
-    console.log("Number of products: " + myProductArray.length);
-}
-
-function getOriginalPrice(index) {
-    return '$' + originalPrice[index];
-}
-
-function tenPercent(index) {
-    let discount = 10 / 100;
-    let total = price[index] - (price[index] * discount);
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-function fifteenPercent(index) {
-    let discount = 15 / 100;
-    let total = price[index] - (price[index] * discount);
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-function twentyPercent(index) {
-    let discount = 20 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-function twentyFivePercent(index) {
-    let discount = 25 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-function thirtyPercent(index) {
-    let discount = 30 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-function fourtyPercent(index) {
-    let discount = 40 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-function fiftyPercent(index) {
-    return "$" + parseFloat(price[index] / 2).toFixed(2);
-}
 
 
 
 
-const footerForm = document.getElementById('footerForm');
-const footerInput = document.getElementById('footerInput');
-const footerBtn = document.getElementById('footerbtn');
-const footerResponse = document.getElementById('footerSubmissionResponse');
-const footerLabel = document.getElementById('footerLabel');
-const companyName = document.getElementById('Company-Name');
-const copyright = document.getElementById('copyright');
-const nextPage = document.getElementById('Next-Page');
 
 
 footerForm.addEventListener('submit', (e) => {
@@ -179,8 +148,6 @@ nextPage.addEventListener('click', () => {
 })
 
 // Toggle Hamburger menu
-const openMenu = document.querySelector('#menu-open');
-const sideNavigation = document.querySelector('.nav-container');
 openMenu.addEventListener('click', () => {
     sideNavigation.classList.toggle('active');
 });
@@ -189,7 +156,7 @@ openMenu.addEventListener('click', () => {
 
 
 
-function validate() {
+export function validate() {
     if(footerInput.value == '') {
     }
     else {
@@ -199,4 +166,56 @@ function validate() {
         console.log('Thank You, you will recieve emails on new content!')
         footerResponse.innerHTML = `<span class="Footer-Response-Icon"><svg viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></span>Thank You, you will recieve emails on new content!`
     }
+}
+export function getAllLengths() {
+    console.log("Number of prices: " + price.length);
+    console.log("Number of ratings: " + rating.length);
+    console.log("Number of images: " + img.length);
+    console.log("Number of descriptions: " + description.length);
+    console.log("Number of links: " + link.length);
+    console.log("Number of products: " + myProductArray.length);
+}
+
+export function getOriginalPrice(index) {
+    return '$' + originalPrice[index];
+}
+
+export function tenPercent(index) {
+    let discount = 10 / 100;
+    let total = price[index] - (price[index] * discount);
+    return "$" + parseFloat(total).toFixed(2);
+}
+
+export function fifteenPercent(index) {
+    let discount = 15 / 100;
+    let total = price[index] - (price[index] * discount);
+    return "$" + parseFloat(total).toFixed(2);
+}
+
+export function twentyPercent(index) {
+    let discount = 20 / 100;
+    let total = price[index] - (price[index] * discount)
+    return "$" + parseFloat(total).toFixed(2);
+}
+
+export function twentyFivePercent(index) {
+    let discount = 25 / 100;
+    let total = price[index] - (price[index] * discount)
+    return "$" + parseFloat(total).toFixed(2);
+}
+
+export function thirtyPercent(index) {
+    let discount = 30 / 100;
+    let total = price[index] - (price[index] * discount)
+    return "$" + parseFloat(total).toFixed(2);
+}
+
+export function fourtyPercent(index) {
+    let discount = 40 / 100;
+    let total = price[index] - (price[index] * discount)
+    return "$" + parseFloat(total).toFixed(2);
+}
+
+export function fiftyPercent(index) {
+    return "$" + parseFloat(price[index] / 2).toFixed(2);
 }
