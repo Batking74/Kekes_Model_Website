@@ -17,6 +17,7 @@ export const footerResponse = document.getElementById('footerSubmissionResponse'
 export const footerLabel = document.getElementById('footerLabel');
 export const date = new Date();
 
+// Dynamic Elements
 storeTitle.forEach(element => {
     element.innerHTML = "Palmer Store";
 })
@@ -41,13 +42,12 @@ export const img = ['/IMG/Store Products/Store 1/Product_1.jpg', '/IMG/Store Pro
 
 export const description = ['Light Gray Palmer Hoodie', 'White Palmer T-Shirt - Hustlers', 'Keke Palmer Duvet Set (Purple)', 'Keke Palmer Duvet Set (Tan)', 'Keke Palmer T-Shirt (White)', 'Keke Do You Love Me T-Shirt', 'Black and Brown Exfoliating Cleanser', 'African Clarifying Mud Mask Oils and Spray', 'Skin Safe Manscaping Trimmer', 'Hair Sponge Brush for Twists and Locks (Black)', 'Classic Styling Essential Compact Comb (Black)', 'Hair Brush Wooden Paddle Hairbrush Detangling Hairbrush', 'Savanna Grass - Album By Kes', 'Nyraju Natural Skincare Serum For Acne (Cleanser and Toner)', 'Blueberry Bliss Curl Control Jelly', 'African  Black Soap 6 fl oz', 'Curl Love Moisture Milk (Rice Milk and Macadamia Oil)', 'Hair Picks (3 Count)', 'Conditioner, Treatment, Detangling Spray, and Shampoo', 'Buttah AHA | BHA Rosewater Toner', 'Champion Adult Mens Everyday Comfort Boxer Underwear', 'Womens Comfort Stretch Brief Panties (Black)', 'Womens Underwear Soft Breathable Panties Stretch Hipsters (Black)', 'Mens Black Boxer Briefs Cotton Stretchy Underwear (5 Pack)', 'Womens Padded Butt Lifter Hip Enhancer Shaper Panties Underwear'];
 
-export const link = ['/HTML/Store/Page 1/product_1.html', '/HTML/Store/Page 1/product_2.html', '/HTML/Store/Page 1/product_3.html', '/HTML/Store/Page 1/product_4.html', '/HTML/Store/Page 1/product_5.html', '/HTML/Store/Page 1/product_6.html', '/HTML/Store/Page 1/product_7.html', '/HTML/Store/Page 1/product_8.html', '/HTML/Store/Page 1/product_9.html', '/HTML/Store/Page 1/product_10.html', '/HTML/Store/Page 1/product_11.html', '/HTML/Store/Page 1/product_12.html', '/HTML/Store/Page 1/product_13.html', '/HTML/Store/Page 1/product_14.html', '/HTML/Store/Page 1/product_15.html', '/HTML/Store/Page 1/product_16.html', '/HTML/Store/Page 1/product_17.html', '/HTML/Store/Page 1/product_18.html', '/HTML/Store/Page 1/product_19.html', '/HTML/Store/Page 1/product_20.html', '/HTML/Store/Page 1/product_21.html', '/HTML/Store/Page 1/product_22.html', '/HTML/Store/Page 1/product_23.html', '/HTML/Store/Page 1/product_24.html', '/HTML/Store/Page 1/product_25.html'];
+export const productLink = ['/HTML/Store/Page 1/product_1.html', '/HTML/Store/Page 1/product_2.html', '/HTML/Store/Page 1/product_3.html', '/HTML/Store/Page 1/product_4.html', '/HTML/Store/Page 1/product_5.html', '/HTML/Store/Page 1/product_6.html', '/HTML/Store/Page 1/product_7.html', '/HTML/Store/Page 1/product_8.html', '/HTML/Store/Page 1/product_9.html', '/HTML/Store/Page 1/product_10.html', '/HTML/Store/Page 1/product_11.html', '/HTML/Store/Page 1/product_12.html', '/HTML/Store/Page 1/product_13.html', '/HTML/Store/Page 1/product_14.html', '/HTML/Store/Page 1/product_15.html', '/HTML/Store/Page 1/product_16.html', '/HTML/Store/Page 1/product_17.html', '/HTML/Store/Page 1/product_18.html', '/HTML/Store/Page 1/product_19.html', '/HTML/Store/Page 1/product_20.html', '/HTML/Store/Page 1/product_21.html', '/HTML/Store/Page 1/product_22.html', '/HTML/Store/Page 1/product_23.html', '/HTML/Store/Page 1/product_24.html', '/HTML/Store/Page 1/product_25.html', '#'];
 
 
 
 // export let myProductArray = Array.from({length: 25}, (_, i) => i + 0);
-export let myProductArray = new Array(25);
-console.log(myProductArray);
+export let myProductArray = new Array(30);
 
 
 
@@ -84,13 +84,13 @@ export default class Product {
 
 // Instantiating
 for(let i = 0; i < img.length; i++) {
-    const objects = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    const objects = new Product(img[i], description[i], price[i], rating[4], productLink[i]);
     myProductArray.push(objects);
 
     // Displaying Each Products Attributes
     productMainContainer.innerHTML += `
         <div class="Product-Container">
-            <a href="${link[i]}">
+            <a href="${productLink[i]}">
             <img src="${img[i]}" alt="${description[i]}">
             <div class="Product-Card">
                 <span class="Price-Container">
@@ -108,67 +108,84 @@ for(let i = 0; i < img.length; i++) {
     `
 }
 
-// Dynamic HTML Page
+
+export const navLinks = new Array(10);
+navLinks[0] = "/HTML/index.html";
+navLinks[1] = "/HTML/About.html";
+navLinks[2] = "/HTML/FAQ.html";
+navLinks[3] = "/HTML/Contact.html";
+navLinks[4] = "/HTML/Store_1.html";
+navLinks[5] = "/HTML/Login.html";
+navLinks[6] = "#";
+
+export const icons = new Array(10);
+icons[0] = "/IMG/Social Media Icons & Logos/Palmer_Logo.PNG";
+icons[1] = "/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png";
+icons[2] = "/IMG/Social Media Icons & Logos/Palmer_Logo.PNG";
+icons[3] = "/IMG/Social Media Icons & Logos/FaceBook_Icon.png";
+icons[4] = "/IMG/Social Media Icons & Logos/Instagram_Icon.png";
+icons[5] = "/IMG/Social Media Icons & Logos/Twitter_Icon.png";
+icons[6] = "/IMG/Social Media Icons & Logos/YouTube_Icon.png";
+
+// Dynamic HTML Pages
 navbar.innerHTML += `
-<a href="#">
-                <img src="/IMG/Social Media Icons & Logos/Palmer_Logo.PNG" alt="Palmer Studios logo.">
-            </a>
-            <a class="nav-animate-group1" href="/HTML/index.html">Home</a>
-            <a class="nav-animate-group1 nav" href="/HTML/About.html">About</a>
-            <a class="nav-animate-group1 nav" href="/HTML/FAQ.html">FAQ</a>
-            <a class="nav-animate-group2 nav" href="/HTML/Contact.html">Contact</a>
-            <a class="nav-animate-group2 nav" href="#">Store</a>
-            <a class="nav-animate-group2" href="/HTML/Login.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg>Log in
-            </a>
-
+    <a href="${navLinks[6]}">
+        <img src="${icons[0]}" alt="Palmer Studios logo.">
+    </a>
+    <a class="nav-animate-group1" href="${navLinks[0]}">Home</a>
+    <a class="nav-animate-group1 nav" href="${navLinks[1]}">About</a>
+    <a class="nav-animate-group1 nav" href="${navLinks[2]}">FAQ</a>
+    <a class="nav-animate-group2 nav" href="${navLinks[3]}">Contact</a>
+    <a class="nav-animate-group2 nav" href="${navLinks[4]}">Store</a>
+    <a class="nav-animate-group2" href="${navLinks[5]}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+        </svg>Log in
+    </a>
 `
 
-storeNavigation.innerHTML += `
-<h2>Page 1 of 3</h2>
-            <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Store Page Navigator">
-
-`
+// storeNavigation.innerHTML += `
+//     <h2>Page 1 of 3</h2>
+//     <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Next Page">
+// `
 
 footer[0].innerHTML += `
     <!-- Start of footer -->
-<div class="position-footer-container">
+    <div class="position-footer-container">
         <div class="position-logos">
-            <img width="120" height="140" src="/IMG/Social Media Icons & Logos/Palmer_Logo.PNG" alt="Palmer Studios logo.">
+            <img width="120" height="140" src="${icons[2]}" alt="Palmer Studios logo.">
             <div class="socialMedia-icons-Container">
                 <a href="https://www.facebook.com/kekepalmer">
-                    <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/FaceBook_Icon.png" alt="FaceBook Logo">
+                    <img class="socialMedia-icons" src="${icons[3]}" alt="FaceBook Logo">
                 </a>
                 <a href="https://www.instagram.com/keke/">
-                    <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/Instagram_Icon.png" alt="Instagram Icon">
+                    <img class="socialMedia-icons" src="${icons[4]}" alt="Instagram Icon">
                 </a>
                 <a href="https://twitter.com/KekePalmer">
-                    <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/Twitter_Icon.png" alt="Twitter Icon">
+                    <img class="socialMedia-icons" src="${icons[5]}" alt="Twitter Icon">
                 </a>
                 <a href="https://www.youtube.com/channel/UCG7azEZJY5PCsjcUCOdvOPw">
-                    <img class="socialMedia-icons" src="/IMG/Social Media Icons & Logos/YouTube_Icon.png" alt="YouTube Icon">
+                    <img class="socialMedia-icons" src="${icons[6]}" alt="YouTube Icon">
                 </a>
             </div>
         </div>
         <div class="footer-column-a-1">
-            <a href="">Support</a>
-            <a href="/HTML/Contact.html">Contact Us</a>
-            <a href="/HTML/FAQ.html">FAQ</a>
-            <a href="">Downloads</a>
-            <a href="">Locate A Dealer</a>
-            <a href="#">Store</a>
-            <a href="">Modeling Registration</a>
+            <a href="${navLinks[6]}">Support</a>
+            <a href="${navLinks[3]}">Contact Us</a>
+            <a href="${navLinks[2]}">FAQ</a>
+            <a href="${navLinks[6]}">Downloads</a>
+            <a href="${navLinks[6]}">Locate A Dealer</a>
+            <a href="${navLinks[6]}">Store</a>
+            <a href="${navLinks[6]}">Modeling Registration</a>
         </div>
         <div class="footer-column-a-2">
-            <a href="">Palmer Studios</a>
-            <a href="">About Palmer Studios</a>
-            <a href="">Palmer Designs</a>
-            <a href="">Careers</a>
-            <a href="">Newsroom</a>
-            <a href="">Palmer Access</a>
+            <a href="${navLinks[6]}">Palmer Studios</a>
+            <a href="${navLinks[1]}">About Palmer Studios</a>
+            <a href="${navLinks[6]}">Palmer Designs</a>
+            <a href="${navLinks[6]}">Careers</a>
+            <a href="${navLinks[6]}">Newsroom</a>
+            <a href="${navLinks[6]}">Palmer Access</a>
         </div>
         <form id="footerForm" class="last-footer-col">
             <p id="footerLabel">Stay up to date on the latest modeling show</p>
@@ -186,21 +203,6 @@ footer[0].innerHTML += `
         <p>&copy; copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()}</p>
     </div>`
 
-// Dynamic Elements
-
-footerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    validate();
-})
-
-nextPage.addEventListener('click', () => {
-    location.replace(`${pageLink[1]}`);
-})
-
-openMenu.addEventListener('click', () => {
-    sideNavigation.classList.toggle('active');
-});
-
 
 // Other Functions
 export function validate() {
@@ -213,15 +215,6 @@ export function validate() {
         console.log('Thank You, you will recieve emails on new content!')
         footerResponse.innerHTML = `<span class="Footer-Response-Icon"><svg viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></span>Thank You, you will recieve emails on new content!`
     }
-}
-
-
-export function getI(n) {
-    if(n === i.length) {
-        return
-    }
-    n--;
-    getI();
 }
 
 
@@ -279,3 +272,16 @@ export function getFourtyPercnt(index) {
 export function getFiftyPercnt(index) {
     return "$" + parseFloat(price[index] / 2).toFixed(2);
 }
+
+footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validate();
+})
+
+nextPage.addEventListener('click', () => {
+    location.replace(`${pageLink[1]}`);
+})
+
+openMenu.addEventListener('click', () => {
+    sideNavigation.classList.toggle('active');
+});

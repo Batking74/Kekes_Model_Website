@@ -1,4 +1,4 @@
-import Product, { companyName, productCount, productMainContainer, nextPage, sideNavigation, openMenu, footerForm, footerInput, footerBtn, footerResponse, footerLabel, date, pageLink, price, rating, img, description, link, validate, getAllLengths, getTenPercnt, getFifteenPercnt, getTwentyPercnt, getTwentyFivePercnt, getThirtyPercnt, getFourtyPercnt, getFiftyPercnt } from "./Store_Products_Blueprint.js";
+import Product, { navbar, pageName, companyName, storeTitle, productCount, productMainContainer, nextPage, sideNavigation, openMenu, storeNavigation, footer, footerForm, footerInput, footerBtn, footerResponse, footerLabel, date, pageLink, price, rating, img, description, productLink, myProductArray, navLinks, icons, validate, getAllLengths, getTenPercnt, getFifteenPercnt, getTwentyPercnt, getTwentyFivePercnt, getThirtyPercnt, getFourtyPercnt, getFiftyPercnt } from "./Store_Products_Blueprint.js";
 
 const previousPageBtn = document.getElementById('Previous-Page');
 
