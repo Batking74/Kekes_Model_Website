@@ -1,38 +1,33 @@
 // Targeting Elements
-export let footer = document.querySelector('.q');
+export const navbar = document.querySelector('#navbar');
+export const pageName = document.querySelectorAll('#Page-Name');
 export const companyName = document.querySelectorAll('#Company-Name');
+export const storeTitle = document.querySelectorAll('#Store-Title');
 export const productCount = document.querySelector('#Products-Count');
 export const productMainContainer = document.querySelector('.Product-Main-Container');
 export const nextPage = document.getElementById('Next-Page');
 export const sideNavigation = document.querySelector('.nav-container');
 export const openMenu = document.querySelector('#menu-open')
+export const storeNavigation = document.querySelector('.nav-2');
+export const footer = document.getElementsByTagName('footer');
 export const footerForm = document.getElementById('footerForm');
 export const footerInput = document.getElementById('footerInput');
 export const footerBtn = document.getElementById('footerbtn');
 export const footerResponse = document.getElementById('footerSubmissionResponse');
 export const footerLabel = document.getElementById('footerLabel');
-export const copyright = document.getElementById('copyright');
 export const date = new Date();
 
-// Dynamic Elements
-// companyName.forEach(element => {
-//     element.innerHTML = "Palmer Store";
-// })
+storeTitle.forEach(element => {
+    element.innerHTML = "Palmer Store";
+})
 
-// copyright.innerHTML = `&copy; copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()}`;
+pageName.forEach(element => {
+    element.innerHTML = "Palmer Studios Store | Page 1";
+})
 
-// footerForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     validate();
-// })
-
-// nextPage.addEventListener('click', () => {
-//     location.replace(`${pageLink[1]}`);
-// })
-
-// openMenu.addEventListener('click', () => {
-//     sideNavigation.classList.toggle('active');
-// });
+companyName.forEach(element => {
+    element.innerHTML = "Palmer Studios";
+})
 
 
 // Declaring and Initializing Arrays
@@ -50,9 +45,9 @@ export const link = ['/HTML/Store/Page 1/product_1.html', '/HTML/Store/Page 1/pr
 
 
 
-// export let i = Array.from({length: 25}, (_, i) => i + 0);
-let myProductArray = new Array(30);
-
+// export let myProductArray = Array.from({length: 25}, (_, i) => i + 0);
+export let myProductArray = new Array(25);
+console.log(myProductArray);
 
 
 
@@ -87,21 +82,10 @@ export default class Product {
     }
 }
 
-class DiscountItem extends Product {
-    constructor(image, description, price, rating, link, newPrice) {
-        super(image, description, price, rating, link);
-        this.newPrice = newPrice;
-    }
-    getPrice() {
-        return this.newPrice;
-    }
-}
-
 // Instantiating
 for(let i = 0; i < img.length; i++) {
-    const g = new Product(img[i], description[i], price[i], rating[4], link[i]);
-    myProductArray.push(g);
-
+    const objects = new Product(img[i], description[i], price[i], rating[4], link[i]);
+    myProductArray.push(objects);
 
     // Displaying Each Products Attributes
     productMainContainer.innerHTML += `
@@ -122,10 +106,34 @@ for(let i = 0; i < img.length; i++) {
         </a>
     </div>
     `
-console.log(footer)
 }
 
-footer.innerHTML += `
+// Dynamic HTML Page
+navbar.innerHTML += `
+<a href="#">
+                <img src="/IMG/Social Media Icons & Logos/Palmer_Logo.PNG" alt="Palmer Studios logo.">
+            </a>
+            <a class="nav-animate-group1" href="/HTML/index.html">Home</a>
+            <a class="nav-animate-group1 nav" href="/HTML/About.html">About</a>
+            <a class="nav-animate-group1 nav" href="/HTML/FAQ.html">FAQ</a>
+            <a class="nav-animate-group2 nav" href="/HTML/Contact.html">Contact</a>
+            <a class="nav-animate-group2 nav" href="#">Store</a>
+            <a class="nav-animate-group2" href="/HTML/Login.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>Log in
+            </a>
+
+`
+
+storeNavigation.innerHTML += `
+<h2>Page 1 of 3</h2>
+            <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Store Page Navigator">
+
+`
+
+footer[0].innerHTML += `
     <!-- Start of footer -->
 <div class="position-footer-container">
         <div class="position-logos">
@@ -175,10 +183,23 @@ footer.innerHTML += `
         <br>
         <hr>
         <br>
-        <p id="copyright"></p>
+        <p>&copy; copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()}</p>
     </div>`
 
-console.log(myProductArray)
+// Dynamic Elements
+
+footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validate();
+})
+
+nextPage.addEventListener('click', () => {
+    location.replace(`${pageLink[1]}`);
+})
+
+openMenu.addEventListener('click', () => {
+    sideNavigation.classList.toggle('active');
+});
 
 
 // Other Functions
