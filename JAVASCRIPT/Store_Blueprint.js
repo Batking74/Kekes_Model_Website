@@ -53,7 +53,7 @@ price[21] = 20.00;
 price[22] = 6.40;
 price[23] = 13.99;
 price[24] = 25.89;
-price[25] = 199.99;
+price[25] = 599.99;
     
 export const rating = new Array(arrayLength);
 rating[0] = '&#8902';
@@ -200,65 +200,65 @@ for(let i = 0; i < img.length; i++) {
                     <a class="AddToList" href="">Add to List</a>
                 </span>
             </div>
-        </a>
-    </div>
-    `
-    function getDiscount() {
-        const oldPrice = document.querySelector('.Product-Old-Price');
+            </a>
+            </div>
+            `
+            function getDiscount() {
+                const oldPrice = document.querySelector('.Product-Old-Price');
+                if(price[i] <= 70) {
+                    let discount = 70 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("70% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
+                
+                else if(price[i] >= 60 && price[i] <= 70) {
+                    let discount = 40 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("40% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
 
-        if(price[i] >= 15) {
-            let discount = 15 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("15% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
+                else if(price[i] <= 50 || price[i] >= 55) {
+                    let discount = 30 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("30% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
 
-        else if(price[i] >= 25) {
-            let discount = 20 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("20% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
+                else if(price[i] <= 40) {
+                    let discount = 25 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("25% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
 
-        else if(price[i] <= 15) {
-            let discount = 10 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("10% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
+                else if(price[i] >= 25) {
+                    let discount = 20 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("20% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
 
-        else if(price[i] <= 40) {
-            let discount = 25 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("25% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
+                else if(price[i] >= 15) {
+                    let discount = 15 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("15% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
 
-        else if(price[i] <= 70) {
-            let discount = 70 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("70% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
 
-        else if(price[i] <= 50 || price[i] >= 55) {
-            let discount = 30 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("30% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
+                else if(price[i] <= 15) {
+                    let discount = 10 / 100;
+                    let total = price[i] - (price[i] * discount);
+                    console.log("10% OFF!");
+                    return "$" + parseFloat(total).toFixed(2);
+                }
 
-        else if(price[i] >= 60 && price[i] <= 70) {
-            let discount = 40 / 100;
-            let total = price[i] - (price[i] * discount);
-            console.log("40% OFF!");
-            return "$" + parseFloat(total).toFixed(2);
-        }
-
-        else {
-            oldPrice.classList.add('Remove-Old-Price');
-            console.log("Nothing");
-        }
+                else {
+                    oldPrice.classList.add('Remove-Old-Price');
+                    console.log("Nothing");
+                }
     }
 }
 
