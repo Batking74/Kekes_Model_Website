@@ -202,22 +202,32 @@ header h1 {
     border: solid 2px #000;
 }
 
-.nav-2 {
+/* Store Navigation */
+#nav-2 {
     display: flex;
     justify-content: center;
     background: #ffffff;
     padding: 2% 0 5% 0;
 }
 
-.nav-2 img {
-    position: relative;
-    bottom: 10px;
-    left: 20px;
+#Next-Page, #Previous-Page {
     width: 45px;
     height: 45px;
 }
 
-.nav-2 img:hover {
+#Next-Page {
+    position: relative;
+    bottom: 10px;
+    left: 20px;
+}
+
+#Previous-Page {
+    position: relative;
+    bottom: 10px;
+    right: 20px;
+}
+
+#Next-Page:hover, #Previous-Page:hover {
     border-radius: 30px;
     border-style: dotted;
 }

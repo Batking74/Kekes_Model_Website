@@ -1,35 +1,24 @@
 // Targeting Elements
 export const navbar = document.querySelector('#navbar');
-export const pageName = document.querySelectorAll('#Page-Name');
+export let pageName = document.querySelectorAll('#Page-Name');
 export const companyName = document.querySelectorAll('#Company-Name');
 export const storeTitle = document.querySelectorAll('#Store-Title');
 export const productCount = document.querySelector('#Products-Count');
 export const productMainContainer = document.querySelector('.Product-Main-Container');
-export const nextPage = document.getElementById('Next-Page');
 export const sideNavigation = document.querySelector('.nav-container');
-export const openMenu = document.querySelector('#menu-open')
-export const storeNavigation = document.querySelector('.nav-2');
+export const storeNavigation = document.querySelector('#nav-2');
 export const footer = document.getElementsByTagName('footer');
-export const footerForm = document.getElementById('footerForm');
-export const footerInput = document.getElementById('footerInput');
-export const footerBtn = document.getElementById('footerbtn');
-export const footerResponse = document.getElementById('footerSubmissionResponse');
-export const footerLabel = document.getElementById('footerLabel');
 export const date = new Date();
 
 // Dynamic Elements
-storeTitle.forEach(element => {
-    element.innerHTML = "Palmer Store";
-})
+setStoreName("Palmer Store");
+setDocName("Palmer Studios Store | Page 1");
+setCompanyName("Palmer Studios");
 
-pageName.forEach(element => {
-    element.innerHTML = "Palmer Studios Store | Page 1";
-})
-
-companyName.forEach(element => {
-    element.innerHTML = "Palmer Studios";
-})
-
+storeNavigation.innerHTML = `
+    <h2>Page 1 of 3</h2>
+    <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Next Page">
+`
 
 // Declaring and Initializing Arrays
 export const pageLink = ['/HTML/Store/Page 1/Store_1.html', '/HTML/Store/Page 2/Store_2.html', '/HTML/Store/Page 3/Store_3.html'];
@@ -47,8 +36,7 @@ export const productLink = ['/HTML/Store/Page 1/product_1.html', '/HTML/Store/Pa
 
 
 // export let myProductArray = Array.from({length: 25}, (_, i) => i + 0);
-export let myProductArray = new Array(30);
-
+export let myProductArray = new Array(10);
 
 
 
@@ -108,13 +96,15 @@ for(let i = 0; i < img.length; i++) {
     `
 }
 
+setNumProducts(myProductArray.length);
+
 
 export const navLinks = new Array(10);
 navLinks[0] = "/HTML/index.html";
 navLinks[1] = "/HTML/About.html";
 navLinks[2] = "/HTML/FAQ.html";
 navLinks[3] = "/HTML/Contact.html";
-navLinks[4] = "/HTML/Store_1.html";
+navLinks[4] = "/HTML/Store/Page 1/Store_1.html";
 navLinks[5] = "/HTML/Login.html";
 navLinks[6] = "#";
 
@@ -127,8 +117,40 @@ icons[4] = "/IMG/Social Media Icons & Logos/Instagram_Icon.png";
 icons[5] = "/IMG/Social Media Icons & Logos/Twitter_Icon.png";
 icons[6] = "/IMG/Social Media Icons & Logos/YouTube_Icon.png";
 
+// Other Functions
+export function validate() {
+    if(footerInput.value == '') {
+    }
+    else {
+        footerLabel.remove()
+        footerInput.remove();
+        footerBtn.remove();
+        console.log('Thank You, you will recieve emails on new content!')
+        footerResponse.innerHTML = `<span class="Footer-Response-Icon"><svg viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></span>Thank You, you will recieve emails on new content!`
+    }
+}
+
+export function setStoreName(storeName) {
+    storeTitle.forEach(element => {
+        element.innerHTML = storeName;
+    })
+}
+
+export function setDocName(docName) {
+    pageName.forEach(element => {
+        element.innerHTML = docName;
+    })
+}
+
+export function setCompanyName(name) {
+    companyName.forEach(element => {
+        element.innerHTML = name;
+    })
+}
+
 // Dynamic HTML Pages
-navbar.innerHTML += `
+export function getHTMLDOC() {
+    navbar.innerHTML = `
     <a href="${navLinks[6]}">
         <img src="${icons[0]}" alt="Palmer Studios logo.">
     </a>
@@ -145,12 +167,7 @@ navbar.innerHTML += `
     </a>
 `
 
-// storeNavigation.innerHTML += `
-//     <h2>Page 1 of 3</h2>
-//     <img id="Next-Page" src="/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png" alt="Next Page">
-// `
-
-footer[0].innerHTML += `
+footer[0].innerHTML = `
     <!-- Start of footer -->
     <div class="position-footer-container">
         <div class="position-logos">
@@ -176,7 +193,7 @@ footer[0].innerHTML += `
             <a href="${navLinks[2]}">FAQ</a>
             <a href="${navLinks[6]}">Downloads</a>
             <a href="${navLinks[6]}">Locate A Dealer</a>
-            <a href="${navLinks[6]}">Store</a>
+            <a href="${navLinks[4]}">Store</a>
             <a href="${navLinks[6]}">Modeling Registration</a>
         </div>
         <div class="footer-column-a-2">
@@ -202,21 +219,7 @@ footer[0].innerHTML += `
         <br>
         <p>&copy; copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()}</p>
     </div>`
-
-
-// Other Functions
-export function validate() {
-    if(footerInput.value == '') {
-    }
-    else {
-        footerLabel.remove()
-        footerInput.remove();
-        footerBtn.remove();
-        console.log('Thank You, you will recieve emails on new content!')
-        footerResponse.innerHTML = `<span class="Footer-Response-Icon"><svg viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></span>Thank You, you will recieve emails on new content!`
-    }
 }
-
 
 export function getAllLengths() {
     console.log("Number of prices: " + price.length);
@@ -227,6 +230,11 @@ export function getAllLengths() {
     console.log("Number of products: " + myProductArray.length);
 }
 
+export function setNumProducts(num) {
+    productCount.innerHTML = `${num}`;
+}
+
+// Discounts
 export function getTenPercnt(index) {
     let discount = 10 / 100;
     let total = price[index] - (price[index] * discount);
@@ -273,15 +281,33 @@ export function getFiftyPercnt(index) {
     return "$" + parseFloat(price[index] / 2).toFixed(2);
 }
 
+// export function nextPage(index) {
+//     navPage.addEventListener('click', () => {
+//         location.replace(`${pageLink[index]}`);
+//     })
+// }
+
+// Display HTML Document
+getHTMLDOC();
+export const nextPage = document.querySelector('#Next-Page');
+export const footerForm = document.getElementById('footerForm');
+export const openMenu = document.querySelector('#menu-open');
+export const footerInput = document.getElementById('footerInput');
+export const footerLabel = document.getElementById('footerLabel');
+export const footerResponse = document.getElementById('footerSubmissionResponse');
+export const footerBtn = document.getElementById('footerbtn');
+
 footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
 
+openMenu.addEventListener('click', () => {
+    sideNavigation.classList.toggle('active');
+});
+
 nextPage.addEventListener('click', () => {
     location.replace(`${pageLink[1]}`);
 })
 
-openMenu.addEventListener('click', () => {
-    sideNavigation.classList.toggle('active');
-});
+export const bluePrints = [navbar, pageName, companyName, storeTitle, productCount, productMainContainer, sideNavigation, storeNavigation, footer, date, pageLink, price, rating, img, description, productLink, myProductArray, icons, validate, setStoreName, setDocName, setCompanyName, getHTMLDOC, getAllLengths, getTenPercnt, getFifteenPercnt, getTwentyPercnt, getTwentyFivePercnt, getThirtyPercnt, getFourtyPercnt, getFiftyPercnt, nextPage, footerForm, openMenu, footerInput, footerLabel, footerResponse, footerBtn];

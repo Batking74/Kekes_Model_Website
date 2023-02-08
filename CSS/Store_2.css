@@ -174,32 +174,32 @@ body {
     color: #ffc107;
 }
 
-.Page-Navigator-1 img {
+/* .Page-Navigator-1 img {
     position: absolute;
     top: 370%;
     left: 41%;
     width: 45px;
     height: 45px;
-}
-.Page-Navigator-1 img:hover, .Page-Navigator-2 img:hover {
+} */
+/* .Page-Navigator-1 img:hover, .Page-Navigator-2 img:hover {
     cursor: none;
     border-radius: 30px;
     border-style: dotted;
-}
+} */
 
-.Page-Nav-Text {
+/* .Page-Nav-Text {
     position: absolute;
     top: 371%;
     left: 703px;
-}
+} */
 
-.Page-Navigator-2 img {
+/* .Page-Navigator-2 img {
     position: absolute;
     top: 370%;
     left: 56%;
     width: 45px;
     height: 45px;
-}
+} */
 
 /* Start of footer */
 footer {
