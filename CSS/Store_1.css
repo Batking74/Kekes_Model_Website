@@ -10,6 +10,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     overflow-x: hidden;
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 /* Navigation Start */
@@ -210,6 +211,10 @@ header h1 {
     padding: 2% 0 5% 0;
 }
 
+#nav-2 h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #Next-Page, #Previous-Page {
     width: 45px;
     height: 45px;
@@ -226,6 +231,25 @@ header h1 {
     bottom: 10px;
     right: 20px;
 }
+
+/* Condition classes */
+.positionMain {
+    padding-top: 80px;
+}
+
+.counter {
+    color: #000;
+    position: absolute;
+    top: 15px;
+    right: 172px;
+    font-size: x-large;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.Remove-Old-Price {
+    display: none;
+}
+/* End */
 
 #Next-Page:hover, #Previous-Page:hover {
     border-radius: 30px;

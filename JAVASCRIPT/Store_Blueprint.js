@@ -21,7 +21,7 @@ storeNavigation.innerHTML = `
 `
 
 // Declaring and Initializing Arrays
-const arrayLength = 25;
+const arrayLength = 26;
 export const pageLink = new Array(arrayLength);
 pageLink[0] = '/HTML/Store/Page 1/Store_1.html';
 pageLink[1] = '/HTML/Store/Page 2/Store_2.html';
@@ -53,6 +53,7 @@ price[21] = 20.00;
 price[22] = 6.40;
 price[23] = 13.99;
 price[24] = 25.89;
+price[25] = 199.99;
     
 export const rating = new Array(arrayLength);
 rating[0] = '&#8902';
@@ -87,6 +88,7 @@ img[21] = '/IMG/Store Products/Store 1/Product_22.jpg';
 img[22] = '/IMG/Store Products/Store 1/Product_23.jpg';
 img[23] = '/IMG/Store Products/Store 1/Product_24.jpg';
 img[24] = '/IMG/Store Products/Store 1/Product_25.jpg';
+img[25] = '/IMG/Store Products/Store 1/Product_26.jpg';
 
 export const description = new Array(arrayLength);
 description[0] = 'Light Gray Palmer Hoodie';
@@ -114,6 +116,7 @@ description[21] = 'Womens Comfort Stretch Brief Panties (Black)';
 description[22] = 'Womens Underwear Soft Breathable Panties Stretch Hipsters (Black)';
 description[23] = 'Mens Black Boxer Briefs Cotton Stretchy Underwear (5 Pack)';
 description[24] = 'Womens Padded Butt Lifter Hip Enhancer Shaper Panties Underwear';
+description[25] = 'PS5';
 
 export const productLink = new Array(arrayLength);
 productLink[0] = '/HTML/Store/Page 1/product_1.html';
@@ -141,6 +144,7 @@ productLink[21] = '/HTML/Store/Page 1/product_22.html';
 productLink[22] = '/HTML/Store/Page 1/product_23.html';
 productLink[23] = '/HTML/Store/Page 1/product_24.html';
 productLink[24] = '/HTML/Store/Page 1/product_25.html';
+productLink[25] = '/HTML/Store/Page 1/product_25.html';
 
 export let myProductArray = new Array(productLink.length);
 setNumProducts(myProductArray.length);
@@ -187,7 +191,7 @@ for(let i = 0; i < img.length; i++) {
             <img src="${img[i]}" alt="${description[i]}">
             <div class="Product-Card">
                 <span class="Price-Container">
-                    <p class="Product-Price">$${price[i]}</p>
+                    <p class="Product-Price">${getDiscount()}</p>
                     <p class="Product-Old-Price">$${price[i]}</p>
                 </span>
                 <p class="Product-description">${description[i]}</p>
@@ -199,8 +203,64 @@ for(let i = 0; i < img.length; i++) {
         </a>
     </div>
     `
-}
+    function getDiscount() {
+        const oldPrice = document.querySelector('.Product-Old-Price');
 
+        if(price[i] >= 15) {
+            let discount = 15 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("15% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else if(price[i] >= 25) {
+            let discount = 20 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("20% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else if(price[i] <= 15) {
+            let discount = 10 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("10% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else if(price[i] <= 40) {
+            let discount = 25 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("25% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else if(price[i] <= 70) {
+            let discount = 70 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("70% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else if(price[i] <= 50 || price[i] >= 55) {
+            let discount = 30 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("30% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else if(price[i] >= 60 && price[i] <= 70) {
+            let discount = 40 / 100;
+            let total = price[i] - (price[i] * discount);
+            console.log("40% OFF!");
+            return "$" + parseFloat(total).toFixed(2);
+        }
+
+        else {
+            oldPrice.classList.add('Remove-Old-Price');
+            console.log("Nothing");
+        }
+    }
+}
 
 export const navLinks = new Array(10);
 navLinks[0] = "/HTML/index.html";
@@ -222,6 +282,7 @@ icons[6] = "/IMG/Social Media Icons & Logos/YouTube_Icon.png";
 // Other Functions
 export function validate() {
     if(footerInput.value == '') {
+        alert("You must fill out!")
     }
     else {
         footerLabel.remove()
@@ -336,52 +397,6 @@ export function setNumProducts(num) {
     productCount.innerHTML = `${num}`;
 }
 
-// Discounts
-export function getTenPercnt(index) {
-    let discount = 10 / 100;
-    let total = price[index] - (price[index] * discount);
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-
-export function getFifteenPercnt(index) {
-    let discount = 15 / 100;
-    let total = price[index] - (price[index] * discount);
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-
-export function getTwentyPercnt(index) {
-    let discount = 20 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-
-export function getTwentyFivePercnt(index) {
-    let discount = 25 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-
-export function getThirtyPercnt(index) {
-    let discount = 30 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-
-export function getFourtyPercnt(index) {
-    let discount = 40 / 100;
-    let total = price[index] - (price[index] * discount)
-    return "$" + parseFloat(total).toFixed(2);
-}
-
-export function getFiftyPercnt(index) {
-    return "$" + parseFloat(price[index] / 2).toFixed(2);
-}
-
 // Display HTML Document
 getHTMLDOC();
 export const nextPage = document.querySelector('#Next-Page');
@@ -405,4 +420,4 @@ nextPage.addEventListener('click', () => {
     location.replace(`${pageLink[1]}`);
 })
 
-export const bluePrints = [navbar, pageName, companyName, storeTitle, productCount, productMainContainer, sideNavigation, storeNavigation, footer, date, pageLink, price, rating, img, description, productLink, myProductArray, icons, validate, setStoreName, setDocName, setCompanyName, getHTMLDOC, getAllLengths, getTenPercnt, getFifteenPercnt, getTwentyPercnt, getTwentyFivePercnt, getThirtyPercnt, getFourtyPercnt, getFiftyPercnt, nextPage, footerForm, openMenu, footerInput, footerLabel, footerResponse, footerBtn];
+export const bluePrints = [navbar, pageName, companyName, storeTitle, productCount, productMainContainer, sideNavigation, storeNavigation, footer, date, pageLink, price, rating, img, description, productLink, myProductArray, icons, nextPage, footerForm, openMenu, footerInput, footerLabel, footerResponse, footerBtn];

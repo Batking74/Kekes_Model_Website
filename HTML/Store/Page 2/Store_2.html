@@ -21,12 +21,12 @@
     
     
         <!-- Start of Store -->
-        <header>
+        <header id="header">
             <h1 id="Store-Title"></h1>
         </header>
     
     
-        <aside style="text-align: center;">
+        <aside id="aside" style="text-align: center;">
             <img src="/IMG/Ads/Sale_ad_1.jpg" alt="Sale ad" style="margin-top: 50px;">
         </aside>
     
@@ -35,15 +35,15 @@
             <div class="title">
                 <div><h1>Products | <span id="Store-Title"></span></h1></div>
                 <div>
-                    <select name="" id="">
-                        <option value="">Featured</option>
-                        <option value="">Best Selling</option>
-                        <option value="">Alphabetically, A-Z</option>
-                        <option value="">Alphabetically, Z-A</option>
-                        <option value="">Price, low to high</option>
-                        <option value="">Price, high to low</option>
+                    <select name="Filter" id="Filter">
+                        <option value="sort by">Sort by</option>
+                        <option value="Best Selling">Best Selling</option>
+                        <option value="Alphabetically, A-Z">Alphabetically, A-Z</option>
+                        <option value="Alphabetically, Z-A">Alphabetically, Z-A</option>
+                        <option value="Price, low to high">Price, low to high</option>
+                        <option value="Price, high to low">Price, high to low</option>
                     </select>
-                    <span style="color: black; position: absolute;"><span id="Products-Count"></span> Products</span>
+                    <span class="counter"><span id="Products-Count"></span> Products</span>
                 </div>
                 <div><hr></div>
             </div>
