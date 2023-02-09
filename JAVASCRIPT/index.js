@@ -1,3 +1,10 @@
+import { navStoreBlueprint, getHTMLDOC, validate } from "./Nav&Footer_Blueprint.mjs";
+
+navStoreBlueprint[2][0] = "HomeAnimateGroup1";
+navStoreBlueprint[2][1] = "HomeAnimateGroup2";
+getHTMLDOC(navStoreBlueprint[2][0], navStoreBlueprint[2][1]);
+console.log(navStoreBlueprint)
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log(Date());
 })
@@ -17,11 +24,11 @@ class myProjects {
         this.image = image;
     }
 }
-item1 = new myProjects('Ariel', '#Ariiaaann', '/IMG/Models/Female/Model_3.jpg');
-item2 = new myProjects('USA Paddle', '#Sierra Leone', '/IMG/Tiki.jpg');
-item3 = new myProjects('Blessing Bengeh', '#Sierra Leone', '/IMG/Models/Female/Model_4.jpg');
-item4 = new myProjects('Keke', '#PalmerSudios', '/IMG/Keke/Photo_3.jpg');
-myProjectsArray = [item1, item2, item3, item4];
+const item1 = new myProjects('Ariel', '#Ariiaaann', '/IMG/Models/Female/Model_3.jpg');
+const item2 = new myProjects('USA Paddle', '#Sierra Leone', '/IMG/Tiki.jpg');
+const item3 = new myProjects('Blessing Bengeh', '#Sierra Leone', '/IMG/Models/Female/Model_4.jpg');
+const item4 = new myProjects('Keke', '#PalmerSudios', '/IMG/Keke/Photo_3.jpg');
+const myProjectsArray = [item1, item2, item3, item4];
 myProjectsArray.forEach(project => {
     imageContainer.innerHTML += `
             <div class="Gallery-Image data-tags="#all, ${project.tags}">

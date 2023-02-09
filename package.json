@@ -1,19 +1,22 @@
 {
   "name": "palmerstudios",
   "version": "1.0.0",
-  "description": "Palmer Studios website for practice",
+  "description": "Keke Palmers Modeling website",
   "main": "index.js",
   "scripts": {
-    "test": "dev"
+    "test": "run"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/Batking74/Keke-s_Model_Website.git"
   },
-  "author": "Nazir Knuckles",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Batking74/Keke-s_Model_Website/issues"
   },
-  "homepage": "https://github.com/Batking74/Keke-s_Model_Website#readme"
+  "homepage": "https://github.com/Batking74/Keke-s_Model_Website#readme",
+  "dependencies": {
+    "jsdom": "^21.1.0"
+  }
 }

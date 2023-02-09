@@ -1,3 +1,4 @@
+import { navStoreBlueprint, getHTMLDOC, validate } from "./Nav&Footer_Blueprint.mjs";
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 const password = document.getElementById('password');

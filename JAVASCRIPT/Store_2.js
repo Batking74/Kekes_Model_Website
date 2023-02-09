@@ -1,4 +1,5 @@
-import Product, { bluePrints, validate, setStoreName, setDocName, setCompanyName, getHTMLDOC, getAllLengths } from "./Store_Blueprint.js";
+import Product, { bluePrints, setStoreName, setDocName, setCompanyName, getAllLengths } from "./Store_Blueprint.mjs";
+import { navStoreBlueprint, getHTMLDOC, validate } from "./Nav&Footer_Blueprint.mjs";
 
 const ad = document.getElementsByTagName('aside');
 const header = document.getElementsByTagName('header');
@@ -6,11 +7,10 @@ const body = document.getElementsByTagName('body');
 ad[0].remove()
 header[0].remove();
 body[0].classList.add('changeBody')
-bluePrints[5].classList.add('positionMain')
+bluePrints[4].classList.add('positionMain')
 
 
 console.log(bluePrints);
-// setStoreName("hihnih")
 setDocName("Palmer Studios Store | Page 2");
 
 bluePrints[7].innerHTML = `

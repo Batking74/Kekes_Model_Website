@@ -12,51 +12,6 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navigation Start */
-.nav-container {
-    position: fixed;
-    background-color: #000000;
-    display: grid;
-    grid-template: 60px / repeat(7, auto);
-    height: 55px;
-    padding: 0 0 5px 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.nav-container img {
-    width: 70px;
-    height: 80px;
-    object-fit: cover;
-}
-
-.nav-container a {
-    text-decoration: none;
-    transition: 1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
-    padding: 0;
-    color: #ffffff;
-}
-
-.nav-btn:hover {
-    background-color: #ffc107;
-}
-
-#special-nav-btn {
-    color: #ffc107;
-}
-
-#special-nav-btn:hover {
-    background-color: #2f4f4f;
-}
-
-.login-logo {
-    margin: 0 5px 0 0;
-}
-
 /* Start form */
 form {
     position: absolute;

@@ -13,52 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation Start */
-.nav-container {
-    position: fixed;
-    background-color: #000000;
-    display: grid;
-    grid-template: 60px / repeat(7, auto);
-    height: 55px;
-    padding: 0 0 5px 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.nav-container img {
-    width: 70px;
-    height: 80px;
-    object-fit: cover;
-}
-
-.nav-container a {
-    text-decoration: none;
-    transition: 1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
-    padding: 0;
-    color: #ffffff;
-}
-
-.nav-btn:hover {
-    background-color: #ffc107;
-}
-
-#special-nav-btn {
-    color: #ffc107;
-}
-
-#special-nav-btn:hover {
-    background-color: #2f4f4f;
-}
-
-.login-logo {
-    margin: 0 5px 0 0;
-}
-
-/* Start of heading */
+/* Heading */
 .heading-container {
     display: flex;
     align-items: center;
@@ -121,7 +76,7 @@ body {
     font-weight: lighter;
 }
 
-/* Start of section 1 */
+/* Section 1 */
 .section-1-heading {
     font-size: 55px;
 }
@@ -163,7 +118,7 @@ body {
     grid-gap: 130px;
 }
 
-/* Start of section 2 */
+/* Section 2 */
 .sction2-container {
     top: 1896px;
     padding: 40px 0 128px 0;
@@ -280,170 +235,11 @@ body {
     color: #ffffffcc;
 }
 
-/* Start of section 3 */
+/* Section 3 */
 .sction3-container {
     top: 3369px;
     background-color: #ffffffd0;
     height: 100%;
-}
-
-/* Start of footer */
-footer {
-    background-color: #000000;
-    position: absolute;
-    top: 530%;
-    width: 100%;
-    padding: 40px 0 40px 0;
-}
-
-.position-footer-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.position-logos {
-    text-align: center;
-}
-
-.socialMedia-icons-Container {
-    display: grid;
-    column-gap: 15px;
-    display: flex;
-}
-
-.socialMedia-icons {
-    width: 30px;
-    height: 30px;
-}
-
-.footer-column-a-1, .footer-column-a-2 {
-    display: grid;
-    row-gap: 17px;
-}
-
-.footer-column-a-1 a, .footer-column-a-2 a, .last-footer-col {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/* Changes Autocomplete styles in Chrome */
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffc107;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.last-footer-col input {
-    padding: 5px 150px 5px 0;
-    background-color: #000000;
-    outline: none;
-    color: #ffc107;
-    border: none;
-    border-bottom: solid #ffffff 1px;
-}
-
-.last-footer-col button {
-    margin-top: 15px;
-    padding: 10px 50px 10px 50px;
-    cursor: pointer;
-    background-color: #ffc107;
-    border: none;
-    border-radius: 5px;
-    transition: 1.3s;
-}
-
-.last-footer-col button:hover {
-    background-color: #ffbf0079;
-    color: #ffffffcd;
-}
-
-.Footer-Response-Icon {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 300px;
-    /* left: 1220px; */
-    bottom: 325px;
-    z-index: 3;
-}
-
-.footer-column-a-1 a:first-child, .footer-column-a-2 a:first-child {
-    color: gray;
-}
-
-.copyright {
-    color: #ffffff;
-    text-align: center;
-}
-
-.copyright hr {
-    border: 0.1px #ffffff2b solid;
-    outline: none;
-}
-
-/* Navigation Animations */
-.Animate_btn {
-    animation: btn-animate 3s;
-}
-
-.nav-animate-group1 {
-    animation: nav-animate-group1 3s;
-}
-
-.nav-animate-group2 {
-    animation: nav-animate-group2 3s;
-}
-
-@keyframes nav-load {
-    /* This is what the navbar will look like at the begining. */
-    0% {
-        transform: translateY(-100%);
-    }
-    /* This is what the animation will look like at the end. */
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes btn-animate {
-    /* This is what the navbar will look like at the begining. */
-    0% {
-        transform: translateY(1000%);
-    }
-    /* This is what the animation will look like at the end. */
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes nav-animate-group1 {
-    /* This is what the navbar will look like at the begining. */
-    0% {
-        transform: translateX(-800%);
-    }
-    /* This is what the animation will look like at the end. */
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes nav-animate-group2 {
-    /* This is what the navbar will look like at the begining. */
-    0% {
-        transform: translateX(800%);
-    }
-    /* This is what the animation will look like at the end. */
-    100% {
-        transform: translateX(0);
-    }
 }
 
 /* tablet view */
