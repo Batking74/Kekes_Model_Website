@@ -1,4 +1,4 @@
-import { navStoreBlueprint, getHTMLDOC, validate } from "./Nav&Footer_Blueprint.mjs";
+import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
 
 navStoreBlueprint[2][0] = "HomeAnimateGroup1";
 navStoreBlueprint[2][1] = "HomeAnimateGroup2";

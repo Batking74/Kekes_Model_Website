@@ -10,7 +10,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     overflow-x: hidden;
-    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Heading Start */
@@ -194,8 +194,15 @@ header h1 {
     font-family:Arial, Helvetica, sans-serif;
 }
 
-.Remove-Old-Price {
+.Remove-Discount {
     display: none;
+}
+
+.Percent-Off {
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+    position: relative;
 }
 /* End */
 

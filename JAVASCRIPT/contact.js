@@ -1,3 +1,6 @@
+import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
+
+const contactContainer = document.querySelector('.main-container');
 const form = document.querySelector('#form');
 const firstName = document.querySelector('#first_Name');
 const lastName = document.querySelector('#last_Name');

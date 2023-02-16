@@ -18,9 +18,8 @@ body {
     display: flex;
     align-items: center;
     flex-flow: column;
-    position: absolute;
-    left: 33%;
-    bottom: 40%;
+    position: relative;
+    top: 250px;
 }
 
 .heading-container h1 {
@@ -40,7 +39,7 @@ body {
     border: solid 2px #0000004e;
     border-radius: 10px;
     color: #000000;
-    background-color: #ffc107;
+    background: #ffc107;
     transition: 2s;
 }
 
@@ -57,10 +56,10 @@ body {
 
 /* ALL SECTIONS */
 .sction1-container, .sction2-container, .sction3-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 50%;
-    background-color: #ffffff;
+    background: #ffffff;
 }
 
 .section-2-img-num1, .section-2-img-num2 {
@@ -81,10 +80,9 @@ body {
     font-size: 55px;
 }
 .sction1-container {
-    top: 91%;
-    background-color: #ffffffd0;
-    padding: 50px 0 50px 0;
-    height: 150%;
+    margin-top: 500px;
+    background: #ffffffd0;
+    padding: 50px 0 200px 0;
 }
 
 .sction1-image-container {
@@ -120,10 +118,8 @@ body {
 
 /* Section 2 */
 .sction2-container {
-    top: 1896px;
-    padding: 40px 0 128px 0;
-    height: 175%;
-    background-color: #000000e7;
+    padding: 40px 0 250px 0;
+    background: #000000e7;
 }
 
 .section-2-heading {
@@ -151,7 +147,7 @@ body {
 }
 
 .sction2-heading {
-    background-color: #ffa500;
+    background: #ffa500;
     padding: 30px;
     margin-bottom: 40px;
     color: #000;
@@ -189,7 +185,7 @@ body {
     border-radius: 20px;
     width: 90%;
     height: 418px;
-    background-color: #000000b3;
+    background: #000000b3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,12 +213,12 @@ body {
 }
 
 .sction-2-btn {
-    background-color: #ffc107;
+    position: relative;
+    left: 40%;
+    top: 70px;
+    background: #ffc107;
     padding: 20px 100px 20px 100px;
     text-decoration: none;
-    position: absolute;
-    left: 40%;
-    top: 92%;
     color: #000000;
     border-radius: 50px;
     font-size: 20px;
@@ -231,15 +227,14 @@ body {
 }
 
 .sction-2-btn:hover {
-    background-color: #ffa6003c;
+    background: #ffa6003c;
     color: #ffffffcc;
 }
 
 /* Section 3 */
 .sction3-container {
-    top: 3369px;
-    background-color: #ffffffd0;
-    height: 100%;
+    background: #ffffffd0;
+    height: 1000px;
 }
 
 /* tablet view */

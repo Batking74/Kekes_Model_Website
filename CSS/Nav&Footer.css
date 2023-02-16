@@ -61,7 +61,7 @@ nav a:nth-child(2), nav a:nth-last-child(1) {
     /* This is what the navbar will look like at the begining. */
     0% {
         transform: translateY(-100%);
-    } */
+    }
     /* This is what the animation will look like at the end. */
     100% {
         transform: translateY(0);
