@@ -20,23 +20,17 @@ icons[4] = "/IMG/Social Media Icons & Logos/Instagram_Icon.png";
 icons[5] = "/IMG/Social Media Icons & Logos/Twitter_Icon.png";
 icons[6] = "/IMG/Social Media Icons & Logos/YouTube_Icon.png";
 
-export let animate = new Array(2);
-
-animate[0] = "StoreAnimateGroup1";
-animate[1] = "StoreAnimateGroup2";
-
-
 // Dynamic Navigation Bar
 navbar.innerHTML = `
 <a href="${navLinks[6]}">
     <img src="${icons[0]}" alt="Palmer Studios logo.">
 </a>
-<a class="${animate[0]}" href="${navLinks[0]}">Home</a>
-<a class="${animate[0]} nav" href="${navLinks[1]}">About</a>
-<a class="${animate[0]} nav" href="${navLinks[2]}">FAQ</a>
-<a class="${animate[1]} nav" href="${navLinks[3]}">Contact</a>
-<a class="${animate[1]} nav" href="${navLinks[4]}">Store</a>
-<a class="${animate[1]} nav" href="${navLinks[5]}">
+<a class="StoreAnimateGroup1 nav" href="${navLinks[0]}">Home</a>
+<a class="StoreAnimateGroup1 nav" href="${navLinks[1]}">About</a>
+<a class="StoreAnimateGroup1 nav" href="${navLinks[2]}">FAQ</a>
+<a class="StoreAnimateGroup2 nav" href="${navLinks[3]}">Contact</a>
+<a class="StoreAnimateGroup2 nav" href="${navLinks[4]}">Store</a>
+<a class="StoreAnimateGroup2 nav" href="${navLinks[5]}">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle login-logo" viewBox="0 0 16 16">
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -124,13 +118,12 @@ function validate() {
 export const navStoreBlueprint = new Array(15);
 navStoreBlueprint[0] = navLinks;
 navStoreBlueprint[1] = icons;
-navStoreBlueprint[2] = animate;
-navStoreBlueprint[3] = navbar;
-navStoreBlueprint[4] = footer;
-navStoreBlueprint[5] = footerForm;
-navStoreBlueprint[6] = footerInput;
-navStoreBlueprint[7] = footerLabel;
-navStoreBlueprint[8] = footerResponse;
-navStoreBlueprint[9] = footerBtn;
-navStoreBlueprint[10] = date;
+navStoreBlueprint[2] = navbar;
+navStoreBlueprint[3] = footer;
+navStoreBlueprint[4] = footerForm;
+navStoreBlueprint[5] = footerInput;
+navStoreBlueprint[6] = footerLabel;
+navStoreBlueprint[7] = footerResponse;
+navStoreBlueprint[8] = footerBtn;
+navStoreBlueprint[9] = date;
 

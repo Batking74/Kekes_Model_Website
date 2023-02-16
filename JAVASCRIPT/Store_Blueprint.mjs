@@ -219,4 +219,23 @@ openMenu.addEventListener('click', () => {
     openMenu.classList.toggle('active');
 });
 
-export const bluePrint = [companyName, productCount, productMainContainer, sideNavigation, storeNavigation, ad, header, body, openMenu, pageName, storeTitle, pageLink, price, myProductArray, productLink, description, img, rating, i];
+export const bluePrint = new Array(20);
+bluePrint[0] = companyName;
+bluePrint[1] = productCount;
+bluePrint[2] = productMainContainer;
+bluePrint[3] = sideNavigation;
+bluePrint[4] = storeNavigation;
+bluePrint[5] = ad;
+bluePrint[6] = header;
+bluePrint[7] = body;
+bluePrint[8] = openMenu;
+bluePrint[9] = pageName;
+bluePrint[10] = storeTitle;
+bluePrint[11] = pageLink;
+bluePrint[12] = price;
+bluePrint[13] = myProductArray;
+bluePrint[14] = productLink;
+bluePrint[15] = description;
+bluePrint[16] = img;
+bluePrint[17] = rating;
+bluePrint[18] = i;
