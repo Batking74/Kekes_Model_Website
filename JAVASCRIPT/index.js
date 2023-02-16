@@ -1,22 +1,24 @@
 import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
 
-navStoreBlueprint[2][0] = "HomeAnimateGroup1";
-navStoreBlueprint[2][1] = "HomeAnimateGroup2";
-getHTMLDOC(navStoreBlueprint[2][0], navStoreBlueprint[2][1]);
-console.log(navStoreBlueprint)
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log(Date());
-})
-// Toggle Hamburger menu
+// Targeting Elements
+const animate = document.querySelectorAll(".StoreAnimateGroup1");
+const animate2 = document.querySelectorAll(".StoreAnimateGroup2");
+const imageContainer = document.querySelector('.Model-Gallery-Container');
 const openMenu = document.querySelector('#menu-open');
 const sideNavigation = document.querySelector('.nav-container');
+
+// Changes Load Animations
+for(let i = 0; animate.length; i++) {
+    animate[i].setAttribute("class", "HomeAnimateGroup1");
+    animate2[i].setAttribute("class", "HomeAnimateGroup2");
+}
+
+// Toggle Hamburger menu
 openMenu.addEventListener('click', (e) => {
     sideNavigation.classList.toggle('active');
 });
 
 // Creating Dynamic Project Card
-const imageContainer = document.querySelector('.Model-Gallery-Container');
 class myProjects {
     constructor(name, tags, image) {
         this.name = name;
@@ -24,11 +26,15 @@ class myProjects {
         this.image = image;
     }
 }
+
+// Creating Models
 const item1 = new myProjects('Ariel', '#Ariiaaann', '/IMG/Models/Female/Model_3.jpg');
 const item2 = new myProjects('USA Paddle', '#Sierra Leone', '/IMG/Tiki.jpg');
 const item3 = new myProjects('Blessing Bengeh', '#Sierra Leone', '/IMG/Models/Female/Model_4.jpg');
 const item4 = new myProjects('Keke', '#PalmerSudios', '/IMG/Keke/Photo_3.jpg');
 const myProjectsArray = [item1, item2, item3, item4];
+
+// Displaying Models
 myProjectsArray.forEach(project => {
     imageContainer.innerHTML += `
             <div class="Gallery-Image data-tags="#all, ${project.tags}">
@@ -58,3 +64,9 @@ footerForm.addEventListener('submit', (e) => {
         footerResponse.innerHTML = `<svg class="Footer-Response-Icon" viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>Thank You, you will recieve emails on new content!`
     }
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log(Date());
+})
+
+console.log(navStoreBlueprint);

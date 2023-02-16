@@ -21,6 +21,7 @@ icons[5] = "/IMG/Social Media Icons & Logos/Twitter_Icon.png";
 icons[6] = "/IMG/Social Media Icons & Logos/YouTube_Icon.png";
 
 export let animate = new Array(2);
+
 animate[0] = "StoreAnimateGroup1";
 animate[1] = "StoreAnimateGroup2";
 
@@ -123,12 +124,13 @@ function validate() {
 export const navStoreBlueprint = new Array(15);
 navStoreBlueprint[0] = navLinks;
 navStoreBlueprint[1] = icons;
-navStoreBlueprint[2] = navbar;
-navStoreBlueprint[3] = footer;
-navStoreBlueprint[4] = footerForm;
-navStoreBlueprint[5] = footerInput;
-navStoreBlueprint[6] = footerLabel;
-navStoreBlueprint[7] = footerResponse;
-navStoreBlueprint[8] = footerBtn;
-navStoreBlueprint[9] = date;
+navStoreBlueprint[2] = animate;
+navStoreBlueprint[3] = navbar;
+navStoreBlueprint[4] = footer;
+navStoreBlueprint[5] = footerForm;
+navStoreBlueprint[6] = footerInput;
+navStoreBlueprint[7] = footerLabel;
+navStoreBlueprint[8] = footerResponse;
+navStoreBlueprint[9] = footerBtn;
+navStoreBlueprint[10] = date;
 
