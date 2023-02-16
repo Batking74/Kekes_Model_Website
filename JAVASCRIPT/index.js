@@ -8,9 +8,9 @@ const openMenu = document.querySelector('#menu-open');
 const sideNavigation = document.querySelector('.nav-container');
 
 // Changes Load Animations
-for(let i = 0; animate.length; i++) {
-    animate[i].setAttribute("class", "HomeAnimateGroup1");
-    animate2[i].setAttribute("class", "HomeAnimateGroup2");
+for(let i = 0; i < animate.length; i++) {
+    animate[i].classList.replace("StoreAnimateGroup1", "HomeAnimateGroup1");
+    animate2[i].classList.replace("StoreAnimateGroup2", "HomeAnimateGroup2");
 }
 
 // Toggle Hamburger menu
