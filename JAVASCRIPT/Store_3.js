@@ -105,8 +105,8 @@ bluePrint[i.link][22] = '/HTML/Store/Page 2/product_23.html';
 bluePrint[i.link][23] = '/HTML/Store/Page 2/product_24.html';
 bluePrint[i.link][24] = '/HTML/Store/Page 2/product_25.html';
 
-bluePrint[i.header].remove();
-bluePrint[i.ad].remove();
+bluePrint[i.header][0].remove();
+bluePrint[i.ad][0].remove();
 bluePrint[i.body][0].classList.add("changeBody");
 bluePrint[i.productMain].classList.add('positionMain');
 

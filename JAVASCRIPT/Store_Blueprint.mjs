@@ -1,9 +1,52 @@
 import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
 
+// Dynamic HTML Page
+const main = document.getElementsByTagName('main');
+const head = document.getElementsByTagName('head');
+const styleLink1 = document.createElement('link');
+const styleLink2 = document.createElement('link');
+const attr = ['rel', 'stylesheet', 'href', '/CSS/Nav&Footer.css', '/CSS/Store.css'];
+styleLink1.setAttribute(attr[0], attr[1]);
+styleLink1.setAttribute(attr[2], attr[4]);
+styleLink2.setAttribute(attr[0], attr[1]);
+styleLink2.setAttribute(attr[2], attr[3]);
+head[0].append(styleLink1, styleLink2);
+const ads = '/IMG/Ads/Sale_ad_1.jpg';
+main[0].innerHTML = `
+    <header>
+        <h1 id="Store-Title"></h1>
+    </header>
+    <aside style="text-align: center;">
+        <img src="${ads}" alt="Sale ad" style="margin-top: 50px;">
+    </aside>
+    
+    <section class="Product-Main-Container">
+        <div class="title">
+            <div>
+                <h1>Products | <span id="Store-Title"></span></h1>
+            </div>
+            <div>
+                <select name="Filter" id="Filter">
+                    <option value="sort by">Sort by</option>
+                    <option value="Best Selling">Best Selling</option>
+                    <option value="Alphabetically, A-Z">Alphabetically, A-Z</option>
+                    <option value="Alphabetically, Z-A">Alphabetically, Z-A</option>
+                    <option value="Price, low to high">Price, low to high</option>
+                    <option value="Price, high to low">Price, high to low</option>
+                </select>
+                <span class="counter"><span id="Products-Count"></span> Products</span>
+            </div>
+            <div><hr></div>
+        </div>
+    </section>
+    
+    <!-- Store Navigation -->
+    <div id="nav-2"></div>`
+
 // Targeting Elements & Creating Arrays
 export const body = document.getElementsByTagName('body');
-export const header = document.querySelector('#header');
-export const ad = document.querySelector('#aside');
+export const header = document.getElementsByTagName('header');
+export const ad = document.getElementsByTagName('aside');
 export const productCount = document.querySelector('#Products-Count');
 export const productMainContainer = document.querySelector('.Product-Main-Container');
 export const storeNavigation = document.querySelector('#nav-2');
