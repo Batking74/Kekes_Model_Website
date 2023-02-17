@@ -20,3 +20,6 @@ form.addEventListener('submit', (stop) => {
         error.innerHTML = messages.join(', ');
     }
 });
+
+console.log(navStoreBlueprint)
+navStoreBlueprint[3][0].remove();

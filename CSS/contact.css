@@ -10,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    padding-bottom: 7%;
 }
 
 /* Title start */
@@ -58,7 +59,7 @@ select:-webkit-autofill:focus {
 
 /* Contact info start */
 .info-container, form {
-    height: 26vmax;
+    height: 440px;
 }
 
 .info-container {
@@ -160,4 +161,4 @@ form {
     color: #fc7e00;
 }
 
-@media screen and (max-width: 1024px) {}
+/* @media screen and (max-width: 1024px) {} */

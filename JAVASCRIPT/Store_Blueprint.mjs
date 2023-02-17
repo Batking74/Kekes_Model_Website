@@ -1,14 +1,13 @@
 import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
 
 // Targeting Elements & Creating Arrays
-export const companyName = document.querySelectorAll('#Company-Name');
+export const body = document.getElementsByTagName('body');
+export const header = document.querySelector('#header');
+export const ad = document.querySelector('#aside');
 export const productCount = document.querySelector('#Products-Count');
 export const productMainContainer = document.querySelector('.Product-Main-Container');
-export const sideNavigation = document.querySelector('.nav-container');
 export const storeNavigation = document.querySelector('#nav-2');
-export const ad = document.querySelector('#aside');
-export const header = document.querySelector('#header');
-export const body = document.getElementsByTagName('body');
+export const sideNavigation = document.querySelector('.nav-container');
 export const openMenu = document.querySelector('#menu-open');
 export let pageName = document.querySelectorAll('#Page-Name');
 export let storeTitle = document.querySelectorAll('#Store-Title');
@@ -26,17 +25,6 @@ rating[2] = '&#8902 &#8902 &#8902';
 rating[3] = '&#8902 &#8902 &#8902 &#8902';
 rating[4] = '&#8902 &#8902 &#8902 &#8902 &#8902';
 
-// Dynamic Indexes
-export const i = {
-    p: 12,
-    rate: 17,
-    img: 16,
-    des: 15,
-    link: 14,
-    pageL: 11,
-    productArr: 13
-}
-
 // Store Pages
 pageLink[0] = '/HTML/Store/Page 1/Store_1.html';
 pageLink[1] = '/HTML/Store/Page 2/Store_2.html';
@@ -45,7 +33,6 @@ pageLink[2] = '/HTML/Store/Page 3/Store_3.html';
 // Dynamic Elements
 setStoreName("Palmer Store");
 setDocName("Palmer Studios Store");
-setCompanyName("Palmer Studios");
 
 // Creating Dynamic Project Card/Classes
 export default class Product {
@@ -80,22 +67,22 @@ export default class Product {
 // Creating Store
 export function setProducts(array) {
     let temp = [];
-    bluePrint[13].push(temp);
+    bluePrint[i.productArr].push(temp);
 
     for(let index = 0; index < array.length; index++) {
-        const objects = new Product(bluePrint[i.img][index], bluePrint[i.des][index], bluePrint[i.p][index], bluePrint[i.rate][4], bluePrint[i.link][index]);
+        const objects = new Product(bluePrint[i.img][index], bluePrint[i.des][index], bluePrint[i.price][index], bluePrint[i.rate][4], bluePrint[i.link][index]);
         temp.push(objects);
         const percent = new Array(0);
 
         // Displaying Each Products Attributes
-        bluePrint[2].innerHTML += `
+        bluePrint[i.productMain].innerHTML += `
             <div class="Product-Container">
                 <a href="${bluePrint[i.link][index]}">
-                <img src="${bluePrint[i.img][index]}" alt="${bluePrint[16][index]}">
+                <img src="${bluePrint[i.img][index]}" alt="${bluePrint[i.des][index]}">
                 <div class="Product-Card">
                     <span class="Price-Container">
-                        <p class="Product-Price">${getDiscount()}</p>
-                        <p class="Product-Old-Price">$${bluePrint[i.p][index]}</p>
+                        <p class="Product-Price">$${getDiscount()}</p>
+                        <p class="Product-Old-Price">$${bluePrint[i.price][index]}</p>
                     </span>
                     <p class="Product-description">${bluePrint[i.des][index]}</p>
                     <br>
@@ -108,35 +95,30 @@ export function setProducts(array) {
             </a>
         </div>`
 
+        // Non Discounted Products Condition
+        const oldPrice = document.querySelectorAll(".Product-Old-Price");
+        const prcnt = document.querySelectorAll('.Percent-Off');
+        if(getDiscount() === bluePrint[i.price][index]) {
+            oldPrice[index].innerHTML = "";
+            prcnt[index].innerHTML = "";
+        }
+        
         // Getting Discounts
         function getDiscount() {
-            const prcnt = document.querySelector('.Percent-Off');
-            if(bluePrint[i.p][index] <= 20 && bluePrint[i.p][index] > 10) {
-                let discount = 15 / 100;
-                let total = bluePrint[i.p][index] - (bluePrint[i.p][index] * discount);
-                percent.push("15% OFF!");
-                return "$" + parseFloat(total).toFixed(2);
-            }
-            else if(bluePrint[i.p][index] <= 30) {
-                let discount = 25 / 100;
-                let total = bluePrint[i.p][index] - (bluePrint[i.p][index] * discount);
-                percent.push("25% OFF!");
-                return "$" + parseFloat(total).toFixed(2);
-            }
-            else if(bluePrint[i.p][index] <= 50) {
+            if(bluePrint[i.price][index] <= 20 && bluePrint[i.price][index] > 10) {
                 let discount = 30 / 100;
-                let total = bluePrint[i.p][index] - (bluePrint[i.p][index] * discount);
+                let total = bluePrint[i.price][index] - (bluePrint[i.price][index] * discount);
                 percent.push("30% OFF!");
-                return "$" + parseFloat(total).toFixed(2);
+                return parseFloat(total).toFixed(2);
             }
-            else if(bluePrint[i.p][index] >= 100) {
+            else if(bluePrint[i.price][index] >= 100) {
                 let discount = 50 / 100;
-                let total = bluePrint[i.p][index] - (bluePrint[i.p][index] * discount);
+                let total = bluePrint[i.price][index] - (bluePrint[i.price][index] * discount);
                 percent.push("50% OFF!");
-                return "$" + parseFloat(total).toFixed(2);
+                return parseFloat(total).toFixed(2);
             }
             else {
-                console.log("Nothing");
+                return bluePrint[i.price][index];
             }
         }
     }
@@ -153,12 +135,6 @@ export function setStoreName(storeName) {
 export function setDocName(docName) {
     pageName.forEach(element => {
         element.innerHTML = docName;
-    })
-}
-
-export function setCompanyName(name) {
-    companyName.forEach(element => {
-        element.innerHTML = name;
     })
 }
 
@@ -219,23 +195,43 @@ openMenu.addEventListener('click', () => {
     openMenu.classList.toggle('active');
 });
 
+// Dynamic Indexes
+export const i = {
+    body: 0,
+    header: 1,
+    ad: 2,
+    productCount: 3,
+    productMain: 4,
+    storeNav: 5,
+    sideNav: 6,
+    openMenu: 7,
+    pageName: 8,
+    storeTitl: 9,
+    pageL: 10,
+    price: 11,
+    link: 12,
+    des: 13,
+    productArr: 14,
+    img: 15,
+    rate: 16,
+}
+
+// BluePrint Array
 export const bluePrint = new Array(20);
-bluePrint[0] = companyName;
-bluePrint[1] = productCount;
-bluePrint[2] = productMainContainer;
-bluePrint[3] = sideNavigation;
-bluePrint[4] = storeNavigation;
-bluePrint[5] = ad;
-bluePrint[6] = header;
-bluePrint[7] = body;
-bluePrint[8] = openMenu;
-bluePrint[9] = pageName;
-bluePrint[10] = storeTitle;
-bluePrint[11] = pageLink;
-bluePrint[12] = price;
-bluePrint[13] = myProductArray;
-bluePrint[14] = productLink;
-bluePrint[15] = description;
-bluePrint[16] = img;
-bluePrint[17] = rating;
-bluePrint[18] = i;
+bluePrint[i.body] = body;
+bluePrint[i.header] = header;
+bluePrint[i.ad] = ad;
+bluePrint[i.productCount] = productCount;
+bluePrint[i.productMain] = productMainContainer;
+bluePrint[i.storeNav] = storeNavigation;
+bluePrint[i.sideNav] = sideNavigation;
+bluePrint[i.openMenu] = openMenu;
+bluePrint[i.pageName] = pageName;
+bluePrint[i.storeTitl] = storeTitle;
+bluePrint[i.pageL] = pageLink;
+bluePrint[i.price] = price;
+bluePrint[i.link] = productLink;
+bluePrint[i.des] = description;
+bluePrint[i.productArr] = myProductArray;
+bluePrint[i.img] = img;
+bluePrint[i.rate] = rating;

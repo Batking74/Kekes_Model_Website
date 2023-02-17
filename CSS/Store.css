@@ -196,6 +196,7 @@ header h1 {
 
 .Remove-Discount {
     display: none;
+    background-color: green;
 }
 
 .Percent-Off {

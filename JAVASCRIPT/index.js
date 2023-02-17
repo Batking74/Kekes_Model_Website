@@ -1,7 +1,7 @@
 import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
 
 // Targeting Elements
-const animate = document.querySelectorAll(".StoreAnimateGroup1");
+const animate = document.querySelectorAll(`.${navStoreBlueprint[2][0]}`);
 const animate2 = document.querySelectorAll(".StoreAnimateGroup2");
 const imageContainer = document.querySelector('.Model-Gallery-Container');
 const openMenu = document.querySelector('#menu-open');

@@ -138,9 +138,5 @@ productLink.forEach( (element, image) => {
     </footer>
     <script src="/JAVASCRIPT/Store_Products.js"></script>
     <script src="/JAVASCRIPT/Store_Products_Blueprint.js"></script>
-</body>
-    
-    
-    
-    `
+</body>`
 })
