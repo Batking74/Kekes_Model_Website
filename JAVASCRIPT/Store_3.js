@@ -1,6 +1,7 @@
 import Product, { bluePrint, setProducts, setStoreName, setDocName, setNumProducts, getNavigator, validateNav, i } from "./Store_Blueprint.mjs";
 
 // Product Attributes
+
 bluePrint[i.price][0] = 24.99;
 bluePrint[i.price][1] = 15.99;
 bluePrint[i.price][2] = 34.99;
@@ -109,11 +110,8 @@ bluePrint[i.header][0].remove();
 bluePrint[i.ad][0].remove();
 bluePrint[i.body][0].classList.add("changeBody");
 bluePrint[i.productMain].classList.add('positionMain');
-
 bluePrint[i.storeNav].innerHTML = getNavigator(2);
 validateNav(2);
 setProducts(bluePrint[i.img]);
 setNumProducts(bluePrint[i.productArr][0].length);
 setDocName("Palmer Studios Store | Page 3");
-console.log(bluePrint);
-

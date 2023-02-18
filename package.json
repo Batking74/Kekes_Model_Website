@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Batking74/Keke-s_Model_Website#readme",
   "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "jsdom": "^21.1.0"
   }
 }

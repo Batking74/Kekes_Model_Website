@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/CSS/Nav&Footer.css">
 </head>
 <body>
-
     <nav id="navbar" class="Animate_Nav"></nav>
 
     <!-- Title start -->
@@ -25,31 +24,31 @@
                 <form autocomplete="off" id="form" action="/HTML/contactAction.html">
                     <div class="position-group-container">
                         <div class="firstNameEmail-group">
-                            <label for="firstname">First Name</label>
-                            <input id="first_Name" autofocus maxlength="20" type="text">
-                            <span id="firstNameError"></span>
-                            <label for="email">E-Mail</label>
-                            <input id="email" maxlength="30" type="email">
-                            <span id="emailError"></span>
+                            <label>First Name</label>
+                            <input id="userInput" autofocus maxlength="20" type="text">
+                            <span id="errorMsg"></span>
+                            <label>E-Mail</label>
+                            <input id="userInput" maxlength="30" type="email">
+                            <span id="errorMsg"></span>
                         </div>
                         <div class="lastNamePhone-group">
-                            <label for="lastname">Last Name</label>
-                            <input id="last_Name" maxlength="20" type="text">
-                            <span id="lastNameError"></span>
-                            <label for="phonenumber">Phone #</label>
-                            <input id="Phone_number" maxlength="11" type="tel">
-                            <span id="phoneNumberError"></span>
+                            <label>Last Name</label>
+                            <input id="userInput" maxlength="20" type="text">
+                            <span id="errorMsg"></span>
+                            <label>Phone #</label>
+                            <input id="userInput" maxlength="11" type="tel">
+                            <span id="errorMsg"></span>
                         </div>
                     </div>
                     <br>
                     <div class="message">
-                        <label for="message">Message</label>
+                        <label>Message</label>
                         <br>
-                        <textarea id="textAreaMessage" maxlength="1000" name="message" id="message" cols="81" rows="3"></textarea>
-                        <div id="messageError"></div>
+                        <textarea id="userInput" maxlength="1000" cols="81" rows="3"></textarea>
+                        <div id="errorMsg"></div>
                     </div>
                     <div class="btn">
-                        <button type="submit" id="btn">Send Message</button>
+                        <button type="submit">Send Message</button>
                     </div>
                 </form>
             </div>

@@ -1,17 +1,18 @@
 import { navStoreBlueprint } from "./Nav&Footer_Blueprint.mjs";
 
 // Dynamic HTML Page
-const main = document.getElementsByTagName('main');
-const head = document.getElementsByTagName('head');
-const styleLink1 = document.createElement('link');
-const styleLink2 = document.createElement('link');
-const attr = ['rel', 'stylesheet', 'href', '/CSS/Nav&Footer.css', '/CSS/Store.css'];
+export const main = document.getElementsByTagName('main');
+export const head = document.getElementsByTagName('head');
+export const styleLink1 = document.createElement('link');
+export const styleLink2 = document.createElement('link');
+export const attr = ['rel', 'stylesheet', 'href', '/CSS/Nav&Footer.css', '/CSS/Store.css'];
 styleLink1.setAttribute(attr[0], attr[1]);
 styleLink1.setAttribute(attr[2], attr[4]);
 styleLink2.setAttribute(attr[0], attr[1]);
 styleLink2.setAttribute(attr[2], attr[3]);
 head[0].append(styleLink1, styleLink2);
 const ads = '/IMG/Ads/Sale_ad_1.jpg';
+
 main[0].innerHTML = `
     <header>
         <h1 id="Store-Title"></h1>
@@ -61,6 +62,7 @@ export let description = [];
 export let img = [];
 export const myProductArray = [];
 export const rating = new Array(5);
+export let isDiscounted = [];
 
 rating[0] = '&#8902';
 rating[1] = '&#8902 &#8902';
@@ -111,11 +113,11 @@ export default class Product {
 export function setProducts(array) {
     let temp = [];
     bluePrint[i.productArr].push(temp);
-
     for(let index = 0; index < array.length; index++) {
         const objects = new Product(bluePrint[i.img][index], bluePrint[i.des][index], bluePrint[i.price][index], bluePrint[i.rate][4], bluePrint[i.link][index]);
-        temp.push(objects);
         const percent = new Array(0);
+        let discounted = new Array(0);
+        temp.push(objects);
 
         // Displaying Each Products Attributes
         bluePrint[i.productMain].innerHTML += `
@@ -145,6 +147,8 @@ export function setProducts(array) {
             oldPrice[index].innerHTML = "";
             prcnt[index].innerHTML = "";
         }
+
+        bluePrint[i.isDiscounted].push(discounted);
         
         // Getting Discounts
         function getDiscount() {
@@ -152,15 +156,18 @@ export function setProducts(array) {
                 let discount = 30 / 100;
                 let total = bluePrint[i.price][index] - (bluePrint[i.price][index] * discount);
                 percent.push("30% OFF!");
+                discounted = true;
                 return parseFloat(total).toFixed(2);
             }
             else if(bluePrint[i.price][index] >= 100) {
                 let discount = 50 / 100;
                 let total = bluePrint[i.price][index] - (bluePrint[i.price][index] * discount);
                 percent.push("50% OFF!");
+                discounted = true;
                 return parseFloat(total).toFixed(2);
             }
             else {
+                discounted = false;
                 return bluePrint[i.price][index];
             }
         }
@@ -240,27 +247,39 @@ openMenu.addEventListener('click', () => {
 
 // Dynamic Indexes
 export const i = {
-    body: 0,
-    header: 1,
-    ad: 2,
-    productCount: 3,
-    productMain: 4,
-    storeNav: 5,
-    sideNav: 6,
-    openMenu: 7,
-    pageName: 8,
-    storeTitl: 9,
-    pageL: 10,
-    price: 11,
-    link: 12,
-    des: 13,
-    productArr: 14,
-    img: 15,
-    rate: 16,
+    mainTag: 0,
+    headTag: 1,
+    styleLink1: 2,
+    styleLink2: 3,
+    body: 4,
+    header: 5,
+    ad: 6,
+    productCount: 7,
+    productMain: 8,
+    storeNav: 9,
+    sideNav: 10,
+    openMenu: 11,
+    pageName: 12,
+    storeTitl: 13,
+    pageL: 14,
+    price: 15,
+    link: 16,
+    des: 17,
+    productArr: 18,
+    img: 19,
+    rate: 20,
+    isDiscounted: 21,
+    store1: 22,
+    store2: 23,
+    store3: 24,
 }
 
 // BluePrint Array
-export const bluePrint = new Array(20);
+export const bluePrint = new Array(23);
+bluePrint[i.mainTag] = main;
+bluePrint[i.headTag] = head;
+bluePrint[i.styleLink1] = styleLink1;
+bluePrint[i.styleLink2] = styleLink2;
 bluePrint[i.body] = body;
 bluePrint[i.header] = header;
 bluePrint[i.ad] = ad;
@@ -278,3 +297,4 @@ bluePrint[i.des] = description;
 bluePrint[i.productArr] = myProductArray;
 bluePrint[i.img] = img;
 bluePrint[i.rate] = rating;
+bluePrint[i.isDiscounted] = isDiscounted;

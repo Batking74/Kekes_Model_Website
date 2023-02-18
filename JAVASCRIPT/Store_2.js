@@ -107,15 +107,14 @@ bluePrint[i.link][21] = '/HTML/Store/Page 2/product_22.html';
 bluePrint[i.link][22] = '/HTML/Store/Page 2/product_23.html';
 bluePrint[i.link][23] = '/HTML/Store/Page 2/product_24.html';
 bluePrint[i.link][24] = '/HTML/Store/Page 2/product_25.html';
+bluePrint[i.link][25] = '/HTML/Store/Page 2/product_25.html';
 
 bluePrint[i.header][0].remove();
 bluePrint[i.ad][0].remove();
 bluePrint[i.body][0].classList.add("changeBody");
 bluePrint[i.productMain].classList.add('positionMain');
-
 bluePrint[i.storeNav].innerHTML = getNavigator(1);
 validateNav(1);
 setProducts(bluePrint[i.img]);
 setNumProducts(bluePrint[i.productArr][0].length);
 setDocName("Palmer Studios Store | Page 2");
-console.log(bluePrint);

@@ -10,7 +10,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding-bottom: 7%;
+    padding-bottom: 2%;
 }
 
 /* Title start */
@@ -59,7 +59,7 @@ select:-webkit-autofill:focus {
 
 /* Contact info start */
 .info-container, form {
-    height: 440px;
+    height: 425px;
 }
 
 .info-container {
@@ -154,9 +154,13 @@ form {
     cursor: pointer;
 }
 
-/* Error Handling */
+.socialMedia-icons {
+    width: 25px;
+    height: 25px;
+}
 
-#firstNameError, #lastNameError, #emailError, #phoneNumberError, #messageError {
+/* Error Handling */
+#errorMsg {
     margin-top: 3%;
     color: #fc7e00;
 }

@@ -15,24 +15,22 @@
         <div id="error"></div>
         <form id="form" action="/HTML/LoginAction.html">
             <h1>Log in</h1>
-            <!-- Email input -->
             <div>
-                <label for="email">Email</label>
+                <label>Username</label>
                 <br>
-                <input id="email" aria-autocomplete="both" autofocus placeholder="Enter email" type="email">
+                <input id="userInput" autofocus placeholder="Enter username" type="text">
             </div>
-            <!-- Password input -->
             <div>
-                <label for="password">Password</label>
+                <label>Password</label>
                 <br>
-                <input id="password" autofocus autocomplete="current-password" placeholder="Enter password" type="password">
+                <input id="userInput" placeholder="Enter password" type="password">
             </div>
             <div>
                 <input id="checkbox" class="checkbox" type="checkbox">
-                <label for="checkbox">Remember me</label>
+                <label>Remember me</label>
             </div>
             <div class="signin-forgotpass">
-                <button type="submit">Sign In</button>
+                <button id="submit-btn">Sign In</button>
                 <a href="/HTML/ForgotPassword.html">Forgot your password?</a>
             </div>
             <br>

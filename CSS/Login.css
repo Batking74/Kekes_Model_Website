@@ -107,6 +107,25 @@ form a:active {
     background-color: #5a5a5a67;
 }
 
+/* Error Styles */
+.Error-Style {
+    position: absolute;
+    background: red;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    transform: translateY(83%);
+    transition: 1s;
+    width: 100%;
+    font-size: x-large;
+}
+
+.Hide-Error-Style {
+    text-align: center;
+    transform: translateY(0%);
+    background: none;
+    transition: 3s;
+}
+
 /* Media Queries */
 
 /* Navigation styles start: BlackBerry Z30, Galaxy Note 3, Galaxy Note 2, Galaxy S 3 */

@@ -12,8 +12,7 @@ body {
 
 /* Products */
 .Product-Main-Container {
-    position: absolute;
-    top: 30%;
+    padding-top: 300px;
     width: 100%;
     display: grid;
     margin-left: 10%;
@@ -165,6 +164,11 @@ body {
 ul {
     position: relative;
     left: 30px;
+}
+
+/* Condition classes */
+.Remove-Animation {
+    display: none;
 }
 
 /* tablet view */
@@ -433,3 +437,4 @@ ul {
     .Page-Navigator-2 img {
         top: 954%;
     }
+}
