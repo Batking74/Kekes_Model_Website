@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-image: url(/IMG/fg\ -\ Copy.jpg);
+    background-position:top;
+    background-repeat: no-repeat;
+}
+
+.hover-btn-clas:hover {
+    background-color: #ffc107;
+    transition: 1s;
+}
+
+.special-btn:hover {
+    background-color: #2f4f4f;
+    transition: 1s;
+}
+
+.footer-p {
+    text-decoration: none;
+}
+
+.faq-btns {
+    padding: 2px 25% 15px 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    background-color: #ffffff;
+}
+
+.faq-btns:hover {
+    background-color: #f4f3f2;
+    transition: 0.1s;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.btnwords {
+    font-weight: 10px;
+    font-size: 20px;
+}
