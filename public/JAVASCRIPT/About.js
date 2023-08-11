@@ -1,7 +1,9 @@
-import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from "./Nav&Footer_Blueprint.js";
+import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from './Nav&Footer_Blueprint.js';
 
+
+// console.log(process.env.COMPANY_YOUTUBE_INFO)
 function fetchYouTubeData() {
-    fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCG7azEZJY5PCsjcUCOdvOPw&q=kekepalmerwebsite&key=AIzaSyDGeGModc2NY9nw5vfL3SWm1jAiBZEpSts')
+    fetch(process.env.COMPANY_YOUTUBE_INFO)
     .then(res => {
         if(!res.ok) {
             throw Error('Error Please Try Again Later...');

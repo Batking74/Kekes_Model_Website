@@ -1,14 +1,14 @@
 const nodemailer = require('nodemailer');
-const sql = require('mysql');
+const sql = require('mysql2');
 require('dotenv').config();
 
 // Connecting to mySQL Database
-const connection = sql.createConnection({
+const pool = sql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-});
+}).promise();
 
 // Authenticating with gmail to send emails from client
 let transporter = nodemailer.createTransport({
@@ -19,5 +19,9 @@ let transporter = nodemailer.createTransport({
     },
 })
 
+async function executeQuery(query) {
+    const res = await pool.execute(query);
+    return res[0];
+}
 
-module.exports = {connection, transporter};
+module.exports = {pool, transporter, executeQuery};

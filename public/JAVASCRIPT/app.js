@@ -12,38 +12,22 @@ app.use(express.static('./public'));
 app.use(express.json());
 
 app.get('/companyinfo', (req, res) => {
-    database.pool.query(query[0], (err, results) => {
-        res.json(results[0]);
+    database.executeQuery((query[0]))
+    .then(data => {res.json(data)})
+        .catch(err => console.log(err));
+    })
+    
+    // Home Page Routings
+    app.get('/', (req, res) => {
+        fs.readFile('./public/HTML/index.html', 'utf8', (err, HTML) => {
+            if(err) throw err;
+            res.send(HTML);
+        });
     });
-})
-
-// Home Page Routings
-app.get('/', (req, res) => {
-    fs.readFile('./public/HTML/index.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
-
-function d() {
-    const d = database.connection.query(query[0])
-    console.log(d.RowDataPacket())
-    // return results;
-}
-
-d()
-
-let mailGenerator = new mailgen({
-    theme: 'default',
-    product: {
-        name: 'g',
-        link: 'ge'
-    }
-});
-
-app.get('/companyInfo', (req, res) => {
-    database.connection.query(query[0], (err, results) => {
-        if(err) throw err;
+    
+    app.get('/companyInfo', (req, res) => {
+        database.connection.query(query[0], (err, results) => {
+            if(err) throw err;
         res.json(results[0]);
     })
 });
@@ -186,37 +170,58 @@ function sendMailToCompany(userData) {
     return mailFromUser;
 }
 
+
 function sendMailToUser(userData) {
-    const mailFromCompany = {
-        from: process.env.SMTP_EMAIL_3,
-        to: 'UsersEmail@gmail.com',
-        subject: 'Thank You For Your Order',
-        html: mailGenerator.generate({
-            body: {
-                name: 'Naz',
-                intro: 'Your bill has arrived booty',
-                table: {
-                    data: [
-                        {
-                            item: 'White T-Shirt',
-                            description: 'White T-Shirt size 32',
-                            price: '$10.99'
-                        }
-                    ]
-                },
-                outro: 'looking for to do more business'
-            }
-        }),
-        attachments: [
-            {
-                filename: 'Product_1.jpg',
-                path: 'public/IMG/Store Products/Store 1/Product_1.jpg'
-            }
-        ]
-    };
-    return mailFromCompany;
+    database.executeQuery((query[0]))
+    .then(data => {
+        const mailFromCompany = getEmail(data, userData);
+        database.transporter.sendMail(mailFromCompany)
+        .then(res => console.log(`Email Sent!: ${res.messageId}`))
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
 }
 
-database.transporter.sendMail(sendMailToCompany(['Nazir', 'te@gmail.com']))
-.then(res => console.log(`Email Sent!: ${res.messageId}`))
-.catch(err => console.log(err))
+const f = process.env.SMTP_EMAIL_1
+
+function getEmail(companyInfo, userData) {
+    console.log(companyInfo)
+    let mailGenerator = new mailgen({
+        theme: 'default',
+        product: {
+            name: companyInfo[0].CompanyName,
+            link: companyInfo[0].Website
+        }
+    });
+    return (
+        {
+            from: `${companyInfo[0].CompanyName} <donotreply@gmail.com>`,
+            // 'UsersEmail@gmail.com'
+            to: f,
+            subject: 'Thank You For Your Order',
+            html: mailGenerator.generate({
+                body: {
+                    name: 'Users Name',
+                    intro: 'Your bill has arrived!',
+                    table: {
+                        data: [
+                            {
+                                ID: companyInfo[0].id,
+                                description: 'Product Description',
+                                price: 'Product Price'
+                            }
+                        ]
+                    },
+                    outro: 'looking for to do more business'
+                }
+            }),
+            attachments: [
+                {
+                    filename: 'Product_1.jpg',
+                    path: 'public/IMG/Store Products/Store 1/Product_1.jpg'
+                }
+            ]
+        })
+    }
+
+sendMailToUser('s')

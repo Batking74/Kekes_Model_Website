@@ -3,12 +3,6 @@ export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
 export const companyInfo = new Array(0);
 
-fetch('/companyinfo')
-.then(res => res.json())
-.then(data => {
-    setCompanyName(data.CompanyName)
-})
-
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
 navLinks[0] = `/`;
