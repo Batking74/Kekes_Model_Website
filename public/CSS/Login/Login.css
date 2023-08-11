@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/IMG/ssss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Start form */
+form {
+    position: absolute;
+    left: 37%;
+    bottom: 15%;
+    display: grid;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+    color: #ffffffd4;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    font-size: 50px;
+}
+
+form h1:hover {
+    cursor: default;
+}
+
+form label {
+    font-size: medium;
+}
+
+form input {
+    padding: 7px 11vmax 7px 7px;
+    font-size: 17px;
+    border: solid 1px #0000004f;
+    outline: none;
+    color: #ffffffc8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #978e4551;
+}
+
+.checkbox {
+    cursor: pointer;
+    background-color: #978e4551;
+}
+
+.checkbox:active {
+    cursor: grabbing;
+}
+
+.sign-in-options {
+    display: grid;
+    column-gap: 51px;
+    display: flex;
+}
+
+.sign-in-options a {
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+}
+
+form button {
+    padding: 10px 65px 10px 65px;
+    background-color: #ffc107;
+    color: #000000;
+    cursor: pointer;
+    border: 2px #00000046 solid;
+    border-radius: 5px;
+}
+
+form button:hover {
+    transition: 1s;
+    background-color: #ffc10784;
+}
+
+form button:active {
+    cursor: grabbing;
+}
+
+form a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff92;
+}
+
+form a:hover {
+    color: #d7a615;
+}
+
+form a:active {
+    cursor: grabbing;
+}
+
+.signup-btn {
+    padding: 14px 0 14px 0;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.signup-btn:hover {
+    transition: 1s;
+    background-color: #5a5a5a67;
+}
+
+/* Error Styles */
+.Error-Style {
+    position: absolute;
+    background: red;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    transform: translateY(83%);
+    transition: 1s;
+    width: 100%;
+    font-size: x-large;
+}
+
+.Hide-Error-Style {
+    text-align: center;
+    transform: translateY(0%);
+    background: none;
+    transition: 3s;
+}
+
+/* Media Queries */
+
+/* Navigation styles start: BlackBerry Z30, Galaxy Note 3, Galaxy Note 2, Galaxy S 3 */
+@media screen and (min-width: 360px) and (max-width: 599px) {
+    .nav-container {
+        display: none;
+    }
+    
+    /* Start form */
+    form {
+        left: 4%;
+        bottom: 20%;
+        padding: 30px 30px 30px 30px;
+    }
+    
+    form h1 {
+        font-size: 40px;
+    }
+    
+    form label {
+        font-size: small;
+    }
+    
+    form input {
+        padding: 6px 10vmax 6px 6px;
+        font-size: 16px;
+    }
+    
+    .signin-forgotpass {
+        font-size: 12px;
+    }
+    
+    form button {
+        padding: 7px 32px 7px 32px;
+    }
+    
+    .signup-btn {
+        padding: 11px 0 11px 0;
+    }
+}
+
+/* Galaxy S9+ */
+@media screen and (min-width: 320px) and (max-width: 359px) {
+    .nav-container {
+        display: none;
+    }
+    
+    form {
+        left: 5px;
+        bottom: 19%;
+        padding: 30px 30px 30px 30px;
+    }
+    
+    form h1 {
+        font-size: 38px;
+    }
+    
+    form label {
+        font-size: small;
+    }
+    
+    form input {
+        padding: 6px 10vmax 6px 6px;
+        font-size: 14px;
+    }
+    
+    .signin-forgotpass {
+        font-size: 10px;
+    }
+
+    form a {
+        font-size: 10px;
+    }
+    
+    form button {
+        padding: 5px 29px 5px 29px;
+    }
+    
+    .signup-btn {
+        padding: 10px 0 10px 0;
+    }
+}
+
+/* Blackberry PlayBook */
+@media screen and (min-width: 600px) and (max-width: 711px) {
+    .nav-container {
+        display: none;
+    }
+    
+    form {
+        left: 10%;
+        bottom: 24%;
+        padding: 30px 30px 30px 30px;
+    }
+    
+    form h1 {
+        font-size: 60px;
+    }
+    
+    form label {
+        font-size: x-large;
+    }
+    
+    form input {
+        padding: 7px 10vmax 7px 6px;
+        font-size: 25px;
+        margin-bottom: 33px;
+    }
+
+    form label:last-child {
+        margin: 0 0 0 5px;
+    }
+
+    form a {
+        font-size: 20px;
+    }
+    
+    form button {
+        padding: 6px 30px 6px 30px;
+        font-size: x-large;
+    }
+    
+    .signup-btn {
+        padding: 13px 0 13px 0;
+    }
+}
+
+/* Galaxy Tab S4 */
+@media screen and (min-width: 712px) and (max-width: 799px) {
+    form {
+        left: 16%;
+        bottom: 27%;
+        padding: 30px 30px 30px 30px;
+    }
+    
+    form h1 {
+        font-size: 65px;
+    }
+    
+    form label {
+        font-size: x-large;
+    }
+    
+    form input {
+        padding: 7px 10vmax 7px 6px;
+        font-size: 25px;
+        margin-bottom: 33px;
+    }
+
+    form a {
+        font-size: 20px;
+    }
+    
+    form button {
+        padding: 8px 50px 8px 50px;
+        font-size: x-large;
+    }
+    
+    .signup-btn {
+        padding: 15px 0 15px 0;
+    }
+}
+
+/* Kindle Fire HDX */
+@media screen and (min-width: 800px) and (max-width: 819px) {
+    form {
+        left: 19%;
+        bottom: 27%;
+        padding: 30px 30px 30px 30px;
+    }
+    
+    form h1 {
+        font-size: 65px;
+    }
+    
+    form label {
+        font-size: x-large;
+    }
+    
+    form input {
+        padding: 7px 10vmax 7px 6px;
+        font-size: 25px;
+        margin-bottom: 33px;
+    }
+
+    form a {
+        font-size: 20px;
+    }
+    
+    form button {
+        padding: 8px 50px 8px 50px;
+        font-size: x-large;
+    }
+
+    .signup-btn {
+        padding: 18px 0 18px 0;
+    }
+}
