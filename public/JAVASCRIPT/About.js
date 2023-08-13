@@ -1,7 +1,7 @@
 import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from "./Nav&Footer_Blueprint.js";
 
 function fetchYouTubeData() {
-    fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCG7azEZJY5PCsjcUCOdvOPw&q=kekepalmerwebsite&key=AIzaSyDGeGModc2NY9nw5vfL3SWm1jAiBZEpSts')
+    fetch()
     .then(res => {
         if(!res.ok) {
             throw Error('Error Please Try Again Later...');
