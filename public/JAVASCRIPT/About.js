@@ -30,7 +30,7 @@ function fetchYouTubeData() {
 fetchYouTubeData();
 
 function fetchWeatherData() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=39.2908816&lon=-76.610759&units=imperial&limit=1&appid=4de5b9b05ea00402efaa87dba6e0268f')
+    fetch()
     .then(res => {
         if(!res.ok) {
             throw Error('Error Please Try Again Later...')
