@@ -11,13 +11,14 @@
         <form id="form">
             <h1>Create an Account</h1>
             <div class="credential-container1">
-                <input id="input" type="email" placeholder="Email">
-                <input id="input" type="password" placeholder="Password">
-                <input id="input" type="password" placeholder="Re-type Password">
+                <input class="input" type="text" placeholder="First Name">
+                <input class="input" type="text" placeholder="Last Name">
+                <input class="input" type="email" placeholder="Email">
+                <input style="padding: 8px 0 8px 10px;" class="input" type="text" placeholder="Create Username">
             </div>
             <div class="credential-container2">
-                <input id="input" type="text" placeholder="First Name">
-                <input id="input" type="text" placeholder="Last Name">
+                <input class="input" type="password" placeholder="Password">
+                <input class="input" type="password" placeholder="Re-type Password">
             </div>
             <div class="credential-container3">
                 <div>
@@ -25,6 +26,8 @@
                     <label>Male</label>
                     <input id="female" type="radio">
                     <label>Female</label>
+                    <input id="other" type="radio">
+                    <label>Other</label>
                 </div>
                 <select id="states-dropdown-list">
                     <option value="Select a state">Select a state</option>
@@ -94,6 +97,6 @@
             </div>
         </form>
     </div>
-    <script src="/JAVASCRIPT/Login/Registration.js"></script>
+    <script type="module" src="/JAVASCRIPT/Login/Registration.js"></script>
 </body>
 </html>

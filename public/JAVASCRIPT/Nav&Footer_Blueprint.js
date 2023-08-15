@@ -3,6 +3,12 @@ export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
 export const companyInfo = new Array(0);
 
+fetch('/companyinfo')
+.then(res => {
+    res.json().then(companyInfo => setCompanyName(companyInfo.CompanyName));
+})
+.catch(err => console.log(err));
+
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
 navLinks[0] = `/`;
@@ -41,6 +47,8 @@ attribute[0] = "StoreAnimateGroup1";
 attribute[1] = "StoreAnimateGroup2";
 attribute[2] = "nav";
 attribute[3] = "socialMedia-icons";
+attribute[4] = 'Error-Style';
+attribute[5] = 'Hide-Error-Style';
 
 // Dynamic Navigation Bar
 navbar.innerHTML = HTML.Navbar;
@@ -126,26 +134,22 @@ export const footerResponse = document.getElementById('footerSubmissionResponse'
 async function validate() {
     if(footerInput.value == '') {
         alert("You must fill out!");
-        }
-        else {
-            footerLabel.remove();
-            footerInput.remove();
-            footerBtn.remove();
-            console.log('Thank You, you will recieve emails on new content!')
-            sendToBackend(footerInput.value);
-            footerResponse.innerHTML = HTML.FooterInputResponse;
-        }
     }
+    else {
+        footerLabel.remove();
+        footerInput.remove();
+        footerBtn.remove();
+        console.log('Thank You, you will recieve emails on new content!')
+        sendToBackend(footerInput.value);
+        footerResponse.innerHTML = HTML.FooterInputResponse;
+    }
+}
 
-    function sendToBackend(email) {
-        console.log('Done!');
-    }
-    
-    export function setCompanyName(name) {
-        companyName.forEach(element => { element.innerHTML = name; })
-    }
-    
-    footerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        validate();
+export function setCompanyName(name) {
+    companyName.forEach(element => { element.innerHTML = name; })
+}
+
+footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validate();
 })

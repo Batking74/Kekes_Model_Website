@@ -1,7 +1,7 @@
 import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from "./Nav&Footer_Blueprint.js";
 import { HTML } from "./HTML.js";
+import { sendPOSTRequestToSever } from "./ExtraTools.js";
 
-// console.log(companyInfo)
 // Targeting Elements
 const formContactInfo = document.querySelector('.info-container');
 const form = document.querySelector('#form');
@@ -67,7 +67,7 @@ inputElement[3].addEventListener('input', () => {
 function validate() {
     let count = 0;
     for(let i = 0; i < inputElement.length; i++) {
-        if(inputElement[i].value == '') {
+        if(inputElement[i].value === '') {
             errorElement[i].innerHTML = errorMsg[i];
             setTimeout(() => errorElement[i].innerHTML = '', 5000);
             count++;
@@ -76,34 +76,28 @@ function validate() {
     if(!(count >= 1)) {
         console.log('Form Completed Submitting...');
         const userSubmission = {
-                Date: Date(),
-                Email: inputElement[1].value,
-                First_name: inputElement[0].value,
-                Last_name: inputElement[2].value,
-                Phone_Number: inputElement[3].value,
-                User_Message: inputElement[4].value
-            };
-            console.log(userSubmission)
-            postToServer(userSubmission);
+            id: 4,
+            Date: Date(),
+            Email: inputElement[1].value,
+            Firstname: inputElement[0].value,
+            Lastname: inputElement[2].value,
+            PhoneNumber: inputElement[3].value,
+            UserMessage: inputElement[4].value
+        };
+        console.log(userSubmission)
+        postToServer(userSubmission);
     }
 }
 
-async function postToServer(data) {
-    await fetch(baseURL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-        })
-        .then(res => {
-            console.log(res);
-            localStorage.setItem('New Contact Message', JSON.stringify(data));
-            form.reset();
-        })
-        .catch(reject => { console.log(reject); })
+function postToServer(data) {
+    sendPOSTRequestToSever(baseURL, data)
+    .then(res => res.json())
+    .then(res => { console.log(res) })
+    .catch(reject => { console.log(reject); })
 }
-    form.addEventListener('submit', (e) => {
+
+form.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
-
 footer[0].remove();

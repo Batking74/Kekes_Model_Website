@@ -57,7 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(Date());
 })
 
-// fetch('http://localhost:5000/')
-// .then(res => {
-//     console.log(res)
-// })
+const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify('Nazir')
+}
+
+// fetch('/receiveEmails', options)

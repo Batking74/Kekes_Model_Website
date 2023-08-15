@@ -1,227 +1,143 @@
-const database = require('./database.js');
+const { transporter, companyDB, userDB, getTablesFrom, createNewUser, getEmailForCompany, getUserConformation } = require('./database.js');
 const express = require('express');
-const mailgen = require('mailgen');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const app = express();
-
-const query = ['SELECT * FROM companyinfo'];
+const filePath = './public/HTML/';
 
 // Routing is how an application/websites end points respond to client/computer requests
 app.use(express.static('./public'));
 app.use(express.json());
 
-app.get('/companyinfo', (req, res) => {
-    database.executeQuery((query[0]))
-    .then(data => {res.json(data)})
-        .catch(err => console.log(err));
-    })
-    
-    // Home Page Routings
-    app.get('/', (req, res) => {
-        fs.readFile('./public/HTML/index.html', 'utf8', (err, HTML) => {
-            if(err) throw err;
-            res.send(HTML);
-        });
-    });
-    
-    app.get('/companyInfo', (req, res) => {
-        database.connection.query(query[0], (err, results) => {
-            if(err) throw err;
-        res.json(results[0]);
-    })
-});
+const api = [
+    '/', // 0
+    '/About', // 1
+    '/FAQ',  // 2
+    '/Contact',  // 3
+    '/Palmerstore',  // 4
+    '/Palmerstore/Page2', // 5
+    '/Palmerstore/Page3', // 6
+    '/Login', // 7
+    '/Register', // 8
+    '/Register/Account_Verification', // 9
+    '/Register/Account_Verification/Account_Conformation', // 10
+    '/ResetPassword', // 11
+    '/ResetPassword/Conformation', // 12
+    '/receiveEmails', // 13
+    '/users', // 14
+    '/companyinfo', // 15
+];
 
-// About Page Routings
-app.get('/About', (req, res) => {
-    fs.readFile('./public/HTML/About.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
+const file = [
+    'index.html',
+    'About.html',
+    'FAQ.html',
+    'Contact.html',
+    'Store/Store_1.html',
+    'Store/Store_2.html',
+    'Store/Store_3.html',
+    'Login/Login.html',
+    'Login/Registration.html',
+    'Login/Account_Verification.html',
+    'Login/Register_Conformation.html',
+    'Login/Reset_Password.html',
+    'Login/ResetPassword_Conformation.html'
+];
 
-// FAQ Page Routings
-app.get('/FAQ', (req, res) => {
-    fs.readFile('./public/HTML/FAQ.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
+const resMsg = [
+    'Email will be sent to you shortly.',
+    'Account Created Thank You!.',
+    'GOT UR DATA!2',
+    'YAYAYAYAYAYAYAY',
+    'okaaay nazzz',
+    `Email Sent!:`
+];
+
+const DBColumns = [
+    '(FirstName, LastName, Gender, Email, Username, Password, State, Account_Created)'
+]
+
+for(let i = 0; i < file.length; i++) getReq(api[i], file[i]);
 
 // Contact Page Routings
-app.route('/Contact')
-.post((req, res) => {
+app.post(api[3], (req, res) => {
     const userData = req.body;
-    bcrypt.hash(userData[0].Email, 10)
-    .then(encryptedData => { res.send(JSON.stringify(encryptedData)); })
+    sendMailToCompany(userData)
+    bcrypt.hash(userData.Email, 10)
+    .then(encryptedData => {
+        sendResponse(res, encryptedData);
+    })
     .catch(err => { console.log(err); });
 })
-.get((req, res) => {
-    fs.readFile('./public/HTML/Contact.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
-
-// Store Page Routings
-app.get('/Palmerstore', (req, res) => {
-    fs.readFile('./public/HTML/Store/Store_1.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
-
-// Store2 Page Routings
-app.get('/Palmerstore/Page2', (req, res) => {
-    fs.readFile('./public/HTML/Store/Store_2.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
-
-// Store3 Page Routings
-app.get('/Palmerstore/Page3', (req, res) => {
-    fs.readFile('./public/HTML/Store/Store_3.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
-
-// Login Page Routings
-app.get('/Login', (req, res) => {
-    fs.readFile('./public/HTML/Login/Login.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
 
 // Register Account Page Routings
-app.route('/Register')
-.post((req, res) => {
-    const userData = req.body;
-    console.log(userData);
-    res.send(JSON.stringify('GOT UR DATA!'));
+app.post(api[8], (req, res) => {
+    if(req.body.id === 2) {
+        createNewUser(req.body, userDB, process.env.TABLE_NAME2, DBColumns[0]);
+        sendResponse(res, resMsg[0]);
+    }
+    else sendResponse(res, resMsg[1]);
+    sendMailToUser(req.body);
 })
-.get((req, res) => {
-    fs.readFile('./public/HTML/Login/Registration.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
-
-// Register Account Page Conformation
-app.get('/Register/Conformation', (req, res) => {
-    fs.readFile('./public/HTML/Login/Account_Created_Conformation.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-});
 
 // Reset Password Page Routings/Conformation
-app.route('/ResetPassword')
-.get((req, res) => {
-    fs.readFile('./public/HTML/Login/Reset_Password.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
-})
-.post((req, res) => {
-    const userData = req.body;
-    console.log(userData);
-    res.send(JSON.stringify('GOT UR DATA!'));
+app.post(api[10], (req, res) => sendResponse(res, resMsg[2]));
+
+// Receive Emails on new Content
+app.post(api[11], (req, res) => {
+    // if(req.body.email ===)
+    sendResponse(res, resMsg[3]);
+});
+app.post(api[12], (req, res) => console.log('vyyy'));
+
+app.get(api[14], (req, res) => {
+    getTablesFrom(process.env.TABLE_NAME2, userDB)
+    .then(data => sendResponse(res, data));
 });
 
-// Reset Password Page Conformation
-app.get('/ResetPassword/Conformation', (req, res) => {
-    fs.readFile('./public/HTML/Login/Email_Recieved_Conformation.html', 'utf8', (err, HTML) => {
-        if(err) throw err;
-        res.send(HTML);
-    });
+app.get(api[15], (req, res) => {
+    getTablesFrom(process.env.TABLE_NAME1, companyDB)
+    .then(data => res.json(data[0]))
+    .catch(err => console.log(err));
 })
+
+function getReq(api, file) {
+    app.route(api)
+    .get((req, res) => {
+        fs.readFile(`${filePath}${file}`, 'utf8', (err, HTML) => {
+            if(err) throw err;
+            else res.send(HTML);
+        });
+    })
+}
+
+function sendMailToCompany(userData) {
+    getTablesFrom(process.env.TABLE_NAME1, companyDB)
+    .then(() => {
+        const mailFromCompany = getEmailForCompany(userData);
+        sendEmail(mailFromCompany);
+    })
+    .catch(err => console.log(err));
+}
+
+function sendMailToUser(userData) {
+    getTablesFrom(process.env.TABLE_NAME1, companyDB)
+    .then(companyInfo => {
+        const mailFromUser = getUserConformation(companyInfo[0], userData);
+        sendEmail(mailFromUser);
+    })
+    .catch(err => console.log(err));
+}
+
+function sendEmail(email) {
+    transporter.sendMail(email)
+    .then(res => console.log(`${resMsg[5]} ${res.messageId}`))
+    .catch(err => console.log(err));
+}
+function sendResponse(res, msg) { res.send(JSON.stringify(msg)); }
 
 // Palmer Studios Server
 app.listen(process.env.COMPANY_PORT, (err) => {
     if(err) throw err;
     console.log(`Listening on port ${process.env.COMPANY_PORT} SUCCESS!!!`);
 });
-
-function sendMailToCompany(userData) {
-    const mailFromUser = {
-        from: userData[1],
-        to: process.env.SMTP_EMAIL_3,
-        subject: 'User Contact Message',
-        html: mailGenerator.generate({
-            body: {
-                name: userData[0],
-                intro: 'Your bill has arrived booty',
-                table: {
-                    data: [
-                        {
-                            item: 'White T-Shirt',
-                            description: 'White T-Shirt size 32',
-                            price: '$10.99'
-                        }
-                    ]
-                },
-                outro: 'looking for to do more business'
-            }
-        })
-    };
-    return mailFromUser;
-}
-
-
-function sendMailToUser(userData) {
-    database.executeQuery((query[0]))
-    .then(data => {
-        const mailFromCompany = getEmail(data, userData);
-        database.transporter.sendMail(mailFromCompany)
-        .then(res => console.log(`Email Sent!: ${res.messageId}`))
-        .catch(err => console.log(err));
-    })
-    .catch(err => console.log(err));
-}
-
-const f = process.env.SMTP_EMAIL_1
-
-function getEmail(companyInfo, userData) {
-    console.log(companyInfo)
-    let mailGenerator = new mailgen({
-        theme: 'default',
-        product: {
-            name: companyInfo[0].CompanyName,
-            link: companyInfo[0].Website
-        }
-    });
-    return (
-        {
-            from: `${companyInfo[0].CompanyName} <donotreply@gmail.com>`,
-            // 'UsersEmail@gmail.com'
-            to: f,
-            subject: 'Thank You For Your Order',
-            html: mailGenerator.generate({
-                body: {
-                    name: 'Users Name',
-                    intro: 'Your bill has arrived!',
-                    table: {
-                        data: [
-                            {
-                                ID: companyInfo[0].id,
-                                description: 'Product Description',
-                                price: 'Product Price'
-                            }
-                        ]
-                    },
-                    outro: 'looking for to do more business'
-                }
-            }),
-            attachments: [
-                {
-                    filename: 'Product_1.jpg',
-                    path: 'public/IMG/Store Products/Store 1/Product_1.jpg'
-                }
-            ]
-        })
-    }
-
-sendMailToUser('s')
