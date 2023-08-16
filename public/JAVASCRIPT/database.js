@@ -28,27 +28,32 @@ function configDatabase(DB_NAME) {
 
 async function getTablesFrom(databaseName, database) {
     const res = await database.execute(`SELECT * FROM ${databaseName}`);
-    return res[0];
+    return await res[0];
 }
 
 async function createNewUser(userData, database, DBName, colums) {
     return await database.execute(`INSERT INTO ${DBName}${colums}VALUES(${JSON.stringify(userData.Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.Gender)}, ${JSON.stringify(userData.Email)}, ${JSON.stringify(userData.Username)}, ${JSON.stringify(userData.Password)}, ${JSON.stringify(userData.From)}, ${JSON.stringify(userData.Date)});`);
 }
 
-function initMailGen(name, link) {
+async function addUserMSG(userData, database, DBName, colums) {
+    return await database.execute(`INSERT INTO ${DBName}${colums}VALUES(${JSON.stringify(userData.Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.UserMessage)}, ${JSON.stringify(userData.Date)});`);
+}
+
+function initMailGen(name, companyinfo) {
     let mailGenerator = new mailgen({
         theme: 'default',
         product: {
             name: name,
-            link: link,
-            logo: '/IMG/Social Media Icons & Logos/Palmer_Logo.PNG'
+            link: companyinfo.Website,
+            logo: 'https://mailgen.js/img/logo.png',
+            copyright: `copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()} | ${companyInfo.CompanyName}`
         }
     });
     return mailGenerator;
 }
 
 function getUserConformation(companyInfo, userData) {
-    const mailGenerator = initMailGen(companyInfo.CompanyName, companyInfo.Website)
+    const mailGenerator = initMailGen(companyInfo.CompanyName, companyInfo);
     return ({
         from: `${companyInfo.CompanyName} <${process.env.SMTP_EMAIL_1}>`,
         to: userData.Email,
@@ -64,13 +69,14 @@ function getUserConformation(companyInfo, userData) {
     )
 }
 
-function getEmailForCompany(userData) {
-    const mailGenerator = initMailGen(userData.Firstname, 'target.com');
+function getEmailForCompany(userData, companyinfo) {
+    const mailGenerator = initMailGen(userData.Firstname, companyinfo);
     return ({
-        from: userData.Email,
-        to: process.env.SMTP_EMAIL_1,
-        subject: resMsg[1],
-        html: mailGenerator.generate(emailForCompany())
+        from: `${userData.Email} <${process.env.SMTP_EMAIL_1}>`,
+        to: process.env.SMTP_EMAIL_2,
+        subject: `${resMsg[1]} ${userData.Firstname} ${userData.Lastname}`,
+        text: userData.UserMessage,
+        html: mailGenerator.generate(emailForCompany(userData, companyinfo))
     });
 }
 module.exports = { companyDB, userDB, transporter, getTablesFrom, createNewUser, getUserConformation, getEmailForCompany };

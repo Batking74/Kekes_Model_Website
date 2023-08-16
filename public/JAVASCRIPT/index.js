@@ -1,4 +1,4 @@
-import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from "./Nav&Footer_Blueprint.js";
+import { attribute, companyInfo, navbar } from "./Nav&Footer_Blueprint.js";
 
 // Targeting Elements
 const animate = document.querySelectorAll(`.${attribute[0]}`);
@@ -13,9 +13,7 @@ for(let index = 0; index < animate.length; index++) {
 }
 
 // Toggle Hamburger menu
-hamburgerBtn.addEventListener('click', (e) => {
-    navbar.classList.toggle('active');
-});
+hamburgerBtn.addEventListener('click', (e) => navbar.classList.toggle('active'));
 
 // Creating Dynamic Project Card
 class myProjects {
@@ -26,7 +24,7 @@ class myProjects {
     }
 }
 const name = ['Ariel', 'USA Paddle', 'Blessing Bengeh', 'Keke'];
-const tag = ['#Ariiaaann', '#Sierra Leone', '#PalmerSudios'];
+const tag = ['#Ariiaaann', '#SaloneFunnyBad', '#Sierra Leone', `#${companyInfo.CompanyName}`];
 const image = new Array(4);
 image[0] = `/IMG/Models/Female/Model_3.jpg`;
 image[1] = `/IMG/Tiki.jpg`;
@@ -34,11 +32,11 @@ image[2] = `/IMG/Models/Female/Model_4.jpg`;
 image[3] = `/IMG/Keke/Photo_3.jpg`;
 
 // Creating Models
-const item1 = new myProjects(name[0], tag[0], image[0]);
-const item2 = new myProjects(name[1], tag[1], image[1])
-const item3 = new myProjects(name[2], tag[2], image[2]);
-const item4 = new myProjects(name[3], tag[3], image[3]);
-const myProjectsArray = [item1, item2, item3, item4];
+let myProjectsArray = [];
+for(let i = 0; i < name.length; i++) {
+    const project = new myProjects(name[i], tag[i], image[i]);
+    myProjectsArray.push(project);
+}
 
 // Displaying Models
 myProjectsArray.forEach(project => {
@@ -52,15 +50,3 @@ myProjectsArray.forEach(project => {
         </div>
     `
 })
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log(Date());
-})
-
-const options = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify('Nazir')
-}
-
-// fetch('/receiveEmails', options)

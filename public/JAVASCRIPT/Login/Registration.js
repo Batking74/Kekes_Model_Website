@@ -1,6 +1,5 @@
-import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, setFalse, hasGender, displayError } from '../ExtraTools.js';
+import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender,displayError } from '../ExtraTools.js';
 const input = document.querySelectorAll('.input');
-const submitBtn = document.querySelector('#submit-btn');
 const form = document.querySelector('#form');
 const male = document.querySelector('#male');
 const female = document.querySelector('#female');
@@ -10,6 +9,7 @@ const option = document.querySelectorAll('option');
 const policy = document.getElementById('policy-conformation');
 const sex = [male, female, other];
 const errorClassName = 'error';
+let gender;
 const errorMsg = [
     'Passwords dont match',
     'Password must be at least 10 characters',
@@ -17,10 +17,9 @@ const errorMsg = [
     `Please select a state`,
     `Must agree to terms and conditions`,
     `Email already used`,
-    `Password already used`,
-    `Username already used`
+    `Username already used`,
+    `Use another password`
 ];
-let gender;
 sex.forEach(element => {
     element.addEventListener('click', (e) => {
         if(e.target.id === 'male') { setFalse(female, other); gender = 'Male'; }
@@ -29,9 +28,13 @@ sex.forEach(element => {
     })
 })
 
-submitBtn.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if(valid()) {
+    validate();
+});
+
+async function validate() {
+    if(await valid()) {
         const newUser = {
             id: 1,
             Date: Date(),
@@ -44,36 +47,34 @@ submitBtn.addEventListener('click', (e) => {
             From: list.value,
         }
         localStorage.setItem('NewUserData', JSON.stringify(newUser));
-        sendPOSTRequestToSever('/Register', newUser)
-        .then(res => { return res.json(); })
-        .then(data => { return data; })
-        .then(res => { console.log(res); })
-        .catch(err => { console.log(err); });
-        location.replace('/Register/Account_Verification');
+        const res = await sendPOSTRequestToSever('/Register', newUser)
+        console.log(res)
     }
-});
+}
 
-function valid() {
+async function valid() {
     let count = 0;
-    const isDuplicate = isADuplicate();
+    let status = true;
     for(let i = 0; i < input.length; i++) {
         if(input[i].value === '') {
             displayError(input[i], errorClassName, errorClassName, 0);
+            status = false;
             count++;
         }
     }
-    if(count >= 1) return false;
-    else if(input[4].value != input[5].value) { alert(errorMsg[0]); error(input); }
-    else if(input[4].value.length < 10) { alert(errorMsg[1]); error(input); }
-    else if(!(hasGender(sex))) { alert(errorMsg[2]) }
-    else if(list.value === option[0].textContent) alert(errorMsg[3]);
-    else if(!(policy.checked)) alert(errorMsg[4]);
-    else if(isDuplicate[0]) {
-        if(isDuplicate[1] === 2) { console.log('butt'); alert(errorMsg[5]); }
-        else if(isDuplicate[1] === 3) alert(errorMsg[6]);
-        else alert(errorMsg[7]);
-    }
-    // else return true;
+    if(status === false) return status;
+    else status = await isOtherInputsValid(status);
+    return status;
+}
+
+async function isOtherInputsValid(status) {
+    if(input[4].value != input[5].value) { alert(errorMsg[0]); error(input); status = false; }
+    else if(input[4].value.length < 10) { alert(errorMsg[1]); error(input); status = false; }
+    else if(!(hasGender(sex))) { alert(errorMsg[2]); status = false; }
+    else if(list.value === option[0].textContent) { alert(errorMsg[3]); status = false; }
+    else if(!(policy.checked)) { alert(errorMsg[4]); status = false; }
+    else if(await isADuplicate(status)) return !(status);
+    else return status;
 }
 
 function error(element) {
@@ -81,21 +82,17 @@ function error(element) {
     displayError(element[5], errorClassName, errorClassName, 0);
 }
 
-function isADuplicate() {
-    let arr = [];
-    fetch('/users')
-    .then(res => { return res.json(); })
-    .then(DB => {
+async function isADuplicate(status) {
+    try {
+        const res = await fetch('/users');
+        const DB = await res.json();
         for(let i = 0; i < DB.length; i++) {
-            if(input[2].value === DB[i].Email) return getDupInfo(arr, true, 2);
-            else if(input[3].value === DB[i].Username) return getDupInfo(arr, true, 3);
-            else if(input[4].value === DB[i].Password) return getDupInfo(arr, true, 4);
+            if(input[2].value === DB[i].Email) { alert(errorMsg[5]); status = true; }
+            else if(input[3].value === DB[i].Username) { alert(errorMsg[6]); status = true; }
+            else if(input[4].value === DB[i].Password) { alert(errorMsg[7]); status = true; }
+            else status = false;
         }
-    })
-    .catch(err => { console.log(err); });
-    return arr;
-}
-function getDupInfo(arr, boolean, i) {
-    const f = {hi: boolean, d: i};
-    arr.push(f);
+    }
+    catch (error) { console.log(error) }
+    return status;
 }

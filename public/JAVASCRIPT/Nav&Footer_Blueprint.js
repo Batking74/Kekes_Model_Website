@@ -1,13 +1,8 @@
 import { HTML } from "./HTML.js";
+import { setImgs, setLinks, sendPOSTRequestToSever, sendGETRequestToSever } from "./ExtraTools.js";
 export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
-export const companyInfo = new Array(0);
-
-fetch('/companyinfo')
-.then(res => {
-    res.json().then(companyInfo => setCompanyName(companyInfo.CompanyName));
-})
-.catch(err => console.log(err));
+export const companyInfo = await sendGETRequestToSever('/companyinfo');
 
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
@@ -21,8 +16,15 @@ navLinks[6] = "https://www.facebook.com/kekepalmer";
 navLinks[7] = "https://www.instagram.com/keke";
 navLinks[8] = "https://twitter.com/KekePalmer";
 navLinks[9] = "https://www.youtube.com/channel/UCG7azEZJY5PCsjcUCOdvOPw";
-navLinks[10] = "/Register";
+navLinks[10] = "#";
 navLinks[11] = "#";
+navLinks[12] = "#";
+navLinks[13] = "#";
+navLinks[14] = "#";
+navLinks[15] = "#";
+navLinks[16] = "#";
+navLinks[17] = "#";
+navLinks[18] = "/Register";
 
 export const icons = new Array(20);
 icons[0] = `/IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
@@ -57,99 +59,67 @@ navbar.innerHTML = HTML.Navbar;
 footer[0].innerHTML = HTML.Footer;
 export const aElement = document.querySelectorAll('.Dynamic-link');
 export const imgElement = document.querySelectorAll('.Dynamic-img');
+setImgs(imgElement, attribute, icons);
+setLinks(aElement, attribute, navLinks, 3);
+setLinks(aElement, attribute, navLinks, 2);
+setLinks(aElement, attribute, navLinks, 11);
+setLinks(aElement, attribute, navLinks, 12);
+setLinks(aElement, attribute, navLinks, 4);
+setLinks(aElement, attribute, navLinks, 13);
+setLinks(aElement, attribute, navLinks, 0);
+setLinks(aElement, attribute, navLinks, 1);
+setLinks(aElement, attribute, navLinks, 14);
+setLinks(aElement, attribute, navLinks, 15);
+setLinks(aElement, attribute, navLinks, 16);
+setLinks(aElement, attribute, navLinks, 17);
 
-// Palmer Studios Logo Attributes
-aElement[0].setAttribute('href', `${navLinks[11]}`);
-imgElement[0].setAttribute('src', `${icons[0]}`);
-
-// Home Navigation Attributes
-aElement[1].setAttribute('class', `${attribute[0]} ${attribute[2]}`);
-aElement[1].setAttribute('href', `${navLinks[0]}`);
-
-// About Navigation Attributes
-aElement[2].setAttribute('class', `${attribute[0]} ${attribute[2]}`);
-aElement[2].setAttribute('href', `${navLinks[1]}`);
-
-// FAQ Navigation Attributes
-aElement[3].setAttribute('class', `${attribute[0]} ${attribute[2]}`);
-aElement[3].setAttribute('href', `${navLinks[2]}`);
-
-// Contact Navigation Attributes
-aElement[4].setAttribute('class', `${attribute[1]} ${attribute[2]}`);
-aElement[4].setAttribute('href', `${navLinks[3]}`);
-
-// Store Navigation Attributes
-aElement[5].setAttribute('class', `${attribute[1]} ${attribute[2]}`);
-aElement[5].setAttribute('href', `${navLinks[4]}`);
-
-// Login Navigation Attributes
-aElement[6].setAttribute('class', `${attribute[1]} ${attribute[2]}`);
-aElement[6].setAttribute('href', `${navLinks[5]}`);
-
-// Palmer Studios Logo
-imgElement[1].setAttribute('src', `${icons[0]}`);
-
-// Facebook Icon Attributes
-imgElement[2].setAttribute('src', `${icons[3]}`);
-imgElement[2].setAttribute('class', `${attribute[3]}`);
-aElement[7].setAttribute('href', `${navLinks[6]}`);
-
-// Instagram Icon Attributes
-imgElement[3].setAttribute('src', `${icons[4]}`);
-imgElement[3].setAttribute('class', `${attribute[3]}`);
-aElement[8].setAttribute('href', `${navLinks[7]}`);
-
-// // Twitter Icon Attributes
-imgElement[4].setAttribute('src', `${icons[5]}`);
-imgElement[4].setAttribute('class', `${attribute[3]}`);
-aElement[9].setAttribute('href', `${navLinks[8]}`);
-
-// // YouTube Icon Attributes
-imgElement[5].setAttribute('src', `${icons[6]}`);
-imgElement[5].setAttribute('class', `${attribute[3]}`);
-aElement[10].setAttribute('href', `${navLinks[9]}`);
-
-// Other Links
-aElement[11].setAttribute('href', `${navLinks[11]}`);
-aElement[12].setAttribute('href', `${navLinks[3]}`);
-aElement[13].setAttribute('href', `${navLinks[2]}`);
-aElement[14].setAttribute('href', `${navLinks[11]}`);
-aElement[15].setAttribute('href', `${navLinks[11]}`);
-aElement[16].setAttribute('href', `${navLinks[4]}`);
-aElement[17].setAttribute('href', `${navLinks[11]}`);
-aElement[18].setAttribute('href', `${navLinks[0]}`);
-aElement[19].setAttribute('href', `${navLinks[1]}`);
-aElement[20].setAttribute('href', `${navLinks[11]}`);
-aElement[21].setAttribute('href', `${navLinks[11]}`);
-aElement[22].setAttribute('href', `${navLinks[11]}`);
-aElement[23].setAttribute('href', `${navLinks[11]}`);
-
-export let companyName = document.querySelectorAll('#Company-Name');
+export let companyNameElements = document.querySelectorAll('#Company-Name');
 export const footerForm = document.getElementById('footerForm');
 export const footerLabel = document.getElementById('footerLabel');
 export const footerInput = document.getElementById('footerInput');
 export const footerBtn = document.getElementById('footerbtn');
 export const footerResponse = document.getElementById('footerSubmissionResponse');
 
+
 async function validate() {
-    if(footerInput.value == '') {
-        alert("You must fill out!");
-    }
+    if(footerInput.value === '') alert("You must fill out!");
     else {
         footerLabel.remove();
         footerInput.remove();
         footerBtn.remove();
-        console.log('Thank You, you will recieve emails on new content!')
-        sendToBackend(footerInput.value);
+        const f = await fetch('/Register', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify("booty")
+        })
+        console.log(f)
+        // console.log(JSON.stringify(footerInput.value))
+        // try {
+        //     const response = await sendPOSTRequestToSever('/Register', JSON.stringify(footerInput.value))
+        //     console.log(response);
+        // } catch(error) { console.log(error) }
         footerResponse.innerHTML = HTML.FooterInputResponse;
     }
 }
 
+export function setContactSocialMediaIcons(aEle, imgEle, imgIndex, linkIndex, navLink, icon, attr) {
+    aEle[linkIndex].setAttribute('href', navLink);
+    imgEle[imgIndex].setAttribute('src', icon);
+    imgEle[imgIndex].setAttribute('class', attr);
+}
+
+export function setContactInfo(pEle, imgEle, imgIndex, pIndex, icon, companyInfo) {
+    imgEle[imgIndex].setAttribute('src', icon);
+    pEle[pIndex].textContent = companyInfo;
+}
+
 export function setCompanyName(name) {
-    companyName.forEach(element => { element.innerHTML = name; })
+    companyNameElements.forEach(element => { element.innerHTML = name; })
 }
 
 footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
+
+setCompanyName(companyInfo.CompanyName)

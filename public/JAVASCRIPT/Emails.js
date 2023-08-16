@@ -1,9 +1,10 @@
 const resMsg = [
     'Thank You For Your Order',
-    'User Contact Message',
+    'User Contact Message from',
     'Thank You for signing up with',
     'Thank you enjoy the rest of your evening!',
-    'Password Reset Request'
+    'Password Reset Request',
+    'You have received a message from a user'
 ];
 
 function userEmailConformation(companyInfo, userData) {
@@ -118,15 +119,14 @@ function userEmailConformation(companyInfo, userData) {
         )
     }
 }
-function emailForCompany() {
+function emailForCompany(userData, companyInfo) {
     return (
         {
             body: {
-                name: "Naz",
-                intro: 'You have received a message from a user',
-                text: "Hello World",
-                outro: 'looking for to do more business'
-            }
+                name: companyInfo.CompanyName,
+                intro: resMsg[5],
+                text: userData.UserMessage
+            },
         }
     )
 }

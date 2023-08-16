@@ -53,7 +53,7 @@ export const HTML = {
     </div>`,
     Navbar: `
     <a class="${name[1]}">
-        <img class="${name[0]}" alt="Palmer Studios logo.">
+        <img class="${name[0]}" alt="Company logo.">
     </a>
     <a class="${name[1]}">Home</a>
     <a class="${name[1]}">About</a>
@@ -70,7 +70,7 @@ export const HTML = {
     <!-- Start of footer -->
     <div class="position-footer-container">
         <div class="position-logos">
-            <img class="${name[0]}" width="120" height="140" alt="Palmer Studios logo.">
+            <img class="${name[0]}" width="120" height="140" alt="Company logo.">
             <div class="socialMedia-icons-Container">
                 <a class="${name[1]}">
                     <img class="${name[0]}" alt="FaceBook Logo">
