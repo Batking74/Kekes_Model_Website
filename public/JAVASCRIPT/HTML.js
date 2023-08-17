@@ -1,4 +1,4 @@
-export const date = new Date();
+import { date } from "./ExtraTools.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
 const num = [27, 22, 28];
 export const HTML = {

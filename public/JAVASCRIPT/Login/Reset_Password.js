@@ -4,15 +4,22 @@ const email = document.getElementById('email');
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if(valid(email.value)) {
-        const cred = [email.value];
-        sendPOSTRequestToSever('/ResetPassword', cred)
-        .then(res => { return res.json(); })
-        .then(data => { return data; })
-        .then(res => { console.log(res) })
-        .catch(err => { console.log(err); });
-    }
+    validate();
 })
+
+async function validate() {
+    if(valid(email.value)) {
+        const cred = {
+            id: 0,
+            keyword: 'reset',
+            Email: email.value,
+            RandomNum: ((Math.random() * 10000) + 1001).toFixed(0)
+        };
+        const response = await sendPOSTRequestToSever('/ResetPassword', cred);
+        localStorage.setItem('PasswordReset', response);
+        location.replace('/ResetPassword/Reset_Password_Auth');
+    }
+}
 
 function valid(input) {
     if(input === '') {

@@ -1,133 +1,106 @@
-const resMsg = [
-    'Thank You For Your Order',
-    'User Contact Message from',
-    'Thank You for signing up with',
-    'Thank you enjoy the rest of your evening!',
-    'Password Reset Request',
-    'You have received a message from a user'
+export const resMsg = [
+    [`New Account Verification Code`,
+    'To get started with',
+    'please enter this code',
+    'To reset your',
+    'Password enter in this code',
+    'Thank you enjoy the rest of your evening! Outro1 Verify Account',
+    'Thank you enjoy the rest of your evening! Outro2 Reset Password',
+    'Test butt'],
+    ['Thank You for signing up with',
+    'Welcome to',
+    `we're very excited to have you on board!`,
+    'Autro for created acount'],
+    'Done plus 2 butt common intro'
 ];
+const sendEmail = [sendCodeVerification, AccountCreatedConformation, sendPurcheseConfirmation, sendEmailToCompany, sendNewsLetter]
 
-function userEmailConformation(companyInfo, userData) {
-    // Registration: Verification Emails
-    if(parseInt(userData.id) === 1) {
-        return (
-            {
-                body: {
-                    // gretting: `Hi, ${userData.Firstname}`,
-                    name: userData.Firstname,
-                    intro: `Welcome to ${companyInfo.CompanyName} we're very excited to have you on board!`,
-                    action: {
-                        instructions: `To get started with ${companyInfo.CompanyName}, please click to verify your account`,
-                        button: {
-                            color: 'red',
-                            text: 'Verify Acoount',
-                            link: 'http://localhost:5000/Register/Account_Verification/Account_Conformation'
-                        }
-                    },
-                }
-            }
-        )
-    }
-    // Registration: Account Created Successfully
-    else if(parseInt(userData.id) === 2) {
-        return (
-            {
-                body: {
-                    gretting: `Hi, ${userData.Firstname}`,
-                    name: userData.Firstname,
-                    intro: `${resMsg[2]} ${companyInfo.CompanyName}!`,
-                    outro: resMsg[3],
-                }
-            }
-        )
-    }
-    // Reset Credentials Emails: PUT REQUEST
-    else if(parseInt(userData.id) === 3) {
-        return (
-            {
-                body: {
-                    name: userData.Firstname,
-                    intro: `${resMsg[4]} ${companyInfo.CompanyName}!`,
-                    action: {
-                        instructions: 'Click the button to reset password',
-                        button: {
-                            color: 'red',
-                            text: 'Reset Password',
-                            link: 'bcps.org'
-                        }
-                    },
-                    outro: resMsg[3],
-                }
-            }
-        )
-    }
-    // Users contacting palmer studios Emails
-    else if(parseInt(userData.id) === 4) {
-        return (
-            {
-                body: {
-                    name: userData.Firstname,
-                    intro: `${resMsg[1]}: ${userData.Firstname} ${userData.Lastname}`,
-                    action: {
-                        instructions: 'Click the button to reset password',
-                    },
-                    outro: resMsg[3],
-                }
-            }
-        )
-    }
-    // Product Conformation Email
-    else if(parseInt(userData.id) === 5) {
-        return (
-            {
-                body: {
-                    name: userData.FirstName,
-                    intro: 'Your bill has arrived!',
-                    table: {
-                        data: [
-                            {
-                                ID: companyInfo.id,
-                                description: 'Product Description',
-                                price: 'Product Price'
-                            }
-                        ]
-                    },
-                    outro: 'looking for to do more business'
-                }
-            }
-        )
-    }
-    // Palmer Studios newsletter/updates
-    else {
-        return (
-            {
-                body: {
-                    name: userData.FirstName,
-                    intro: 'Your bill has arrived!',
-                    table: {
-                        data: [
-                            {
-                                ID: companyInfo.id,
-                                description: 'Product Description',
-                                price: 'Product Price'
-                            }
-                        ]
-                    },
-                    outro: 'looking for to do more business'
-                }
-            }
-        )
+export function email(companyinfo, userData) {
+    for(let i = 0; i < sendEmail.length; i++) {
+        if(parseInt(userData.id) == i) return sendEmail[i](companyinfo, userData, i);
     }
 }
-function emailForCompany(userData, companyInfo) {
+
+function sendEmailToCompany(userData, companyInfo, i) {
     return (
         {
             body: {
                 name: companyInfo.CompanyName,
-                intro: resMsg[5],
-                text: userData.UserMessage
+                intro: resMsg[resMsg.length-1],
+                instructions: userData.UserMessage
             },
         }
     )
 }
-module.exports = { userEmailConformation, emailForCompany, resMsg }
+
+function sendCodeVerification(companyinfo, userData, i) {
+    resMsg[i][0] = `${resMsg[i][0]}`;
+    if(userData.keyword === 'reset') {
+        resMsg[i][0] = `${companyinfo.CompanyName} Reset Verification Code`;
+        resMsg[i][1] = resMsg[i][3];
+        resMsg[i][2] = resMsg[i][4];
+        resMsg[i][5] = resMsg[i][6];
+    }
+    return ({
+        body: {
+            title: `${resMsg[i][1]} ${companyinfo.CompanyName} ${resMsg[i][2]}`,
+            name: userData.Firstname,
+            intro: resMsg[7],
+            action: {
+                instructions: `${userData.RandomNum}`
+            },
+            outro: resMsg[i][5]
+        }
+    })
+}
+
+function AccountCreatedConformation(companyinfo, userData, i) {
+    return ({
+        body: {
+            gretting: `Hi, ${userData.Firstname}`,
+            intro: `${resMsg[i][0]} ${companyinfo.CompanyName}!`,
+            body: {
+                instructions: `${resMsg[i][1]} ${companyinfo.CompanyName} ${resMsg[i][2]}`
+            },
+            outro: resMsg[i][3],
+        }
+    })
+}
+
+function sendPurcheseConfirmation(companyinfo, userData, i) {
+    return ({
+        body: {
+            name: userData.FirstName,
+            intro: 'Thank You For Your Order, Your bill has arrived!',
+            table: {
+                data: [{
+                    ID: companyinfo.id,
+                        description: 'Product Description',
+                        price: 'Product Price'
+                    }]
+                },
+            outro: 'Shop again at Palmer Studios!'
+        }
+    })
+}
+
+function emailForCompany(companyinfo, userData, i) {
+    return ({
+        body: {
+            intro: `${companyinfo.CompanyName} Contact Message from: ${userData.Firstname} ${userData.Lastname}`,
+            text: userData.UserMessage
+        }
+    })
+}
+
+function sendNewsLetter(companyinfo, userData, i) {
+    return ({
+        body: {
+            intro: 'News Letter',
+            body: {
+                instructions: 'Welcome to my news letter'
+            },
+            outro: 'looking for to do more business'
+        }
+    })
+}

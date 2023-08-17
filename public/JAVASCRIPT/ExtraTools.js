@@ -1,31 +1,21 @@
+export const date = new Date();
 export async function sendGETRequestToSever(api) {
-    try { const res = await fetch(api); return await res.json(); }
-    catch (error) { return error }
+    return (await fetch(api)).json();
 }
 
 export async function sendPOSTRequestToSever(api, data) {
+    return (await fetch(api, options('POST', data))).json();
+}
 
-    let option = {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: data}
-        console.log(option)
-    try {
-        const res = await fetch(api, option);
-        return res.json();
-    }
+export async function sendPUTRequestToSever(api, data) {
+    try { const res = await fetch(api, options('PUT', data)); return await res.json(); }
     catch (err) { return err; }
 }
 
-// export async function sendPUTRequestToSever(api, data) {
-//     try { const res = await fetch(api, options('PUT', data)); return await res.json(); }
-//     catch (err) { return err; }
-// }
-
-// export async function sendDELETERequestToSever(api, data) {
-//     try { const res = await fetch(api, options('DELETE', data)); return await res.json(); }
-//     catch (err) { return err; }
-// }
+export async function sendDELETERequestToSever(api, data) {
+    try { const res = await fetch(api, options('DELETE', data)); return await res.json(); }
+    catch (err) { return err; }
+}
 
 export function setFalse(gender1, gender2) {
     gender1.checked = false;
@@ -80,10 +70,10 @@ export function j(count, select) {
     if(select === 1) if(count === 0) return 1; else return count;
     else if(count > 0 && count < 4) return 0; else return 1;
 }
-export function options(h, data) {
+function options(method, data) {
     return {
-        method: h,
-        headers: { 'Content-Type': 'application/json' },
+        method: method,
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     }
 }

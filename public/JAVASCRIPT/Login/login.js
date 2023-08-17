@@ -1,9 +1,9 @@
 import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from "../Nav&Footer_Blueprint.js";
-import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError } from "../ExtraTools.js";
+import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError, date } from "../ExtraTools.js";
 
 const submitBtn = document.getElementById('submit-btn');
 const signUpBtn = document.querySelector('.signup-btn');
-const inputElement = document.querySelectorAll('#userInput');
+const inputElement = document.querySelectorAll('.userInput');
 const checkbox = document.getElementById('checkbox');
 const errorElement = document.getElementById('error');
 const errorMsg = [
@@ -17,7 +17,7 @@ const errorMsg = [
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if(valid()) {
-        const userCredentials = [Date(), inputElement[0].value, inputElement[1].value];
+        const userCredentials = [date.toUTCString(), inputElement[0].value, inputElement[1].value];
         fetch('/users')
         .then(res => { return res.json(); })
         .then(DB => {

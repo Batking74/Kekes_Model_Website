@@ -1,4 +1,4 @@
-import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender,displayError } from '../ExtraTools.js';
+import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../ExtraTools.js';
 const input = document.querySelectorAll('.input');
 const form = document.querySelector('#form');
 const male = document.querySelector('#male');
@@ -36,8 +36,8 @@ form.addEventListener('submit', (e) => {
 async function validate() {
     if(await valid()) {
         const newUser = {
-            id: 1,
-            Date: Date(),
+            id: 0,
+            Date: date.toUTCString(),
             Firstname: input[0].value,
             Lastname: input[1].value,
             Email: input[2].value,
@@ -45,10 +45,11 @@ async function validate() {
             Password: input[4].value,
             Gender: gender,
             From: list.value,
+            RandomNum: ((Math.random() * 10000) + 1001).toFixed(0)
         }
+        const res = await sendPOSTRequestToSever('/Register', newUser);
         localStorage.setItem('NewUserData', JSON.stringify(newUser));
-        const res = await sendPOSTRequestToSever('/Register', newUser)
-        console.log(res)
+        location.replace('/Register/Account_Verification');
     }
 }
 

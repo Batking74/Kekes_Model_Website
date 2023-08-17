@@ -1,5 +1,5 @@
 import { HTML } from "./HTML.js";
-import { setImgs, setLinks, sendPOSTRequestToSever, sendGETRequestToSever } from "./ExtraTools.js";
+import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever } from "./ExtraTools.js";
 export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
 export const companyInfo = await sendGETRequestToSever('/companyinfo');
@@ -87,17 +87,12 @@ async function validate() {
         footerLabel.remove();
         footerInput.remove();
         footerBtn.remove();
-        const f = await fetch('/Register', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify("booty")
-        })
-        console.log(f)
-        // console.log(JSON.stringify(footerInput.value))
-        // try {
-        //     const response = await sendPOSTRequestToSever('/Register', JSON.stringify(footerInput.value))
-        //     console.log(response);
-        // } catch(error) { console.log(error) }
+        const userData = {
+            id: 4,
+            Date: date.toUTCString(),
+            Email: footerInput.value,
+        }
+        console.log(await sendPOSTRequestToSever('/receiveEmails', userData))
         footerResponse.innerHTML = HTML.FooterInputResponse;
     }
 }
