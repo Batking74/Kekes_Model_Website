@@ -44,7 +44,7 @@ export function setLinks(element, attr, link, index) {
     let count2 = 1;
     for(let i = 0; i < element.length; i++) {
         if(i > 0 && i < 7) {
-            element[i].setAttribute('class', `${attr[j(count2, 2)]} ${attr[2]}`);
+            element[i].setAttribute('class', `${attr[j(count2 - 1, 2)]} ${attr[2]}`);
             setLink(element, link, i, i - 1);
             count2++;
         }

@@ -3,9 +3,8 @@ const inputs = document.getElementsByTagName('input');
 const verifyBtn = document.getElementById('verify-btn');
 const resendBtn = document.getElementById('resend-btn');
 document.getElementById('message').textContent = localStorage.getItem('PasswordReset').Email;
-
 verifyBtn.addEventListener('click', async () => {
-    console.log('butt')
+    console.log('test')
 })
 
 resendBtn.addEventListener('click', async () => {

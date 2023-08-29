@@ -51,20 +51,8 @@ async function validate() {
             UserMessage: inputElement[4].value
         };
         const res = await sendPOSTRequestToSever('/Contact', userSubmission);
-        console.log(res)
-
+        location.replace('/Contact/Conformation');
     }
 }
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    validate();
-})
+form.addEventListener('submit', (e) => { e.preventDefault(); validate(); })
 footer[0].remove();
-
-
-fetch('/Register', {
-    method: 'POST',
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify('hello')
-}).then(res => console.log(res))

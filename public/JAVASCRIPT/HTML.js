@@ -1,5 +1,6 @@
 import { date } from "./ExtraTools.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
+const ad = `/IMG/Ads/Sale_ad_1.jpg`;
 const num = [27, 22, 28];
 export const HTML = {
     Contact: `
@@ -32,7 +33,31 @@ export const HTML = {
         </a>
     </div>
     `,
-    Store: `
+    StoreBody: `
+    <header><h1 id="Store-Title"></h1></header>
+    <aside style="text-align: center;">
+        <img src="${ad}" alt="Sale ad" style="margin-top: 50px;">
+    </aside>
+    <section class="Product-Main-Container">
+        <div class="title">
+            <div><h1>Products | <span id="Store-Title"></span></h1></div>
+            <div>
+                <select name="Filter" id="Filter">
+                    <option value="sort by">Sort by</option>
+                    <option value="Best Selling">Best Selling</option>
+                    <option value="Alphabetically, A-Z">Alphabetically, A-Z</option>
+                    <option value="Alphabetically, Z-A">Alphabetically, Z-A</option>
+                    <option value="Price, low to high">Price, low to high</option>
+                    <option value="Price, high to low">Price, high to low</option>
+                </select>
+                <span class="counter"><span id="Products-Count"></span> Products</span>
+            </div>
+            <div><hr></div>
+        </div>
+    </section>
+    <!-- Store Navigation -->
+    <div id="nav-2"></div>`,
+    StoreProduct: `
     <div class="Product-Container">
         <a class="itemPageLink">
             <img class="itemImage">

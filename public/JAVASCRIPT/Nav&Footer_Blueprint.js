@@ -80,7 +80,6 @@ export const footerInput = document.getElementById('footerInput');
 export const footerBtn = document.getElementById('footerbtn');
 export const footerResponse = document.getElementById('footerSubmissionResponse');
 
-
 async function validate() {
     if(footerInput.value === '') alert("You must fill out!");
     else {
@@ -92,7 +91,7 @@ async function validate() {
             Date: date.toUTCString(),
             Email: footerInput.value,
         }
-        console.log(await sendPOSTRequestToSever('/receiveEmails', userData))
+        const res = await sendPOSTRequestToSever('/receiveEmails', userData);
         footerResponse.innerHTML = HTML.FooterInputResponse;
     }
 }
@@ -116,5 +115,4 @@ footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
-
 setCompanyName(companyInfo.CompanyName)

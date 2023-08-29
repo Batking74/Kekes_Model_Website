@@ -11,7 +11,8 @@ export const resMsg = [
     'Welcome to',
     `we're very excited to have you on board!`,
     'Autro for created acount'],
-    'Done plus 2 butt common intro'
+    'Thank You For Your Order, Your bill has arrived!',
+    'Contacted You From'
 ];
 const sendEmail = [sendCodeVerification, AccountCreatedConformation, sendPurcheseConfirmation, sendEmailToCompany, sendNewsLetter]
 
@@ -21,16 +22,16 @@ export function email(companyinfo, userData) {
     }
 }
 
-function sendEmailToCompany(userData, companyInfo, i) {
-    return (
-        {
-            body: {
-                name: companyInfo.CompanyName,
-                intro: resMsg[resMsg.length-1],
-                instructions: userData.UserMessage
-            },
+function sendEmailToCompany(companyinfo, userData, i) {
+    return ({
+        body: {
+            name: 'Nazir',
+            intro: `${userData.Firstname} ${userData.Lastname} ${resMsg[resMsg.length-1]} ${companyinfo.CompanyName}`,
+            action: {
+                instructions: `Message: ${userData.UserMessage}`
+            }
         }
-    )
+    })
 }
 
 function sendCodeVerification(companyinfo, userData, i) {
@@ -71,7 +72,7 @@ function sendPurcheseConfirmation(companyinfo, userData, i) {
     return ({
         body: {
             name: userData.FirstName,
-            intro: 'Thank You For Your Order, Your bill has arrived!',
+            intro: resMsg[2],
             table: {
                 data: [{
                     ID: companyinfo.id,
@@ -80,15 +81,6 @@ function sendPurcheseConfirmation(companyinfo, userData, i) {
                     }]
                 },
             outro: 'Shop again at Palmer Studios!'
-        }
-    })
-}
-
-function emailForCompany(companyinfo, userData, i) {
-    return ({
-        body: {
-            intro: `${companyinfo.CompanyName} Contact Message from: ${userData.Firstname} ${userData.Lastname}`,
-            text: userData.UserMessage
         }
     })
 }

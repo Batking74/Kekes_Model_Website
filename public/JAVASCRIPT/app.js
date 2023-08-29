@@ -1,9 +1,10 @@
-import { transporter, companyDB, userDB, getTablesFrom, createNewUser, getEmailForCompany, getEmailForUser }  from './database.js';
+import { transporter, companyDB, userDB, storeDB, getTablesFrom, createNewUser, getEmailForCompany, getEmailForUser }  from './database.js';
 import express from 'express';
 import bcrypt from 'bcrypt';
 import fs from 'fs'
 const filePath = './public/HTML/';
 const app = express()
+
 
 // Routing is how an application/websites end points respond to client/computer requests
 app.use(express.static('./public'));
@@ -27,6 +28,9 @@ const api = [
     '/receiveEmails', // 15
     '/users', // 16
     '/companyinfo', // 17
+    '/done', // 18
+    '/products', // 19
+    '/apis' // 20
 ];
 const file = [
     'index.html', // 0
@@ -44,7 +48,7 @@ const file = [
     'Login/Authentication.html', // 12
     'Login/Change_Password.html', // 13
     'Login/Reset_Password_Complete.html', // 14
-    'Login/ResetPassword_Conformation.html' // 15
+    'Login/ResetPassword_Conformation.html', // 15
 ];
 const resMsg = [
     'Email will be sent to you shortly.', // 0
@@ -60,9 +64,10 @@ const DBColumns = [
     '(Message, Date_Sent)'
 ]
 
+
 for(let i = 0; i < file.length; i++) getReq(api[i], file[i]);
 
-// Contact Page Routings
+
 app.post(api[3], async (req, res) => {
     sendMailToCompany(req.body);
     const encryptedData = await encryptData(req.body.Email);
@@ -95,6 +100,7 @@ app.post(api[15], (req, res) => {
     sendResponse(res, resMsg[6]);
 })
 
+
 app.get(api[16], async (req, res) => {
     const data = await getTablesFrom(process.env.TABLE_NAME2, userDB);
     sendResponse(res, data);
@@ -105,12 +111,25 @@ app.get(api[17], async (req, res) => {
     res.json(data[0]);
 })
 
+app.get(api[18], (req, res) => {
+    fs.readFile('./public/HTML/Store/Product.html', 'utf8', (err, HTML) => {
+        res.send(HTML);
+    })
+})
+
+app.get(api[19], async (req, res) => {
+    res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+})
+
+app.get(api[20], async (req, res) => {
+    res.send(await getTablesFrom(process.env.TABLE_NAME5, companyDB));
+})
 async function sendMailToCompany(userData) { prepareEmail(userData) }
 async function sendMailToUser(userData) { prepareEmail(userData) }
 async function prepareEmail(userData) {
     const companyinfo = await getTablesFrom(process.env.TABLE_NAME1, companyDB);
-    const companyEmail = getEmailForUser(companyinfo[0], userData);
-    sendEmail(companyEmail);
+    if(userData.id == 3) sendEmail(getEmailForCompany(companyinfo[0], userData));
+    else sendEmail(getEmailForUser(companyinfo[0], userData));
 }
 
 async function sendEmail(email) {
