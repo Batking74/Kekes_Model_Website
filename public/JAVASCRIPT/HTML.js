@@ -59,7 +59,7 @@ export const HTML = {
     <div id="nav-2"></div>`,
     StoreProduct: `
     <div class="Product-Container">
-        <a class="itemPageLink">
+        <a href="#" class="itemPageLink">
             <img class="itemImage">
             <div class="Product-Card">
                 <span class="Price-Container">
@@ -71,7 +71,7 @@ export const HTML = {
                 <p class="itemPercentageOff"></p>
                 <p class="rating" class="Product-Rating"></p>
                 <span>
-                    <a class="AddToList">Add to List</a>
+                    <a href="#" class="AddToList">Add to List</a>
                 </span>
             </div>
         </a>
