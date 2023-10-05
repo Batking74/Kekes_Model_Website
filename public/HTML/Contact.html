@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/Nav&Footer.css">
-    <link rel="stylesheet" href="/CSS/contact.css">
+    <meta name="discription" content="Palmer Studios Contact Page">
+    <link rel="stylesheet" href="../CSS/contact.css">
+    <link rel="stylesheet" href="../CSS/Nav&Footer.css">
     <title>Contact Us</title>
 </head>
 <body>
+    
+    <!-- Mobile/Tablet Responsive Navigation -->
+    <div role="navigation" id="hamburger-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <!-- Navigation Bar -->
     <nav id="navbar"></nav>
 
@@ -17,45 +26,65 @@
         <h1>Contact <span id="Company-Name"></span></h1>
     </div>
     
-        <!-- Start of contact info container -->
-        <div class="position-container">
-            <div class="main-container">
-                <div class="info-container"></div>
+    <!-- Start of contact info container -->
+    <main>
+        <div class="main-container">
 
-                <!-- Start of form -->
-                <form autocomplete="off" id="form" action="/HTML/contactAction.html">
-                    <div class="position-group-container">
-                        <div class="firstNameEmail-group">
+            <!-- Palmer Studios Contact Info Container -->
+            <div class="info-container"></div>
+            
+            <!-- Start of form -->
+            <form id="form" action="../HTML/contactAction.html">
+                <div class="form-container">
+                    <div>
+
+                        <!-- First Name Input -->
+                        <div>
                             <label>First Name</label>
-                            <input id="userInput" autofocus maxlength="20" type="text">
-                            <span id="errorMsg"></span>
-                            <label>E-Mail</label>
-                            <input id="userInput" maxlength="30" type="email">
-                            <span id="errorMsg"></span>
+                            <input class="userInput" autofocus maxlength="20" type="text">
+                            <span class="errorMsg"></span>
                         </div>
-                        <div class="lastNamePhone-group">
+
+                        <!-- Last Name Input -->
+                        <div>
                             <label>Last Name</label>
-                            <input id="userInput" maxlength="20" type="text">
-                            <span id="errorMsg"></span>
-                            <label>Phone #</label>
-                            <input id="userInput" maxlength="12" type="tel">
-                            <span id="errorMsg"></span>
+                            <input class="userInput" maxlength="20" type="text">
+                            <span class="errorMsg"></span>
                         </div>
                     </div>
+                    <div>
+
+                        <!-- Email Name Input -->
+                        <div>
+                            <label>E-Mail</label>
+                            <input class="userInput" maxlength="30" type="email">
+                            <span class="errorMsg"></span>
+                        </div>
+
+                        <!-- Phone Number Name Input -->
+                        <div>
+                            <label>Phone #</label>
+                            <input class="userInput" maxlength="12" type="tel">
+                            <span class="errorMsg"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Message Input -->
+                <div class="user-message-container">
+                    <label>Message</label>
                     <br>
-                    <div class="message">
-                        <label>Message</label>
-                        <br>
-                        <textarea id="userInput" maxlength="1000" cols="81" rows="3"></textarea>
-                        <div id="errorMsg"></div>
-                    </div>
-                    <div class="btn">
-                        <button type="submit">Send Message</button>
-                    </div>
-                </form>
-            </div>
+                    <textarea class="userInput" maxlength="1000" cols="81" rows="3"></textarea>
+                    <div class="errorMsg"></div>
+                </div>
+
+                <!-- Send Message Button -->
+                <div class="contact-button-container">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
         </div>
         <footer></footer>
-        <script type="module" src="/JAVASCRIPT/contact.js"></script>
+        <script type="module" src="../JAVASCRIPT/contact.js"></script>
     </body>
 </html>

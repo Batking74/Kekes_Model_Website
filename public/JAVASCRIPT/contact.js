@@ -1,12 +1,12 @@
 import { HTML } from "./HTML.js";
 import { sendPOSTRequestToSever } from "./ExtraTools.js";
-import { navLinks, icons, attribute, footer, setContactSocialMediaIcons, setContactInfo, companyInfo } from "./Nav&Footer_Blueprint.js";
+import * as navTools from "./Nav&Footer_Blueprint.js";
 
 // Targeting Elements
 const formContactInfo = document.querySelector('.info-container');
 const form = document.querySelector('#form');
-const inputElement = document.querySelectorAll('#userInput');
-const errorElement = document.querySelectorAll('#errorMsg');
+const inputElement = document.querySelectorAll('.userInput');
+const errorElement = document.querySelectorAll('.errorMsg');
 const errorMsg = new Array(5);
 errorMsg[0] = 'First name is required!';
 errorMsg[1] = 'Email is required!';
@@ -19,18 +19,24 @@ const imgElement = document.querySelectorAll('.Dynamic-img');
 const aElement = document.querySelectorAll('.Dynamic-link');
 const pElement = document.querySelectorAll('.Dynamic-Data');
 
-setContactInfo(pElement, imgElement, 1, 0, icons[7], companyInfo.PhoneNumber);
-setContactInfo(pElement, imgElement, 2, 1, icons[8], companyInfo.Email);
-setContactInfo(pElement, imgElement, 3, 2, icons[9], companyInfo.Location);
-// FaceBook Icon
-setContactSocialMediaIcons(aElement, imgElement, 4, 1, navLinks[6], icons[12], attribute[3]);
-// Instagram Icon
-setContactSocialMediaIcons(aElement, imgElement, 5, 2, navLinks[7], icons[13], attribute[3]);
-// Twitter Icon
-setContactSocialMediaIcons(aElement, imgElement, 6, 3, navLinks[8], icons[14], attribute[3]);
-// Twitter Icon
-setContactSocialMediaIcons(aElement, imgElement, 7, 4, navLinks[9], icons[15], attribute[3]);
+navTools.setContactInfo(pElement, imgElement, 1, 0, navTools.icons[7], navTools.companyInfo.PhoneNumber);
+navTools.setContactInfo(pElement, imgElement, 2, 1, navTools.icons[8], navTools.companyInfo.Email);
+navTools.setContactInfo(pElement, imgElement, 3, 2, navTools.icons[9], navTools.companyInfo.Location);
 
+// FaceBook Icon
+navTools.setContactSocialMediaIcons(aElement, imgElement, 4, 1, navTools.navLinks[6], navTools.icons[12], navTools.attribute[3]);
+
+// Instagram Icon
+navTools.setContactSocialMediaIcons(aElement, imgElement, 5, 2, navTools.navLinks[7], navTools.icons[13], navTools.attribute[3]);
+
+// Twitter Icon
+navTools.setContactSocialMediaIcons(aElement, imgElement, 6, 3, navTools.navLinks[8], navTools.icons[14], navTools.attribute[3]);
+
+// Twitter Icon
+navTools.setContactSocialMediaIcons(aElement, imgElement, 7, 4, navTools.navLinks[9], navTools.icons[15], navTools.attribute[3]);
+
+
+// Validates User input, and if all feilds are valid a POST request is sent to the server.
 async function validate() {
     let count = 0;
     for(let i = 0; i < inputElement.length; i++) {
@@ -54,5 +60,7 @@ async function validate() {
         location.replace('/Contact/Conformation');
     }
 }
+
+
 form.addEventListener('submit', (e) => { e.preventDefault(); validate(); })
-footer[0].remove();
+navTools.footer[0].remove();

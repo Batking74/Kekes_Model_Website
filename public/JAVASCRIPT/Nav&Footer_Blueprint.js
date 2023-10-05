@@ -7,8 +7,8 @@ export const companyInfo = await sendGETRequestToSever('/companyinfo');
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
 navLinks[0] = `/`;
-navLinks[1] = `/About`;
-navLinks[2] = `/FAQ`;
+navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website/tree/frontend`;
+navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
 navLinks[3] = `/Contact`;
 navLinks[4] = `/Palmerstore`;
 navLinks[5] = `/Login`;
@@ -115,4 +115,7 @@ footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
+// Toggle Hamburger menu
+const hamburgerBtn = document.querySelector('#hamburger-nav');
+hamburgerBtn.addEventListener('click', (e) => navbar.classList.toggle('active'));
 setCompanyName(companyInfo.CompanyName)
