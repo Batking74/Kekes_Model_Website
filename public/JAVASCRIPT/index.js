@@ -4,16 +4,12 @@ import { attribute, companyInfo, navbar } from "./Nav&Footer_Blueprint.js";
 const animate = document.querySelectorAll(`.${attribute[0]}`);
 const animate2 = document.querySelectorAll(`.${attribute[1]}`);
 const imageContainer = document.querySelector('.Model-Gallery-Container');
-const hamburgerBtn = document.querySelector('#hamburger-btn');
 
 // Changes Load Animations
 for(let index = 0; index < animate.length; index++) {
     animate[index].classList.replace(`${attribute[0]}`, "HomeAnimateGroup1");
     animate2[index].classList.replace(`${attribute[1]}`, "HomeAnimateGroup2");
 }
-
-// Toggle Hamburger menu
-hamburgerBtn.addEventListener('click', (e) => navbar.classList.toggle('active'));
 
 // Creating Dynamic Project Card
 class myProjects {
