@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription" content="Account Registration">
     <link rel="stylesheet" href="/CSS/Login/Registration.css">
-    <title>Document</title>
+    <title>Account Registration</title>
 </head>
 <body>
-    <div class="main-container">
+
+    <!-- Start of Main Container -->
+    <main>
         <form id="form">
             <h1>Create an Account</h1>
+
+            <!-- User Credential Inputs -->
             <div class="credential-container1">
                 <input class="input" type="text" placeholder="First Name">
                 <input class="input" type="text" placeholder="Last Name">
                 <input class="input" type="email" placeholder="Email">
                 <input style="padding: 8px 0 8px 10px;" class="input" type="text" placeholder="Create Username">
             </div>
+
+            <!-- Create Password Inputs -->
             <div class="credential-container2">
                 <input class="input" type="password" placeholder="Password">
                 <input class="input" type="password" placeholder="Re-type Password">
             </div>
+
+            <!-- Extra Info about User inputs -->
             <div class="credential-container3">
                 <div>
                     <input id="male" type="radio" >
@@ -85,7 +94,7 @@
                 <span class="checkbox-container">
                     <span>
                         <input id="policy-conformation" type="checkbox">
-                        <label>I agree with <a target="_blank" href="http://localhost:5000/policies&conditions">terms and conditions</a></label>
+                        <label>I agree with <a target="_blank" href="https://en.wikipedia.org/wiki/Lorem_ipsum">terms and conditions</a></label>
                     </span>
                     <span>
                         <input type="checkbox">
@@ -96,7 +105,7 @@
                 <a class="loginLink" href="http://localhost:5000/Login">Back To Login</a>
             </div>
         </form>
-    </div>
+    </main>
     <script type="module" src="/JAVASCRIPT/Login/Registration.js"></script>
 </body>
 </html>

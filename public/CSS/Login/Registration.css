@@ -4,11 +4,9 @@ body {
     background-size: cover;
 }
 
-.main-container {
-   display: flex;
-   justify-content: end;
-   position: relative;
-   right: 200px;
+main {
+    display: flex;
+    justify-content: center;
 }
 
 form {
@@ -124,8 +122,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffc107;
-  -webkit-box-shadow: 0 0 0px 1000px #4a4a4a inset;
+    -webkit-text-fill-color: #ffc107;
+    -webkit-box-shadow: 0 0 0px 1000px #4a4a4a inset;
 }
 
 .error {

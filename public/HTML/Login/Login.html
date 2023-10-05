@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription" content="Palmer Studios Login">
     <link rel="stylesheet" href="/CSS/Login/Login.css">
     <link rel="stylesheet" href="/CSS/Nav&Footer.css">
     <title>Log in</title>
@@ -23,16 +24,12 @@
         <div id="error"></div>
         <form id="form" action="/Login" method="get">
             <h1>Log in</h1>
-            <div>
-                <label>Username</label>
+                <label class="username-label">Username</label>
                 <br>
-                <input class="userInput" name="Username" autofocus placeholder="Enter username" type="text">
-            </div>
-            <div>
-                <label>Password</label>
+                <input class="username userInput" name="Username" autofocus placeholder="Enter username" type="text">
+                <label class="password-label">Password</label>
                 <br>
                 <input class="userInput" name="Password" placeholder="Enter password" type="password">
-            </div>
             <div>
                 <input id="checkbox" class="checkbox" type="checkbox">
                 <label>Remember me</label>
@@ -46,8 +43,6 @@
             <br>
             <button class="signup-btn">Sign up for an account</button>
         </form>
-        <!-- End of form -->
-
         <footer></footer>
         <script type="module" src="/JAVASCRIPT/Login/login.js"></script>
 </body>
