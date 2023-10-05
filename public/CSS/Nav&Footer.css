@@ -1,3 +1,4 @@
+/* Start of Navigation */
 nav {
     display: grid;
     grid-template: 60px / repeat(7, auto);
@@ -9,7 +10,7 @@ nav {
     z-index: 1;
 }
 
-nav img { width: 70px; height: 80px; object-fit: cover; }
+nav img { width: 60px; height: 55px; object-fit: cover; }
 
 nav a {
     text-decoration: none;
@@ -158,7 +159,7 @@ select:-webkit-autofill:focus {
 
 .copyright hr { border: 0.1px #ffffff2b solid; outline: none; }
 
-/* First Tablet View */
+/* Responsive Web Design: First Tablet View */
 @media (max-width: 850px) {
     #navbar {
         display: grid;
@@ -171,34 +172,35 @@ select:-webkit-autofill:focus {
         left: -100%;
         transition: 1.3s;
     }
-
+    
     #navbar.active { left: 0;}
-
-    #hamburger-btn {
+    
+    #hamburger-nav {
         position: fixed;
         top: 25px;
         left: 20px;
+        background: none;
         width: 25px;
         height: 25px;
         cursor: pointer;
         z-index: 5;
         transition: 0.3s;
     }
-
-    #hamburger-btn span {
+    
+    #hamburger-nav span {
         display: flex;
         width: 20px;
         height: 2px;
         padding: 1px 2px 1px 2px;
-        background-color: #ffa600;
+        background: #8a5b02;
         margin-top: 3.2px;
     }
-
-    #hamburger-btn:hover { transform: scale(1.5);cursor: pointer; }
-    #hamburger-btn:active { cursor: grab; }
-
+    
+    #hamburger-nav:hover { transform: scale(1.5);cursor: pointer; }
+    #hamburger-nav:active { cursor: grab; }
+    
     nav { grid-template: repeat(7, auto) / 100%; }
-
+    
     .active { left: 0; }
 }
 
@@ -240,13 +242,16 @@ select:-webkit-autofill:focus {
 }
 
 /* Second Mobile View */
-@media (max-width: 590px) {
-    #hamburger-btn { top: 30px; left: 27rem; }
+@media (max-width: 500px) {
+    #hamburger-nav {
+        top: 30px;
+        left: 24rem;
+    }
 
     #navbar {
         grid-template-rows: repeat(7, 100px);
         width: 100%;
-        background-color: #000000;
+        background: #000;
         border-right: none;
         top: -105%;
         left: 0;

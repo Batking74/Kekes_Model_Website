@@ -12,10 +12,10 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Start form */
+/* Start of Form */
 form {
-    position: absolute;
-    left: 37%;
+    position: fixed;
+    left: 35%;
     bottom: 15%;
     display: grid;
     border-radius: 20px;
@@ -25,7 +25,6 @@ form {
 
 form h1 {
     text-align: center;
-    margin-bottom: 20px;
     font-weight: lighter;
     font-size: 50px;
 }
@@ -38,20 +37,30 @@ form label {
     font-size: medium;
 }
 
+form h1, .username, .password-label {
+    position: relative;
+    top: 18px;
+}
+
+.username-label {
+    position: relative;
+    top: 33px;
+}
+
 form input {
-    padding: 7px 11vmax 7px 7px;
+    padding: 7px 0 7px 7px;
     font-size: 17px;
     border: solid 1px #0000004f;
     outline: none;
     color: #ffffffc8;
     border-radius: 5px;
     margin-bottom: 20px;
-    background-color: #978e4551;
+    background: #978e4551;
 }
 
 .checkbox {
     cursor: pointer;
-    background-color: #978e4551;
+    background: #978e4551;
 }
 
 .checkbox:active {
@@ -105,18 +114,18 @@ form a:active {
 .signup-btn {
     padding: 14px 0 14px 0;
     color: #ffffff;
-    background-color: #000000;
+    background: #000000;
 }
 
 .signup-btn:hover {
     transition: 1s;
-    background-color: #5a5a5a67;
+    background: #5a5a5a67;
 }
 
 /* Error Styles */
 .Error-Style {
     position: absolute;
-    background: red;
+    background: #ff0000;
     padding: 20px 0 20px 0;
     text-align: center;
     transform: translateY(83%);
@@ -132,201 +141,48 @@ form a:active {
     transition: 3s;
 }
 
-/* Media Queries */
-
-/* Navigation styles start: BlackBerry Z30, Galaxy Note 3, Galaxy Note 2, Galaxy S 3 */
-@media screen and (min-width: 360px) and (max-width: 599px) {
-    .nav-container {
-        display: none;
-    }
-    
-    /* Start form */
+/* Responsive Web Design: Tablet View */
+@media screen and (max-width: 1140px) {
     form {
-        left: 4%;
-        bottom: 20%;
-        padding: 30px 30px 30px 30px;
+        left: 28%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    form { left: 23%; }
+
+    /* Error Styles */
+    .Error-Style {
+        transform: translateY(-10%);
+        font-size: large;
+        z-index: 10;
     }
     
+    .Hide-Error-Style {
+        transform: translateY(-80%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form { left: 13%; }
+}
+
+@media screen and (max-width: 490px) {
+    form {
+        left: 25px;
+        margin-top: 50px;
+    }
+
+    /* Start of Form */
     form h1 {
         font-size: 40px;
     }
-    
-    form label {
-        font-size: small;
-    }
-    
-    form input {
-        padding: 6px 10vmax 6px 6px;
-        font-size: 16px;
-    }
-    
-    .signin-forgotpass {
-        font-size: 12px;
-    }
-    
-    form button {
-        padding: 7px 32px 7px 32px;
-    }
-    
-    .signup-btn {
-        padding: 11px 0 11px 0;
-    }
-}
 
-/* Galaxy S9+ */
-@media screen and (min-width: 320px) and (max-width: 359px) {
-    .nav-container {
-        display: none;
-    }
-    
-    form {
-        left: 5px;
-        bottom: 19%;
-        padding: 30px 30px 30px 30px;
-    }
-    
-    form h1 {
-        font-size: 38px;
-    }
-    
-    form label {
-        font-size: small;
-    }
-    
-    form input {
-        padding: 6px 10vmax 6px 6px;
+    .sign-in-options a {
         font-size: 14px;
     }
-    
-    .signin-forgotpass {
-        font-size: 10px;
-    }
 
-    form a {
-        font-size: 10px;
-    }
-    
     form button {
-        padding: 5px 29px 5px 29px;
-    }
-    
-    .signup-btn {
-        padding: 10px 0 10px 0;
-    }
-}
-
-/* Blackberry PlayBook */
-@media screen and (min-width: 600px) and (max-width: 711px) {
-    .nav-container {
-        display: none;
-    }
-    
-    form {
-        left: 10%;
-        bottom: 24%;
-        padding: 30px 30px 30px 30px;
-    }
-    
-    form h1 {
-        font-size: 60px;
-    }
-    
-    form label {
-        font-size: x-large;
-    }
-    
-    form input {
-        padding: 7px 10vmax 7px 6px;
-        font-size: 25px;
-        margin-bottom: 33px;
-    }
-
-    form label:last-child {
-        margin: 0 0 0 5px;
-    }
-
-    form a {
-        font-size: 20px;
-    }
-    
-    form button {
-        padding: 6px 30px 6px 30px;
-        font-size: x-large;
-    }
-    
-    .signup-btn {
-        padding: 13px 0 13px 0;
-    }
-}
-
-/* Galaxy Tab S4 */
-@media screen and (min-width: 712px) and (max-width: 799px) {
-    form {
-        left: 16%;
-        bottom: 27%;
-        padding: 30px 30px 30px 30px;
-    }
-    
-    form h1 {
-        font-size: 65px;
-    }
-    
-    form label {
-        font-size: x-large;
-    }
-    
-    form input {
-        padding: 7px 10vmax 7px 6px;
-        font-size: 25px;
-        margin-bottom: 33px;
-    }
-
-    form a {
-        font-size: 20px;
-    }
-    
-    form button {
-        padding: 8px 50px 8px 50px;
-        font-size: x-large;
-    }
-    
-    .signup-btn {
-        padding: 15px 0 15px 0;
-    }
-}
-
-/* Kindle Fire HDX */
-@media screen and (min-width: 800px) and (max-width: 819px) {
-    form {
-        left: 19%;
-        bottom: 27%;
-        padding: 30px 30px 30px 30px;
-    }
-    
-    form h1 {
-        font-size: 65px;
-    }
-    
-    form label {
-        font-size: x-large;
-    }
-    
-    form input {
-        padding: 7px 10vmax 7px 6px;
-        font-size: 25px;
-        margin-bottom: 33px;
-    }
-
-    form a {
-        font-size: 20px;
-    }
-    
-    form button {
-        padding: 8px 50px 8px 50px;
-        font-size: x-large;
-    }
-
-    .signup-btn {
-        padding: 18px 0 18px 0;
+        padding: 10px 60px 10px 60px;
     }
 }

@@ -17,7 +17,6 @@ export const numberOfProducts = document.querySelector('#Products-Count');
 export const productMainContainer = document.querySelector('.Product-Main-Container');
 export const storeNavigation = document.querySelector('#nav-2');
 export const sideNavigation = document.querySelector('.nav-container');
-export const hamburgerBtn = document.querySelector('#hamburger-btn');
 export let pageName = document.querySelectorAll('#Page-Name');
 export let storeTitle = document.querySelectorAll('#Store-Title');
 export let pageLink = new LinkedList();
@@ -95,6 +94,7 @@ function getDiscount(price, percentageOff, id) {
     else if(id == 18) price = calculateDiscount(37, price, percentageOff);
     else if(id == 5) price = calculateDiscount(25, price, percentageOff);
     else if(id == 12) price = calculateDiscount(30, price, percentageOff);
+    else if(id == 11) price = calculateDiscount(5, price, percentageOff);
     return price;
 }
 
@@ -181,5 +181,3 @@ function sortLowToHigh() {
 function sortHighToLow() {
     console.log("Sorted High to Low!!!");
 }
-
-hamburgerBtn.addEventListener('click', () => { navbar.classList.toggle('active'); });

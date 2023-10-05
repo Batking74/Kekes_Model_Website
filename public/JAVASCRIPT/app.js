@@ -93,7 +93,7 @@ app.post(api[11], (req, res) => {
         sendResponse(res, `${resMsg[3]} ${req.body} please verify...`);
     }
 });
-app.post(api[14], (req, res) => console.log('vyyy'));
+app.post(api[14], (req, res) => console.log('test'));
 
 app.post(api[15], (req, res) => {
     sendMailToUser(req.body);

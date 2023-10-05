@@ -1,4 +1,6 @@
 import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../ExtraTools.js';
+
+// Declaring and Initializing Variables
 const input = document.querySelectorAll('.input');
 const form = document.querySelector('#form');
 const male = document.querySelector('#male');
@@ -20,6 +22,8 @@ const errorMsg = [
     `Username already used`,
     `Use another password`
 ];
+
+// Validating radio buttons
 sex.forEach(element => {
     element.addEventListener('click', (e) => {
         if(e.target.id === 'male') { setFalse(female, other); gender = 'Male'; }
@@ -33,6 +37,7 @@ form.addEventListener('submit', (e) => {
     validate();
 });
 
+// If all inputs are valid user is dirrected to the Account Verification page and email will be sent.
 async function validate() {
     if(await valid()) {
         const newUser = {
@@ -53,6 +58,7 @@ async function validate() {
     }
 }
 
+// Checking if all inputs are filled out and returning true or false
 async function valid() {
     let count = 0;
     let status = true;
@@ -68,6 +74,7 @@ async function valid() {
     return status;
 }
 
+// Checking if all other inputs are not null and validating each
 async function isOtherInputsValid(status) {
     if(input[4].value != input[5].value) { alert(errorMsg[0]); error(input); status = false; }
     else if(input[4].value.length < 10) { alert(errorMsg[1]); error(input); status = false; }
@@ -78,11 +85,15 @@ async function isOtherInputsValid(status) {
     else return status;
 }
 
+// If something isn't filled out or answered an error is returned
 function error(element) {
     displayError(element[4], errorClassName, errorClassName, 0);
     displayError(element[5], errorClassName, errorClassName, 0);
 }
 
+/*
+Checking SQL database to make sure user trying to create an account doesn't already have one or any duplicate username, password, and email
+*/
 async function isADuplicate(status) {
     try {
         const res = await fetch('/users');
