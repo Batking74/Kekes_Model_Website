@@ -5,7 +5,7 @@ This is one of my bigger Projects that I started building when I was 16. I origi
 
 - I was motivated to build this project to improve on my skills in HTML, CSS, JavaScript, Node.js, SQL, debugging, staying organized, shortcuts, swiftness with coding, etc. The main benifit I got though out of this project is Problem Solving.
 
-![Image of Nazir's Palmer Studio Project Landing page](./public/IMG/Palmer_Studios_Project.png)
+![Image of Nazir's Palmer Studio Project Landing page](./IMG/Palmer_Studios_Project.png)
 
 ## Features
 - Validates User input on all pages that has inputs.
