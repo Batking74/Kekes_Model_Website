@@ -1,13 +1,11 @@
-import { navbar } from "../Nav&Footer_Blueprint.js";
-import { getProductsFromDB, getProductElements, getProductInstance, calculateDiscount } from "./Store_tools.js";
-import { sendGETRequestToSever } from "../ExtraTools.js";
+import {} from "../Nav&Footer_Blueprint.js";
 import LinkedList from "../LinkedList.js";
 import { HTML } from "../HTML.js";
-export const products = await sendGETRequestToSever('/products');
 
 // Dynamic Store HTML Page
 export const main = document.getElementsByTagName('main');
 main[0].innerHTML = HTML.StoreBody;
+
 
 // Targeting Elements & Creating Arrays
 export const body = document.getElementsByTagName('body');
@@ -21,7 +19,13 @@ export let pageName = document.querySelectorAll('#Page-Name');
 export let storeTitle = document.querySelectorAll('#Store-Title');
 export let pageLink = new LinkedList();
 export const productArray = new LinkedList();
+export let price = new LinkedList();
+export let productLink = new LinkedList();
+export let description = new LinkedList();
+export let img = new LinkedList();
+export const myProductArray = new LinkedList();
 export const rating = new Array(5);
+
 rating[0] = '&#8902';
 rating[1] = '&#8902 &#8902';
 rating[2] = '&#8902 &#8902 &#8902';
@@ -29,9 +33,9 @@ rating[3] = '&#8902 &#8902 &#8902 &#8902';
 rating[4] = '&#8902 &#8902 &#8902 &#8902 &#8902';
 
 // Store landing page Links
-pageLink[0] = `/Palmerstore`;
-pageLink[1] = `/Palmerstore/Page2`;
-pageLink[2] = `/Palmerstore/Page3`;
+pageLink[0] = `/HTML/Store/Store_1.html`;
+pageLink[1] = `/HTML/Store/Store_2.html`;
+pageLink[2] = `/HTML/Store/Store_3.html`;
 
 // Dynamic Elements
 setStoreName("Palmer Store");
@@ -56,32 +60,55 @@ export default class Product {
     getId() { return this.id; }
 }
 
-// Creating Store Products
-export function instantiateProducts(start, end) {
-    for(let i = start; i < end; i++) {
-        const attr = getProductsFromDB(i);
-        const object = new Product(attr[0], attr[2], attr[1], rating[4], attr[3], attr[4]);
-        productArray.insertAtHead(object);
-        productMainContainer.innerHTML += HTML.StoreProduct;
-    }
+// ID Generator
+export function* generateId(i) {
+    let id = 4381971 + (i * 27385);
+    while(true) yield id;
 }
 
-export function displayProducts(productsLength) {
-    for(let i = 0; i < productsLength; i++) {  
-        const element = getProductElements();
-        const productAttr = getProductInstance(i);
-        element[0][i].setAttribute('src', productAttr[0]);
-        element[0][i].setAttribute('alt', productAttr[2]);
-        element[5][i].setAttribute('href', productAttr[3]);
-        element[1][i].textContent = `${productAttr[1]}`;
-        element[4][i].textContent = productAttr[2];
-        element[2][i].textContent = getDiscount(productAttr[1], element[3][i], productAttr[4]);
+// Creating Store Products
+export function createProducts(array, randomNum) {
+    for(let i = 0; i < array.length; i++) {
+        const itemImage = img.getIndex(i).value;
+        const itemPrice = price.getIndex(i).value;
+        const itemDescription = description.getIndex(i).value;
+        const itemPageLink = productLink.getIndex(i).value;
+        let id = generateId(i).next().value + randomNum;
+        const object = new Product(itemImage, itemDescription, itemPrice, rating[4], itemPageLink, id);
+        myProductArray.insertAtHead(object);
+        console.log(myProductArray)
+        // Displaying Each Products Attributes
+        productMainContainer.innerHTML += HTML.StoreProduct;
+    }
+    console.log(productMainContainer.innerHTML)
+}
+
+export function displayProducts() {
+    for(let i = 0; i < myProductArray.length; i++) {
+        const itemImage = img.getIndex(i).value;
+        const itemRegularPrice = price.getIndex(i).value;
+        const itemDescription = description.getIndex(i).value;
+        const itemPageLink = productLink.getIndex(i).value;
+        const id = myProductArray.getIndex(i).value.id;
+        const itemImages = document.querySelectorAll('.itemImage');
+        const itemRegularPrices = document.querySelectorAll('.itemRegularPrice');
+        const itemDiscountPrices = document.querySelectorAll('.itemDiscount');
+        const itemPercentagesOff = document.querySelectorAll('.itemPercentageOff');
+        const itemDiscriptions = document.querySelectorAll('.itemDiscription');
+        const itemPageLinks = document.querySelectorAll('.itemPageLink');
+
+        itemImages[i].setAttribute('src', itemImage);
+        itemImages[i].setAttribute('alt', itemDescription);
+        itemPageLinks[i].setAttribute('href', itemPageLink);
+        itemRegularPrices[i].textContent = `$${itemRegularPrice}`;
+        itemDiscriptions[i].textContent = itemDescription;
+        itemDiscountPrices[i].textContent = getDiscount(itemRegularPrice, itemPercentagesOff[i],  id);
 
         // Non Discounted Products Condition
-        if(element[2][i].textContent == productAttr[1]) {
-            element[2][i].textContent = `${productAttr[1]}`;
-            element[1][i].textContent = '';
-            element[3][i].innerHTML = '';
+        if(itemDiscountPrices[i].textContent == itemRegularPrice) {
+            itemDiscountPrices[i].textContent = `$${itemRegularPrice}`;
+            itemRegularPrices[i].textContent = '';
+            itemPercentagesOff[i].innerHTML = '';
         }
     }
 }
@@ -96,6 +123,13 @@ function getDiscount(price, percentageOff, id) {
     else if(id == 12) price = calculateDiscount(30, price, percentageOff);
     else if(id == 11) price = calculateDiscount(5, price, percentageOff);
     return price;
+}
+
+export function calculateDiscount(percent, price, percentageOff) {
+    let discount = percent / 100;
+    let total = price - (price * discount);
+    percentageOff.textContent = `${percent}% OFF!`;
+    return `$${parseFloat(total).toFixed(2)}`;
 }
 
 export function setStoreName(storeName) {

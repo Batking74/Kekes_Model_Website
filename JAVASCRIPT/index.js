@@ -1,4 +1,4 @@
-import { attribute, companyInfo, navbar } from "./Nav&Footer_Blueprint.js";
+import { attribute, companyInfo } from "./Nav&Footer_Blueprint.js";
 
 // Targeting Elements
 const animate = document.querySelectorAll(`.${attribute[0]}`);
@@ -22,10 +22,10 @@ class myProjects {
 const name = ['Ariel', 'USA Paddle', 'Blessing Bengeh', 'Keke'];
 const tag = ['#Ariiaaann', '#SaloneFunnyBad', '#Sierra Leone', `#${companyInfo.CompanyName}`];
 const image = new Array(4);
-image[0] = `/IMG/Models/Female/Model_3.jpg`;
-image[1] = `/IMG/Tiki.jpg`;
-image[2] = `/IMG/Models/Female/Model_4.jpg`;
-image[3] = `/IMG/Keke/Photo_3.jpg`;
+image[0] = `./IMG/Models/Female/Model_3.jpg`;
+image[1] = `./IMG/Tiki.jpg`;
+image[2] = `./IMG/Models/Female/Model_4.jpg`;
+image[3] = `./IMG/Keke/Photo_3.jpg`;
 
 // Creating Models
 let myProjectsArray = [];

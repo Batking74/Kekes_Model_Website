@@ -1,17 +1,24 @@
 import { HTML } from "./HTML.js";
-import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever } from "./ExtraTools.js";
+import { setImgs, setLinks, date } from "./ExtraTools.js";
 export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
-export const companyInfo = await sendGETRequestToSever('/companyinfo');
+
+export const companyInfo = {
+    CompanyName: 'Palmer Studios',
+    PhoneNumber: '410-895-4859',
+    Email: 'Keke@gmail.com',
+    Location: '7625 Belair Rd, Nottingham, MD 21236',
+    Website: 'http://127.0.0.1:5500/index.html'
+}
 
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
-navLinks[0] = `/`;
+navLinks[0] = `http://127.0.0.1:5500/index.html`;
 navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website/tree/frontend`;
 navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
-navLinks[3] = `/Contact`;
-navLinks[4] = `/Palmerstore`;
-navLinks[5] = `/Login`;
+navLinks[3] = `/HTML/Contact.html`;
+navLinks[4] = `/HTML/Store/Store_1.html`;
+navLinks[5] = `/HTML/Login/Login.html`;
 navLinks[6] = "https://www.facebook.com/kekepalmer";
 navLinks[7] = "https://www.instagram.com/keke";
 navLinks[8] = "https://twitter.com/KekePalmer";
@@ -24,7 +31,7 @@ navLinks[14] = "#";
 navLinks[15] = "#";
 navLinks[16] = "#";
 navLinks[17] = "#";
-navLinks[18] = "/Register";
+navLinks[18] = "/HTML/Login/Registration.html";
 
 export const icons = new Array(20);
 icons[0] = `/IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
@@ -91,7 +98,6 @@ async function validate() {
             Date: date.toUTCString(),
             Email: footerInput.value,
         }
-        const res = await sendPOSTRequestToSever('/receiveEmails', userData);
         footerResponse.innerHTML = HTML.FooterInputResponse;
     }
 }
@@ -115,6 +121,7 @@ footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
+
 // Toggle Hamburger menu
 const hamburgerBtn = document.querySelector('#hamburger-nav');
 hamburgerBtn.addEventListener('click', (e) => navbar.classList.toggle('active'));

@@ -1,5 +1,4 @@
 import { HTML } from "./HTML.js";
-import { sendPOSTRequestToSever } from "./ExtraTools.js";
 import * as navTools from "./Nav&Footer_Blueprint.js";
 
 // Targeting Elements
@@ -56,8 +55,8 @@ async function validate() {
             PhoneNumber: inputElement[3].value,
             UserMessage: inputElement[4].value
         };
-        const res = await sendPOSTRequestToSever('/Contact', userSubmission);
-        location.replace('/Contact/Conformation');
+        localStorage.setItem((Math.random() * 100000) + 1000000, userSubmission);
+        location.replace('https://batking74.github.io/Portfolio-Website/');
     }
 }
 

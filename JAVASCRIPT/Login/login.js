@@ -52,6 +52,6 @@ function error(i) {
 
 signUpBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    location.replace('/Register');
+    location.replace('/HTML/Login/Registration.html');
 })
 footer[0].remove();
