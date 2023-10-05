@@ -94,6 +94,7 @@ function getDiscount(price, percentageOff, id) {
     else if(id == 18) price = calculateDiscount(37, price, percentageOff);
     else if(id == 5) price = calculateDiscount(25, price, percentageOff);
     else if(id == 12) price = calculateDiscount(30, price, percentageOff);
+    else if(id == 11) price = calculateDiscount(5, price, percentageOff);
     return price;
 }
 
