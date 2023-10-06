@@ -10,13 +10,13 @@ export const companyInfo = {
     Location: '7625 Belair Rd, Nottingham, MD 21236',
     Website: 'https://batking74.github.io/Kekes_Model_Website/'
 }
-
+const path = '/Kekes_Model_Website'
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
 navLinks[0] = `http://127.0.0.1:5500/index.html`;
 navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website/tree/frontend`;
 navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
-navLinks[3] = `./HTML/Contact.html`;
+navLinks[3] = `.${path}/HTML/Contact.html`;
 navLinks[4] = `./HTML/Store_1.html`;
 navLinks[5] = `./HTML/Login.html`;
 navLinks[6] = "https://www.facebook.com/kekepalmer";
