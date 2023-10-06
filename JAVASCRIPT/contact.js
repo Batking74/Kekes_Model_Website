@@ -1,5 +1,5 @@
-import { HTML } from "./HTML.js";
-import * as navTools from "./Nav&Footer_Blueprint.js";
+import { HTML } from "../JAVASCRIPT/HTML.js";
+import * as navTools from "../JAVASCRIPT/Nav&Footer_Blueprint.js";
 
 // Targeting Elements
 const formContactInfo = document.querySelector('.info-container');

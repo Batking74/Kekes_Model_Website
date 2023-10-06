@@ -59,9 +59,9 @@ nav a:nth-child(2), nav a:nth-last-child(1) {
     100% { transform: translateX(0); }
 }
 
- @keyframes HomeAnimateGroup2 { 
-     0% { transform: translateX(800%); } 
-     100% { transform: translateX(0); }
+@keyframes HomeAnimateGroup2 { 
+    0% { transform: translateX(800%); } 
+    100% { transform: translateX(0); }
 }
 
 /* Store Navigation Animations */
@@ -119,8 +119,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffc107;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    -webkit-text-fill-color: #ffc107;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
 }
 
 .last-footer-col input {

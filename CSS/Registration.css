@@ -1,0 +1,132 @@
+body {
+    background-image: url(../IMG/Background_Images/Registration_Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background: #000;
+    border-top: #ffc107 solid 7px;
+    border-radius: 30px;
+    box-shadow: #ffc107 5px 0 30px;
+    padding: 60px 35px 60px 35px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+input {
+    padding: 16px 0 16px 10px;
+    background: #4a4a4a;
+    outline: none;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #ffc107;
+}
+
+input:focus {
+    border: solid #ffc107 1px;
+    box-shadow:#ffc107 0 0 10px;
+}
+
+::placeholder {
+    color: #ffc107;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    padding: 12px 0 12px 0;
+    background: #ffc107;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ffc107b6;
+    padding: 12px 0 12px 0;
+    cursor: pointer;
+}
+
+select {
+    padding: 9px 0 9px 0;
+    background: #e6e4e4;
+}
+
+option {
+    font-size: 25px;
+}
+
+.credential-container1 {
+    display: grid;
+    grid-template-rows: repeat(3, 30px);
+    row-gap: 20px;
+    padding: 20px 0 20px 0;
+}
+
+.credential-container2 {
+    display: flex;
+    column-gap: 30px;
+}
+
+.credential-container2 input{
+    padding: 7px 0 7px 10px;
+}
+
+.credential-container3 {
+    display: grid;
+    text-align: left;
+    row-gap: 20px;
+}
+
+.credential-container3 div {
+    display: flex;
+    text-align: left;
+    color: #ffffff;
+    margin: 25px 0 0 0;
+    column-gap: 8px;
+}
+
+.checkbox-container {
+    display: grid;
+    text-align: left;
+    row-gap: 15px;
+    color: #ffffff;
+}
+
+a {
+    color: #ffc107;
+}
+
+.loginLink {
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Changes Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffc107;
+    -webkit-box-shadow: 0 0 0px 1000px #4a4a4a inset;
+}
+
+.error {
+    border: solid 2px red;
+    box-shadow:#ff0000 0px 0 10px;
+}

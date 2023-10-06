@@ -1,4 +1,4 @@
-import { date } from "./ExtraTools.js";
+import { date } from "../JAVASCRIPT/ExtraTools.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
 const ad = `/IMG/Ads/Sale_ad_1.jpg`;
 const num = [27, 22, 28];
