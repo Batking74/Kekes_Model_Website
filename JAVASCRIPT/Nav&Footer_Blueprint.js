@@ -8,7 +8,7 @@ export const companyInfo = {
     PhoneNumber: '410-895-4859',
     Email: 'Keke@gmail.com',
     Location: '7625 Belair Rd, Nottingham, MD 21236',
-    Website: 'http://127.0.0.1:5500/index.html'
+    Website: 'https://batking74.github.io/Kekes_Model_Website/'
 }
 
 // Organizing Data in Arrays
@@ -16,9 +16,9 @@ export const navLinks = new Array(10);
 navLinks[0] = `http://127.0.0.1:5500/index.html`;
 navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website/tree/frontend`;
 navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
-navLinks[3] = `../HTML/Contact.html`;
-navLinks[4] = `../HTML/Store_1.html`;
-navLinks[5] = `../HTML/Login.html`;
+navLinks[3] = `.../HTML/Contact.html`;
+navLinks[4] = `.../HTML/Store_1.html`;
+navLinks[5] = `.../HTML/Login.html`;
 navLinks[6] = "https://www.facebook.com/kekepalmer";
 navLinks[7] = "https://www.instagram.com/keke";
 navLinks[8] = "https://twitter.com/KekePalmer";
@@ -31,25 +31,25 @@ navLinks[14] = "#";
 navLinks[15] = "#";
 navLinks[16] = "#";
 navLinks[17] = "#";
-navLinks[18] = "../HTML/Registration.html";
+navLinks[18] = "/HTML/Login/Registration.html";
 
 export const icons = new Array(20);
-icons[0] = `../IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
-icons[1] = `../IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png`;
-icons[2] = `../IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
-icons[3] = `../IMG/Social Media Icons & Logos/FaceBook_Icon.png`;
-icons[4] = `../IMG/Social Media Icons & Logos/Instagram_Icon.png`;
-icons[5] = `../IMG/Social Media Icons & Logos/Twitter_Icon.png`;
-icons[6] = `../IMG/Social Media Icons & Logos/YouTube_Icon.png`;
-icons[7] = `../IMG/Social Media Icons & Logos/Black_Phone_Icon.png`;
-icons[8] = `../IMG/Social Media Icons & Logos/Black_Mail_Icon.png`;
-icons[9] = `../IMG/Social Media Icons & Logos/Black_Location_Icon.png`;
-icons[10] = `../IMG/Social Media Icons & Logos/YouTube_Icon.png`;
-icons[11] = `../IMG/Social Media Icons & Logos/YouTube_Icon.png`;
-icons[12] = `../IMG/Social Media Icons & Logos/Black_FaceBook_Icon.png`;
-icons[13] = `../IMG/Social Media Icons & Logos/Black_Instagram_Icon.png`;
-icons[14] = `../IMG/Social Media Icons & Logos/Black_Twitter_Icon.png`;
-icons[15] = `../IMG/Social Media Icons & Logos/Black_YouTube_Icon.png`;
+icons[0] = `/IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
+icons[1] = `/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png`;
+icons[2] = `/IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
+icons[3] = `/IMG/Social Media Icons & Logos/FaceBook_Icon.png`;
+icons[4] = `/IMG/Social Media Icons & Logos/Instagram_Icon.png`;
+icons[5] = `/IMG/Social Media Icons & Logos/Twitter_Icon.png`;
+icons[6] = `/IMG/Social Media Icons & Logos/YouTube_Icon.png`;
+icons[7] = `/IMG/Social Media Icons & Logos/Black_Phone_Icon.png`;
+icons[8] = `/IMG/Social Media Icons & Logos/Black_Mail_Icon.png`;
+icons[9] = `/IMG/Social Media Icons & Logos/Black_Location_Icon.png`;
+icons[10] = `/IMG/Social Media Icons & Logos/YouTube_Icon.png`;
+icons[11] = `/IMG/Social Media Icons & Logos/YouTube_Icon.png`;
+icons[12] = `/IMG/Social Media Icons & Logos/Black_FaceBook_Icon.png`;
+icons[13] = `/IMG/Social Media Icons & Logos/Black_Instagram_Icon.png`;
+icons[14] = `/IMG/Social Media Icons & Logos/Black_Twitter_Icon.png`;
+icons[15] = `/IMG/Social Media Icons & Logos/Black_YouTube_Icon.png`;
 
 export const attribute = new Array(10);
 attribute[0] = "StoreAnimateGroup1";

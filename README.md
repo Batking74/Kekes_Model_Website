@@ -33,6 +33,6 @@ This is one of my bigger Projects that I started building when I was 16. I origi
 - Mysql2
 - Nodemailer
 
-Deployed Site: Coming Soon!
+Deployed Site: https://batking74.github.io/Kekes_Model_Website/
 
 GitHub Repo: https://github.com/Batking74/Kekes_Model_Website/tree/frontend
