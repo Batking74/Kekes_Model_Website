@@ -18,9 +18,7 @@ submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if(valid()) {
         const userCredentials = [tools.date.toUTCString(), inputElement[0].value, inputElement[1].value];
-        errorElement.style.background = 'green';
-        errorElement.innerHTML = `Welcome! ${inputElement[0].value}`;
-        setTimeout(() => tools.displayError(errorElement, navTools.attribute[5], navTools.attribute[4], 1), 4000);
+        success(`Welcome! ${userCredentials[1]}`);
     }
 })
 
@@ -38,8 +36,15 @@ function error(i) {
     setTimeout(() => tools.displayError(errorElement, navTools.attribute[5], navTools.attribute[4], 1), 4000);
 }
 
+function success(message) {
+    tools.displayError(errorElement, navTools.attribute[4], navTools.attribute[5], 1);
+    errorElement.style.background = 'green';
+    errorElement.innerHTML = message;
+    setTimeout(() => tools.displayError(errorElement, navTools.attribute[5], navTools.attribute[4], 1), 4000);
+}
+
 signUpBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    location.replace('/HTML/Login/Registration.html');
+    location.replace('../HTML/Registration.html');
 })
 navTools.footer[0].remove();
