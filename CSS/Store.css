@@ -291,10 +291,14 @@ header h1 {
 }
 
 @media (max-width: 500px) {
-    header {
+    body {
+        background-image: none;
+        background: #000;
+    }
+    /* header {
         display: none;
     }
     .store-ad {
         margin-top: 0;
-    }
+    } */
 }
