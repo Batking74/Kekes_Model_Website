@@ -348,6 +348,10 @@ textarea {
     .form-container input, textarea {
         font-size: large;
     }
+
+    .form-container input {
+        width: 220px;
+    }
     
     .form-container label, .lastNamePhone-group label, .user-message-container label {
         font-size: large;
@@ -358,7 +362,6 @@ textarea {
     }
     
     textarea {
-        width: 220px;
         resize: vertical;
     }
 }

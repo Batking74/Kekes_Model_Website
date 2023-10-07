@@ -18,21 +18,9 @@ submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if(valid()) {
         const userCredentials = [tools.date.toUTCString(), inputElement[0].value, inputElement[1].value];
-        fetch('/users')
-        .then(res => { return res.json(); })
-        .then(DB => {
-            if(DB.length === 0) error(3);
-            else {
-                for(let i = 0; i < DB.length; i++) {
-                    if(DB[i].Username === userCredentials[1] && DB[i].Password === userCredentials[2]) {
-                        console.log('Welcome');
-                        // location.replace()
-                    }
-                    else error(3);
-                }
-            }
-        })
-        .catch(err => { return err; });
+        errorElement.style.background = 'green';
+        errorElement.innerHTML = `Welcome! ${inputElement[0].value}`;
+        setTimeout(() => tools.displayError(errorElement, navTools.attribute[5], navTools.attribute[4], 1), 4000);
     }
 })
 

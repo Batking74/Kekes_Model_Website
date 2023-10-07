@@ -13,12 +13,13 @@ body {
     background-image: url(../IMG/Background_Images/Home_Background_IMG.jpg);
     background-repeat: no-repeat;
     background-position-y: center;
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Start of Heading */
+/* Heading Styles */
 .heading-container {
     display: flex;
     align-items: center;
@@ -87,7 +88,7 @@ body {
     height: 350px;
 }
 
-/* Start of Section 1 Styles */
+/* Section 1 Styles */
 .section1-p1, .section1-p2 {
     font-size: 1.2rem;
     font-weight: 300;
@@ -135,7 +136,7 @@ body {
     width: 750px;
 }
 
-/* Start of Section 2 */
+/* Section 2 Styles */
 .section2-container {
     padding: 40px 0 250px 0;
     background: #000000e7;
@@ -312,11 +313,6 @@ body {
         font-size: 14px;
     }
 
-    body {
-        background-position-x: calc(100% - 1px);
-        background-position-y: bottom;
-    }
-
     .section1-first-nested-section-container {
         display: flex;
         flex-direction: column;
@@ -390,8 +386,7 @@ body {
 /* mobile view */
 @media (max-width: 600px) {
     body {
-        background-position: center;
-        background-position-x: -500px;
+        background-position: calc(100% + 250px);
     }
 
     .heading-container h1 {
@@ -432,5 +427,11 @@ body {
     .section2-btn {
         padding: 16px 83px 16px 83px;
         font-size: 19px;
+    }
+}
+
+@media (max-width: 435px) {
+    body {
+        background-position: calc(100% + 275px);
     }
 }
