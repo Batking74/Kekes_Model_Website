@@ -196,5 +196,6 @@ form a:active {
 
     form button {
         padding: 7px 20px 7px 20px;
+        font-size: small;
     }
 }

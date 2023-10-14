@@ -1,4 +1,4 @@
-import * as bluprint from "../JAVASCRIPT/Store_Blueprint.js";
+import * as blueprint from "../JAVASCRIPT/Store_Blueprint.js";
 import {} from "../JAVASCRIPT/Nav&Footer_Blueprint.js";
 
 // Product Attributes
