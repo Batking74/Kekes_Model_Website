@@ -309,7 +309,7 @@ body {
     }
 }
 
-@media (max-width: 996px) {
+@media screen and (max-width: 996px) {
     html {
         font-size: 14px;
     }
@@ -385,9 +385,9 @@ body {
 }
 
 /* mobile view */
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     body {
-        /* background-position: calc(100% + 250px); */
+        background-position: calc(100% + 250px);
     }
 
     .heading-container h1 {
@@ -431,8 +431,8 @@ body {
     }
 }
 
-@media (max-width: 435px) {
+@media screen and (max-width: 435px) {
     body {
-        /* background-position: calc(100% + 275px); */
+        background-position: calc(100% + 275px);
     }
 }

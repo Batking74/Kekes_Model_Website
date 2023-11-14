@@ -208,6 +208,7 @@ select:-webkit-autofill:focus {
     form {
         width: 80vw;
         height: 600px;
+        margin-top: 20px;
     }
 
     /* Password Inputs */
