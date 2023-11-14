@@ -11,9 +11,9 @@
 
 body {
     background-image: url(../IMG/Background_Images/Home_Background_IMG.png);
-    background-position: center;
+    background-position-x: center;
     background-repeat: no-repeat;
-    /* background-size:contain; */
+    background-position-y: 50px;
     background-attachment:fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -263,6 +263,9 @@ body {
 
 /* Responsive Web Design: Tablet view */
 @media screen and (max-width: 1200px) {
+    body {
+        background-position-y: 0;
+    }
     .section1-p1, .section1-p2 {
         font-size: 14.8px;
         margin-left: 50px;
