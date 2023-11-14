@@ -1,6 +1,6 @@
 import { date } from "../JAVASCRIPT/ExtraTools.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
-const ad = `../IMG/Ads/Sale_ad_1.jpg`;
+const ad = `../IMG/Ads/Sale_ad_1.webp`;
 const num = [27, 22, 28];
 export const HTML = {
     // Contact Page Side Info HTML
@@ -65,7 +65,7 @@ export const HTML = {
     StoreProduct: `
     <section class="Product-Container">
         <a href="#" class="itemPageLink">
-            <img class="itemImage">
+            <img loading="lazy" class="itemImage">
             <div class="Product-Card">
                 <span class="Price-Container">
                     <p class="itemDiscount"></p>
@@ -104,19 +104,19 @@ export const HTML = {
     <!-- Start of footer -->
     <div class="position-footer-container">
         <div class="position-logos">
-            <img class="${name[0]}" width="120" height="140" alt="Company logo.">
+            <img loading="lazy" class="${name[0]}" width="120" height="140" alt="Company logo.">
             <div class="socialMedia-icons-Container">
                 <a class="${name[1]}">
-                    <img class="${name[0]}" alt="FaceBook Logo">
+                    <img loading="lazy" class="${name[0]}" alt="FaceBook Logo">
                 </a>
                 <a class="${name[1]}">
-                    <img class="${name[0]}" alt="Instagram Icon">
+                    <img loading="lazy" class="${name[0]}" alt="Instagram Icon">
                 </a>
                 <a class="${name[1]}">
-                    <img class="${name[0]}" alt="Twitter Icon">
+                    <img loading="lazy" class="${name[0]}" alt="Twitter Icon">
                 </a>
                 <a class="${name[1]}">
-                    <img class="${name[0]}" alt="YouTube Icon">
+                    <img loading="lazy" class="${name[0]}" alt="YouTube Icon">
                 </a>
             </div>
         </div>

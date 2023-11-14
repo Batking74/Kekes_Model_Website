@@ -46,8 +46,8 @@ pageLink[2] = `../HTML/Store_3.html`;
 
 // HTML Attribute Values
 const attribute = new Array(4);
-attribute[0] = `../IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png`;
-attribute[1] = `../IMG/Social Media Icons & Logos/Store_Navigation_Left_Arrow.png`;
+attribute[0] = `../IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.webp`;
+attribute[1] = `../IMG/Social Media Icons & Logos/Store_Navigation_Left_Arrow.webp`;
 attribute[2] = "Next-Page";
 attribute[3] = "Previous-Page";
 

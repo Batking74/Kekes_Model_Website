@@ -39,22 +39,22 @@ function setUrlPath(path) {
     navLinks[17] = "#";
     navLinks[18] = `${path}/HTML/Login/Registration.html`;
     
-    icons[0] = `${path}/IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
-    icons[1] = `${path}/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png`;
-    icons[2] = `${path}/IMG/Social Media Icons & Logos/Palmer_Logo.PNG`;
-    icons[3] = `${path}/IMG/Social Media Icons & Logos/FaceBook_Icon.png`;
-    icons[4] = `${path}/IMG/Social Media Icons & Logos/Instagram_Icon.png`;
-    icons[5] = `${path}/IMG/Social Media Icons & Logos/Twitter_Icon.png`;
-    icons[6] = `${path}/IMG/Social Media Icons & Logos/YouTube_Icon.png`;
-    icons[7] = `${path}/IMG/Social Media Icons & Logos/Black_Phone_Icon.png`;
-    icons[8] = `${path}/IMG/Social Media Icons & Logos/Black_Mail_Icon.png`;
-    icons[9] = `${path}/IMG/Social Media Icons & Logos/Black_Location_Icon.png`;
-    icons[10] = `${path}/IMG/Social Media Icons & Logos/YouTube_Icon.png`;
-    icons[11] = `${path}/IMG/Social Media Icons & Logos/YouTube_Icon.png`;
-    icons[12] = `${path}/IMG/Social Media Icons & Logos/Black_FaceBook_Icon.png`;
-    icons[13] = `${path}/IMG/Social Media Icons & Logos/Black_Instagram_Icon.png`;
-    icons[14] = `${path}/IMG/Social Media Icons & Logos/Black_Twitter_Icon.png`;
-    icons[15] = `${path}/IMG/Social Media Icons & Logos/Black_YouTube_Icon.png`;
+    icons[0] = `${path}/IMG/Social Media Icons & Logos/Palmer_Logo.webp`;
+    icons[1] = `${path}/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.webp`;
+    icons[2] = `${path}/IMG/Social Media Icons & Logos/Palmer_Logo.webp`;
+    icons[3] = `${path}/IMG/Social Media Icons & Logos/FaceBook_Icon.webp`;
+    icons[4] = `${path}/IMG/Social Media Icons & Logos/Instagram_Icon.webp`;
+    icons[5] = `${path}/IMG/Social Media Icons & Logos/Twitter_Icon.webp`;
+    icons[6] = `${path}/IMG/Social Media Icons & Logos/YouTube_Icon.webp`;
+    icons[7] = `${path}/IMG/Social Media Icons & Logos/Black_Phone_Icon.webp`;
+    icons[8] = `${path}/IMG/Social Media Icons & Logos/Black_Mail_Icon.webp`;
+    icons[9] = `${path}/IMG/Social Media Icons & Logos/Black_Location_Icon.webp`;
+    icons[10] = `${path}/IMG/Social Media Icons & Logos/YouTube_Icon.webp`;
+    icons[11] = `${path}/IMG/Social Media Icons & Logos/YouTube_Icon.webp`;
+    icons[12] = `${path}/IMG/Social Media Icons & Logos/Black_FaceBook_Icon.webp`;
+    icons[13] = `${path}/IMG/Social Media Icons & Logos/Black_Instagram_Icon.webp`;
+    icons[14] = `${path}/IMG/Social Media Icons & Logos/Black_Twitter_Icon.webp`;
+    icons[15] = `${path}/IMG/Social Media Icons & Logos/Black_YouTube_Icon.webp`;
 }
 
 export const attribute = new Array(10);
