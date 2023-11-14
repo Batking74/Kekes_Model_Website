@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="discription" content="Account Registration">
+    <meta name="description" content="Account Registration">
     <link rel="stylesheet" href="../CSS/Registration.css">
     <title>Account Registration</title>
 </head>
@@ -32,13 +32,13 @@
             <div class="credential-container3">
                 <div>
                     <input id="male" type="radio" >
-                    <label>Male</label>
+                    <label for="male">Male</label>
                     <input id="female" type="radio">
-                    <label>Female</label>
+                    <label for="female">Female</label>
                     <input id="other" type="radio">
-                    <label>Other</label>
+                    <label for="other">Other</label>
                 </div>
-                <select id="states-dropdown-list">
+                <select aria-label="state" id="states-dropdown-list">
                     <option value="Select a state">Select a state</option>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
@@ -94,11 +94,11 @@
                 <span class="checkbox-container">
                     <span>
                         <input id="policy-conformation" type="checkbox">
-                        <label>I agree with <a target="_blank" href="https://en.wikipedia.org/wiki/Lorem_ipsum">terms and conditions</a></label>
+                        <label for="policy-conformation">I agree with <a target="_blank" href="https://en.wikipedia.org/wiki/Lorem_ipsum">terms and conditions</a></label>
                     </span>
                     <span>
-                        <input type="checkbox">
-                        <label>I want to receive newsletters</label>
+                        <input id="checkbox" type="checkbox">
+                        <label for="checkbox">I want to receive newsletters</label>
                     </span>
                 </span>
                 <button id="submit-btn" type="submit">Create Account</button>

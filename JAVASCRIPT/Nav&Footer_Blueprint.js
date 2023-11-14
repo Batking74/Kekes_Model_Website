@@ -86,7 +86,7 @@ setLinks(aElement, attribute, navLinks, 15);
 setLinks(aElement, attribute, navLinks, 16);
 setLinks(aElement, attribute, navLinks, 17);
 
-export let companyNameElements = document.querySelectorAll('#Company-Name');
+export let companyNameElements = document.querySelectorAll('.Company-Name');
 export const footerForm = document.getElementById('footerForm');
 export const footerLabel = document.getElementById('footerLabel');
 export const footerInput = document.getElementById('footerInput');

@@ -35,6 +35,20 @@ export default class LinkedList {
         console.log(`${output} ${originalNode}`);
     }
 
+    reverseLinkedList(head) {
+        let prev = null;
+        let current = head;
+      
+        while (current !== null) {
+          const nextNode = current.nextNode;
+          current.next = prev;
+          prev = current;
+          current = nextNode;
+        }
+      
+        return prev;
+      }
+
     removeHead() {
         this.head = this.head.nextNode;
         this.length--;

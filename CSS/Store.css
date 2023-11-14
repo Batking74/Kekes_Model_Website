@@ -13,6 +13,11 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+:root {
+    --store-ad-width: 70%;
+    --store-ad-height: 50%;
+}
+
 /* Heading Start */
 header {
     position: relative;
@@ -33,6 +38,8 @@ header h1 {
 
 .store-ad {
     margin-top: 50px;
+    width: var(--store-ad-width);
+    height: var(--store-ad-height);
 }
 
 .title {
@@ -125,11 +132,11 @@ header h1 {
     left: 10px;
     font-size: 15px;
     text-decoration: line-through;
-    color: #ff0000;
+    color: #e21919;
 }
 
 .itemPercentageOff {
-    color: red;
+    color: #e21919;
     font-weight: bolder;
     font-size: large;
     position: relative;
@@ -229,11 +236,13 @@ header h1 {
     
     header {
         background: #000;
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        top: 0;
+        position: initial;
     }
+
+    .store-ad {
+        margin-top: 0;
+    }
+
     .counter { right: 90px; top: 25px; }
 
     .title div h1 {
