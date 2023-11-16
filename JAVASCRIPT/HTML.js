@@ -59,7 +59,8 @@ export const HTML = {
         </div>
     </section>
     <!-- Store Navigation -->
-    <nav id="nav-2"></nav>`,
+    <div id="nav-2"></div>
+    `,
 
     // Store Products HTML
     StoreProduct: `

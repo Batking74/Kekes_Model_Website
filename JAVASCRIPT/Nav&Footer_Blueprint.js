@@ -93,6 +93,8 @@ export const footerInput = document.getElementById('footerInput');
 export const footerBtn = document.getElementById('footerbtn');
 export const footerResponse = document.getElementById('footerSubmissionResponse');
 
+
+// Validates the footer input
 async function validate() {
     if(footerInput.value === '') alert("You must fill out!");
     else {
@@ -108,17 +110,20 @@ async function validate() {
     }
 }
 
+// Sets the social media icons on contact page
 export function setContactSocialMediaIcons(aEle, imgEle, imgIndex, linkIndex, navLink, icon, attr) {
     aEle[linkIndex].setAttribute('href', navLink);
     imgEle[imgIndex].setAttribute('src', icon);
     imgEle[imgIndex].setAttribute('class', attr);
 }
 
+// Sets thes the Contact info on Contact page
 export function setContactInfo(pEle, imgEle, imgIndex, pIndex, icon, companyInfo) {
     imgEle[imgIndex].setAttribute('src', icon);
     pEle[pIndex].textContent = companyInfo;
 }
 
+// Sets the companies name where ever the id is in html
 export function setCompanyName(name) {
     companyNameElements.forEach(element => { element.innerHTML = name; })
 }
