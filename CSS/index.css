@@ -7,14 +7,14 @@
     --section-2-paragraph-spacing: 20px;
     --Gallery-Image-Width: 90%;
     --Gallery-Image-Height: 90%;
+    --body-width: 0;
 }
 
 body {
     background-image: url(../IMG/Background_Images/Home_Background_IMG.png);
-    background-position-x: center;
     background-repeat: no-repeat;
     background-position-y: 50px;
-    background-attachment:fixed;
+    background-attachment: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -263,9 +263,6 @@ body {
 
 /* Responsive Web Design: Tablet view */
 @media screen and (max-width: 1200px) {
-    body {
-        background-position-y: 0;
-    }
     .section1-p1, .section1-p2 {
         font-size: 14.8px;
         margin-left: 50px;
@@ -310,9 +307,21 @@ body {
     }
 }
 
+@media screen and (max-width: 1074px) {
+    body {
+        background-position-x: -10vw; 
+    }
+}
+
+
 @media screen and (max-width: 996px) {
     html {
         font-size: 14px;
+    }
+
+    body {
+        background-position-y: 0;
+        background-position-x: -40vw; 
     }
 
     .section1-first-nested-section-container {
@@ -385,10 +394,21 @@ body {
     }
 }
 
+@media screen and (max-width: 770px) {
+    body {
+        background-position-x: -70vw; 
+    }
+}
+@media screen and (max-width: 640px) {
+    body {
+        background-position-x: -80vw; 
+    }
+}
+
 /* mobile view */
 @media screen and (max-width: 600px) {
     body {
-        background-position: calc(100% + 250px);
+        background-position-x: -100vw;
     }
 
     .heading-container h1 {
@@ -432,8 +452,23 @@ body {
     }
 }
 
-@media screen and (max-width: 435px) {
+@media screen and (max-width: 538px) {
     body {
-        background-position: calc(100% + 275px);
+        background-position-x: -115vw;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    body {
+        background-position-x: -130vw;
+    }
+}
+
+
+@media screen and (max-width: 463px) {
+    body {
+        background-position: center;
+        background-position-x: -550px;
+        background-size: cover;
     }
 }
