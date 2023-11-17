@@ -43,7 +43,11 @@ export const HTML = {
     </aside>
     <section class="Product-Main-Container">
         <div class="title">
-            <div><h1>Products | <span id="Store-Title"></span></h1></div>
+            <div>
+                <h1>
+                    Products | <span id="Store-Title"></span>
+                </h1>
+            </div>
             <div>
                 <select aria-label="Sort Store products" name="Filter" id="Filter">
                     <option value="sort by">Sort by</option>
@@ -53,7 +57,9 @@ export const HTML = {
                     <option value="Price, low to high">Price, low to high</option>
                     <option value="Price, high to low">Price, high to low</option>
                 </select>
-                <span class="counter"><span id="Products-Count"></span> Products</span>
+                <span class="counter">
+                    <span id="Products-Count"></span> Products
+                </span>
             </div>
             <div><hr></div>
         </div>
