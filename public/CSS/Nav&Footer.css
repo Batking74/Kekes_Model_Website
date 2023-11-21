@@ -292,7 +292,6 @@ select:-webkit-autofill:focus {
         z-index: 5;
         transition: 0.3s;
     }
-
     #hamburger-nav span {
         display: flex;
         width: 20px;

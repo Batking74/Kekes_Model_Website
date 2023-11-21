@@ -115,4 +115,7 @@ footerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
 })
+// Toggle Hamburger menu
+const hamburgerBtn = document.querySelector('#hamburger-nav');
+hamburgerBtn.addEventListener('click', (e) => navbar.classList.toggle('active'));
 setCompanyName(companyInfo.CompanyName)

@@ -8,6 +8,10 @@
     --icon-size: 25px;
 }
 
+:root {
+    --icon-size: 25px;
+}
+
 body {
     background-image: url(../IMG/contact_bg4.png);
     background-position-y: 100%;
@@ -236,7 +240,6 @@ textarea {
 
 /* Tablet View 2 */
 @media screen and (max-width: 850px) {
-
     /* Start of Heading */
     .header {
         top: 40px;
@@ -298,7 +301,6 @@ textarea {
     .info-container p {
         font-size: 17px;
     }
-
     /* Start of Form Styles */
     form {
         margin-top: 30px;
@@ -352,7 +354,6 @@ textarea {
         background: none;
         padding: 0;
     }
-
     /* Contact info start */
     .info-container {
         height: 350px;
