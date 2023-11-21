@@ -7,8 +7,8 @@ export const companyInfo = await sendGETRequestToSever('/companyinfo');
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
 navLinks[0] = `/`;
-navLinks[1] = `/About`;
-navLinks[2] = `/FAQ`;
+navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website`;
+navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
 navLinks[3] = `/Contact`;
 navLinks[4] = `/Palmerstore`;
 navLinks[5] = `/Login`;

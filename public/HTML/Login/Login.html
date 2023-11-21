@@ -4,43 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/Login/Login.css">
+    <meta name="description" content="Palmer Studios Login">
     <link rel="stylesheet" href="/CSS/Nav&Footer.css">
+    <link rel="stylesheet" href="/CSS/Login/Login.css">
     <title>Log in</title>
 </head>
 <body>
+    <!-- Mobile/Tablet Responsive Navigation -->
+    <div role="navigation" id="hamburger-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <!-- Navigation Bar -->
     <nav id="navbar"></nav>
 
     <!-- Form Start -->
         <div id="error"></div>
-        <form id="form" action="/Login" method="get">
+        <form id="form" action="../HTML/Loged_In.html" method="get">
             <h1>Log in</h1>
-            <div>
-                <label>Username</label>
+                <label for="username" class="username-label">Username</label>
                 <br>
-                <input class="userInput" name="Username" autofocus placeholder="Enter username" type="text">
-            </div>
-            <div>
-                <label>Password</label>
+                <input class="username userInput" name="Username" autofocus placeholder="Enter username" type="text">
+                <label for="password" class="password-label">Password</label>
                 <br>
-                <input class="userInput" name="Password" placeholder="Enter password" type="password">
-            </div>
+                <input class="userInput" name="password" placeholder="Enter password" type="password">
             <div>
                 <input id="checkbox" class="checkbox" type="checkbox">
-                <label>Remember me</label>
+                <label for="checkbox">Remember me</label>
             </div>
             <div class="sign-in-options">
                 <button id="submit-btn">Sign In</button>
-                <a href="http://localhost:5000/ResetPassword">Forgot password?</a>
+                <a href="/HTML/Login/Reset_Password.html">Forgot password?</a>
             </div>
             <br>
             <hr>
             <br>
             <button class="signup-btn">Sign up for an account</button>
         </form>
-        <!-- End of form -->
-
         <footer></footer>
         <script type="module" src="/JAVASCRIPT/Login/login.js"></script>
 </body>

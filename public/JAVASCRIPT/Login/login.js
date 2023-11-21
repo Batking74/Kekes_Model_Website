@@ -1,4 +1,4 @@
-import { companyInfo, navLinks, icons, attribute, navbar, footer, footerForm, footerInput, footerLabel, footerResponse, footerBtn } from "../Nav&Footer_Blueprint.js";
+import { attribute, footer } from "../Nav&Footer_Blueprint.js";
 import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError, date } from "../ExtraTools.js";
 
 const submitBtn = document.getElementById('submit-btn');

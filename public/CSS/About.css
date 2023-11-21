@@ -19,7 +19,7 @@
 
 /* Weather Statistics */
 #fetchedWeatherData {
-    background-image: url(/IMG/blue-cloudy-daylight-background-weather-design_33099-512.webp);
+    background-image: url(../IMG/blue-cloudy-daylight-background-weather-design_33099-512.webp);
     background-repeat: no-repeat;
     width: fit-content;
     position: relative;

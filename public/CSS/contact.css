@@ -1,11 +1,15 @@
 * {
     margin: 0;
     padding: 0;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+:root {
+    --icon-size: 25px;
 }
 
 body {
-    background-image: url(/IMG/contact_bg4.png);
+    background-image: url(../IMG/contact_bg4.png);
     background-position-y: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,7 +17,7 @@ body {
     padding-bottom: 2%;
 }
 
-/* Title start */
+/* Start of Heading */
 .header {
     text-align: center;
     position: relative;
@@ -28,23 +32,24 @@ body {
     font-weight: lighter;
 }
 
-.position-container {
+/* Start of Main */
+main {
     display: flex;
     justify-content: center;
     margin-top: 7%;
 }
 
 .main-container {
+    display: flex;
     background-color: #b08c8c6b;
     padding: 50px;
-    display: grid;
     column-gap: 3vmax;
-    display: flex;
     border-radius: 2%;
 }
 
+/* Changes Autocomplete styles in Chrome */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -52,18 +57,19 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0 0 0px 1000px #b08c8c00 inset;
-  transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0px 1000px #b08c8c00 inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 /* Contact info start */
-.info-container, form {
+.info-container,
+form {
     height: 425px;
 }
 
 .info-container {
-    background-color: #d7a615;
+    background: #d7a615;
     border-radius: 10px;
     padding: 2vmax 25px 3vmax 2vmax;
     display: grid;
@@ -73,7 +79,9 @@ select:-webkit-autofill:focus {
     margin-bottom: 10px;
 }
 
-.info-heading h1:hover, .info-heading p:hover, .header h1:hover {
+.info-heading h1:hover,
+.info-heading p:hover,
+.header h1:hover {
     cursor: default;
 }
 
@@ -81,88 +89,306 @@ select:-webkit-autofill:focus {
     font-size: 16px;
 }
 
-.info-group-1, .info-group-2, .info-group-3, .info-group-4 {
+.info-group-1,
+.info-group-2,
+.info-group-3,
+.info-group-4 {
     display: grid;
     column-gap: 20px;
     display: flex;
 }
 
-/* Form start */
-form {
-    color: white;
-    margin-top: 10px;
-}
-
-.position-group-container {
-    display: grid;
-    column-gap: 5%;
-    display: flex;
-}
-
-.firstNameEmail-group input, .lastNamePhone-group input {
-    width: 285px;
-}
-
-.firstNameEmail-group input, .lastNamePhone-group input, .message textarea {
+/* Start of Form Styles */
+.form-container input,
+textarea {
     background: none;
     border: none;
     font-size: x-large;
     margin-top: 26px;
     outline: none;
-    border-bottom: solid 1px #ffffff;
-    color: #ffffff;
+    border-bottom: solid 1px #fff;
+    color: #fff;
 }
 
-.firstNameEmail-group label, .lastNamePhone-group label, .message label {
+form {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.form-container label,
+.lastNamePhone-group label,
+.user-message-container label {
     margin-top: 26px;
     font-size: medium;
 }
 
-.firstNameEmail-group {
+.form-container div {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 30px;
+    width: fit-content;
+}
+
+.form-container input {
+    padding-bottom: 5px;
+}
+
+.form-container div div {
     display: grid;
 }
 
-.lastNamePhone-group {
-    display: grid;
+.user-message-container {
+    margin-top: 20px;
 }
 
-.message textarea {
+textarea {
     width: 600px;
     resize: none;
 }
 
-.btn {
+.contact-button-container {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
 }
 
-.btn button {
+.contact-button-container button {
     padding: 10px 20px 10px 20px;
     border-radius: 10px;
     border: none;
-    color: #ffffff;
-    background-color: #000000;
+    color: #fff;
+    background: #000;
     font-size: large;
     transition: 1s;
 }
 
-.btn button:hover {
+.contact-button-container button:hover {
     transform: scale(1.1);
     background-color: #ffc107;
-    color: black;
+    color: #000;
     cursor: pointer;
 }
 
 .socialMedia-icons {
-    width: 25px;
-    height: 25px;
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
 
 /* Error Handling */
-#errorMsg {
+.errorMsg {
     margin-top: 3%;
     color: #fc7e00;
 }
 
-/* @media screen and (max-width: 1024px) {} */
+/* Responsive Web Design: Tablet View 1 */
+@media screen and (max-width: 1100px) {
+
+    /* Start of Heading */
+    .header {
+        top: 65px;
+    }
+
+    /* Start of Main */
+    .main-container {
+        padding: 20px;
+
+    }
+
+    /* Contact info start */
+    .info-container,
+    form {
+        height: 400px;
+    }
+
+    .info-group-1,
+    .info-group-2,
+    .info-group-3,
+    .info-group-4 {
+        font-size: 15px;
+    }
+
+    .info-group-3 {
+        width: 260px;
+    }
+
+    /* Start of Form Styles */
+    .form-container input,
+    textarea {
+        font-size: 16px;
+    }
+
+    form {
+        width: fit-content;
+    }
+
+    textarea {
+        width: 450px;
+    }
+
+    .contact-button-container button {
+        font-size: medium;
+    }
+
+    .contact-button-container button:active {
+        background: #008000;
+    }
+}
+
+/* Tablet View 2 */
+@media screen and (max-width: 850px) {
+
+    /* Start of Heading */
+    .header {
+        top: 40px;
+    }
+
+    /* Contact info start */
+    .info-container,
+    form {
+        height: 350px;
+    }
+
+    .info-container h1 {
+        font-size: 28.4px;
+    }
+
+    .info-group-1,
+    .info-group-2,
+    .info-group-3,
+    .info-group-4 {
+        font-size: 14px;
+    }
+
+    .info-group-3 {
+        width: 230px;
+    }
+
+    .socialMedia-icons {
+        width: calc(var(--icon-size) - 5px);
+        height: calc(var(--icon-size) - 5px);
+    }
+
+    /* Start of Form Styles */
+    .form-container input,
+    textarea {
+        font-size: 14px;
+    }
+
+    textarea {
+        width: 400px;
+    }
+}
+
+/* Mobile View 1 */
+@media screen and (max-width: 750px) {
+
+    /* Start of Main */
+    .main-container {
+        flex-direction: column;
+        background: linear-gradient(#d7a615, #000, #d7a615);
+        padding: 50px 100px 50px 100px;
+    }
+
+    /* Contact info start */
+    .info-container {
+        height: 425px;
+        padding: 50px 70px 0 100px;
+    }
+
+    .info-container p {
+        font-size: 17px;
+    }
+
+    /* Start of Form Styles */
+    form {
+        margin-top: 30px;
+        height: fit-content;
+        position: relative;
+        left: 14%;
+    }
+
+    .form-container input,
+    textarea {
+        font-size: x-large;
+    }
+
+    .form-container label,
+    .lastNamePhone-group label,
+    .user-message-container label {
+        font-size: large;
+    }
+
+    .form-container div {
+        flex-direction: column;
+    }
+
+    textarea {
+        width: 300px;
+        resize: none;
+    }
+
+    .contact-button-container {
+        margin-top: 20px;
+    }
+}
+
+/* Mobile View 2 */
+@media screen and (max-width: 630px) {
+    body {
+        background: linear-gradient(#d7a615, #000, #d7a615);
+    }
+
+    .header {
+        top: 0;
+    }
+
+    .header h1 {
+        font-size: 35px;
+    }
+
+    /* Start of Main */
+    .main-container {
+        flex-direction: column;
+        background: none;
+        padding: 0;
+    }
+
+    /* Contact info start */
+    .info-container {
+        height: 350px;
+        padding: 30px 20px 0 50px;
+    }
+
+    .info-container p {
+        font-size: 13px;
+    }
+
+    /* Start of Form Styles */
+    form {
+        left: 15%;
+    }
+
+    .form-container input,
+    textarea {
+        font-size: large;
+    }
+
+    .form-container input {
+        width: 220px;
+    }
+
+    .form-container label,
+    .lastNamePhone-group label,
+    .user-message-container label {
+        font-size: large;
+    }
+
+    .form-container div {
+        flex-direction: column;
+    }
+
+    textarea {
+        resize: vertical;
+        width: 220px;
+    }
+}
