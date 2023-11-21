@@ -11,9 +11,10 @@
 }
 
 body {
-    background-image: url(../IMG/Background_Images/Home_Background_IMG.png);
+    background-image: url(../IMG/Background_Images/Home_Background_IMG.jpg);
     background-repeat: no-repeat;
-    background-position-y: 50px;
+    background-position-y: center;
+    background-size: cover;
     background-attachment: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -320,8 +321,8 @@ body {
     }
 
     body {
-        background-position-y: 0;
-        background-position-x: -40vw; 
+        background-position-x: calc(100% - 1px);
+        background-position-y: bottom;
     }
 
     .section1-first-nested-section-container {
@@ -394,21 +395,11 @@ body {
     }
 }
 
-@media screen and (max-width: 770px) {
-    body {
-        background-position-x: -70vw; 
-    }
-}
-@media screen and (max-width: 640px) {
-    body {
-        background-position-x: -80vw; 
-    }
-}
-
 /* mobile view */
 @media screen and (max-width: 600px) {
     body {
-        background-position-x: -100vw;
+        background-position: center;
+        background-position-x: -500px;
     }
 
     .heading-container h1 {
