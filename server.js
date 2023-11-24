@@ -1,4 +1,4 @@
-const { getTablesFrom, userDB, companyDB } = require('./utils/database');
+const { getTablesFrom, companyDB, PORT } = require('./utils/database');
 const resetPass = require('./routes/reset_password');
 const store = require('./routes/palmerstore');
 const register = require('./routes/Register');
@@ -70,9 +70,9 @@ app.post('/FAQ', async (req, res) => {
 
 
 // Starting Palmer Studios Server
-app.listen(process.env.COMPANY_PORT, (err) => {
+app.listen(PORT, (err) => {
     if(err) throw err;
-    console.log(`Listening on port ${process.env.COMPANY_PORT} SUCCESS!!!`);
+    console.log(`Listening on port ${PORT} SUCCESS!!!`);
 });
 
 
