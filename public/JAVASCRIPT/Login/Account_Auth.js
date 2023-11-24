@@ -1,4 +1,4 @@
-import { sendPOSTRequestToSever } from '../ExtraTools.js'
+import { sendPOSTRequestToSever } from '../utils1.js'
 const inputs = document.getElementsByTagName('input');
 const verifyBtn = document.getElementById('verify-btn');
 const resendBtn = document.getElementById('resend-btn');

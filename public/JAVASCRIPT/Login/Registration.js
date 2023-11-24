@@ -1,4 +1,4 @@
-import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../ExtraTools.js';
+import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../utils1.js';
 
 // Declaring and Initializing Variables
 const input = document.querySelectorAll('.input');
@@ -12,6 +12,8 @@ const policy = document.getElementById('policy-conformation');
 const sex = [male, female, other];
 const errorClassName = 'error';
 let gender;
+
+// Error Messages
 const errorMsg = [
     'Passwords dont match',
     'Password must be at least 10 characters',
@@ -23,6 +25,7 @@ const errorMsg = [
     `Use another password`
 ];
 
+
 // Validating radio buttons
 sex.forEach(element => {
     element.addEventListener('click', (e) => {
@@ -31,6 +34,7 @@ sex.forEach(element => {
         else { setFalse(male, female); gender = 'Other'; }
     })
 })
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -96,12 +100,12 @@ Checking SQL database to make sure user trying to create an account doesn't alre
 */
 async function isADuplicate(status) {
     try {
-        const res = await fetch('/users');
-        const DB = await res.json();
-        for(let i = 0; i < DB.length; i++) {
-            if(input[2].value === DB[i].Email) { alert(errorMsg[5]); status = true; }
-            else if(input[3].value === DB[i].Username) { alert(errorMsg[6]); status = true; }
-            else if(input[4].value === DB[i].Password) { alert(errorMsg[7]); status = true; }
+        const res = await sendGETRequestToSever('/Login/Users');
+        console.log(res)
+        for(let i = 0; i < res.length; i++) {
+            if(input[2].value === res[i].Email) { alert(errorMsg[5]); status = true; }
+            else if(input[3].value === res[i].Username) { alert(errorMsg[6]); status = true; }
+            else if(input[4].value === res[i].Password) { alert(errorMsg[7]); status = true; }
             else status = false;
         }
     }

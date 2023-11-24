@@ -11,6 +11,7 @@ for(let index = 0; index < animate.length; index++) {
     animate2[index].classList.replace(`${attribute[1]}`, "HomeAnimateGroup2");
 }
 
+
 // Creating Dynamic Project Card
 class myProjects {
     constructor(name, tags, image) {

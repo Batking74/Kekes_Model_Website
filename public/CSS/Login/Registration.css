@@ -1,5 +1,5 @@
 body {
-    background-image: url(../IMG/Background_Images/Registration_Background.jpg);
+    background-image: url(/IMG/Background_Images/Registration_Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

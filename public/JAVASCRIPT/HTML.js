@@ -1,4 +1,4 @@
-import { date } from "../JAVASCRIPT/ExtraTools.js";
+import { date } from "./utils1.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
 const ad = `../IMG/Ads/Sale_ad_1.webp`;
 const num = [27, 22, 28];
@@ -155,5 +155,5 @@ export const HTML = {
     </div>`,
     
     // Footer submit icon HTML
-    FooterInputResponse: `<span class="Footer-Response-Icon"><svg viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></span>Thank You, you will recieve emails on new content!`,
+    FooterInputResponse: `<span class="Footer-Response-Icon"><svg viewBox="0 0 24 24"><path fill="green" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg></span>`,
 }

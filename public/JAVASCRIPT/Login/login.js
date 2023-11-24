@@ -1,5 +1,5 @@
 import { attribute, footer } from "../Nav&Footer_Blueprint.js";
-import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError, date } from "../ExtraTools.js";
+import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError, date } from "../utils1.js";
 
 const submitBtn = document.getElementById('submit-btn');
 const signUpBtn = document.querySelector('.signup-btn');
@@ -18,7 +18,7 @@ submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if(valid()) {
         const userCredentials = [date.toUTCString(), inputElement[0].value, inputElement[1].value];
-        fetch('/users')
+        fetch('/Login/Users')
         .then(res => { return res.json(); })
         .then(DB => {
             if(DB.length === 0) error(3);

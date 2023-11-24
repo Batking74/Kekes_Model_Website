@@ -1,6 +1,6 @@
 import { navbar } from "../Nav&Footer_Blueprint.js";
 import { getProductsFromDB, getProductElements, getProductInstance, calculateDiscount } from "./Store_tools.js";
-import { sendGETRequestToSever } from "../ExtraTools.js";
+import { sendGETRequestToSever } from "../utils1.js";
 import LinkedList from "../LinkedList.js";
 import { HTML } from "../HTML.js";
 export const products = await sendGETRequestToSever('/products');

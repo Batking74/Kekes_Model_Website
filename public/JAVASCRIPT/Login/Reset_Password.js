@@ -1,4 +1,4 @@
-import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever } from '../ExtraTools.js';
+import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever } from '../utils1.js';
 const submitBtn = document.getElementById('submit-btn');
 const email = document.getElementById('email');
 
