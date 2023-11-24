@@ -8,6 +8,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     background-attachment: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -184,5 +185,17 @@ form a:active {
 
     form button {
         padding: 10px 60px 10px 60px;
+    }
+}
+
+@media screen and (max-width: 413px) {
+
+    .sign-in-options a {
+        font-size: 10px;
+    }
+
+    form button {
+        padding: 7px 20px 7px 20px;
+        font-size: small;
     }
 }

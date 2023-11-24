@@ -1,6 +1,7 @@
 import { HTML } from "./HTML.js";
-import { sendPOSTRequestToSever } from "./ExtraTools.js";
+import { sendPOSTRequestToSever } from "./utils1.js";
 import * as navTools from "./Nav&Footer_Blueprint.js";
+const date = new Date();
 
 // Targeting Elements
 const formContactInfo = document.querySelector('.info-container');
@@ -56,11 +57,16 @@ async function validate() {
             PhoneNumber: inputElement[3].value,
             UserMessage: inputElement[4].value
         };
-        const res = await sendPOSTRequestToSever('/Contact', userSubmission);
-        location.replace('/Contact/Conformation');
+        try {
+            const res = await sendPOSTRequestToSever('/Contact', userSubmission);
+            console.log(res)
+            // location.replace('/Contact/Conformation');
+        }
+        catch(error) {
+            console.log(error);
+        }
     }
 }
-
 
 form.addEventListener('submit', (e) => { e.preventDefault(); validate(); })
 navTools.footer[0].remove();

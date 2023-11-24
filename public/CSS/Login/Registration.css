@@ -14,28 +14,32 @@ form {
     border-top: #ffc107 solid 7px;
     border-radius: 30px;
     box-shadow: #ffc107 5px 0 30px;
-    padding: 60px 35px 60px 35px;
+    width: 350px;
+    height: 605px;
+    padding: 30px 35px 0 35px;
 }
 
+/* Title */
 h1 {
     text-align: center;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 30px;
 }
 
+/* Style All inputs */
 input {
-    padding: 16px 0 16px 10px;
+    padding: 12px 0 12px 10px;
     background: #4a4a4a;
     outline: none;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 12px;
     color: #ffc107;
 }
 
 input:focus {
     border: solid #ffc107 1px;
-    box-shadow:#ffc107 0 0 10px;
+    box-shadow: #ffc107 0 0 10px;
 }
 
 ::placeholder {
@@ -43,6 +47,12 @@ input:focus {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* Username Input */
+#Username {
+    padding: 5.6px 0 5.6px 10px;
+}
+
+/* Style All buttons */
 button {
     padding: 12px 0 12px 0;
     background: #ffc107;
@@ -56,31 +66,35 @@ button:hover {
     cursor: pointer;
 }
 
+/* Select State Drop Down */
 select {
-    padding: 9px 0 9px 0;
+    padding: 7px 0 7px 0;
     background: #e6e4e4;
 }
 
 option {
-    font-size: 25px;
+    font-size: 17px;
 }
 
+/* Firstname, Lastname, and Email Inputs */
 .credential-container1 {
     display: grid;
-    grid-template-rows: repeat(3, 30px);
+    grid-template-rows: repeat(3, 20px);
     row-gap: 20px;
     padding: 20px 0 20px 0;
 }
 
+/* Password Inputs */
 .credential-container2 {
     display: flex;
     column-gap: 30px;
 }
 
-.credential-container2 input{
-    padding: 7px 0 7px 10px;
+.credential-container2 input {
+    padding: 6px 0 6px 10px;
 }
 
+/* Radio Inputs */
 .credential-container3 {
     display: grid;
     text-align: left;
@@ -91,7 +105,7 @@ option {
     display: flex;
     text-align: left;
     color: #ffffff;
-    margin: 25px 0 0 0;
+    margin-top: 25px;
     column-gap: 8px;
 }
 
@@ -114,7 +128,7 @@ a {
 
 /* Changes Autocomplete styles in Chrome */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -128,5 +142,106 @@ select:-webkit-autofill:focus {
 
 .error {
     border: solid 2px red;
-    box-shadow:#ff0000 0px 0 10px;
+    box-shadow: #ff0000 0px 0 10px;
+}
+
+/* Responsive Web Design */
+@media screen and (max-width: 993px) {
+    body {
+        background-image: none;
+        background: linear-gradient(black, rgb(133, 87, 0), black);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 330px;
+        height: 570px;
+        padding: 15px 25px 0 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    label {
+        font-size: 14.2px;
+    }
+
+    /* Select State Drop Down */
+    select {
+        padding: 5px 0 5px 0;
+    }
+
+    option {
+        font-size: 15px;
+    }
+
+    /* Password Inputs */
+    .credential-container2 {
+        column-gap: 10px;
+    }
+
+    /* Radio Inputs */
+    .credential-container3 {
+        row-gap: 10px;
+    }
+
+    .credential-container3 div {
+        margin-top: 20px;
+    }
+
+    /* Create an Account/Return to Login */
+    button,
+    .loginLink {
+        margin-top: 10px;
+    }
+
+    .loginLink {
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+    }
+}
+
+/* Average Phone Screen Sizes */
+@media screen and (max-width: 470px) {
+    form {
+        width: 80vw;
+        height: 600px;
+        margin-top: 20px;
+    }
+
+    /* Password Inputs */
+    .credential-container2 {
+        display: grid;
+        grid-template-columns: repeat(2, 39vw);
+    }
+}
+
+/* Smallest Phone Screen Sizes */
+@media screen and (max-width: 270px) {
+    form {
+        width: 330px;
+        height: 670px;
+    }
+
+    /* Select State Drop Down */
+    label {
+        font-size: 14px;
+    }
+
+    option {
+        font-size: 10px;
+    }
+
+    /* Password Inputs */
+    .credential-container2 {
+        grid-template: repeat(2, 28px) / repeat(1, 39vw);
+        row-gap: 14px;
+    }
+
+    .credential-container2 input {
+        width: 195px;
+    }
 }

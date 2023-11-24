@@ -1,7 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+:root {
+    --icon-size: 25px;
 }
 
 :root {
@@ -49,7 +53,7 @@ main {
 
 /* Changes Autocomplete styles in Chrome */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -63,7 +67,8 @@ select:-webkit-autofill:focus {
 }
 
 /* Contact info start */
-.info-container, form {
+.info-container,
+form {
     height: 425px;
 }
 
@@ -78,7 +83,9 @@ select:-webkit-autofill:focus {
     margin-bottom: 10px;
 }
 
-.info-heading h1:hover, .info-heading p:hover, .header h1:hover {
+.info-heading h1:hover,
+.info-heading p:hover,
+.header h1:hover {
     cursor: default;
 }
 
@@ -86,14 +93,18 @@ select:-webkit-autofill:focus {
     font-size: 16px;
 }
 
-.info-group-1, .info-group-2, .info-group-3, .info-group-4 {
+.info-group-1,
+.info-group-2,
+.info-group-3,
+.info-group-4 {
     display: grid;
     column-gap: 20px;
     display: flex;
 }
 
 /* Start of Form Styles */
-.form-container input, textarea {
+.form-container input,
+textarea {
     background: none;
     border: none;
     font-size: x-large;
@@ -108,17 +119,20 @@ form {
     margin-top: 10px;
 }
 
-.form-container label, .lastNamePhone-group label, .user-message-container label {
+.form-container label,
+.lastNamePhone-group label,
+.user-message-container label {
     margin-top: 26px;
     font-size: medium;
 }
 
 .form-container div {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     column-gap: 30px;
     width: fit-content;
 }
+
 .form-container input {
     padding-bottom: 5px;
 }
@@ -185,35 +199,40 @@ textarea {
     }
 
     /* Contact info start */
-    .info-container, form {
+    .info-container,
+    form {
         height: 400px;
     }
-    
-    .info-group-1, .info-group-2, .info-group-3, .info-group-4 {
+
+    .info-group-1,
+    .info-group-2,
+    .info-group-3,
+    .info-group-4 {
         font-size: 15px;
     }
 
     .info-group-3 {
         width: 260px;
     }
-    
+
     /* Start of Form Styles */
-    .form-container input, textarea {
+    .form-container input,
+    textarea {
         font-size: 16px;
     }
-    
+
     form {
         width: fit-content;
     }
-    
+
     textarea {
         width: 450px;
     }
-    
+
     .contact-button-container button {
         font-size: medium;
     }
-    
+
     .contact-button-container button:active {
         background: #008000;
     }
@@ -221,22 +240,25 @@ textarea {
 
 /* Tablet View 2 */
 @media screen and (max-width: 850px) {
-    
     /* Start of Heading */
     .header {
         top: 40px;
     }
 
     /* Contact info start */
-    .info-container, form {
+    .info-container,
+    form {
         height: 350px;
     }
 
     .info-container h1 {
         font-size: 28.4px;
     }
-    
-    .info-group-1, .info-group-2, .info-group-3, .info-group-4 {
+
+    .info-group-1,
+    .info-group-2,
+    .info-group-3,
+    .info-group-4 {
         font-size: 14px;
     }
 
@@ -248,12 +270,13 @@ textarea {
         width: calc(var(--icon-size) - 5px);
         height: calc(var(--icon-size) - 5px);
     }
-    
+
     /* Start of Form Styles */
-    .form-container input, textarea {
+    .form-container input,
+    textarea {
         font-size: 14px;
     }
-    
+
     textarea {
         width: 400px;
     }
@@ -278,7 +301,6 @@ textarea {
     .info-container p {
         font-size: 17px;
     }
-    
     /* Start of Form Styles */
     form {
         margin-top: 30px;
@@ -287,11 +309,14 @@ textarea {
         left: 14%;
     }
 
-    .form-container input, textarea {
+    .form-container input,
+    textarea {
         font-size: x-large;
     }
 
-    .form-container label, .lastNamePhone-group label, .user-message-container label {
+    .form-container label,
+    .lastNamePhone-group label,
+    .user-message-container label {
         font-size: large;
     }
 
@@ -329,36 +354,42 @@ textarea {
         background: none;
         padding: 0;
     }
-    
     /* Contact info start */
     .info-container {
         height: 350px;
         padding: 30px 20px 0 50px;
     }
-    
+
     .info-container p {
         font-size: 13px;
     }
-    
+
     /* Start of Form Styles */
     form {
         left: 15%;
     }
-    
-    .form-container input, textarea {
+
+    .form-container input,
+    textarea {
         font-size: large;
     }
-    
-    .form-container label, .lastNamePhone-group label, .user-message-container label {
+
+    .form-container input {
+        width: 220px;
+    }
+
+    .form-container label,
+    .lastNamePhone-group label,
+    .user-message-container label {
         font-size: large;
     }
-    
+
     .form-container div {
         flex-direction: column;
     }
-    
+
     textarea {
-        width: 220px;
         resize: vertical;
+        width: 220px;
     }
 }

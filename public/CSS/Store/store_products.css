@@ -78,7 +78,8 @@ body {
     margin-left: 15px;
 }
 
-.Product-Details h2, .Product-Details h2 span {
+.Product-Details h2,
+.Product-Details h2 span {
     cursor: default;
 }
 
