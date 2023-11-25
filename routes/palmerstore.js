@@ -1,27 +1,70 @@
 const store = require('express').Router();
-const path = require('path');
+const { getTablesFrom, storeDB } = require('../utils/database');
+let path = require('path');
+let ejs = require('ejs');
+const { sendResponse } = require('./helopers');
+path = `${path.dirname(path.join(__dirname))}\\public\\HTML\\Store`;
 
 
+// Page 1
+store.get('/', async (req, res) => {
+    res.sendFile(`${path}\\Store_1.html`, (error) => {
+        console.log(error);
+    })
+})
 
+// Page 2
+store.get('/Page2', async (req, res) => {
+    res.sendFile(`${path}\\Store_2.html`, (error) => {
+        console.log(error);
+    })
+})
 
-store.get('/store/:id', (req, res) => {
-    fs.readFile('./public/HTML/Store/Product.html', 'utf8', (err, HTML) => {
-        res.send(HTML);
+// Page 3
+store.get('/Page3', async (req, res) => {
+    res.sendFile(`${path}\\Store_3.html`, (error) => {
+        console.log(error);
     })
 })
 
 
-store.get('store/products', async (req, res) => {
-    res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+// Products Page
+store.get(`/Product/`, async (req, res) => {
+    res.sendFile(`${path}\\Product.html`, (error) => {
+        console.log(error);
+    })
 })
 
-store.get('store/page2', async (req, res) => {
-    res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+
+// Getting All Products from Database 
+store.get('/Products', async (req, res) => {
+    try {
+        res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+    }
+    catch (error) {
+        console.log(error);
+    }
 })
 
-store.get('store/page3', async (req, res) => {
-    res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+store.get('/Page2/Products', async (req, res) => {
+    try {
+        res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+    }
+    catch (error) {
+        console.log(error);
+    }
 })
+
+store.get('/Page3/Products', async (req, res) => {
+    try {
+        res.send(await getTablesFrom(process.env.TABLE_NAME4, storeDB));
+    }
+    catch (error) {
+        console.log(error);
+    }
+})
+
+
 
 
 

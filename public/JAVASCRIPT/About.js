@@ -1,5 +1,5 @@
 import { sendGETRequestToSever } from './utils1.js';
-import {} from './Nav&Footer_Blueprint.js';
+import {} from './utils/Nav&Footer_utils.js';
 const apis = await sendGETRequestToSever('/apis');
 fetchYouTubeData();
 fetchWeatherData();

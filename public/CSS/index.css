@@ -269,6 +269,19 @@ body {
     font-size: 35px;
     background: #ffffffe0;;
     height: 1000px;
+    text-align: center;
+}
+
+#prompt-input {
+    width: 50vw;
+    padding: 10px 0 10px 5px;
+}
+
+#prompt-output {
+    margin: 0 130px 0 130px;
+    height: 20vw;
+    background: #000;
+    color: #fff;
 }
 
 /* Responsive Web Design: Tablet view */

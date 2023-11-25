@@ -5,8 +5,9 @@ export function getProductsFromDB(i) {
     const img = products[i].Image;
     const price = products[i].Price;
     const descrip = products[i].Description;
-    const productLink = products[i].Link;
-    return [img, price, descrip, productLink, UPC];
+    const productLink = products[i].link;
+    const storeNumber = products[i].StorePage;
+    return [img, price, descrip, productLink, UPC, storeNumber];
 }
 
 export function getProductInstance(i) {
@@ -15,7 +16,8 @@ export function getProductInstance(i) {
     const price = productArray.getIndex(i).value.getPrice();
     const descrip = productArray.getIndex(i).value.getDescription();
     const productLink = productArray.getIndex(i).value.getLink();
-    return [img, price, descrip, productLink, UPC];
+    const storeNumber = productArray.getIndex(i).value.getStoreNumber();
+    return [img, price, descrip, productLink, UPC, storeNumber];
 }
 
 export function getProductElements() {

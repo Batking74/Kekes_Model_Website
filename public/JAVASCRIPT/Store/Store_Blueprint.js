@@ -1,13 +1,17 @@
-import { navbar } from "../Nav&Footer_Blueprint.js";
+console.log(location.pathname)
+import { navbar } from "../utils/Nav&Footer_utils.js";
 import { getProductsFromDB, getProductElements, getProductInstance, calculateDiscount } from "./Store_tools.js";
-import { sendGETRequestToSever } from "../utils1.js";
-import LinkedList from "../LinkedList.js";
+import { sendGETRequestToSever } from "../utils/utils1.js";
+import LinkedList from "../utils/LinkedList.js";
 import { HTML } from "../HTML.js";
-export const products = await sendGETRequestToSever('/products');
+export const products = await sendGETRequestToSever(`/Store/Products`);
+
+
 
 // Dynamic Store HTML Page
 export const main = document.getElementsByTagName('main');
 main[0].innerHTML = HTML.StoreBody;
+
 
 // Targeting Elements & Creating Arrays
 export const body = document.getElementsByTagName('body');
@@ -28,39 +32,45 @@ rating[2] = '&#8902 &#8902 &#8902';
 rating[3] = '&#8902 &#8902 &#8902 &#8902';
 rating[4] = '&#8902 &#8902 &#8902 &#8902 &#8902';
 
+
 // Store landing page Links
-pageLink[0] = `/Palmerstore`;
-pageLink[1] = `/Palmerstore/Page2`;
-pageLink[2] = `/Palmerstore/Page3`;
+pageLink[0] = '/Store';
+pageLink[1] = `/Store/Page2`;
+pageLink[2] = `/Store/Page3`;
+
 
 // Dynamic Elements
 setStoreName("Palmer Store");
 setDocName("Palmer Studios Store");
 
+
 // Creating Dynamic Project Card/Classes
 export default class Product {
-    constructor(image, description, price, rating, link, id) {
-        this.image = image;
-        this.imageAlt = description;
+    constructor(image, description, price, rating, link, id, storeNumber) {
+        this.storeNumber = storeNumber;
         this.description = description;
-        this.price = price;
+        this.imageAlt = description;
         this.rating = rating;
+        this.image = image;
+        this.price = price;
         this.link = link;
         this.id = id;
     }
-    getImage() { return this.image; }
-    getAlt() { return this.imageAlt; }
+    getStoreNumber() { return this.storeNumber; }
     getDescription() { return this.description; }
+    getAlt() { return this.imageAlt; }
+    getImage() { return this.image; }
     getPrice() { return this.price; }
     getLink() { return this.link; }
     getId() { return this.id; }
 }
 
+
 // Creating Store Products
 export function instantiateProducts(start, end) {
     for(let i = start; i < end; i++) {
         const attr = getProductsFromDB(i);
-        const object = new Product(attr[0], attr[2], attr[1], rating[4], attr[3], attr[4]);
+        const object = new Product(attr[0], attr[2], attr[1], rating[4], attr[3], attr[4], attr[5]);
         productArray.insertAtHead(object);
         productMainContainer.innerHTML += HTML.StoreProduct;
     }
@@ -72,11 +82,11 @@ export function displayProducts(productsLength) {
         const productAttr = getProductInstance(i);
         element[0][i].setAttribute('src', productAttr[0]);
         element[0][i].setAttribute('alt', productAttr[2]);
-        element[5][i].setAttribute('href', productAttr[3]);
+        element[5][i].setAttribute('href', `http://localhost:5000/Store/Product?descrip=${productAttr[2]}&id=${productAttr[4]}`);
+        console.log(element[5])
         element[1][i].textContent = `${productAttr[1]}`;
         element[4][i].textContent = productAttr[2];
         element[2][i].textContent = getDiscount(productAttr[1], element[3][i], productAttr[4]);
-
         // Non Discounted Products Condition
         if(element[2][i].textContent == productAttr[1]) {
             element[2][i].textContent = `${productAttr[1]}`;
@@ -85,6 +95,7 @@ export function displayProducts(productsLength) {
         }
     }
 }
+
 
 // Getting Discounts
 function getDiscount(price, percentageOff, id) {
@@ -102,14 +113,17 @@ export function setStoreName(storeName) {
     storeTitle.forEach(element => element.innerHTML = storeName);
 }
 
+
 export function setDocName(docName) {
     pageName.forEach(element => element.innerHTML = docName);
 }
+
 
 export function setNumProducts(num) {
     const numberOfProducts = document.querySelector('#Products-Count');
     numberOfProducts.innerHTML = `${num}`;
 }
+
 
 export function newNavigations(index) {
     const nextPage = document.querySelector('#Next-Page');
@@ -128,10 +142,11 @@ export function newNavigations(index) {
     }
 }
 
+
 export function getNavigator(index) {
     const attribute = new Array(4);
-    attribute[0] = `/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png`;
-    attribute[1] = `/IMG/Social Media Icons & Logos/Store_Navigation_Left_Arrow.png`;
+    attribute[0] = `/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.webp`;
+    attribute[1] = `/IMG/Social Media Icons & Logos/Store_Navigation_Left_Arrow.webp`;
     attribute[2] = "Next-Page";
     attribute[3] = "Previous-Page";
     const nav = new Array(3);
@@ -150,6 +165,7 @@ export function getNavigator(index) {
     return nav[index];
 }
 
+
 export function sortList() {
     const filterOptions = document.getElementById('Filter');
     filterOptions.addEventListener('change', (element) => {
@@ -162,21 +178,26 @@ export function sortList() {
     });
 }
 
+
 function getBestSellers() {
     console.log("Sorted Best Sellers!!!");
 }
+
 
 function sortAtoZ() {
     console.log("Sorted A to Z!!!");
 }
 
+
 function sortZtoA() {
     console.log("Sorted Z to A!!!");
 }
 
+
 function sortLowToHigh() {
     console.log("Sorted Low to High!!!");
 }
+
 
 function sortHighToLow() {
     console.log("Sorted High to Low!!!");
