@@ -1,4 +1,4 @@
-import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../utils1.js';
+import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../utils/utils1.js'
 
 // Declaring and Initializing Variables
 const input = document.querySelectorAll('.input');

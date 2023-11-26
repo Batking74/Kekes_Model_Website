@@ -1,5 +1,5 @@
-import { attribute, footer } from "../Nav&Footer_Blueprint.js";
-import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError, date } from "../utils1.js";
+import { attribute, footer } from "../utils/Nav&Footer_utils.js";
+import { sendDELETERequestToSever, sendPOSTRequestToSever, sendPUTRequestToSever, displayError, date } from "../utils/utils1.js";
 
 const submitBtn = document.getElementById('submit-btn');
 const signUpBtn = document.querySelector('.signup-btn');

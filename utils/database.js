@@ -36,21 +36,46 @@ function configDatabase(DB_NAME) {
 
 // Reads data from specified table and database
 async function getTablesFrom(tableName, database) {
-    const res = await database.execute(`SELECT * FROM ${tableName}`);
-    return await res[0];
+    try {
+        const res = await database.execute(`SELECT * FROM ${tableName}`);
+        return await res[0];
+    }
+    catch(error) { console.log(error); }
 }
 
 
 // Creates new Users Account
 async function createNewUser(userData, database, tableName, colums) {
-    return await database.execute(`INSERT INTO ${tableName}${colums}VALUES(${JSON.stringify(userData.Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.Gender)}, ${JSON.stringify(userData.Email)}, ${JSON.stringify(userData.Username)}, ${JSON.stringify(userData.Password)}, ${JSON.stringify(userData.From)}, ${JSON.stringify(userData.Date)});`);
+    try {
+        return await database.execute(`INSERT INTO ${tableName}${colums}VALUES(${JSON.stringify(userData.       Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.Gender)}, ${JSON.stringify(userData.Email)}, ${JSON.stringify(userData.Username)}, ${JSON.stringify(userData.Password)}, ${JSON.stringify(userData.From)}, ${JSON.stringify(userData.Date)});`);
+    }
+    catch(error) { console.log(error) }
+}
+
+
+// Updates Store database based on frontend conditions
+async function updateDatabase(database, userData) {
+    try {
+        return await database.execute(`
+            UPDATE ${process.env.TABLE_NAME4}
+            SET ${userData.column} = '${userData.value}'
+            WHERE id = ${userData.id};`);
+    }
+    catch(error) { console.log(error) }
 }
 
 
 // Adds Users Contact Messages if they have an Account with Palmer Studios
 async function addUserMSG(userData, database, tableName, colums) {
-    return await database.execute(`INSERT INTO ${tableName}${colums}VALUES(${JSON.stringify(userData.Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.UserMessage)}, ${JSON.stringify(userData.Date)});`);
+    try {
+        return await database.execute(`INSERT INTO ${tableName}${colums}VALUES(${JSON.stringify(userData.Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.UserMessage)}, ${JSON.stringify(userData.Date)});`);
+    }
+    catch(error) { console.log(error) }
 }
 
 
-module.exports = { companyDB, userDB, storeDB, transporter, getTablesFrom, createNewUser, addUserMSG, PORT }
+// Exporting Modules
+module.exports = {
+    companyDB, userDB, storeDB, transporter, getTablesFrom,
+    updateDatabase, createNewUser, addUserMSG, PORT
+}
