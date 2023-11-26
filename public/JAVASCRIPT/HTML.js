@@ -1,4 +1,4 @@
-import { date } from "./utils1.js";
+import { date } from "./utils/utils1.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
 const ad = `../IMG/Ads/Sale_ad_1.webp`;
 const num = [27, 22, 28];
@@ -65,7 +65,7 @@ export const HTML = {
     // Store Products HTML
     StoreProduct: `
     <section class="Product-Container">
-        <a href="#" class="itemPageLink">
+        <a href="" class="itemPageLink">
             <img loading="lazy" class="itemImage">
             <div class="Product-Card">
                 <span class="Price-Container">
@@ -77,7 +77,7 @@ export const HTML = {
                 <p class="itemPercentageOff"></p>
                 <p class="Product-Rating"></p>
                 <span>
-                    <a href="#" class="AddToList">Add to List</a>
+                    <button class="AddToList">Add to List</button>
                 </span>
             </div>
         </a>

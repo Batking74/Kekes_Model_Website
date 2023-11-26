@@ -11,27 +11,36 @@
 }
 
 body {
-    background-image: url(/IMG/Background_Images/Home_Background_IMG.png);
     background-repeat: no-repeat;
-    background-position-y: center;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
+    background-color: #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.test {
+    margin-top: 60px;
+    width: 100%;
 }
 
 /* Heading Styles */
 .heading-container {
     display: flex;
     align-items: center;
+    text-align: center;
     flex-flow: column;
-    position: relative;
-    top: 250px;
+    position: absolute;
+    /* Centering absolute Element */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .heading-container h1 {
     font-size: 55px;
     font-weight: lighter;
     color: #fff;
+    width: 600px;
     text-shadow: #000 4px 4px 5px;
     border-radius: 40px;
     padding: 15px;
@@ -63,15 +72,6 @@ body {
 }
 
 /* Styling All Sections*/
-.section1-container,
-.section2-container,
-.section3-container {
-    position: relative;
-    width: 100%;
-    height: 50%;
-    background: #fff;
-}
-
 .section1-heading,
 .section2-heading,
 .section3-heading {
@@ -111,7 +111,7 @@ body {
 }
 
 .section1-container {
-    margin-top: 530px;
+    /* margin-top: 230px; */
     background: #ffffffe0;
     padding: 50px 0 200px 0;
 }
@@ -267,12 +267,40 @@ body {
 /* Start of Section 3 */
 .section3-container {
     font-size: 35px;
-    background: #ffffffe0;;
-    height: 1000px;
+    background: #ffffffe0;
+    padding-bottom: 300px;
+    text-align: center;
+}
+
+.prompt-output-container {
+    text-align: left;
+    margin: 20px 150px 0 150px;
+    height: fit-content;
+    padding: 50px;
+    background: #000;
+    border-radius: 20px;
+}
+
+.prompt-input {
+    width: 50vw;
+    padding: 10px 0 10px 5px;
+}
+
+.prompt-output-container p {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;
 }
 
 /* Responsive Web Design: Tablet view */
 @media screen and (max-width: 1200px) {
+    .heading-container h1 {
+        font-size: 35px;
+    }
+
+    .heading-container {
+        top: 45%;
+    }
 
     .section1-p1,
     .section1-p2 {
@@ -320,21 +348,15 @@ body {
     }
 }
 
-@media screen and (max-width: 1074px) {
-    body {
-        background-position-x: -10vw;
-    }
-}
-
-
 @media screen and (max-width: 996px) {
     html {
         font-size: 14px;
     }
 
-    body {
-        background-position-x: calc(100% - 1px);
-        background-position-y: bottom;
+    .heading-container button {
+        width: 200px;
+        padding: 10px;
+        font-size: 16px;
     }
 
     .section1-first-nested-section-container {
@@ -369,14 +391,6 @@ body {
         margin: 0;
     }
 
-    .heading-container h1 {
-        font-size: 50px;
-    }
-
-    .heading-container button {
-        width: 35%;
-    }
-
     .section1-heading,
     .section3-heading {
         font-size: 50px;
@@ -408,23 +422,60 @@ body {
         padding: 16px 83px 16px 83px;
         font-size: 19px;
     }
+    
+    /* Section 3 */
+    .prompt-output-container {
+        margin: 20px 80px 0 80px;
+    }
+    
+    .prompt-output-container p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .test {
+        margin-top: 0;
+    }
+    .heading-container {
+        top: 30%;
+    }
+    
+    .heading-container h1 {
+        font-size: 26.5px;
+        width: 300px;
+        padding-bottom: 0px;
+    }
+    
+    .heading-container button {
+        font-size: 12px;
+        padding: 10px 0 10px 0;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .test {
+        margin-top: 0;
+    }
+    .heading-container {
+        top: 20%;
+    }
+    
+    .heading-container h1 {
+        font-size: 26.5px;
+        width: 300px;
+    }
+    
+    .heading-container button {
+        font-size: 12px;
+        padding: 10px 0 10px 0;
+    }
 }
 
 /* mobile view */
 @media screen and (max-width: 600px) {
-    body {
-        background-position: center;
-        background-position-x: -500px;
-    }
-
     .heading-container h1 {
-        font-size: 30px;
-    }
-
-    .heading-container button {
-        width: 200px;
-        padding: 10px;
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .section2-heading {
@@ -457,25 +508,23 @@ body {
         padding: 16px 83px 16px 83px;
         font-size: 19px;
     }
-}
 
-@media screen and (max-width: 538px) {
-    body {
-        background-position-x: -115vw;
+    /* Section 3 */
+    .prompt-output-container {
+        margin: 40px 20px 0 40px;
+    }
+    
+    .prompt-output-container p {
+        font-size: 18px;
     }
 }
 
-@media screen and (max-width: 495px) {
-    body {
-        background-position-x: -130vw;
+@media screen and (max-width: 400px) {
+    .heading-container {
+        top: 15%;
     }
-}
 
-
-@media screen and (max-width: 463px) {
-    body {
-        background-position: center;
-        background-position-x: -550px;
-        background-size: cover;
+    .heading-container h1 {
+        font-size: 20px;
     }
 }

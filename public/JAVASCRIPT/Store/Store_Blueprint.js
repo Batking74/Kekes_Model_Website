@@ -1,13 +1,14 @@
-import { navbar } from "../Nav&Footer_Blueprint.js";
-import { getProductsFromDB, getProductElements, getProductInstance, calculateDiscount } from "./Store_tools.js";
-import { sendGETRequestToSever } from "../utils1.js";
-import LinkedList from "../LinkedList.js";
+import {} from "../utils/Nav&Footer_utils.js";
+import * as util from "./helpers.js";
+import { sendPUTRequestToSever } from "../utils/utils1.js";
+import LinkedList from "../utils/LinkedList.js";
 import { HTML } from "../HTML.js";
-export const products = await sendGETRequestToSever('/products');
+
 
 // Dynamic Store HTML Page
 export const main = document.getElementsByTagName('main');
 main[0].innerHTML = HTML.StoreBody;
+
 
 // Targeting Elements & Creating Arrays
 export const body = document.getElementsByTagName('body');
@@ -28,89 +29,95 @@ rating[2] = '&#8902 &#8902 &#8902';
 rating[3] = '&#8902 &#8902 &#8902 &#8902';
 rating[4] = '&#8902 &#8902 &#8902 &#8902 &#8902';
 
+
 // Store landing page Links
-pageLink[0] = `/Palmerstore`;
-pageLink[1] = `/Palmerstore/Page2`;
-pageLink[2] = `/Palmerstore/Page3`;
+pageLink[0] = '/Store';
+pageLink[1] = `/Store/Page2`;
+pageLink[2] = `/Store/Page3`;
+
 
 // Dynamic Elements
-setStoreName("Palmer Store");
-setDocName("Palmer Studios Store");
+util.setStoreName("Palmer Store");
+util.setDocName("Palmer Studios Store");
+
 
 // Creating Dynamic Project Card/Classes
 export default class Product {
-    constructor(image, description, price, rating, link, id) {
-        this.image = image;
-        this.imageAlt = description;
+    constructor(image, description, price, rating, discountedPrice, id, percentageOff, numOfReviews) {
+        this.discountedPrice = discountedPrice;
+        this.percentageOff = percentageOff;
+        this.numOfReviews = numOfReviews;
         this.description = description;
-        this.price = price;
+        this.imageAlt = description;
         this.rating = rating;
-        this.link = link;
+        this.image = image;
+        this.price = price;
         this.id = id;
     }
-    getImage() { return this.image; }
-    getAlt() { return this.imageAlt; }
+    getDiscountedPrice() { return this.discountedPrice; }
+    getNumberOfReviews() { return this.numOfReviews; }
+    getPercentageOFF() { return this.percentageOff; }
+    getRating() { return this.rating; }
     getDescription() { return this.description; }
+    getAlt() { return this.imageAlt; }
+    getImage() { return this.image; }
     getPrice() { return this.price; }
-    getLink() { return this.link; }
     getId() { return this.id; }
 }
+
 
 // Creating Store Products
 export function instantiateProducts(start, end) {
     for(let i = start; i < end; i++) {
-        const attr = getProductsFromDB(i);
-        const object = new Product(attr[0], attr[2], attr[1], rating[4], attr[3], attr[4]);
+        const [img, descrip, price, discount, id, percentageOff, reviews, rate] = util.getProductsFromDB(i);
+        const object = new Product(img, descrip, price, rate, discount, id, percentageOff, reviews);
         productArray.insertAtHead(object);
         productMainContainer.innerHTML += HTML.StoreProduct;
     }
 }
 
-export function displayProducts(productsLength) {
-    for(let i = 0; i < productsLength; i++) {  
-        const element = getProductElements();
-        const productAttr = getProductInstance(i);
-        element[0][i].setAttribute('src', productAttr[0]);
-        element[0][i].setAttribute('alt', productAttr[2]);
-        element[5][i].setAttribute('href', productAttr[3]);
-        element[1][i].textContent = `${productAttr[1]}`;
-        element[4][i].textContent = productAttr[2];
-        element[2][i].textContent = getDiscount(productAttr[1], element[3][i], productAttr[4]);
 
+// Displays all products to the webpage
+export function displayProducts(productsLength) {
+    for(let i = 0; i < productsLength; i++) {
+        // Getting all elements and instances
+        const [imgElmt,priceElmt,discountPriceElmt,percentOffElmt,descripElmt,linkElmt, rateElmt] = util.getProductElmt();
+        const [img, price, descrip, id, discount, percentOff, reviews, rate] = util.getProductInstance(i);
+        // Setting Attributes
+        imgElmt[i].setAttribute('src', img);
+        imgElmt[i].setAttribute('alt', descrip);
+        linkElmt[i].setAttribute('href', `http://localhost:5000/Store/Product?descrip=${descrip}&id=${id}`);
+        // Displaying data
+        rateElmt[i].innerHTML = rate;
+        priceElmt[i].textContent = price;
+        descripElmt[i].textContent = descrip;
+        discountPriceElmt[i].textContent = getDiscount(percentOffElmt[i], percentOff, price, discount, id);
         // Non Discounted Products Condition
-        if(element[2][i].textContent == productAttr[1]) {
-            element[2][i].textContent = `${productAttr[1]}`;
-            element[1][i].textContent = '';
-            element[3][i].innerHTML = '';
+        if(percentOff === '0%') {
+            discountPriceElmt[i].textContent = `${price}`;
+            priceElmt[i].textContent = '';
+            percentOffElmt[i].innerHTML = '';
         }
     }
 }
 
-// Getting Discounts
-function getDiscount(price, percentageOff, id) {
-    if(price <= 20 && price > 10) price = calculateDiscount(30, price, percentageOff);
-    else if(price >= 100) price = calculateDiscount(50, price, percentageOff);
-    else if(id == 23) price = calculateDiscount(20, price, percentageOff);
-    else if(id == 18) price = calculateDiscount(37, price, percentageOff);
-    else if(id == 5) price = calculateDiscount(25, price, percentageOff);
-    else if(id == 12) price = calculateDiscount(30, price, percentageOff);
-    else if(id == 11) price = calculateDiscount(5, price, percentageOff);
+
+// Getting Discounted items
+function getDiscount(percentageOffElement, dbPercentage, price, discountPrice, id) {
+    if(dbPercentage !== '0%') {
+        const total = util.calculateDiscount(percentageOffElement, dbPercentage, price);
+        console.log(discountPrice)
+        if(discountPrice === 'none') {
+            console.log({ id: id, value: total, })
+            sendPUTRequestToSever('/Store/Product/Discounts', { id: id, value: total, column: 'DiscountedPrice' })
+        }
+        return total;
+    }
     return price;
 }
 
-export function setStoreName(storeName) {
-    storeTitle.forEach(element => element.innerHTML = storeName);
-}
 
-export function setDocName(docName) {
-    pageName.forEach(element => element.innerHTML = docName);
-}
-
-export function setNumProducts(num) {
-    const numberOfProducts = document.querySelector('#Products-Count');
-    numberOfProducts.innerHTML = `${num}`;
-}
-
+// Setting eventlisters for all navigations on each page
 export function newNavigations(index) {
     const nextPage = document.querySelector('#Next-Page');
     const backButton = document.querySelector('#Previous-Page');
@@ -128,10 +135,12 @@ export function newNavigations(index) {
     }
 }
 
+
+// Setting different navigations for each page
 export function getNavigator(index) {
     const attribute = new Array(4);
-    attribute[0] = `/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.png`;
-    attribute[1] = `/IMG/Social Media Icons & Logos/Store_Navigation_Left_Arrow.png`;
+    attribute[0] = `/IMG/Social Media Icons & Logos/Store_Navigation_Right_Arrow.webp`;
+    attribute[1] = `/IMG/Social Media Icons & Logos/Store_Navigation_Left_Arrow.webp`;
     attribute[2] = "Next-Page";
     attribute[3] = "Previous-Page";
     const nav = new Array(3);
@@ -150,6 +159,7 @@ export function getNavigator(index) {
     return nav[index];
 }
 
+
 export function sortList() {
     const filterOptions = document.getElementById('Filter');
     filterOptions.addEventListener('change', (element) => {
@@ -162,21 +172,26 @@ export function sortList() {
     });
 }
 
+
 function getBestSellers() {
     console.log("Sorted Best Sellers!!!");
 }
+
 
 function sortAtoZ() {
     console.log("Sorted A to Z!!!");
 }
 
+
 function sortZtoA() {
     console.log("Sorted Z to A!!!");
 }
 
+
 function sortLowToHigh() {
     console.log("Sorted Low to High!!!");
 }
+
 
 function sortHighToLow() {
     console.log("Sorted High to Low!!!");

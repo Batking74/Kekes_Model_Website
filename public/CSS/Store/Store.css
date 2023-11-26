@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(../IMG/Background_Images/Store_Background_Image.jpg);
+    background-image: url(/IMG/Background_Images/Store_Background_Image.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -160,6 +160,7 @@ header h1 {
     border-radius: 15px;
     width: fit-content;
     padding: 8px;
+    margin-top: 20px;
     color: #ffffff;
     transition: 1.6s;
     border: solid 2px #000;

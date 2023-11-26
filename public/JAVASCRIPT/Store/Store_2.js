@@ -1,5 +1,5 @@
 import {instantiateProducts, displayProducts, setDocName, setNumProducts, getNavigator, newNavigations, body, storeName, sortList, storeAd, productMainContainer, storeNavigation, productArray } from "../Store/Store_Blueprint.js";
-import {} from "../Nav&Footer_Blueprint.js";
+import {} from "../utils/Nav&Footer_utils.js";
 
 storeName[0].remove();
 storeAd[0].remove();

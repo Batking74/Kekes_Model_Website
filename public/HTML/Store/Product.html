@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Nav&Footer.css">
-    <link rel="stylesheet" href="../CSS/store_products.css">
+    <link rel="stylesheet" href="/CSS/Nav&Footer.css">
+    <link rel="stylesheet" href="/CSS/Store/store_products.css">
     <title></title>
 </head>
 <body>
@@ -18,36 +18,64 @@
 
     <!-- Navigation Bar -->
     <nav role="navigation" id="navbar"></nav>
-
-    <div class="Product-Main-Container">
-        <div>
+s
+    <main class="Product-Main-Container">
+        <!-- Image -->
+        <section>
             <img class="Product-image">
-        </div>
-        <div class="Product-Details">
-            <h1></h1>
+        </section>
+        <!-- Details -->
+        <section class="Product-Details">
+            <!-- Product Title -->
+            <h1 id="description"></h1>
+
+            <!-- Product Rating -->
             <a href="#" class="Ratings">
                 <p id="Rating"></p>
                 <p id="Number-of-Reviews"></p>
             </a>
-            <h2 class="Price"> <span class="Product-Old-Price"></span></h2>
+
+            <!-- Product Price -->
+            <span class="price-container">
+                <h2 class="Price"></h2>
+                <span class="Product-Old-Price"></span>
+            </span>
+
+            <!-- Product Inputs -->
+            <div class="input-container">
+                <input aria-label="color picker" type="color">
+                <input aria-label="color picker" type="color">
+            </div>
+
+            <!-- Product Options -->
             <div>
-            <input aria-label="color picker" type="color">
-            <input aria-label="color picker" type="color">
-        </div>
-        <div>
-            <button>XS</button>
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-        </div>
-        <div class="Product-Detail-text">
-            <p><img src="../IMG/Social Media Icons & Logos/Palmer_Studios_Icon.png" alt="Palmer Studios Model icon"> and shipped by Palmer Studios</p>
-            <p><img src="../IMG/Social Media Icons & Logos/Return_Icon.png" alt="Return Policy"> Free 14-Day returns</p>
-        </div>
-        <button class="AddToCart">Add to Cart</button>
-    </div>
-    <div class="Product-Discription-Container">
+                <button>XS</button>
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>XL</button>
+            </div>
+
+            <!-- Product Purchase Info -->
+            <div class="Product-Detail-text">
+                <p>
+                    <img src="/IMG/Social Media Icons & Logos/Palmer_Logo.webp"
+                    alt="Palmer Studios Model icon"> and shipped by Palmer Studios
+                </p>
+                <p>
+                    <img src="../IMG/Social Media Icons & Logos/Return_Icon.webp"
+                    alt="Return Policy"> Free 14-Day returns
+                </p>
+            </div>
+
+            <!-- Add To Cart Button -->
+            <div class="addToCart--container">
+                <button class="AddToCart">Add to Cart</button>
+            </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="Product-Discription-Container">
         <h1>About this item</h1>
         <br>
         <hr>
@@ -68,11 +96,16 @@
             <br>
             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem</li>
         </ul>
-    </div>
-    <p>We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it.  See our disclaimer</p>
-</div>
+    </section>
 
+    <!-- Company Notice -->
+    <section>
+        <p>We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it.  See our disclaimer</p>
+    </section>
+</main>
+
+<!-- Footer -->
 <footer></footer>
-<script type="module" src="../JAVASCRIPT/Store_Products.js"></script>
+<script type="module" src="/JAVASCRIPT/Store/Store_Products.js"></script>
 </body>
 </html>

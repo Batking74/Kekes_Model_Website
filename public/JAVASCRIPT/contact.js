@@ -1,13 +1,14 @@
+import { sendPOSTRequestToSever } from "./utils/utils1.js";
+import * as navTools from "./utils/Nav&Footer_utils.js";
 import { HTML } from "./HTML.js";
-import { sendPOSTRequestToSever } from "./utils1.js";
-import * as navTools from "./Nav&Footer_Blueprint.js";
-const date = new Date();
 
 // Targeting Elements
 const formContactInfo = document.querySelector('.info-container');
 const form = document.querySelector('#form');
 const inputElement = document.querySelectorAll('.userInput');
 const errorElement = document.querySelectorAll('.errorMsg');
+
+// Error Messages
 const errorMsg = new Array(5);
 errorMsg[0] = 'First name is required!';
 errorMsg[1] = 'Email is required!';
@@ -15,6 +16,7 @@ errorMsg[2] = 'Last name is required!';
 errorMsg[3] = 'Phone number is required!';
 errorMsg[4] = 'Message is required';
 
+// Displaying Company Contact Information
 formContactInfo.innerHTML = HTML.Contact;
 const imgElement = document.querySelectorAll('.Dynamic-img');
 const aElement = document.querySelectorAll('.Dynamic-link');
@@ -38,7 +40,7 @@ navTools.setContactSocialMediaIcons(aElement, imgElement, 7, 4, navTools.navLink
 
 
 // Validates User input, and if all feilds are valid a POST request is sent to the server.
-async function validate() {
+function validate() {
     let count = 0;
     for(let i = 0; i < inputElement.length; i++) {
         if(inputElement[i].value === '') {
@@ -57,16 +59,27 @@ async function validate() {
             PhoneNumber: inputElement[3].value,
             UserMessage: inputElement[4].value
         };
-        try {
-            const res = await sendPOSTRequestToSever('/Contact', userSubmission);
-            console.log(res)
-            // location.replace('/Contact/Conformation');
-        }
-        catch(error) {
-            console.log(error);
-        }
+        submit(userSubmission);
     }
 }
 
-form.addEventListener('submit', (e) => { e.preventDefault(); validate(); })
+
+// Submits Users Contact Message
+async function submit(userSubmission) {
+    try {
+        const res = await sendPOSTRequestToSever('/Contact', userSubmission);
+        console.log(res);
+        location.replace('../HTML/Contact_Submission.html');
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
+// Adds Click Event Listener to form
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validate();
+})
+
 navTools.footer[0].remove();

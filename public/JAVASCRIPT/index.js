@@ -1,4 +1,4 @@
-import { attribute, companyInfo } from "../JAVASCRIPT/Nav&Footer_Blueprint.js";
+import { attribute, companyInfo } from "./utils/Nav&Footer_utils.js";
 
 // Targeting Elements
 const animate = document.querySelectorAll(`.${attribute[0]}`);

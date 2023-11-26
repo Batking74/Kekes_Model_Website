@@ -1,8 +1,43 @@
-import { HTML } from "./HTML.js";
-import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever } from "./utils1.js";
+import { HTML } from "../HTML.js";
+import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever, sendPUTRequestToSever } from "./utils1.js";
 export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
 export const companyInfo = await sendGETRequestToSever('/Companyinfo');
+export let responseContainer = document.querySelectorAll('.prompt-output-container');
+export let responseFromAI;
+const promptInputs = document.querySelectorAll('.prompt-input');
+
+
+for(let promptInput of promptInputs) {
+    promptInput.addEventListener('keydown', async (e) => {
+        if(e.key === 'Enter') {
+            try {
+                const value = promptInput.value;
+                promptInput.value = '';
+                const usersInput = document.createElement('p');
+                const aiInput = document.createElement('p');
+                aiInput.setAttribute('class', 'prompt-output');
+                usersInput.textContent = `You: ${value}`;
+                aiInput.textContent = await sendPOSTRequestToSever('/CompanyAI', { Prompt: value });
+                responseContainer.forEach(container => {
+                    container.append(usersInput);
+                    container.append(aiInput);
+                })
+                const text = new SpeechSynthesisUtterance(aiInput.textContent);
+                text.rate = 1.7;
+                speechSynthesis.speak(text);
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
+    })
+}
+
+console.log(promptInputs)
+
+
+
 
 // Organizing Data in Arrays
 export const navLinks = new Array(10);
@@ -10,7 +45,7 @@ navLinks[0] = `/`;
 navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website`;
 navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
 navLinks[3] = `/Contact`;
-navLinks[4] = `/Palmerstore`;
+navLinks[4] = `/Store`;
 navLinks[5] = `/Login`;
 navLinks[6] = "https://www.facebook.com/kekepalmer";
 navLinks[7] = "https://www.instagram.com/keke";
