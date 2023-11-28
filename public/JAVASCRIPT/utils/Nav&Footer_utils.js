@@ -2,7 +2,13 @@ import { HTML } from "../HTML.js";
 import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever, sendPUTRequestToSever } from "./utils1.js";
 export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
-export const companyInfo = await sendGETRequestToSever('/Companyinfo');
+export let companyInfo;
+try {
+    companyInfo = await sendGETRequestToSever('/Companyinfo');
+}
+catch(error) {
+    console.log(error);
+}
 export let responseContainer = document.querySelectorAll('.prompt-output-container');
 export let responseFromAI;
 const promptInputs = document.querySelectorAll('.prompt-input');
