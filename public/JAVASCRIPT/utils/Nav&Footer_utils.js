@@ -18,7 +18,7 @@ for(let promptInput of promptInputs) {
                 const aiInput = document.createElement('p');
                 aiInput.setAttribute('class', 'prompt-output');
                 usersInput.textContent = `You: ${value}`;
-                aiInput.textContent = await sendPOSTRequestToSever('/CompanyAI', { Prompt: value });
+                aiInput.textContent = await sendPOSTRequestToSever('/CompanyAI/', { Prompt: value });
                 responseContainer.forEach(container => {
                     container.append(usersInput);
                     container.append(aiInput);
