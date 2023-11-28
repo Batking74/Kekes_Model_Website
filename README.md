@@ -6,7 +6,7 @@ In the course of this significant project, I embarked on a transformative journe
 
 - The driving force behind this project was a desire to enhance proficiency in various skills, including HTML, CSS, JavaScript, Node.js, SQL, debugging, organization, coding efficiency, and more. The primary benefit derived from the project, however, was a significant improvement in problem-solving abilities.
 
-![Image of Nazir's Palmer Studio Project Landing page](./public/IMG/Palmer_Studios_Project.png)
+![Image of Nazir's Palmer Studio Project Landing page](./IMG/Background_Images/Home_Background_IMG.png)
 
 ## Features
 - Validates User input on all pages that has inputs.
