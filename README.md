@@ -1,9 +1,10 @@
 # Palmer Studios
 
 ### Description
-This is one of my bigger Projects that I started building when I was 16. I originally Started building this project using Bootstrap, but as I taught myself more, practiced, got more fluent in Javascript, and learned other languages such as Node.js and SQL. I wanted to build a real Fullstack application to apply all that I've learned. Unfortuately, I never had any great ideas or anything on what to build. So I decided to pretend like I'm building a site for a company called Palmer Studios (Keke Palmer my celebrity crush). Building this project was difficult because I had no clear vision on how i'd want to layout/display/design everything. I tried not to focus on it so much, and instead just build something using the advanced technologies that I learned. I have to say that I think this project turned out very good for a person my age.
+In the course of this significant project, I embarked on a transformative journey of self-improvement. Beginning with Bootstrap, I gradually refined my expertise in JavaScript and ventured into languages such as Node.js and SQL. The ultimate aim was to translate my acquired knowledge into a concrete Fullstack application. Choosing the fictional identity of "Palmer Studios" added an extra layer of complexity to the project's development, presenting unforeseen challenges. Undeterred by the obstacles, I remained steadfast in my commitment to continuous improvement, incorporating advanced technologies into the project. This endeavor not only stands as a testament to my technical growth but also serves as a demonstration of my adeptness at overcoming obstacles in the pursuit of ambitious goals. Moreover, with the integration of Transformer models, the app evolved into an AI-powered platform, providing users with dynamic information and personalized interactions about Palmer Studios.
 
-- I was motivated to build this project to improve on my skills in HTML, CSS, JavaScript, Node.js, SQL, debugging, staying organized, shortcuts, swiftness with coding, etc. The main benifit I got though out of this project is Problem Solving.
+
+- The driving force behind this project was a desire to enhance proficiency in various skills, including HTML, CSS, JavaScript, Node.js, SQL, debugging, organization, coding efficiency, and more. The primary benefit derived from the project, however, was a significant improvement in problem-solving abilities.
 
 ![Image of Nazir's Palmer Studio Project Landing page](./public/IMG/Palmer_Studios_Project.png)
 
@@ -32,7 +33,8 @@ This is one of my bigger Projects that I started building when I was 16. I origi
 - Mailgen
 - Mysql2
 - Nodemailer
+- Langchain
 
-Deployed Site: Coming Soon!
+Deployed Site: https://batking74.github.io/Kekes_Model_Website/
 
 GitHub Repo: https://github.com/Batking74/Kekes_Model_Website/tree/frontend
