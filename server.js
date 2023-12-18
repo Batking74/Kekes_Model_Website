@@ -20,7 +20,7 @@ app.use('/Register', register);
 app.use('/ResetPassword', resetPass);
 app.use('/CompanyAI', AI);
 
-store.get('/Store', async (req, res) => {
+app.get('/Store', async (req, res) => {
     res.sendFile(`${path}\\Store_1.html`, (error) => {
         console.log(error);
     })
