@@ -95,7 +95,7 @@ export function displayProducts(productsLength) {
         // Setting Attributes
         imgElmt[i].setAttribute('src', img);
         imgElmt[i].setAttribute('alt', descrip);
-        linkElmt[i].setAttribute('href', `http://localhost:5000/Store/Product?descrip=${descrip}&id=${id}`);
+        linkElmt[i].setAttribute('href', `${location.href}/Product?descrip=${descrip}&id=${id}`);
         // Displaying data
         rateElmt[i].innerHTML = rate;
         priceElmt[i].textContent = price;
