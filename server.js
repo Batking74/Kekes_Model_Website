@@ -20,6 +20,12 @@ app.use('/Register', register);
 app.use('/ResetPassword', resetPass);
 app.use('/CompanyAI', AI);
 
+store.get('/Store', async (req, res) => {
+    res.sendFile(`${path}\\Store_1.html`, (error) => {
+        console.log(error);
+    })
+})
+
 
 app.get('/Apis', async (req, res) => {
     res.send(await getTablesFrom(process.env.TABLE_NAME5, companyDB));
