@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.use(express.static('public'));
 app.use(express.json());
-// app.use('/Store', store);
+app.use('/Store', store);
 app.use('/Email', mail);
 app.use('/Login', login);
 app.use('/Register', register);
@@ -21,16 +21,14 @@ app.use('/ResetPassword', resetPass);
 app.use('/CompanyAI', AI);
 console.log(`${path.join(__dirname, '\\Store_1.html')}`)
 
-app.get('/Store', async (req, res) => {
-    console.log('hi')
-    console.log(path.join(__dirname, 'public/HTML/Store/Store_1.html'))
-    res.sendFile(path.join(__dirname, 'public/HTML/Store/Store_1.html'), (error) => {
-        if(error) {
-            console.error(`Something went wrong in the ${req.url} route: ${error.message}`);
-            throw error;
-        }
-    })
-})
+// app.get('/Store', async (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/HTML/Store/Store_1.html'), (error) => {
+//         if(error) {
+//             console.error(`Something went wrong in the ${req.url} route: ${error.message}`);
+//             throw error;
+//         }
+//     })
+// })
 
 
 app.get('/Apis', async (req, res) => {

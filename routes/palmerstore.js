@@ -4,13 +4,16 @@ let path = require('path');
 let ejs = require('ejs');
 const { sendResponse } = require('./helopers');
 const { query } = require('express');
-path = `${path.dirname(path.join(__dirname))}\\public\\HTML\\Store`;
+// path = `${path.dirname(path.join(__dirname))}\\public\\HTML\\Store`;
 
 
 // Page 1
 store.get('/', async (req, res) => {
-    res.sendFile(`${path}\\Store_1.html`, (error) => {
-        console.log(error);
+    res.sendFile(path.join(__dirname, '../public/HTML/Store/Store_1.html'), (error) => {
+        if(error) {
+            console.error(`Something went wrong in the ${req.url} route: ${error.message}`);
+            throw error;
+        }
     })
 })
 
