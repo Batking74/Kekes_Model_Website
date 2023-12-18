@@ -23,8 +23,12 @@ console.log(`${path.join(__dirname, '\\Store_1.html')}`)
 
 app.get('/Store', async (req, res) => {
     console.log('hi')
-    res.sendFile(`public/HTML/Store/Store_1.html`, (error) => {
-        console.log(error);
+    console.log(path.join(__dirname, 'public', 'HTML', 'Store', 'Store_1.html'))
+    res.sendFile(path.join(__dirname, 'public', 'HTML', 'Store', 'Store_1.html'), (error) => {
+        if(error) {
+            console.error(`Something went wrong in the ${req.url} route: ${error.message}`);
+            throw error;
+        }
     })
 })
 
