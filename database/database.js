@@ -1,5 +1,7 @@
+// Importing Modules/Packages
+const { handleAndLogError } = require('../routes/helpers/helper');
+const { createConnection } = require('mysql2');
 const nodemailer = require('nodemailer');
-const { createPool, createConnection } = require('mysql2');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
@@ -25,7 +27,7 @@ function configDatabase(DB_NAME) {
     if(process.env.JAWSDB_URL) {
         return createConnection(process.env.JAWSDB_URL).promise();
     }
-    return createPool({
+    return createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
@@ -37,19 +39,26 @@ function configDatabase(DB_NAME) {
 // Reads data from specified table and database
 async function getTablesFrom(tableName, database) {
     try {
-        const res = await database.execute(`SELECT * FROM ${tableName}`);
+        const res = await database.execute('SELECT * FROM ' + tableName);
         return await res[0];
     }
-    catch(error) { console.log(error); }
+    catch(error) {
+        handleAndLogError('getTablesFrom', error, 1);
+    }
 }
 
 
 // Creates new Users Account
 async function createNewUser(userData, database, tableName, colums) {
     try {
-        return await database.execute(`INSERT INTO ${tableName}${colums}VALUES(${JSON.stringify(userData.       Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.Gender)}, ${JSON.stringify(userData.Email)}, ${JSON.stringify(userData.Username)}, ${JSON.stringify(userData.Password)}, ${JSON.stringify(userData.From)}, ${JSON.stringify(userData.Date)});`);
+        const query = `INSERT INTO ${tableName} ${colums} VALUES(?, ?, ?, ?, ?, ?, ?, ?);`;
+        const values = Object.values(userData);
+        console.log(values)
+        return await database.execute(query, JSON.stringify(values));
     }
-    catch(error) { console.log(error) }
+    catch(error) {
+        handleAndLogError('createNewUser', error, 1);
+    }
 }
 
 
@@ -57,11 +66,13 @@ async function createNewUser(userData, database, tableName, colums) {
 async function updateDatabase(database, userData) {
     try {
         return await database.execute(`
-            UPDATE ${process.env.TABLE_NAME4}
-            SET ${userData.column} = '${userData.value}'
-            WHERE id = ${userData.id};`);
+            UPDATE products
+            SET ?? = ?
+            WHERE id = ?;`, [userData.column, userData.value, userData.id]);
     }
-    catch(error) { console.log(error) }
+    catch(error) {
+        handleAndLogError('updateDatabase', error, 1);
+    }
 }
 
 
@@ -70,12 +81,21 @@ async function addUserMSG(userData, database, tableName, colums) {
     try {
         return await database.execute(`INSERT INTO ${tableName}${colums}VALUES(${JSON.stringify(userData.Firstname)}, ${JSON.stringify(userData.Lastname)}, ${JSON.stringify(userData.UserMessage)}, ${JSON.stringify(userData.Date)});`);
     }
-    catch(error) { console.log(error) }
+    catch(error) {
+        handleAndLogError('addUserMSG', error, 1);
+    }
 }
 
 
 // Exporting Modules
 module.exports = {
-    companyDB, userDB, storeDB, transporter, getTablesFrom,
-    updateDatabase, createNewUser, addUserMSG, PORT
+    companyDB,
+    userDB,
+    storeDB,
+    transporter,
+    getTablesFrom,
+    updateDatabase,
+    createNewUser,
+    addUserMSG,
+    PORT
 }

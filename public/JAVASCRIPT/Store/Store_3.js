@@ -1,5 +1,7 @@
-import * as store from "../Store/Store_Blueprint.js";
-import {} from "../utils/Nav&Footer_utils.js";
+// Importing Modules
+import { setDocName, setNumProducts } from "./helpers/helpers.js";
+import * as store from "./Store_Blueprint.js";
+import "../Nav_and_Footer/Nav&Footer.js";
 
 // Modifying Store UI
 store.storeName[0].remove();
@@ -12,11 +14,11 @@ store.storeNavigation.innerHTML = store.getNavigator(2);
 store.instantiateProducts(52, 78);
 
 // Setting Store Title
-store.setDocName("Palmer Studios Store | Page 3");
+setDocName("Palmer Studios Store | Page 3");
 
 // Displaying all products
 store.displayProducts(store.productArray.length);
-store.setNumProducts(store.productArray.length);
+setNumProducts(store.productArray.length);
 
 // Setting New Navigations
 store.newNavigations(2);

@@ -1,11 +1,23 @@
-import {instantiateProducts, displayProducts, getNavigator, newNavigations, sortList, storeNavigation, productArray } from "./Store_Blueprint.js";
-import { setDocName, setNumProducts } from "./helpers.js";
-import {} from "../utils/Nav&Footer_utils.js";
+// Importing Modules
+import { setDocName, setNumProducts } from "./helpers/helpers.js";
+import * as store from "./Store_Blueprint.js";
+import "../Nav_and_Footer/Nav&Footer.js";
 
-storeNavigation.innerHTML = getNavigator(0);
-newNavigations(0);
-instantiateProducts(0, 25);
-setNumProducts(productArray.length);
-displayProducts(productArray.length);
-sortList();
+// Changing Navigations
+store.storeNavigation.innerHTML = store.getNavigator(0);
+
+// Setting New Navigations
+store.newNavigations(0);
+
+// Retreiving Products From database
+store.instantiateProducts(0, 25);
+
+// Displaying all products
+store.displayProducts(store.productArray.length);
+setNumProducts(store.productArray.length);
+
+// Setting Store Title
 setDocName("Palmer Studios Store | Page 1");
+
+// Sorts Products
+store.sortList();

@@ -29,7 +29,7 @@ store.get('/Page2/Products', async (req, res) => getProductsForPage(res, '/Page2
 store.get('/Page3/Products', async (req, res) => getProductsForPage(res, '/Page3'));
 
 
-// Products Page
+// Serving up Products Page
 store.get(`/Product`, async (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/HTML/Store/Product.html'), (error) => {
         if(error) handleAndLogError('/Product', error, 0);

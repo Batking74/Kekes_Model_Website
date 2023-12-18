@@ -1,4 +1,4 @@
-import { date } from "./utils/utils1.js";
+import { date } from "./helpers/helper.js";
 const name = ['Dynamic-img', 'Dynamic-link', 'Dynamic-Data'];
 const ad = `../IMG/Ads/Sale_ad_1.webp`;
 const num = [27, 22, 28];

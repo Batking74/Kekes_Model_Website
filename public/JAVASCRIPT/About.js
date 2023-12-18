@@ -1,6 +1,6 @@
 import { sendGETRequestToSever } from './utils1.js';
-import {} from './utils/Nav&Footer_utils.js';
-const apis = await sendGETRequestToSever('/apis');
+import './utils/Nav&Footer_utils.js';
+
 fetchYouTubeData();
 fetchWeatherData();
 

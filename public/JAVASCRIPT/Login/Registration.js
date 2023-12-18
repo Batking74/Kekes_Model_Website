@@ -1,4 +1,8 @@
-import { sendGETRequestToSever, sendPOSTRequestToSever, setFalse, hasGender, displayError, date } from '../utils/utils1.js'
+// Importing Modules
+import { sendGETRequestToSever, sendPOSTRequestToSever } from '../helpers/request_methods.js'
+import { setFalse, hasGender, displayError } from '../Nav_and_Footer/utils/utils.js'
+import { date } from '../helpers/helper.js';
+
 
 // Declaring and Initializing Variables
 const input = document.querySelectorAll('.input');
@@ -12,6 +16,7 @@ const policy = document.getElementById('policy-conformation');
 const sex = [male, female, other];
 const errorClassName = 'error';
 let gender;
+
 
 // Error Messages
 const errorMsg = [
@@ -41,6 +46,7 @@ form.addEventListener('submit', (e) => {
     validate();
 });
 
+
 // If all inputs are valid user is dirrected to the Account Verification page and email will be sent.
 async function validate() {
     if(await valid()) {
@@ -62,6 +68,7 @@ async function validate() {
     }
 }
 
+
 // Checking if all inputs are filled out and returning true or false
 async function valid() {
     let count = 0;
@@ -78,6 +85,7 @@ async function valid() {
     return status;
 }
 
+
 // Checking if all other inputs are not null and validating each
 async function isOtherInputsValid(status) {
     if(input[4].value != input[5].value) { alert(errorMsg[0]); error(input); status = false; }
@@ -89,11 +97,13 @@ async function isOtherInputsValid(status) {
     else return status;
 }
 
+
 // If something isn't filled out or answered an error is returned
 function error(element) {
     displayError(element[4], errorClassName, errorClassName, 0);
     displayError(element[5], errorClassName, errorClassName, 0);
 }
+
 
 /*
 Checking SQL database to make sure user trying to create an account doesn't already have one or any duplicate username, password, and email

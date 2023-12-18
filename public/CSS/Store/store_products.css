@@ -156,3 +156,7 @@ ul {
 .Remove-Animation {
     display: none;
 }
+
+.reviews-container {
+    text-align: center;
+}

@@ -1,5 +1,6 @@
-import { sendPOSTRequestToSever } from "./utils/utils1.js";
-import * as navTools from "./utils/Nav&Footer_utils.js";
+import { icons, navLinks, attribute } from "./Nav_and_Footer/utils/nav&footer_data.js";
+import { sendPOSTRequestToSever } from "./helpers/request_methods.js";
+import * as navTools from "./Nav_and_Footer/Nav&Footer.js";
 import { HTML } from "./HTML.js";
 
 // Targeting Elements
@@ -22,21 +23,21 @@ const imgElement = document.querySelectorAll('.Dynamic-img');
 const aElement = document.querySelectorAll('.Dynamic-link');
 const pElement = document.querySelectorAll('.Dynamic-Data');
 
-navTools.setContactInfo(pElement, imgElement, 1, 0, navTools.icons[7], navTools.companyInfo.PhoneNumber);
-navTools.setContactInfo(pElement, imgElement, 2, 1, navTools.icons[8], navTools.companyInfo.Email);
-navTools.setContactInfo(pElement, imgElement, 3, 2, navTools.icons[9], navTools.companyInfo.Location);
+navTools.setContactInfo(pElement, imgElement, 1, 0, icons[7], navTools.companyInfo.PhoneNumber);
+navTools.setContactInfo(pElement, imgElement, 2, 1, icons[8], navTools.companyInfo.Email);
+navTools.setContactInfo(pElement, imgElement, 3, 2, icons[9], navTools.companyInfo.Location);
 
 // FaceBook Icon
-navTools.setContactSocialMediaIcons(aElement, imgElement, 4, 1, navTools.navLinks[6], navTools.icons[12], navTools.attribute[3]);
+navTools.setContactSocialMediaIcons(aElement, imgElement, 4, 1, navLinks[6], icons[12], attribute[3]);
 
 // Instagram Icon
-navTools.setContactSocialMediaIcons(aElement, imgElement, 5, 2, navTools.navLinks[7], navTools.icons[13], navTools.attribute[3]);
+navTools.setContactSocialMediaIcons(aElement, imgElement, 5, 2, navLinks[7], icons[13], attribute[3]);
 
 // Twitter Icon
-navTools.setContactSocialMediaIcons(aElement, imgElement, 6, 3, navTools.navLinks[8], navTools.icons[14], navTools.attribute[3]);
+navTools.setContactSocialMediaIcons(aElement, imgElement, 6, 3, navLinks[8], icons[14], attribute[3]);
 
 // Twitter Icon
-navTools.setContactSocialMediaIcons(aElement, imgElement, 7, 4, navTools.navLinks[9], navTools.icons[15], navTools.attribute[3]);
+navTools.setContactSocialMediaIcons(aElement, imgElement, 7, 4, navLinks[9], icons[15], attribute[3]);
 
 
 // Validates User input, and if all feilds are valid a POST request is sent to the server.

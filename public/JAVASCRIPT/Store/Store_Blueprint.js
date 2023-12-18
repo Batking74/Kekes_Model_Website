@@ -1,11 +1,12 @@
-import {} from "../utils/Nav&Footer_utils.js";
-import * as util from "./helpers.js";
-import { sendPUTRequestToSever } from "../utils/utils1.js";
-import LinkedList from "../utils/LinkedList.js";
+// Importing Modules
+import { sendPUTRequestToSever } from "../helpers/request_methods.js";
+import LinkedList from "../helpers/LinkedList.js";
+import * as util from "./helpers/helpers.js";
+import "../Nav_and_Footer/Nav&Footer.js";
 import { HTML } from "../HTML.js";
 
 
-// Dynamic Store HTML Page
+// Dynamic Store HTML Page | Displaying Store
 export const main = document.getElementsByTagName('main');
 main[0].innerHTML = HTML.StoreBody;
 
@@ -30,13 +31,13 @@ rating[3] = '&#8902 &#8902 &#8902 &#8902';
 rating[4] = '&#8902 &#8902 &#8902 &#8902 &#8902';
 
 
-// Store landing page Links
+// Store page Links for Navigating
 pageLink[0] = '/Store';
 pageLink[1] = `/Store/Page2`;
 pageLink[2] = `/Store/Page3`;
 
 
-// Dynamic Elements
+// Dynamic Elements for setting Store Title
 util.setStoreName("Palmer Store");
 util.setDocName("Palmer Studios Store");
 
@@ -68,10 +69,18 @@ export default class Product {
 
 // Creating Store Products
 export function instantiateProducts(start, end) {
+    // Loops through the specified range of products to display
     for(let i = start; i < end; i++) {
+        // Retrieve product details from the database
         const [img, descrip, price, discount, id, percentageOff, reviews, rate] = util.getProductsFromDB(i);
+
+        // Create a new Product instance with retrieved details
         const object = new Product(img, descrip, price, rate, discount, id, percentageOff, reviews);
+        
+        // Add the created product instance to the productArray
         productArray.insertAtHead(object);
+
+        // Append the corresponding HTML element to the DOM
         productMainContainer.innerHTML += HTML.StoreProduct;
     }
 }
@@ -106,10 +115,8 @@ export function displayProducts(productsLength) {
 function getDiscount(percentageOffElement, dbPercentage, price, discountPrice, id) {
     if(dbPercentage !== '0%') {
         const total = util.calculateDiscount(percentageOffElement, dbPercentage, price);
-        console.log(discountPrice)
         if(discountPrice === 'none') {
-            console.log({ id: id, value: total, })
-            sendPUTRequestToSever('/Store/Product/Discounts', { id: id, value: total, column: 'DiscountedPrice' })
+            sendPUTRequestToSever('/Store/Product/Discounts', { id: id, value: total, column: 'DiscountedPrice' });
         }
         return total;
     }

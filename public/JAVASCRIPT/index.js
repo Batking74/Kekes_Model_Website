@@ -1,9 +1,13 @@
-import { attribute, companyInfo } from "./utils/Nav&Footer_utils.js";
+// Importing Modules
+import { attribute } from "./Nav_and_Footer/utils/nav&footer_data.js";
+import { companyInfo } from "./Nav_and_Footer/Nav&Footer.js";
+
 
 // Targeting Elements
 const animate = document.querySelectorAll(`.${attribute[0]}`);
 const animate2 = document.querySelectorAll(`.${attribute[1]}`);
 const imageContainer = document.querySelector('.Model-Gallery-Container');
+
 
 // Changes Load Animations
 for(let index = 0; index < animate.length; index++) {
@@ -20,6 +24,9 @@ class myProjects {
         this.image = image;
     }
 }
+
+
+// Initalizing Project Values
 const name = ['Ariel', 'USA Paddle', 'Blessing Bengeh', 'Keke'];
 const tag = ['#Ariiaaann', '#SaloneFunnyBad', '#Sierra Leone', `#${companyInfo.CompanyName}`];
 const image = new Array(4);
@@ -28,12 +35,14 @@ image[1] = `./IMG/Tiki.jpg`;
 image[2] = `./IMG/Models/Female/Model_4.jpg`;
 image[3] = `./IMG/Keke/Photo_3.jpg`;
 
+
 // Creating Models
 let myProjectsArray = [];
 for(let i = 0; i < name.length; i++) {
     const project = new myProjects(name[i], tag[i], image[i]);
     myProjectsArray.push(project);
 }
+
 
 // Displaying Models
 myProjectsArray.forEach(project => {

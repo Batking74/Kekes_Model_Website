@@ -1,7 +1,13 @@
 // Importing Modules
-import { productArray, storeTitle, pageName, rating } from "./Store_Blueprint.js";
-import { sendGETRequestToSever } from "../utils/utils1.js";
-export const products = await sendGETRequestToSever(`/Store/Products`);
+import { productArray, storeTitle, pageName, rating } from "../Store_Blueprint.js";
+import { sendGETRequestToSever } from "../../helpers/request_methods.js";
+export let products;
+try {
+    products = await sendGETRequestToSever(`/Store/Products`);
+}
+catch(error) {
+
+}
 
 
 // Declares variables containing product details
