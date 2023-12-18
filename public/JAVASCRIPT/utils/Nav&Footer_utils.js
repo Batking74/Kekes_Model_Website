@@ -1,5 +1,5 @@
 import { HTML } from "../HTML.js";
-import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever, sendPUTRequestToSever } from "./utils1.js";
+import { setImgs, setLinks, date, sendPOSTRequestToSever, sendGETRequestToSever } from "./utils1.js";
 export let navbar = document.querySelector('#navbar');
 export const footer = document.getElementsByTagName('footer');
 export let companyInfo;

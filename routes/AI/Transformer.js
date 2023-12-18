@@ -1,5 +1,7 @@
+// Importing Modules/Packages
 const { PromptTemplate } = require('langchain/prompts');
 const { OpenAI } = require('langchain/llms/openai');
+const { handleAndLogError } = require('../helpers/helper');
 const ai = require('express').Router();
 
 
@@ -11,6 +13,7 @@ const promptMessage  = `
 
     usersQuestion: {question}
 `;
+
 
 // Instantiating a new AI Large Learning Model / Transformer Model
 const model = new OpenAI({
@@ -31,18 +34,18 @@ const prompt = new PromptTemplate({
 // Route for users prompts
 ai.post('/', async (req, res) => {
     const usersPrompt = req.body.Prompt;
-    try {
-        if(usersPrompt != '') {
+    if(usersPrompt != '') {
+        try {
             const modelResponse = await prompt.format({ question: usersPrompt });
             const response = await model.call(modelResponse);
             res.send(JSON.stringify(response));
         }
-    }
-    catch(error) {
-        console.log(error);
+        catch(error) {
+            handleAndLogError('/', error, 0);
+        }
     }
 })
 
 
-// Exporting Ai
+// Exporting Module
 module.exports = ai;

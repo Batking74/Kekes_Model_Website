@@ -1,3 +1,4 @@
+// Importing Modules
 import { productArray, storeTitle, pageName, rating } from "./Store_Blueprint.js";
 import { sendGETRequestToSever } from "../utils/utils1.js";
 export const products = await sendGETRequestToSever(`/Store/Products`);

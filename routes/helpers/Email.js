@@ -1,6 +1,7 @@
-const { getTablesFrom, transporter, companyDB } = require('../utils/database');
-const { email } = require('../utils/Emails');
-const { resMsg } = require('./helopers');
+// Importing Modules/Packages
+const { getTablesFrom, transporter, companyDB } = require('../../database/database');
+const { resMsg, handleAndLogError, tableName } = require('./helper');
+const { email } = require('../../database/Emails');
 const mail = require('express').Router();
 const mailgen = require('mailgen');
 const date = new Date();
@@ -13,7 +14,7 @@ function initMailGen(name, companyinfo) {
         product: {
             name: name,
             link: companyinfo.Website,
-            logo: '../public/IMG/Background_Images/Home_Background_IMG.png',
+            logo: '../../public/IMG/Background_Images/Home_Background_IMG.png',
             copyright: `copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()} | ${companyinfo.CompanyName}`
         }
     });
@@ -21,22 +22,10 @@ function initMailGen(name, companyinfo) {
 }
 
 
-// Sends an Email to the Company
-async function sendMailToCompany(userData) {
-    prepareEmail(userData);
-}
-
-
-// Sends an Email to the User
-async function sendMailToUser(userData) {
-    prepareEmail(userData);
-}
-
-
 // Preparing to send to user or company
 async function prepareEmail(userData) {
     try {
-        const companyinfo = await getTablesFrom(process.env.TABLE_NAME1, companyDB);
+        const companyinfo = await getTablesFrom(tableName[2], companyDB);
         if(userData.id == 3) {
             sendEmail(getEmailForCompany(companyinfo[0], userData));
         }
@@ -45,7 +34,7 @@ async function prepareEmail(userData) {
         }
     }
     catch(error) {
-        console.log(error);
+        handleAndLogError('prepareEmail', error, 1);
     }
 }
 
@@ -66,7 +55,7 @@ function getEmailForUser(companyinfo, userData) {
 }
 
 
-// Retreives the Email Template
+// Retreives Email Template
 function getEmailForCompany(companyinfo, userData) {
     const mailGenerator = initMailGen(userData.Firstname, companyinfo);
     return ({
@@ -79,14 +68,17 @@ function getEmailForCompany(companyinfo, userData) {
 
 
 // Sends Email to User or Company
-async function sendEmail(email) {
+async function sendEmail(generatedMail) {
     try {
-        const response = await transporter.sendMail(email);
+        const response = await transporter.sendMail(generatedMail);
         console.log(`${resMsg[5]} ${response.messageId}`);
+        return `${resMsg[5]} ${response.messageId}`;
     }
     catch(error) {
-        console.log(error);
+        handleAndLogError('sendEmail', error, 1);
     }
 }
 
-module.exports = { getEmailForUser, getEmailForCompany, sendMailToCompany, sendMailToUser, mail }
+
+// Exporting Modules
+module.exports = { getEmailForUser, getEmailForCompany, prepareEmail, mail }
