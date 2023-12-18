@@ -23,7 +23,7 @@ console.log(`${path.join(__dirname, '\\Store_1.html')}`)
 
 app.get('/Store', async (req, res) => {
     console.log('hi')
-    res.sendFile(`${path.join(__dirname, '/Store_1.html')}`, (error) => {
+    res.sendFile(`./public/HTML/Store/Store_1.html`, (error) => {
         console.log(error);
     })
 })
