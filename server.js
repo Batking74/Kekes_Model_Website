@@ -13,15 +13,17 @@ const app = express();
 // Middleware
 app.use(express.static('public'));
 app.use(express.json());
-app.use('/Store', store);
+// app.use('/Store', store);
 app.use('/Email', mail);
 app.use('/Login', login);
 app.use('/Register', register);
 app.use('/ResetPassword', resetPass);
 app.use('/CompanyAI', AI);
+console.log(`${path.join(__dirname, '\\Store_1.html')}`)
 
 app.get('/Store', async (req, res) => {
-    res.sendFile(`${path}\\Store_1.html`, (error) => {
+    console.log('hi')
+    res.sendFile(`${path.join(__dirname, '\\Store_1.html')}`, (error) => {
         console.log(error);
     })
 })
