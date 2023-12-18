@@ -35,6 +35,6 @@ In the course of this significant project, I embarked on a transformative journe
 - Nodemailer
 - Langchain
 
-Deployed Site: https://batking74.github.io/Kekes_Model_Website/
+Deployed Site: https://palmer-studios-f1975e2e82dd.herokuapp.com
 
 GitHub Repo: https://github.com/Batking74/Kekes_Model_Website/tree/frontend
