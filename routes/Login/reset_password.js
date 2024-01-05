@@ -2,11 +2,12 @@
 const { sendResponse, resMsg, handleAndLogError } = require('../helpers/helper');
 const { prepareEmail } = require('../helpers/Email');
 const resetPass = require('express').Router();
+const { hash } = require('bcrypt');
 const path = require('path');
 
 
 // Reset Password Routes
-resetPass.route('/ResetPassword')
+resetPass.route('/')
 // Serving Up Page
 .get((req, res) => {
     res.sendFile(path.join(__dirname, '../../public/HTML/Login/Reset_Password.html'), (error) => {
@@ -23,20 +24,36 @@ resetPass.route('/ResetPassword')
     else {
         // Sanitize data
         prepareEmail(req.body);
+        localStorage.setItem('VerificationCode', hash(req.body.RandomNum));
         sendResponse(res, `${resMsg[3]} ${req.body} please verify...`);
     }
 });
 
 
+// Email Conformation
+resetPass.get('/Email_Conformation', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/HTML/Login/Email_Recieved_Conformation.html'), (error) => {
+        if(error) {
+            handleAndLogError('/Email_Conformation', error, 0);
+            res.status(500).send('Internal Server Error');
+        }
+    })
+})
+
+
 // Reset Password Authentication
-resetPass.get('/ResetPassword/Reset_Password_Auth', (req, res) => {
-    console.log('GOOD PASSED!');
-    console.log('/ResetPassword/Reset_Password_Auth');
+resetPass.get('/Reset_Password_Auth', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/HTML/Login/Authentication.html'), (error) => {
+        if(error) {
+            handleAndLogError('/Reset_Password_Auth', error, 0);
+            res.status(500).send('Internal Server Error');
+        }
+    })
 })
 
 
 // New Password Password Conformation
-resetPass.post('/ResetPassword/Reset_Password_Auth/UpdatePassword/Conformation', (req, res) => {
+resetPass.post('/Reset_Password_Auth/UpdatePassword/Conformation', (req, res) => {
     console.log('GOOD PASSED!');
     console.log('/ResetPassword/Reset_Password_Auth/UpdatePassword/Conformation');
 })

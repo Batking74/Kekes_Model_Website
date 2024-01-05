@@ -14,7 +14,7 @@ function initMailGen(name, companyinfo) {
         product: {
             name: name,
             link: companyinfo.Website,
-            logo: '../../public/IMG/Background_Images/Home_Background_IMG.png',
+            logo: '/IMG/Social Media Icons & Logos/Palmer_Logo.webp',
             copyright: `copyright 2022 Nazir Knuckles Inc | ${date.getFullYear()} | ${companyinfo.CompanyName}`
         }
     });
@@ -45,12 +45,8 @@ function getEmailForUser(companyinfo, userData) {
     return ({
         from: `${companyinfo.CompanyName} <${process.env.SMTP_EMAIL_1}>`,
         to: userData.Email,
-        subject: `Message From ${companyinfo.CompanyName}`,
+        subject: `Two-Step Verification for Your ${companyinfo.CompanyName} Account`,
         html: mailGenerator.generate(email(companyinfo, userData)),
-        attachments: [{
-            filename: 'Product_1.jpg',
-            path: 'public/IMG/Store Products/Store 1/Product_1.webp'
-        }]
     })
 }
 

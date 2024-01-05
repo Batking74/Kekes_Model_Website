@@ -2,6 +2,7 @@
 const { sendResponse, resMsg, handleAndLogError, tableName } = require('../helpers/helper');
 const { prepareEmail } = require('../helpers/Email');
 const register = require('express').Router();
+const { hash } = require('bcrypt');
 const path = require('path');
 
 
@@ -22,8 +23,8 @@ register.route('/')
         console.log(req.body);
         // createNewUser(req.body, userDB, tableName[1], DBColumns[0]);
     }
-    console.log(req.body);
-    // prepareEmail(req.body);
+    localStorage.setItem('VerificationCode', hash(req.body.RandomNum));
+    prepareEmail(req.body);
 })
 
 

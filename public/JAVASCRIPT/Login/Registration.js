@@ -1,7 +1,8 @@
 // Importing Modules
-import { sendGETRequestToSever, sendPOSTRequestToSever } from '../helpers/request_methods.js'
-import { setFalse, hasGender, displayError } from '../Nav_and_Footer/utils/utils.js'
+import { sendGETRequestToSever, sendPOSTRequestToSever } from '../helpers/request_methods.js';
+import { setFalse, hasGender, displayError } from '../Nav_and_Footer/utils/utils.js';
 import { date } from '../helpers/helper.js';
+import { footer, navbar } from '../Nav_and_Footer/Nav&Footer.js';
 
 
 // Declaring and Initializing Variables
@@ -111,7 +112,6 @@ Checking SQL database to make sure user trying to create an account doesn't alre
 async function isADuplicate(status) {
     try {
         const res = await sendGETRequestToSever('/Login/Users');
-        console.log(res)
         for(let i = 0; i < res.length; i++) {
             if(input[2].value === res[i].Email) { alert(errorMsg[5]); status = true; }
             else if(input[3].value === res[i].Username) { alert(errorMsg[6]); status = true; }
@@ -122,3 +122,8 @@ async function isADuplicate(status) {
     catch (error) { console.log(error) }
     return status;
 }
+
+
+// Removing Nav and Footer
+navbar.remove();
+footer[0].remove();

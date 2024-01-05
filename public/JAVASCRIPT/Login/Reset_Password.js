@@ -17,7 +17,7 @@ async function validate() {
         };
         const response = await sendPOSTRequestToSever('/ResetPassword', cred);
         localStorage.setItem('PasswordReset', response);
-        location.replace('/ResetPassword/Reset_Password_Auth');
+        location.replace('/ResetPassword/Email_Conformation');
     }
 }
 

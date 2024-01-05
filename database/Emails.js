@@ -1,12 +1,12 @@
 const resMsg = [
     [`New Account Verification Code`,
-    'To get started with',
-    'please enter this code',
+    '',
+    '',
     'To reset your',
     'Password enter in this code',
-    'Thank you enjoy the rest of your evening! Outro1 Verify Account',
+    '',
     'Thank you enjoy the rest of your evening! Outro2 Reset Password',
-    'Test butt'],
+    'Test okaayyy'],
     ['Thank You for signing up with',
     'Welcome to',
     `we're very excited to have you on board!`,
@@ -35,22 +35,25 @@ function sendEmailToCompany(companyinfo, userData, i) {
 }
 
 function sendCodeVerification(companyinfo, userData, i) {
-    resMsg[i][0] = `${resMsg[i][0]}`;
-    if(userData.keyword === 'reset') {
-        resMsg[i][0] = `${companyinfo.CompanyName} Reset Verification Code`;
-        resMsg[i][1] = resMsg[i][3];
-        resMsg[i][2] = resMsg[i][4];
-        resMsg[i][5] = resMsg[i][6];
-    }
     return ({
         body: {
-            title: `${resMsg[i][1]} ${companyinfo.CompanyName} ${resMsg[i][2]}`,
             name: userData.Firstname,
-            intro: resMsg[7],
-            action: {
-                instructions: `${userData.RandomNum}`
-            },
-            outro: resMsg[i][5]
+            action: [
+                {
+                    instructions: `To enhance the security of your ${companyinfo.CompanyName} account, we require a two-step verification. Please enter the following code to complete the setup:`
+                },
+                {
+                    instructions: `Verification Code: ${userData.RandomNum}`,
+                    button: {
+                        color: '#000',
+                        text: 'Verify',
+                        link: 'http://localhost:5000/ResetPassword/Reset_Password_Auth'
+                    }
+                },
+                {
+                    instructions: `If you did not initiate this process or have any concerns, please contact our support team immediately at ${companyinfo.Email}.`
+                }
+            ],
         }
     })
 }
