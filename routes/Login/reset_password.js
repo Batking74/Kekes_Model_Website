@@ -18,14 +18,14 @@ resetPass.route('/')
     })
 })
 // Sends a reset password email
-.post((req, res) => {
+.post( async (req, res) => {
     // Sanitize data
     if(req.body.id == 6) prepareEmail(req.body.Email);
     else {
         // Sanitize data
         prepareEmail(req.body);
-        localStorage.setItem('VerificationCode', hash(req.body.RandomNum));
-        sendResponse(res, `${resMsg[3]} ${req.body} please verify...`);
+        const hashedNum = await hash(req.body.RandomNum, 10);
+        sendResponse(res, { Name: 'VerificationCode', Hash: hashedNum });
     }
 });
 

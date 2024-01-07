@@ -8,7 +8,7 @@ const route = require('express').Router();
 const AI = require('./AI/Transformer');
 const store = require('./Store/store');
 const login = require('./Login/login');
-const { hash } = require('bcrypt');
+const { compare } = require('bcrypt');
 const FAQ = require('./FAQ/FAQ');
 
 
@@ -36,14 +36,9 @@ route.get('/Companyinfo', async (req, res) => {
 
 // Gets Users input Verification Code 
 route.put('/VerificationCode', async (req, res) => {
-    const usersCode = req.body.Code;
-    if(hash(usersCode, 10) === localStorage.getItem()) {
-        console.log('sucesss')
-    }
-    else {
-        console.log('DWED')
-        // res.json('Incorrect Verification Code');
-    }
+    const usersCode = req.body.usersCode;
+    if(await compare(usersCode, req.body.HashCode)) res.json(true);
+    else res.json('Incorrect Verification Code');
 })
 
 

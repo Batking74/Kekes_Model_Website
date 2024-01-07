@@ -17,14 +17,15 @@ register.route('/')
     })
 })
 // Creates user accounts
-.post((req, res) => {
+.post(async (req, res) => {
     // Sanitize data
     if(req.body.id === 1 && req.body.Answer == req.body.RandomNum) {
         console.log(req.body);
         // createNewUser(req.body, userDB, tableName[1], DBColumns[0]);
     }
-    localStorage.setItem('VerificationCode', hash(req.body.RandomNum));
     prepareEmail(req.body);
+    const hashedNum = await hash(req.body.RandomNum, 10);
+    sendResponse(res, { Name: 'VerificationCode', Hash: hashedNum });
 })
 
 

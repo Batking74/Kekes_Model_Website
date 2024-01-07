@@ -61,11 +61,13 @@ async function validate() {
             Password: input[4].value,
             Gender: gender,
             From: list.value,
-            RandomNum: ((Math.random() * 10000) + 1001).toFixed(0)
+            RandomNum: ((Math.random() * 9000) + 1000).toFixed(0)
         }
         const res = await sendPOSTRequestToSever('/Register', newUser);
+        if(localStorage.getItem(res.Name)) localStorage.removeItem(res.Name);
         localStorage.setItem('NewUserData', JSON.stringify(newUser));
-        location.replace('/Register/Account_Verification');
+        localStorage.setItem(res.Name, res.Hash);
+        location.replace('../../HTML/Login/Send_Verification_Code.html');
     }
 }
 

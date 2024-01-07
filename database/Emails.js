@@ -47,7 +47,7 @@ function sendCodeVerification(companyinfo, userData, i) {
                     button: {
                         color: '#000',
                         text: 'Verify',
-                        link: 'http://localhost:5000/ResetPassword/Reset_Password_Auth'
+                        link: 'http://localhost:5000/HTML/Login/Authentication.html'
                     }
                 },
                 {

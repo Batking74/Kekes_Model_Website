@@ -55,25 +55,41 @@
     </div>
 
     <script type="module">
+        // Importing Module and Targeting HTML Elements
         import { sendPUTRequestToSever } from '../../JAVASCRIPT/helpers/request_methods.js'
         const digits = document.querySelectorAll('.digit');
         const validateBtn = document.getElementById('validateCodeBtn');
+
+
+        // Adding eventlisteners to all buttons
+        validateBtn.addEventListener('click', validateCode);
+
         for(let i = 0; i < digits.length - 1; i++) {
             digits[i].addEventListener('input', moveToNextInput);
         }
 
-        validateBtn.addEventListener('click', validateCode);
 
+        // Moves carot to next input when user types
         function moveToNextInput(e) {
+            if(e.inputType === 'deleteContentBackward') return;
             e.target.nextElementSibling.focus();
         }
 
+
+        // Validates users code
         async function validateCode() {
             let code = '';
             for(let i = 0; i < digits.length; i++) code += digits[i].value;
-            const response = await sendPUTRequestToSever('/VerificationCode', code);
+            const response = await sendPUTRequestToSever('/VerificationCode', {
+                usersCode: code,
+                HashCode: localStorage.getItem('VerificationCode')
+            });
 
-            console.log(response)
+            // Checking if the code is correct or not
+            if(response === true) {
+                location.replace('../../HTML/Login/Reset_Password_Complete.html');
+            }
+            else alert(response);
         }
     </script>
 </body>

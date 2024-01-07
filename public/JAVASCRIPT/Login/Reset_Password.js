@@ -7,19 +7,29 @@ submitBtn.addEventListener('click', (e) => {
     validate();
 })
 
+
+console.log(btoa('HELLLLOOO'))
+
 async function validate() {
     if(valid(email.value)) {
         const cred = {
             id: 0,
             keyword: 'reset',
             Email: email.value,
-            RandomNum: ((Math.random() * 10000) + 1001).toFixed(0)
+            RandomNum: ((Math.random() * 9000) + 1000).toFixed(0)
         };
         const response = await sendPOSTRequestToSever('/ResetPassword', cred);
-        localStorage.setItem('PasswordReset', response);
-        location.replace('/ResetPassword/Email_Conformation');
+        if(localStorage.getItem(response.Name)) localStorage.removeItem(response.Name);
+        localStorage.setItem(response.Name, response.Hash);
+        localStorage.setItem('PasswordReset', JSON.stringify({
+            Email:  cred.Email,
+            Title: "Reset Password"
+        }));
+        location.replace('../../HTML/Login/Send_Verification_Code.html');
     }
 }
+
+console.log(atob('SEVMTExMT09P'));
 
 function valid(input) {
     if(input === '') {
