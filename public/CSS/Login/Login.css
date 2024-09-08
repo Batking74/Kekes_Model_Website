@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/IMG/ssss.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Start of Form */
+form {
+    position: fixed;
+    left: 35%;
+    bottom: 15%;
+    display: grid;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+    color: #ffffffd4;
+}
+
+form h1 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 50px;
+}
+
+form h1:hover {
+    cursor: default;
+}
+
+form label {
+    font-size: medium;
+}
+
+form h1, .username, .password-label {
+    position: relative;
+    top: 18px;
+}
+
+.username-label {
+    position: relative;
+    top: 33px;
+}
+
+form input {
+    padding: 7px 0 7px 7px;
+    font-size: 17px;
+    border: solid 1px #0000004f;
+    outline: none;
+    color: #ffffffc8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: #978e4551;
+}
+
+.checkbox {
+    cursor: pointer;
+    background: #978e4551;
+}
+
+.checkbox:active {
+    cursor: grabbing;
+}
+
+.sign-in-options {
+    display: grid;
+    column-gap: 51px;
+    display: flex;
+}
+
+.sign-in-options a {
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+}
+
+form button {
+    padding: 10px 65px 10px 65px;
+    background-color: #ffc107;
+    color: #000000;
+    cursor: pointer;
+    border: 2px #00000046 solid;
+    border-radius: 5px;
+}
+
+form button:hover {
+    transition: 1s;
+    background-color: #ffc10784;
+}
+
+form button:active {
+    cursor: grabbing;
+}
+
+form a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff92;
+}
+
+form a:hover {
+    color: #d7a615;
+}
+
+form a:active {
+    cursor: grabbing;
+}
+
+.signup-btn {
+    padding: 14px 0 14px 0;
+    color: #ffffff;
+    background: #000000;
+}
+
+.signup-btn:hover {
+    transition: 1s;
+    background: #5a5a5a67;
+}
+
+/* Error Styles */
+.Error-Style {
+    position: absolute;
+    background: #ff0000;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    transform: translateY(83%);
+    transition: 1s;
+    width: 100%;
+    font-size: x-large;
+}
+
+.Hide-Error-Style {
+    text-align: center;
+    transform: translateY(0%);
+    background: none;
+    transition: 3s;
+}
+
+/* Responsive Web Design: Tablet View */
+@media screen and (max-width: 1140px) {
+    form {
+        left: 28%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    form { left: 23%; }
+
+    /* Error Styles */
+    .Error-Style {
+        transform: translateY(-10%);
+        font-size: large;
+        z-index: 10;
+    }
+    
+    .Hide-Error-Style {
+        transform: translateY(-80%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form { left: 13%; }
+}
+
+@media screen and (max-width: 490px) {
+    form {
+        left: 25px;
+        margin-top: 50px;
+    }
+
+    /* Start of Form */
+    form h1 {
+        font-size: 40px;
+    }
+
+    .sign-in-options a {
+        font-size: 14px;
+    }
+
+    form button {
+        padding: 10px 60px 10px 60px;
+    }
+}
+
+@media screen and (max-width: 413px) {
+
+    .sign-in-options a {
+        font-size: 10px;
+    }
+
+    form button {
+        padding: 7px 20px 7px 20px;
+        font-size: small;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Palmer Studios Verification Page">
+    <link rel="stylesheet" href="../../CSS/Login/Reset_Password_Auth.css">
+    <title>Verify</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .verification-container {
+            text-align: center;
+        }
+
+        input {
+            font-size: 5em;
+            padding: 10px;
+            text-align: center;
+            width: 100px;
+            height: 150px;
+            margin: 0 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="verification-container">
+        <input aria-label="digit1" type="text" class="digit" maxlength="1">
+        <input aria-label="digit2" type="text" class="digit" maxlength="1">
+        <input aria-label="digit3" type="text" class="digit" maxlength="1">
+        <input aria-label="digit4" type="text" class="digit" maxlength="1">
+        <br>
+        <button id="validateCodeBtn">Validate Code</button>
+    </div>
+
+    <script type="module">
+        // Importing Module and Targeting HTML Elements
+        import { sendPUTRequestToSever } from '../../JAVASCRIPT/helpers/request_methods.js'
+        const digits = document.querySelectorAll('.digit');
+        const validateBtn = document.getElementById('validateCodeBtn');
+
+
+        // Adding eventlisteners to all buttons
+        validateBtn.addEventListener('click', validateCode);
+
+        for(let i = 0; i < digits.length - 1; i++) {
+            digits[i].addEventListener('input', moveToNextInput);
+        }
+
+
+        // Moves carot to next input when user types
+        function moveToNextInput(e) {
+            if(e.inputType === 'deleteContentBackward') return;
+            e.target.nextElementSibling.focus();
+        }
+
+
+        // Validates users code
+        async function validateCode() {
+            let code = '';
+            for(let i = 0; i < digits.length; i++) code += digits[i].value;
+            const response = await sendPUTRequestToSever('/VerificationCode', {
+                usersCode: code,
+                HashCode: localStorage.getItem('VerificationCode')
+            });
+
+            // Checking if the code is correct or not
+            if(response === true) {
+                location.replace('../../HTML/Login/Reset_Password_Complete.html');
+            }
+            else alert(response);
+        }
+    </script>
+</body>
+
+</html>

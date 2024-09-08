@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Palmer Studios Contact Page">
+    <link rel="stylesheet" href="../CSS/Nav&Footer.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    
+    <!-- Mobile/Tablet Responsive Navigation -->
+    <div role="navigation" id="hamburger-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar"></nav>
+
+    <!-- Heading -->
+    <div class="header">
+        <h1>Contact <span id="Company-Name"></span></h1>
+    </div>
+    
+    <!-- Start of contact info container -->
+    <main>
+        <div class="main-container">
+
+            <!-- Palmer Studios Contact Info Container -->
+            <div class="info-container"></div>
+            
+            <!-- Start of form -->
+            <form id="form" action="../HTML/contactAction.html">
+                <div class="form-container">
+                    <div>
+
+                        <!-- First Name Input -->
+                        <div>
+                            <label for="First-Name">First Name</label>
+                            <input id="First-Name" class="userInput" autofocus maxlength="20" type="text">
+                            <span class="errorMsg"></span>
+                        </div>
+
+                        <!-- Last Name Input -->
+                        <div>
+                            <label for="Last-Name">Last Name</label>
+                            <input id="Last-Name" class="userInput" maxlength="20" type="text">
+                            <span class="errorMsg"></span>
+                        </div>
+                    </div>
+                    <div>
+
+                        <!-- Email Name Input -->
+                        <div>
+                            <label for="Email">E-Mail</label>
+                            <input id="Email" class="userInput" maxlength="30" type="email">
+                            <span class="errorMsg"></span>
+                        </div>
+
+                        <!-- Phone Number Name Input -->
+                        <div>
+                            <label for="Phone#">Phone #</label>
+                            <input id="Phone#" class="userInput" maxlength="12" type="tel">
+                            <span class="errorMsg"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Message Input -->
+                <div class="user-message-container">
+                    <label for="Message">Message</label>
+                    <br>
+                    <textarea id="Message" class="userInput" maxlength="1000" cols="81" rows="3"></textarea>
+                    <div class="errorMsg"></div>
+                </div>
+
+                <!-- Send Message Button -->
+                <div class="contact-button-container">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+        <footer></footer>
+        <script type="module" src="../JAVASCRIPT/contact.js"></script>
+    </body>
+</html>

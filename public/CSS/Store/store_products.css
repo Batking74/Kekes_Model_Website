@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* Main */
+.Product-Main-Container {
+    display: grid;
+    grid-template: repeat(2, 450px) / repeat(2, 30vw);
+    justify-content: center;
+    margin-top: 200px;
+    column-gap: 30vw;
+    row-gap: 10vw;
+    width: 100%;
+    padding-bottom: 15%;
+}
+
+/* Styling Main Image */
+.Product-image {
+    border-radius: 10px;
+    box-shadow: 0 10px 10px #00000040;
+    position: relative;
+    bottom: 20px;
+    left: 15%;
+    width: 470px;
+    height: 400px;
+    transition: 1s;
+}
+
+.Product-image:hover {
+    cursor: default;
+    transform: scale(1.1);
+}
+
+/* Start of Product Details side menu */
+.Product-Details {
+    display: grid;
+    grid-template-rows: repeat(6, 40px);
+    row-gap: 30px;
+    background-color: #f5f5f5;
+    border: 1 solid #f5f5f5;
+    width: 70%;
+    height: fit-content;
+    border-radius: 10%;
+    box-shadow: 0 10px 10px #00000040;
+    position: relative;
+    bottom: 20%;
+    padding: 10%;
+}
+
+.Product-Details h1 {
+    font-size: 30px;
+    font-family: serif;
+}
+
+.Ratings {
+    display: inline;
+    color: #000000;
+}
+
+.Ratings p:nth-child(1) {
+    font-size: 40px;
+    color: #ffc107;
+}
+
+.Product-Details a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.Product-Details h2,
+.Product-Details h2 span {
+    cursor: default;
+}
+
+
+/* Styling Prices */
+.price-container {
+    display: flex;
+}
+
+.Product-Details h2 {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.price-container span {
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #ff0000;
+}
+
+.Product-Details div button {
+    font-size: small;
+    border-radius: 50px;
+    padding: 12px;
+    transition: 1s;
+}
+
+.Product-Details div button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #000;
+    color: #fff;
+}
+
+/* Styling Product Detail Icons */
+.Product-Detail-text p:nth-child(1) img {
+    width: 16px;
+    height: 16px;
+}
+
+.Product-Detail-text p:nth-child(2) img {
+    position: relative;
+    top: 7px;
+    right: 4px;
+    width: 25px;
+    height: 25px;
+}
+
+.addToCart--container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling Add to Cart Button */
+.AddToCart {
+    font-size: medium;
+    border-radius: 50px;
+    padding: 15px 60px 15px 60px;
+    transition: 1s;
+    background: #000;
+    color: #fff;
+}
+
+.AddToCart:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000000;
+}
+
+/* Styling Unordered List */
+ul {
+    position: relative;
+    left: 30px;
+}
+
+/* Condition classes */
+.Remove-Animation {
+    display: none;
+}
+
+.reviews-container {
+    text-align: center;
+}

@@ -1,0 +1,370 @@
+/* Declaring Variables */
+:root {
+    --main-color-1: #ffc107;
+    --main-color-2: #000;
+}
+
+/* Navigation Styles */
+nav {
+    display: grid;
+    grid-template: 60px / repeat(7, auto);
+    position: fixed;
+    background: var(--main-color-2);
+    height: 55px;
+    padding: 0 0 5px 0;
+    width: 100%;
+    z-index: 1;
+}
+
+nav img {
+    width: 60px;
+    height: 55px;
+    object-fit: cover;
+}
+
+nav a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding: 0;
+    color: #fff;
+}
+
+nav a:hover {
+    transition: 1s;
+}
+
+.nav:hover {
+    background: var(--main-color-1);
+}
+
+nav a:nth-child(2):hover,
+nav a:nth-last-child(1):hover {
+    background: #2f4f4f;
+}
+
+nav a:nth-child(2),
+nav a:nth-last-child(1) {
+    color: var(--main-color-1);
+}
+
+.login-logo {
+    position: relative;
+    right: 5px;
+}
+
+/* Home Page Nav Animations */
+.appointment_btn {
+    animation: btn-animate 3s;
+}
+
+.HomeAnimateGroup1 {
+    animation: HomeAnimateGroup1 3s;
+}
+
+.HomeAnimateGroup2 {
+    animation: HomeAnimateGroup2 3s;
+}
+
+@keyframes nav-load {
+
+    /* This is what the navbar will look like at the begining. */
+    0% {
+        transform: translateY(-100%);
+    }
+
+    /* This is what the animation will look like at the end. */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes btn-animate {
+    0% {
+        transform: translateY(3000%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes HomeAnimateGroup1 {
+    0% {
+        transform: translateX(-800%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes HomeAnimateGroup2 {
+    0% {
+        transform: translateX(800%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* All other Pages Nav Animations */
+.StoreAnimateGroup1 {
+    animation: StoreAnimateGroup1 3s;
+}
+
+.StoreAnimateGroup2 {
+    animation: StoreAnimateGroup2 3s;
+}
+
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes StoreAnimateGroup1 {
+    0% {
+        transform: translateY(-80%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes StoreAnimateGroup2 {
+    0% {
+        transform: translateY(-80%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: var(--main-color-2);
+    padding: 40px 0 40px 0;
+    width: 100%;
+}
+
+.position-footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.position-logos {
+    text-align: center;
+}
+
+.socialMedia-icons-Container {
+    display: grid;
+    column-gap: 15px;
+    display: flex;
+}
+
+.socialMedia-icons {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-column-a-1,
+.footer-column-a-2 {
+    display: grid;
+    row-gap: 17px;
+}
+
+.footer-column-a-1 a,
+.footer-column-a-2 a,
+.last-footer-col {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Changes Autocomplete styles in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--main-color-1);
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+}
+
+.last-footer-col input {
+    padding: 5px 70px 5px 0;
+    background: var(--main-color-2);
+    outline: none;
+    color: var(--main-color-1);
+    border: none;
+    border-bottom: solid #ffffff 1px;
+}
+
+.last-footer-col button {
+    margin-top: 15px;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+    background-color: var(--main-color-1);
+    border: none;
+    border-radius: 5px;
+}
+
+.Footer-Response-Icon {
+    display: block;
+    text-align: center;
+}
+
+.Footer-Response-Icon svg {
+    width: 50px;
+    height: 50px;
+}
+
+.last-footer-col button:hover {
+    transition: 1s;
+    background: #ffbf00cc;
+    color: #fff;
+}
+
+.footer-column-a-1 a:first-child,
+.footer-column-a-2 a:first-child {
+    color: gray;
+}
+
+.copyright {
+    color: #fff;
+    text-align: center;
+}
+
+.copyright hr {
+    border: 0.1px #ffffff2b solid;
+    outline: none;
+}
+
+/* Responsive Web Design */
+@media screen and (max-width: 1000px) {
+
+    .last-footer-col input,
+    .last-footer-col button,
+    #footerLabel {
+        display: none;
+    }
+}
+
+/* Tablet View 1  */
+@media (max-width: 850px) {
+    #navbar {
+        display: grid;
+        grid-template-rows: repeat(7, 90px);
+        height: 100vh;
+        width: 30%;
+        z-index: 4;
+        border-right: 3px solid #ffa60088;
+        background: #000000e9;
+        left: -100%;
+        transition: 1.3s;
+    }
+
+    #navbar.active {
+        left: 0;
+    }
+
+    #hamburger-nav {
+        position: fixed;
+        top: 25px;
+        left: 20px;
+        background: none;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 5;
+        transition: 0.3s;
+    }
+    #hamburger-nav span {
+        display: flex;
+        width: 20px;
+        height: 2px;
+        padding: 1px 2px 1px 2px;
+        background: #8a5b02;
+        margin-top: 3.2px;
+    }
+
+    #hamburger-nav:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+    }
+
+    #hamburger-nav:active {
+        cursor: grab;
+    }
+
+    nav {
+        grid-template: repeat(7, auto) / 100%;
+    }
+
+    .active {
+        left: 0;
+    }
+}
+
+
+/* Tablet View 2 */
+@media screen and (max-width: 810px) {
+    footer {
+        top: 970%;
+    }
+
+    .position-footer-container {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        row-gap: 50px;
+        text-align: center;
+    }
+
+    .footer-column-a-1,
+    .footer-column-a-2 {
+        position: relative;
+        bottom: 90%;
+    }
+
+    .position-logos {
+        position: relative;
+        top: 325%;
+    }
+
+    .socialMedia-icons-Container {
+        column-gap: 40px;
+    }
+
+    .nav-animate-group2 {
+        animation: none;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 500px) {
+    #navbar {
+        grid-template-rows: repeat(7, 100px);
+        width: 100%;
+        background: var(--main-color-2);
+        border-right: none;
+        top: -200%;
+        left: 0;
+    }
+
+    #navbar.active {
+        top: 0;
+    }
+}
