@@ -24,7 +24,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position-x: 60%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* Heading Styles */
