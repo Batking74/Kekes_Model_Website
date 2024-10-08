@@ -19,10 +19,8 @@ body {
     background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
     min-width: 100%;
     min-height: 100vh;
-    background-position: top;
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
     background-position-x: 60%;
 }
 
@@ -355,6 +353,10 @@ body {
 @media screen and (max-width: 996px) {
     html {
         font-size: 14px;
+    }
+    .test {
+        background-image: url('/IMG/Background_Images/Home_Background_IMG-Mobile.png');
+        background-position-x: 50%;
     }
 
     .heading-container button {
