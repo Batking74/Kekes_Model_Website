@@ -18,14 +18,13 @@ body {
 .test {
     background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
     min-width: 100%;
-    max-width: 100%;
     min-height: 100vh;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position-x: 60%;
+    object-fit: contain;
 }
 
 /* Heading Styles */
