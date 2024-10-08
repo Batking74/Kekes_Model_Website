@@ -19,11 +19,11 @@ body {
     background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
     min-width: 100%;
     min-height: 100vh;
-    background-position: center;
-    background-size: auto;
+    background-position: top;
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    /* background-position-x: 60%; */
+    background-position-x: 60%;
 }
 
 /* Heading Styles */
