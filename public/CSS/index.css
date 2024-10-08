@@ -354,10 +354,6 @@ body {
     html {
         font-size: 14px;
     }
-    .test {
-        background-image: url('/IMG/Background_Images/Home_Background_IMG-Mobile.png');
-        background-position-x: 50%;
-    }
 
     .heading-container button {
         width: 200px;
