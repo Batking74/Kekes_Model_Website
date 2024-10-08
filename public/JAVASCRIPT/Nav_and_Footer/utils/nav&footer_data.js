@@ -1,8 +1,8 @@
 // Organizing all navigation links
 export const navLinks = new Array(10);
 navLinks[0] = `/`;
-navLinks[1] = `https://github.com/Batking74/Kekes_Model_Website`;
-navLinks[2] = `https://batking74.github.io/Portfolio-Website/#contact-section`;
+navLinks[1] = `https://contra.com/p/b6PslE6N-kekes-modeling-studio-palmer-studios`;
+navLinks[2] = `https://nazirsportfolio.com/FAQ`;
 navLinks[3] = `/Contact`;
 navLinks[4] = `/Store`;
 navLinks[5] = `/Login`;
