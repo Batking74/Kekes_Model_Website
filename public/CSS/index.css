@@ -27,20 +27,20 @@ body {
 }
 
 /* Heading Styles */
-.heading-container {
+/* .heading-container {
     display: flex;
     align-items: center;
     text-align: center;
     flex-flow: column;
     position: absolute;
-    width: 100%;
+    width: 100%; */
     /* Centering absolute Element */
-    top: 50%;
+    /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
-.heading-container h1 {
+/* .heading-container h1 {
     font-size: 55px;
     font-weight: lighter;
     color: #fff;
@@ -48,10 +48,10 @@ body {
     text-shadow: #000 4px 4px 5px;
     border-radius: 40px;
     padding: 15px;
-}
+} */
 
 /* Schedule Appointment Button Styles */
-.heading-container button {
+/* .heading-container button {
     font-size: 17px;
     font-weight: large;
     padding: 17px 0 17px 0;
@@ -73,7 +73,7 @@ body {
 
 .heading-container button:active {
     cursor: grabbing;
-}
+} */
 
 /* Styling All Sections*/
 .section1-heading,
