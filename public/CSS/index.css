@@ -17,46 +17,29 @@ body {
 }
 
 .test {
-    /* background-image: url('/IMG/Background_Images/happy-black-girl.webp'); */
-    background-image: url('../IMG/Background_Images/happy-black-girl.webp');
-    /* width: 100%; */
-    height: 100vh;
-    /* background-repeat: no-repeat; */
-    background-size: contain;
+    background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
+    min-width: 100%;
+    min-height: 100vh;
+    background-size: cover;
     background-attachment: fixed;
     background-position-x: 60%;
-
-
-    /* background-position: center;
-    background-size: contain;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center; */
 }
 
-/* @media screen and (max-width: 1115px) {
-    .test {
-        background-size: cover
-
-    }
-} */
-
-
 /* Heading Styles */
-/* .heading-container {
+.heading-container {
     display: flex;
     align-items: center;
     text-align: center;
     flex-flow: column;
     position: absolute;
-    width: 100%; */
+    width: 100%;
     /* Centering absolute Element */
-    /* top: 50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-} */
+}
 
-/* .heading-container h1 {
+.heading-container h1 {
     font-size: 55px;
     font-weight: lighter;
     color: #fff;
@@ -64,10 +47,10 @@ body {
     text-shadow: #000 4px 4px 5px;
     border-radius: 40px;
     padding: 15px;
-} */
+}
 
 /* Schedule Appointment Button Styles */
-/* .heading-container button {
+.heading-container button {
     font-size: 17px;
     font-weight: large;
     padding: 17px 0 17px 0;
@@ -89,10 +72,10 @@ body {
 
 .heading-container button:active {
     cursor: grabbing;
-} */
+}
 
 /* Styling All Sections*/
-/* .section1-heading,
+.section1-heading,
 .section2-heading,
 .section3-heading {
     color: #000;
@@ -112,10 +95,10 @@ body {
     border-radius: 20%;
     width: 270px;
     height: 350px;
-} */
+}
 
 /* Section 1 Styles */
-/* .section1-p1,
+.section1-p1,
 .section1-p2 {
     font-size: 1.2rem;
     font-weight: 300;
@@ -162,10 +145,10 @@ body {
 
 .section1-p2 {
     width: 750px;
-} */
+}
 
 /* Section 2 Styles */
-/* .section2-container {
+.section2-container {
     padding: 40px 0 250px 0;
     background: #000000e7;
 }
@@ -282,10 +265,10 @@ body {
 .section2-btn:hover {
     background: #ffa6003c;
     color: #ffffffcc;
-} */
+}
 
 /* Start of Section 3 */
-/* .section3-container {
+.section3-container {
     font-size: 35px;
     background: #ffffffe0;
     padding-bottom: 300px;
@@ -310,10 +293,10 @@ body {
     font-size: 20px;
     color: #fff;
     margin-top: 20px;
-} */
+}
 
 /* Responsive Web Design: Tablet view */
-/* @media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .heading-container h1 {
         font-size: 35px;
     }
@@ -328,6 +311,7 @@ body {
         margin-left: 50px;
     }
 
+    /* Start of Section 2 */
     .Advantages-Section {
         flex-direction: column;
     }
@@ -365,9 +349,9 @@ body {
     .section2-img2 {
         margin-top: 45px;
     }
-} */
+}
 
-/* @media screen and (max-width: 996px) {
+@media screen and (max-width: 996px) {
     html {
         font-size: 14px;
     }
@@ -415,6 +399,7 @@ body {
         font-size: 50px;
     }
 
+    /* Start of Model Gallery */
     .Model-Gallery-Container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -441,6 +426,7 @@ body {
         font-size: 19px;
     }
 
+    /* Section 3 */
     .prompt-output-container {
         margin: 20px 80px 0 80px;
     }
@@ -448,21 +434,22 @@ body {
     .prompt-output-container p {
         font-size: 18px;
     }
-} */
+}
 
-/* @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
     .heading-container h1 {
         font-size: 30px;
         width: 300px;
     }
-} */
+}
 
 /* mobile view */
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .section2-heading {
         font-size: 25px;
     }
 
+    /* Start of Model Gallery */
     .Model-Gallery-Container {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -489,6 +476,7 @@ body {
         font-size: 19px;
     }
 
+    /* Section 3 */
     .prompt-output-container {
         margin: 40px 20px 0 40px;
     }
@@ -496,13 +484,13 @@ body {
     .prompt-output-container p {
         font-size: 18px;
     }
-} */
+}
 
-/* @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .heading-container h1 {
         font-size: 25px;
     }
     .heading-container button {
         font-size: 15px;
     }
-} */
+}
