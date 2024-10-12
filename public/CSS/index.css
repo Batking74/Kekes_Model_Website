@@ -24,6 +24,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position-x: 62%;
+    overflow: hidden;
 }
 
 /* Heading Styles */
