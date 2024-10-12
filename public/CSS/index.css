@@ -296,7 +296,7 @@ body {
 }
 
 /* Responsive Web Design: Tablet view */
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .heading-container h1 {
         font-size: 35px;
     }
@@ -311,7 +311,6 @@ body {
         margin-left: 50px;
     }
 
-    /* Start of Section 2 */
     .Advantages-Section {
         flex-direction: column;
     }
@@ -349,9 +348,9 @@ body {
     .section2-img2 {
         margin-top: 45px;
     }
-}
+} */
 
-@media screen and (max-width: 996px) {
+/* @media screen and (max-width: 996px) {
     html {
         font-size: 14px;
     }
@@ -399,7 +398,6 @@ body {
         font-size: 50px;
     }
 
-    /* Start of Model Gallery */
     .Model-Gallery-Container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -426,7 +424,6 @@ body {
         font-size: 19px;
     }
 
-    /* Section 3 */
     .prompt-output-container {
         margin: 20px 80px 0 80px;
     }
@@ -434,22 +431,21 @@ body {
     .prompt-output-container p {
         font-size: 18px;
     }
-}
+} */
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
     .heading-container h1 {
         font-size: 30px;
         width: 300px;
     }
-}
+} */
 
 /* mobile view */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .section2-heading {
         font-size: 25px;
     }
 
-    /* Start of Model Gallery */
     .Model-Gallery-Container {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -476,7 +472,6 @@ body {
         font-size: 19px;
     }
 
-    /* Section 3 */
     .prompt-output-container {
         margin: 40px 20px 0 40px;
     }
@@ -484,13 +479,13 @@ body {
     .prompt-output-container p {
         font-size: 18px;
     }
-}
+} */
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     .heading-container h1 {
         font-size: 25px;
     }
     .heading-container button {
         font-size: 15px;
     }
-}
+} */
