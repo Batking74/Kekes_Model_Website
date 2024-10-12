@@ -17,11 +17,11 @@ body {
 }
 
 .test {
-    background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
+    background-image: url('/IMG/Background_Images/Home_Background_IMG - Copy.png');
     min-width: 100%;
     min-height: 100vh;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
     background-position-x: 60%;
 }
