@@ -63,7 +63,8 @@ nav a:nth-last-child(1) {
 
 /* Home Page Nav Animations */
 .appointment_btn {
-    animation: btn-animate 3s;
+    /* position: absolute; */
+    /* animation: btn-animate 3s; */
 }
 
 .HomeAnimateGroup1 {
