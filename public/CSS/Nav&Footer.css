@@ -68,11 +68,11 @@ nav a:nth-last-child(1) {
 }
 
 .HomeAnimateGroup1 {
-    animation: HomeAnimateGroup1 3s;
+    /* animation: HomeAnimateGroup1 3s; */
 }
 
 .HomeAnimateGroup2 {
-    animation: HomeAnimateGroup2 3s;
+    /* animation: HomeAnimateGroup2 3s; */
 }
 
 @keyframes nav-load {
