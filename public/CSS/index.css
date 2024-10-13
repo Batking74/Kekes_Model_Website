@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -11,40 +12,36 @@
 }
 
 body {
-    background: #000;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.test {
-    background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
-    width: 100%;
+    /* background-repeat: no-repeat;
     min-height: 100vh;
-    background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
     background-attachment: fixed;
     background-position-x: 62%;
-    overflow: hidden;
+    background-image: url('/IMG/Background_Images/Home_Background_IMG.png'); */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Heading Styles */
 .heading-container {
+    background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position-x: 62%;
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
     flex-flow: column;
-    position: absolute;
-    width: 100%;
-    /* Centering absolute Element */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    min-height: 100vh;
 }
 
 .heading-container h1 {
     font-size: 55px;
     font-weight: lighter;
     color: #fff;
-    width: 600px;
+    width: fit-content;
     text-shadow: #000 4px 4px 5px;
     border-radius: 40px;
     padding: 15px;
@@ -115,6 +112,7 @@ body {
 }
 
 .section1-container {
+    /* margin-top: 230px; */
     background: #ffffffe0;
     padding: 50px 0 200px 0;
 }
@@ -298,13 +296,6 @@ body {
 
 /* Responsive Web Design: Tablet view */
 @media screen and (max-width: 1200px) {
-    .heading-container h1 {
-        font-size: 35px;
-    }
-
-    .heading-container {
-        top: 45%;
-    }
 
     .section1-p1,
     .section1-p2 {
@@ -437,10 +428,10 @@ body {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
     .heading-container h1 {
-        font-size: 30px;
-        width: 300px;
+        font-size: 35px;
+        padding-bottom: 0px;
     }
 }
 
@@ -491,7 +482,9 @@ body {
     .heading-container h1 {
         font-size: 25px;
     }
+
     .heading-container button {
-        font-size: 15px;
+        font-size: 14px;
+        width: 170px;
     }
 }
