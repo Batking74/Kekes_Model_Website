@@ -12,23 +12,23 @@
 }
 
 body {
-    /* background-repeat: no-repeat;
-    min-height: 100vh;
-    background-size: cover;
-    width: 100%;
-    background-attachment: fixed;
-    background-position-x: 62%;
-    background-image: url('/IMG/Background_Images/Home_Background_IMG.png'); */
+    background: #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Heading Styles */
-.heading-container {
+.background-container {
     background-image: url('/IMG/Background_Images/Home_Background_IMG.png');
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
     background-position-x: 62%;
+    min-height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.heading-container {
     display: flex;
     justify-content: center;
     align-items: center;
