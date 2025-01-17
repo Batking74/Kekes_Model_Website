@@ -21,7 +21,7 @@ register.route('/')
     // Sanitize data
     if(req.body.id === 1 && req.body.Answer == req.body.RandomNum) {
         console.log(req.body);
-        // createNewUser(req.body, userDB, tableName[1], DBColumns[0]);
+        // createNewUser(req.body, companyDB, tableName[1], DBColumns[0]);
     }
     prepareEmail(req.body);
     const hashedNum = await hash(req.body.RandomNum, 10);

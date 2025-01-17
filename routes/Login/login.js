@@ -1,6 +1,6 @@
 // Importing Modules/Packages
 const { sendResponse, handleAndLogError, tableName } = require('../helpers/helper');
-const { getTablesFrom, userDB } = require('../../database/database');
+const { getTablesFrom, companyDB } = require('../../database/database');
 const login = require('express').Router();
 const path = require('path');
 
@@ -19,7 +19,7 @@ login.get('/', (req, res) => {
 // Retrieves all users from SQL Database
 login.get('/Users', async (req, res) => {
     try {
-        const data = await getTablesFrom(tableName[1], userDB);
+        const data = await getTablesFrom(tableName[1], companyDB);
         sendResponse(res, data);
     }
     catch (error) {

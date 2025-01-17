@@ -1,5 +1,5 @@
 // Importing Packages/Modules
-const { getTablesFrom, updateDatabase, storeDB } = require('../../database/database');
+const { getTablesFrom, updateDatabase, companyDB } = require('../../database/database');
 const { handleAndLogError, tableName } = require('../helpers/helper');
 const store = require('express').Router();
 let path = require('path');
@@ -27,7 +27,7 @@ store.get(`/Page3/Product`, async (req, res) => serveProductPage(res, '/Page3/Pr
 store.put('/Product/Discounts?', async (req, res) => {
     try {
         // Sanitize data
-        res.send(await updateDatabase(storeDB, req.body));
+        res.send(await updateDatabase(companyDB, req.body));
     }
     catch (error) {
         handleAndLogError('/Product/Discounts?', error, 0);
@@ -57,7 +57,7 @@ function serveStorePage(res, file, route = '/') {
 // Handles the retrieval of products based on the specified page.
 async function getProductsForPage(res, page = '') {
     try {
-        res.send(await getTablesFrom(tableName[0], storeDB));
+        res.send(await getTablesFrom(tableName[0], companyDB));
     }
     catch (error) {
         handleAndLogError(`${page}/Products`, error, 0);

@@ -8,8 +8,6 @@ const PORT = process.env.PORT || 5000;
 
 // Connecting Databases
 const companyDB = configDatabase(process.env.DB1_NAME);
-const userDB = configDatabase(process.env.DB2_NAME);
-const storeDB = configDatabase(process.env.DB3_NAME);
 
 
 // Authenticating with gmail to send emails to client
@@ -90,8 +88,6 @@ async function addUserMSG(userData, database, tableName, colums) {
 // Exporting Modules
 module.exports = {
     companyDB,
-    userDB,
-    storeDB,
     transporter,
     getTablesFrom,
     updateDatabase,

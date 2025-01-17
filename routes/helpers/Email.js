@@ -9,6 +9,7 @@ const date = new Date();
 
 // Setting up Email Settings that the user will receive
 function initMailGen(name, companyinfo) {
+    console.log(name)
     let mailGenerator = new mailgen({
         theme: 'default',
         product: {

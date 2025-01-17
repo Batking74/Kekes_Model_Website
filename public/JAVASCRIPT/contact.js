@@ -23,9 +23,9 @@ const imgElement = document.querySelectorAll('.Dynamic-img');
 const aElement = document.querySelectorAll('.Dynamic-link');
 const pElement = document.querySelectorAll('.Dynamic-Data');
 
-navTools.setContactInfo(pElement, imgElement, 1, 0, icons[7], navTools.companyInfo.PhoneNumber);
-navTools.setContactInfo(pElement, imgElement, 2, 1, icons[8], navTools.companyInfo.Email);
-navTools.setContactInfo(pElement, imgElement, 3, 2, icons[9], navTools.companyInfo.Location);
+navTools.setContactInfo(pElement, imgElement, 1, 0, icons[7], navTools.companyInfo.CompanyPhoneNumber);
+navTools.setContactInfo(pElement, imgElement, 2, 1, icons[8], navTools.companyInfo.CompanyEmail);
+navTools.setContactInfo(pElement, imgElement, 3, 2, icons[9], navTools.companyInfo.CompanyLocation);
 
 // FaceBook Icon
 navTools.setContactSocialMediaIcons(aElement, imgElement, 4, 1, navLinks[6], icons[12], attribute[3]);
